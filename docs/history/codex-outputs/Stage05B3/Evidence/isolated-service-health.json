@@ -1,0 +1,9 @@
+{
+  "actual_application_lifespan": true,
+  "kernel_sandbox": true,
+  "configuration": "connectivity-only; no hosted calls",
+  "database_credentials_supplied": false,
+  "health": {
+    "status": "configuration_required"
+  }
+}

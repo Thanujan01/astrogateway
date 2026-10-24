@@ -1,0 +1,8 @@
+Actual Unity Editor batch Play Mode Game View frame cadence. Not interactive Editor, GPU-only time, or Android performance.
+Unity=6000.6.4f1 GPU=Apple M4 Pro API=Metal framebuffer=3024x1600
+Camera=fixed astronaut spawn; weather=clear; no capture during sample; no intentional sleep; 2-second warmup then >=5 seconds sampling per preset.
+Low: frames=131 average_ms=38.39 effective_fps=26.05 p95_ms=34.65 scale=0.65 shadow=512 distance=25 AA=1 mips=2 lod=0.65 cap=30
+Medium: frames=151 average_ms=33.33 effective_fps=30.00 p95_ms=34.98 scale=0.8 shadow=1024 distance=45 AA=2 mips=1 lod=1 cap=30
+High: frames=300 average_ms=16.69 effective_fps=59.92 p95_ms=17.76 scale=1 shadow=2048 distance=65 AA=4 mips=0 lod=1.5 cap=60
+Desktop: frames=300 average_ms=16.69 effective_fps=59.93 p95_ms=18.24 scale=1 shadow=4096 distance=90 AA=4 mips=0 lod=2 cap=60
+CPU/GPU timing, drawn batches, thermal state: not instrumented; batch cadence is not an improvement claim.

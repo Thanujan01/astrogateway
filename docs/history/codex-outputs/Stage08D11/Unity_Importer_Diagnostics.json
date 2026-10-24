@@ -1,0 +1,14 @@
+[
+  {
+    "lod": 0,
+    "reportItemsYAML": "  reportItems:\n  - type: 2\n    code: 20\n    messages:\n    - KHR_materials_ior\n  - type: 2\n    code: 20\n    messages:\n    - KHR_materials_specular\n"
+  },
+  {
+    "lod": 1,
+    "reportItemsYAML": "  reportItems:\n  - type: 2\n    code: 20\n    messages:\n    - KHR_materials_ior\n  - type: 2\n    code: 20\n    messages:\n    - KHR_materials_specular\n"
+  },
+  {
+    "lod": 2,
+    "reportItemsYAML": "  reportItems:\n  - type: 2\n    code: 20\n    messages:\n    - KHR_materials_ior\n  - type: 2\n    code: 20\n    messages:\n    - KHR_materials_specular\n"
+  }
+]

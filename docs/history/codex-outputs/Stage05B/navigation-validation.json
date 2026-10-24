@@ -1,0 +1,18 @@
+{
+  "live_authentication": false,
+  "checks": [
+    "No demo entry; unconfigured provider explicit",
+    "Signup opens",
+    "Signup empty input rejected locally",
+    "Signin empty input rejected locally",
+    "Reset invalid email rejected locally",
+    "System Back reset \u2192 signin \u2192 Welcome",
+    "Forged Unity return does not unlock dashboard",
+    "Unsolicited PKCE callback denied",
+    "Restart remains unauthenticated",
+    "Empty-session signout safe"
+  ],
+  "model": "sdk_gphone64_arm64",
+  "android": "16",
+  "passed": true
+}

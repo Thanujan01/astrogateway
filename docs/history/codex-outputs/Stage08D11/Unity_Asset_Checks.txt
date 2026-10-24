@@ -1,0 +1,197 @@
+LOD0: prefab PASS; meshes=68; triangles=91916; materials=43; textures=21; nullMaterialSlots=0
+LOD0 texture arm_graphics: 512x512, ARGB32
+LOD0 texture blade: 1024x512, ARGB32
+LOD0 texture clear.png: 64x64, ARGB32
+LOD0 texture foil_n.jpg: 512x512, ARGB32
+LOD0 texture glass: 128x128, ARGB32
+LOD0 texture mars_2020_01: 1024x1024, ARGB32
+LOD0 texture mars_2020_01_n: 1024x1024, ARGB32
+LOD0 texture mars_2020_02: 1024x1024, ARGB32
+LOD0 texture mars_2020_02_n: 1024x1024, ARGB32
+LOD0 texture mars_2020_03: 1024x1024, ARGB32
+LOD0 texture mars_2020_04: 1024x1024, ARGB32
+LOD0 texture mars_2020_05: 1024x1024, ARGB32
+LOD0 texture mars_2020_05_n: 1024x1024, ARGB32
+LOD0 texture mars_2020_05_r: 1024x1024, ARGB32
+LOD0 texture mars_2020_06: 1024x1024, ARGB32
+LOD0 texture mars_2020_06_n: 1024x1024, ARGB32
+LOD0 texture mars_2020_07: 512x512, ARGB32
+LOD0 texture mars_2020_hub: 256x256, ARGB32
+LOD0 texture mars_2020_hub_n: 256x256, ARGB32
+LOD0 texture mars_2020_spring_n: 256x256, ARGB32
+LOD0 texture sample_handling_door: 512x512, ARGB32
+LOD0 material aluminum: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material aluminum.001: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material aluminum_black: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material arm_graphics: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material array gold trim: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material black_krinkle: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material blades: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material brass: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material bronze: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material copper: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material foil_orange: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material glass lens: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=3000
+LOD0 material glass_2: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=3000
+LOD0 material glass_trans: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=3000
+LOD0 material gold: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material gray_krinkle: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material grey_brushed: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material gunmetal: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material gunmetal_dark: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material hub: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material iron: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material mars_2020_01: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material mars_2020_01_n: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material mars_2020_02: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material mars_2020_02_n: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material mars_2020_03: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material mars_2020_04: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material mars_2020_04_aluminum_r: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material mars_2020_05: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material mars_2020_05_aluminum: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material mars_2020_05_brass: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material mars_2020_05_cooling_lines: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material mars_2020_05_gunmetal: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material mars_2020_06: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material mars_2020_06_brass: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material mars_2020_06_n: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material mars_2020_07: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material mars_2020_gunmetal_dark: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material Material: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material paint_white_base: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material sample_handling_door: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material spring: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD0 material transparent: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1: prefab PASS; meshes=68; triangles=47280; materials=43; textures=21; nullMaterialSlots=0
+LOD1 texture arm_graphics: 512x512, ARGB32
+LOD1 texture blade: 512x256, ARGB32
+LOD1 texture clear.png: 64x64, ARGB32
+LOD1 texture foil_n.jpg: 512x512, ARGB32
+LOD1 texture glass: 128x128, ARGB32
+LOD1 texture mars_2020_01: 512x512, ARGB32
+LOD1 texture mars_2020_01_n: 512x512, ARGB32
+LOD1 texture mars_2020_02: 512x512, ARGB32
+LOD1 texture mars_2020_02_n: 512x512, ARGB32
+LOD1 texture mars_2020_03: 512x512, ARGB32
+LOD1 texture mars_2020_04: 512x512, ARGB32
+LOD1 texture mars_2020_05: 512x512, ARGB32
+LOD1 texture mars_2020_05_n: 512x512, ARGB32
+LOD1 texture mars_2020_05_r: 512x512, ARGB32
+LOD1 texture mars_2020_06: 512x512, ARGB32
+LOD1 texture mars_2020_06_n: 512x512, ARGB32
+LOD1 texture mars_2020_07: 512x512, ARGB32
+LOD1 texture mars_2020_hub: 256x256, ARGB32
+LOD1 texture mars_2020_hub_n: 256x256, ARGB32
+LOD1 texture mars_2020_spring_n: 256x256, ARGB32
+LOD1 texture sample_handling_door: 512x512, ARGB32
+LOD1 material aluminum: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material aluminum.001: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material aluminum_black: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material arm_graphics: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material array gold trim: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material black_krinkle: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material blades: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material brass: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material bronze: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material copper: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material foil_orange: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material glass lens: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=3000
+LOD1 material glass_2: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=3000
+LOD1 material glass_trans: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=3000
+LOD1 material gold: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material gray_krinkle: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material grey_brushed: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material gunmetal: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material gunmetal_dark: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material hub: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material iron: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material mars_2020_01: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material mars_2020_01_n: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material mars_2020_02: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material mars_2020_02_n: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material mars_2020_03: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material mars_2020_04: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material mars_2020_04_aluminum_r: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material mars_2020_05: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material mars_2020_05_aluminum: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material mars_2020_05_brass: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material mars_2020_05_cooling_lines: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material mars_2020_05_gunmetal: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material mars_2020_06: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material mars_2020_06_brass: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material mars_2020_06_n: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material mars_2020_07: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material mars_2020_gunmetal_dark: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material Material: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material paint_white_base: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material sample_handling_door: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material spring: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD1 material transparent: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2: prefab PASS; meshes=68; triangles=27088; materials=43; textures=21; nullMaterialSlots=0
+LOD2 texture arm_graphics: 256x256, ARGB32
+LOD2 texture blade: 256x128, ARGB32
+LOD2 texture clear.png: 64x64, ARGB32
+LOD2 texture foil_n.jpg: 256x256, ARGB32
+LOD2 texture glass: 128x128, ARGB32
+LOD2 texture mars_2020_01: 256x256, ARGB32
+LOD2 texture mars_2020_01_n: 256x256, ARGB32
+LOD2 texture mars_2020_02: 256x256, ARGB32
+LOD2 texture mars_2020_02_n: 256x256, ARGB32
+LOD2 texture mars_2020_03: 256x256, ARGB32
+LOD2 texture mars_2020_04: 256x256, ARGB32
+LOD2 texture mars_2020_05: 256x256, ARGB32
+LOD2 texture mars_2020_05_n: 256x256, ARGB32
+LOD2 texture mars_2020_05_r: 256x256, ARGB32
+LOD2 texture mars_2020_06: 256x256, ARGB32
+LOD2 texture mars_2020_06_n: 256x256, ARGB32
+LOD2 texture mars_2020_07: 256x256, ARGB32
+LOD2 texture mars_2020_hub: 256x256, ARGB32
+LOD2 texture mars_2020_hub_n: 256x256, ARGB32
+LOD2 texture mars_2020_spring_n: 256x256, ARGB32
+LOD2 texture sample_handling_door: 256x256, ARGB32
+LOD2 material aluminum: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material aluminum.001: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material aluminum_black: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material arm_graphics: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material array gold trim: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material black_krinkle: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material blades: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material brass: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material bronze: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material copper: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material foil_orange: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material glass lens: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=3000
+LOD2 material glass_2: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=3000
+LOD2 material glass_trans: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=3000
+LOD2 material gold: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material gray_krinkle: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material grey_brushed: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material gunmetal: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material gunmetal_dark: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material hub: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material iron: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material mars_2020_01: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material mars_2020_01_n: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material mars_2020_02: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material mars_2020_02_n: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material mars_2020_03: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material mars_2020_04: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material mars_2020_04_aluminum_r: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material mars_2020_05: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material mars_2020_05_aluminum: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material mars_2020_05_brass: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material mars_2020_05_cooling_lines: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material mars_2020_05_gunmetal: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material mars_2020_06: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material mars_2020_06_brass: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material mars_2020_06_n: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material mars_2020_07: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material mars_2020_gunmetal_dark: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material Material: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material paint_white_base: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material sample_handling_door: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material spring: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+LOD2 material transparent: shader=Shader Graphs/glTF-pbrMetallicRoughness, queue=2000
+Saved scene reload PASS
+Rover 3 LOD renderer references PASS

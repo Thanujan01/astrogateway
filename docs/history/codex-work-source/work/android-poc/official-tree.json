@@ -1,0 +1,2351 @@
+{
+  "sha": "751338682fd5c96c13cfaad0f1b34e47562904ff",
+  "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/751338682fd5c96c13cfaad0f1b34e47562904ff",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7bd39f91c2caebd5b7999e0cbc7bec85e8706e4b",
+      "size": 74,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/7bd39f91c2caebd5b7999e0cbc7bec85e8706e4b"
+    },
+    {
+      "path": ".yamato",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a8b0aa07bbb92a4755e2c47b55bc190bda36fd25",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/a8b0aa07bbb92a4755e2c47b55bc190bda36fd25"
+    },
+    {
+      "path": ".yamato/upm-ci.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6079b2de5a396c2b0060ebeb4aead1545e2d8545",
+      "size": 2890,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/6079b2de5a396c2b0060ebeb4aead1545e2d8545"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8eb66bb52134ff15faf5986329403934c1a27a46",
+      "size": 478,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/8eb66bb52134ff15faf5986329403934c1a27a46"
+    },
+    {
+      "path": "LICENSE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2964aedc33478f8e7fb61bf01d290502ae48823f",
+      "size": 487,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/2964aedc33478f8e7fb61bf01d290502ae48823f"
+    },
+    {
+      "path": "NativeiOSApp",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "404faee375a5943903d3245de0701acf5b72980f",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/404faee375a5943903d3245de0701acf5b72980f"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp.xcodeproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3d1351326379ebcaff56ab440566604bfc30eb6d",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/3d1351326379ebcaff56ab440566604bfc30eb6d"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp.xcodeproj/project.pbxproj",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c49aa36d9f274359dbb377aeff7c51fc5f24e870",
+      "size": 12575,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/c49aa36d9f274359dbb377aeff7c51fc5f24e870"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp.xcodeproj/project.xcworkspace",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3e19b671be9a52d6da8ff06dccd2df656b547808",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/3e19b671be9a52d6da8ff06dccd2df656b547808"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp.xcodeproj/project.xcworkspace/contents.xcworkspacedata",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "016839adfbc501987c75ec1a595b65c8edd24c5b",
+      "size": 157,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/016839adfbc501987c75ec1a595b65c8edd24c5b"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp.xcodeproj/project.xcworkspace/xcshareddata",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c43cc9b8ba4e4ae5c6df5ed5e3f199668b7fead0",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/c43cc9b8ba4e4ae5c6df5ed5e3f199668b7fead0"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "18d981003d68d0546c4804ac2ff47dd97c6e7921",
+      "size": 238,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/18d981003d68d0546c4804ac2ff47dd97c6e7921"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp.xcodeproj/project.xcworkspace/xcuserdata",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d8b0424b581f7f978e02909413f5e13e98c721f6",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/d8b0424b581f7f978e02909413f5e13e98c721f6"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp.xcodeproj/project.xcworkspace/xcuserdata/unity.xcuserdatad",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f4e5f25e73fd283e2d93112764ec19692c3a70b4",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/f4e5f25e73fd283e2d93112764ec19692c3a70b4"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp.xcodeproj/project.xcworkspace/xcuserdata/unity.xcuserdatad/UserInterfaceState.xcuserstate",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f65fd53fe26c6f90a59724464a18ec1dcdb5d0e0",
+      "size": 26436,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/f65fd53fe26c6f90a59724464a18ec1dcdb5d0e0"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp.xcodeproj/xcshareddata",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8070644ff5d34d8b546406ddcd6322f4f2daf833",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/8070644ff5d34d8b546406ddcd6322f4f2daf833"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp.xcodeproj/xcshareddata/xcschemes",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5fda5a051ba3e781a641d7c1a54f10cc90b8c51e",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/5fda5a051ba3e781a641d7c1a54f10cc90b8c51e"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp.xcodeproj/xcshareddata/xcschemes/NativeiOSApp.xcscheme",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "32afa7bfa60a346e5fb0c4a5ddfa05a11428fdd0",
+      "size": 3363,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/32afa7bfa60a346e5fb0c4a5ddfa05a11428fdd0"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp.xcodeproj/xcuserdata",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a4fe40877fda9a9c58123db4e3085a08897b3b7b",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/a4fe40877fda9a9c58123db4e3085a08897b3b7b"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp.xcodeproj/xcuserdata/unity.xcuserdatad",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9ee5353cf709fb0bfe08f944c762c69d528dfc21",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/9ee5353cf709fb0bfe08f944c762c69d528dfc21"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp.xcodeproj/xcuserdata/unity.xcuserdatad/xcschemes",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a55ee479361ba1a0bd09529a28d5ce9d9f35837a",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/a55ee479361ba1a0bd09529a28d5ce9d9f35837a"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp.xcodeproj/xcuserdata/unity.xcuserdatad/xcschemes/xcschememanagement.plist",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "97a5df5c4bd21c2d1f5a03069a60947f71c7b158",
+      "size": 496,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/97a5df5c4bd21c2d1f5a03069a60947f71c7b158"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "816569ac9f86ab146d83e3f351b52600fb66900a",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/816569ac9f86ab146d83e3f351b52600fb66900a"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp/Assets.xcassets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2d3348d87704fa6b151e425325bd52055b823c47",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/2d3348d87704fa6b151e425325bd52055b823c47"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp/Assets.xcassets/AppIcon.appiconset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2708767942efb50b50b9a3c79288121cd70a2a9f",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/2708767942efb50b50b9a3c79288121cd70a2a9f"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8db8d65fd79fd541b2b7eba75c7378af3448f9c",
+      "size": 1590,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/d8db8d65fd79fd541b2b7eba75c7378af3448f9c"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp/Assets.xcassets/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da4a164c918651cdd1e11dca5cc62c333f097601",
+      "size": 62,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/da4a164c918651cdd1e11dca5cc62c333f097601"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp/Base.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3ecae382fed3df5c4f67f7da79c237f1fc765f1b",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/3ecae382fed3df5c4f67f7da79c237f1fc765f1b"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp/Base.lproj/LaunchScreen.storyboard",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bfa36129419f8bd7ad73581cb9f07b8c6eec3fcf",
+      "size": 1658,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/bfa36129419f8bd7ad73581cb9f07b8c6eec3fcf"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp/Base.lproj/Main.storyboard",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "942f0bc452d11c7a9521cad0a5816473dbd84819",
+      "size": 1591,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/942f0bc452d11c7a9521cad0a5816473dbd84819"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp/Info.plist",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "685c66585ea083d1444891192969c3f38caef106",
+      "size": 1505,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/685c66585ea083d1444891192969c3f38caef106"
+    },
+    {
+      "path": "NativeiOSApp/NativeiOSApp/MainViewController.mm",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bf0b3e012c23cc7bfa43b0c2509f819c565ad937",
+      "size": 12415,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/bf0b3e012c23cc7bfa43b0c2509f819c565ad937"
+    },
+    {
+      "path": "NativeiOSSwiftApp",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d3e49879a381ae8bbe9eb925953567a12f30f45f",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/d3e49879a381ae8bbe9eb925953567a12f30f45f"
+    },
+    {
+      "path": "NativeiOSSwiftApp/NativeiOSSwiftApp.xcodeproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "25f50336a7b9ab82725674800864b9ec59b977da",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/25f50336a7b9ab82725674800864b9ec59b977da"
+    },
+    {
+      "path": "NativeiOSSwiftApp/NativeiOSSwiftApp.xcodeproj/project.pbxproj",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d6c5a027b6fe5914055b8e2e7a4c3bb321de298",
+      "size": 12896,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/2d6c5a027b6fe5914055b8e2e7a4c3bb321de298"
+    },
+    {
+      "path": "NativeiOSSwiftApp/NativeiOSSwiftApp.xcodeproj/project.xcworkspace",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8960b2f456fbdcfde6d5ecea3735e11bf0c1fbeb",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/8960b2f456fbdcfde6d5ecea3735e11bf0c1fbeb"
+    },
+    {
+      "path": "NativeiOSSwiftApp/NativeiOSSwiftApp.xcodeproj/project.xcworkspace/contents.xcworkspacedata",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "919434a6254f0e9651f402737811be6634a03e9c",
+      "size": 135,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/919434a6254f0e9651f402737811be6634a03e9c"
+    },
+    {
+      "path": "NativeiOSSwiftApp/NativeiOSSwiftApp.xcodeproj/project.xcworkspace/xcuserdata",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "39e14273939754716ee3cf263b0476bc597d5c74",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/39e14273939754716ee3cf263b0476bc597d5c74"
+    },
+    {
+      "path": "NativeiOSSwiftApp/NativeiOSSwiftApp.xcodeproj/project.xcworkspace/xcuserdata/pavell.xcuserdatad",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1fb565439d88b7961fd8373357a75e6d2d204a2b",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/1fb565439d88b7961fd8373357a75e6d2d204a2b"
+    },
+    {
+      "path": "NativeiOSSwiftApp/NativeiOSSwiftApp.xcodeproj/project.xcworkspace/xcuserdata/pavell.xcuserdatad/UserInterfaceState.xcuserstate",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c201154e10993a707dce8e427fd2421dbdd36725",
+      "size": 15772,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/c201154e10993a707dce8e427fd2421dbdd36725"
+    },
+    {
+      "path": "NativeiOSSwiftApp/NativeiOSSwiftApp.xcodeproj/xcshareddata",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f9edf29feafb82ed56dbbd0df06699a860142c2d",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/f9edf29feafb82ed56dbbd0df06699a860142c2d"
+    },
+    {
+      "path": "NativeiOSSwiftApp/NativeiOSSwiftApp.xcodeproj/xcshareddata/xcschemes",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "831b551be4741752e54953ee9b05d4d566ddebbd",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/831b551be4741752e54953ee9b05d4d566ddebbd"
+    },
+    {
+      "path": "NativeiOSSwiftApp/NativeiOSSwiftApp.xcodeproj/xcshareddata/xcschemes/NativeiOSSwiftApp.xcscheme",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "26daa8dd8f446641d39ef60ad11fe117ee8a52ee",
+      "size": 3698,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/26daa8dd8f446641d39ef60ad11fe117ee8a52ee"
+    },
+    {
+      "path": "NativeiOSSwiftApp/NativeiOSSwiftApp.xcodeproj/xcuserdata",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8f432d4f45a81d7a2901177100a4cef2aa694a6f",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/8f432d4f45a81d7a2901177100a4cef2aa694a6f"
+    },
+    {
+      "path": "NativeiOSSwiftApp/NativeiOSSwiftApp.xcodeproj/xcuserdata/pavell.xcuserdatad",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d1b2a513cdebb0430422893e7fa3b7ed8b1cde8c",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/d1b2a513cdebb0430422893e7fa3b7ed8b1cde8c"
+    },
+    {
+      "path": "NativeiOSSwiftApp/NativeiOSSwiftApp.xcodeproj/xcuserdata/pavell.xcuserdatad/xcschemes",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "81d291237bfdb405f13714e1eec34e47afba16d6",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/81d291237bfdb405f13714e1eec34e47afba16d6"
+    },
+    {
+      "path": "NativeiOSSwiftApp/NativeiOSSwiftApp.xcodeproj/xcuserdata/pavell.xcuserdatad/xcschemes/xcschememanagement.plist",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fc170577f1bdaf54b7f8a76b6bd4d8e21b53fc4f",
+      "size": 501,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/fc170577f1bdaf54b7f8a76b6bd4d8e21b53fc4f"
+    },
+    {
+      "path": "NativeiOSSwiftApp/NativeiOSSwiftApp",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5803455817252156b6e8101e6bee670638cb5733",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/5803455817252156b6e8101e6bee670638cb5733"
+    },
+    {
+      "path": "NativeiOSSwiftApp/NativeiOSSwiftApp/Assets.xcassets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7c889ff98e8c23b4a564a8cc6e4f4d3943f40003",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/7c889ff98e8c23b4a564a8cc6e4f4d3943f40003"
+    },
+    {
+      "path": "NativeiOSSwiftApp/NativeiOSSwiftApp/Assets.xcassets/AccentColor.colorset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "986bd324c26d854187559f27f8194c8afd1795ac",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/986bd324c26d854187559f27f8194c8afd1795ac"
+    },
+    {
+      "path": "NativeiOSSwiftApp/NativeiOSSwiftApp/Assets.xcassets/AccentColor.colorset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb8789700816459c1e1480e0b34781d9fb78a1ca",
+      "size": 123,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/eb8789700816459c1e1480e0b34781d9fb78a1ca"
+    },
+    {
+      "path": "NativeiOSSwiftApp/NativeiOSSwiftApp/Assets.xcassets/AppIcon.appiconset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3a33721dda7cf69b67b5012b17e7764a87d8a342",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/3a33721dda7cf69b67b5012b17e7764a87d8a342"
+    },
+    {
+      "path": "NativeiOSSwiftApp/NativeiOSSwiftApp/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2305880107db52fdcc2a49e2cd1cd14ced699c85",
+      "size": 607,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/2305880107db52fdcc2a49e2cd1cd14ced699c85"
+    },
+    {
+      "path": "NativeiOSSwiftApp/NativeiOSSwiftApp/Assets.xcassets/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73c00596a7fca3f3d4bdd64053b69d86745f9e10",
+      "size": 63,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/73c00596a7fca3f3d4bdd64053b69d86745f9e10"
+    },
+    {
+      "path": "NativeiOSSwiftApp/NativeiOSSwiftApp/NativeiOSSwiftAppApp.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a1d0c60d6c395aba0f9ae6fbe7a95f64c8e64264",
+      "size": 7145,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/a1d0c60d6c395aba0f9ae6fbe7a95f64c8e64264"
+    },
+    {
+      "path": "NativetvOSApp",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a5184329eaad6561272cb5332e01fe857eaad83d",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/a5184329eaad6561272cb5332e01fe857eaad83d"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp.xcodeproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "16969181e0d067dd71065902290f3d4ec0e081a8",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/16969181e0d067dd71065902290f3d4ec0e081a8"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp.xcodeproj/project.pbxproj",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5adaac839a509fdb7a8237c16826d794a05ccb23",
+      "size": 12162,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/5adaac839a509fdb7a8237c16826d794a05ccb23"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp.xcodeproj/project.xcworkspace",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "296507e0eb866c9b1a832423e4b00d51c7fd833c",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/296507e0eb866c9b1a832423e4b00d51c7fd833c"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp.xcodeproj/project.xcworkspace/contents.xcworkspacedata",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c37a653338e368acf99b66b6721b5723c7bcec12",
+      "size": 158,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/c37a653338e368acf99b66b6721b5723c7bcec12"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp.xcodeproj/project.xcworkspace/xcshareddata",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c43cc9b8ba4e4ae5c6df5ed5e3f199668b7fead0",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/c43cc9b8ba4e4ae5c6df5ed5e3f199668b7fead0"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "18d981003d68d0546c4804ac2ff47dd97c6e7921",
+      "size": 238,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/18d981003d68d0546c4804ac2ff47dd97c6e7921"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp.xcodeproj/project.xcworkspace/xcuserdata",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3893dee837a5fbab16578f2fd00dc22fc0587e2e",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/3893dee837a5fbab16578f2fd00dc22fc0587e2e"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp.xcodeproj/project.xcworkspace/xcuserdata/unity.xcuserdatad",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e0779c720c05c64b15e5f427cb811437d4242a4a",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/e0779c720c05c64b15e5f427cb811437d4242a4a"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp.xcodeproj/project.xcworkspace/xcuserdata/unity.xcuserdatad/UserInterfaceState.xcuserstate",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6ef0e030a76749f434fd35e7ad0e1cd534c745e0",
+      "size": 18010,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/6ef0e030a76749f434fd35e7ad0e1cd534c745e0"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp.xcodeproj/xcuserdata",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3627e76be8f395ee4f06f8f52f164259edea1552",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/3627e76be8f395ee4f06f8f52f164259edea1552"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp.xcodeproj/xcuserdata/unity.xcuserdatad",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1d706cc64afe1f218db97f779ec99019a2674d47",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/1d706cc64afe1f218db97f779ec99019a2674d47"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp.xcodeproj/xcuserdata/unity.xcuserdatad/xcschemes",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f760a5e8bff393fc07a2ab87aa71e80376106206",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/f760a5e8bff393fc07a2ab87aa71e80376106206"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp.xcodeproj/xcuserdata/unity.xcuserdatad/xcschemes/xcschememanagement.plist",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4406ca3fbfe862b7822e0c0ebe40bc1c9333cf29",
+      "size": 348,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/4406ca3fbfe862b7822e0c0ebe40bc1c9333cf29"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7610695e4f99ae3767fb19fc9012e12b31fc8edf",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/7610695e4f99ae3767fb19fc9012e12b31fc8edf"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8daa37f9e7316427bab81633ffa218d4fd9e7a17",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/8daa37f9e7316427bab81633ffa218d4fd9e7a17"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4dbc3677ac83a200a88238339e4c8fcc25d6df3b",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/4dbc3677ac83a200a88238339e4c8fcc25d6df3b"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9f525bab4e94be999e8e9ab50906bf565590a662",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/9f525bab4e94be999e8e9ab50906bf565590a662"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Back.imagestacklayer",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4b880652a25cc581e615967bc96795aee2131c68",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/4b880652a25cc581e615967bc96795aee2131c68"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Back.imagestacklayer/Content.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c9710067ac797257d76ab5e01750ea874c4d8879",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/c9710067ac797257d76ab5e01750ea874c4d8879"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Back.imagestacklayer/Content.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48ecb4fa43e287f506607be7383b6e11f466ca0f",
+      "size": 115,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/48ecb4fa43e287f506607be7383b6e11f466ca0f"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Back.imagestacklayer/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da4a164c918651cdd1e11dca5cc62c333f097601",
+      "size": 62,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/da4a164c918651cdd1e11dca5cc62c333f097601"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d29f024ed5c3128ad5835d7b44176860dc84dac4",
+      "size": 249,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/d29f024ed5c3128ad5835d7b44176860dc84dac4"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Front.imagestacklayer",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4b880652a25cc581e615967bc96795aee2131c68",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/4b880652a25cc581e615967bc96795aee2131c68"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Front.imagestacklayer/Content.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c9710067ac797257d76ab5e01750ea874c4d8879",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/c9710067ac797257d76ab5e01750ea874c4d8879"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Front.imagestacklayer/Content.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48ecb4fa43e287f506607be7383b6e11f466ca0f",
+      "size": 115,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/48ecb4fa43e287f506607be7383b6e11f466ca0f"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Front.imagestacklayer/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da4a164c918651cdd1e11dca5cc62c333f097601",
+      "size": 62,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/da4a164c918651cdd1e11dca5cc62c333f097601"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Middle.imagestacklayer",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4b880652a25cc581e615967bc96795aee2131c68",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/4b880652a25cc581e615967bc96795aee2131c68"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Middle.imagestacklayer/Content.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c9710067ac797257d76ab5e01750ea874c4d8879",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/c9710067ac797257d76ab5e01750ea874c4d8879"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Middle.imagestacklayer/Content.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48ecb4fa43e287f506607be7383b6e11f466ca0f",
+      "size": 115,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/48ecb4fa43e287f506607be7383b6e11f466ca0f"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Middle.imagestacklayer/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da4a164c918651cdd1e11dca5cc62c333f097601",
+      "size": 62,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/da4a164c918651cdd1e11dca5cc62c333f097601"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "97d54f0f69b90e27fc45861533e63c1bad11eb81",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/97d54f0f69b90e27fc45861533e63c1bad11eb81"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Back.imagestacklayer",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "99accd117f3c362ce772113d44a2a009b33a0c73",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/99accd117f3c362ce772113d44a2a009b33a0c73"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Back.imagestacklayer/Content.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "00cc1468b3641fddd8a6bca516a2d2730dbe5d71",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/00cc1468b3641fddd8a6bca516a2d2730dbe5d71"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Back.imagestacklayer/Content.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16a370df0147cffb86e00a4f4f78544aabe22990",
+      "size": 193,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/16a370df0147cffb86e00a4f4f78544aabe22990"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Back.imagestacklayer/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da4a164c918651cdd1e11dca5cc62c333f097601",
+      "size": 62,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/da4a164c918651cdd1e11dca5cc62c333f097601"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d29f024ed5c3128ad5835d7b44176860dc84dac4",
+      "size": 249,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/d29f024ed5c3128ad5835d7b44176860dc84dac4"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Front.imagestacklayer",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "99accd117f3c362ce772113d44a2a009b33a0c73",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/99accd117f3c362ce772113d44a2a009b33a0c73"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Front.imagestacklayer/Content.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "00cc1468b3641fddd8a6bca516a2d2730dbe5d71",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/00cc1468b3641fddd8a6bca516a2d2730dbe5d71"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Front.imagestacklayer/Content.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16a370df0147cffb86e00a4f4f78544aabe22990",
+      "size": 193,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/16a370df0147cffb86e00a4f4f78544aabe22990"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Front.imagestacklayer/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da4a164c918651cdd1e11dca5cc62c333f097601",
+      "size": 62,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/da4a164c918651cdd1e11dca5cc62c333f097601"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Middle.imagestacklayer",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "99accd117f3c362ce772113d44a2a009b33a0c73",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/99accd117f3c362ce772113d44a2a009b33a0c73"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Middle.imagestacklayer/Content.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "00cc1468b3641fddd8a6bca516a2d2730dbe5d71",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/00cc1468b3641fddd8a6bca516a2d2730dbe5d71"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Middle.imagestacklayer/Content.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16a370df0147cffb86e00a4f4f78544aabe22990",
+      "size": 193,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/16a370df0147cffb86e00a4f4f78544aabe22990"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Middle.imagestacklayer/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da4a164c918651cdd1e11dca5cc62c333f097601",
+      "size": 62,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/da4a164c918651cdd1e11dca5cc62c333f097601"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db288f368f11348a7077acb27682d3abfd6388d3",
+      "size": 662,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/db288f368f11348a7077acb27682d3abfd6388d3"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/Top Shelf Image Wide.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d631a590c39fdf777073641d3631bf510c91e135",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/d631a590c39fdf777073641d3631bf510c91e135"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/Top Shelf Image Wide.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7dc95020229d4aeff932efb7af29817b6032befb",
+      "size": 325,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/7dc95020229d4aeff932efb7af29817b6032befb"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/Top Shelf Image.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d631a590c39fdf777073641d3631bf510c91e135",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/d631a590c39fdf777073641d3631bf510c91e135"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/Top Shelf Image.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7dc95020229d4aeff932efb7af29817b6032befb",
+      "size": 325,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/7dc95020229d4aeff932efb7af29817b6032befb"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da4a164c918651cdd1e11dca5cc62c333f097601",
+      "size": 62,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/da4a164c918651cdd1e11dca5cc62c333f097601"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/Launch Image.launchimage",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "932fd897ce6c1f3e065c3c78e180333acb9dd815",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/932fd897ce6c1f3e065c3c78e180333acb9dd815"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Assets.xcassets/Launch Image.launchimage/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d746a609003ff0f1b97da99bb088b9ddb62f515a",
+      "size": 408,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/d746a609003ff0f1b97da99bb088b9ddb62f515a"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Base.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1d94775968ff46fc6298beab6637f86e036aa2dc",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/1d94775968ff46fc6298beab6637f86e036aa2dc"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Base.lproj/Main.storyboard",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a5c40f196895645697fb6b78ba700c4d3ad3c6e9",
+      "size": 1820,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/a5c40f196895645697fb6b78ba700c4d3ad3c6e9"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/Info.plist",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02942a34f3ed21d78973eddb03dbe70aeb41d6a6",
+      "size": 943,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/02942a34f3ed21d78973eddb03dbe70aeb41d6a6"
+    },
+    {
+      "path": "NativetvOSApp/NativetvOSApp/MainViewController.mm",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c212d27a35c12b4781869e1403dfb997265af2b",
+      "size": 12411,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/2c212d27a35c12b4781869e1403dfb997265af2b"
+    },
+    {
+      "path": "NativetvOSSwiftApp",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b7660fab6c020d5b6771f4da9aa23a948c7ea985",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/b7660fab6c020d5b6771f4da9aa23a948c7ea985"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp.xcodeproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "375f2ec440f9d4933985bf7a8aa415b095663c7f",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/375f2ec440f9d4933985bf7a8aa415b095663c7f"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp.xcodeproj/project.pbxproj",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9121b2edb4193385610542e10ee8c4ee4d2acab7",
+      "size": 11721,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/9121b2edb4193385610542e10ee8c4ee4d2acab7"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp.xcodeproj/project.xcworkspace",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d9c19cc17a1d6452956495c8f392c3673f08a9eb",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/d9c19cc17a1d6452956495c8f392c3673f08a9eb"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp.xcodeproj/project.xcworkspace/contents.xcworkspacedata",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "919434a6254f0e9651f402737811be6634a03e9c",
+      "size": 135,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/919434a6254f0e9651f402737811be6634a03e9c"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp.xcodeproj/xcshareddata",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6890aedb2997f0e5ee7606a56920c9f602c802f4",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/6890aedb2997f0e5ee7606a56920c9f602c802f4"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp.xcodeproj/xcshareddata/xcschemes",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d8f2f8852e212ea292dc2ee52e797d0a64f91936",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/d8f2f8852e212ea292dc2ee52e797d0a64f91936"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp.xcodeproj/xcshareddata/xcschemes/NativetvOSSwiftApp.xcscheme",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c3000b6659914103b02e3aa64250d235505e3d9",
+      "size": 2916,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/3c3000b6659914103b02e3aa64250d235505e3d9"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0839e8267b174f9bc5e8c05ce4f55d946920f0ad",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/0839e8267b174f9bc5e8c05ce4f55d946920f0ad"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "199e1fd75b91678d02eea73d04575b0e512fc5ea",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/199e1fd75b91678d02eea73d04575b0e512fc5ea"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/AccentColor.colorset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "986bd324c26d854187559f27f8194c8afd1795ac",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/986bd324c26d854187559f27f8194c8afd1795ac"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/AccentColor.colorset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb8789700816459c1e1480e0b34781d9fb78a1ca",
+      "size": 123,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/eb8789700816459c1e1480e0b34781d9fb78a1ca"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "425dd075060203519d601497f44ce24cc60c8dcf",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/425dd075060203519d601497f44ce24cc60c8dcf"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e93cf905906af0834b739d8d3e0d05a8722060cd",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/e93cf905906af0834b739d8d3e0d05a8722060cd"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Back.imagestacklayer",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cda38070538cd357080bbe2c1dea266c1eb55fe7",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/cda38070538cd357080bbe2c1dea266c1eb55fe7"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Back.imagestacklayer/Content.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "062fa8fc4d6ce8e07fcf6ab040e0e3e6ecd6d829",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/062fa8fc4d6ce8e07fcf6ab040e0e3e6ecd6d829"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Back.imagestacklayer/Content.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e003356c75081af56be6c8423bd90006315dbd9",
+      "size": 116,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/2e003356c75081af56be6c8423bd90006315dbd9"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Back.imagestacklayer/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73c00596a7fca3f3d4bdd64053b69d86745f9e10",
+      "size": 63,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/73c00596a7fca3f3d4bdd64053b69d86745f9e10"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de59d885ae8d836da0247d15347fa53397f81254",
+      "size": 250,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/de59d885ae8d836da0247d15347fa53397f81254"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Front.imagestacklayer",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cda38070538cd357080bbe2c1dea266c1eb55fe7",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/cda38070538cd357080bbe2c1dea266c1eb55fe7"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Front.imagestacklayer/Content.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "062fa8fc4d6ce8e07fcf6ab040e0e3e6ecd6d829",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/062fa8fc4d6ce8e07fcf6ab040e0e3e6ecd6d829"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Front.imagestacklayer/Content.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e003356c75081af56be6c8423bd90006315dbd9",
+      "size": 116,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/2e003356c75081af56be6c8423bd90006315dbd9"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Front.imagestacklayer/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73c00596a7fca3f3d4bdd64053b69d86745f9e10",
+      "size": 63,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/73c00596a7fca3f3d4bdd64053b69d86745f9e10"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Middle.imagestacklayer",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cda38070538cd357080bbe2c1dea266c1eb55fe7",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/cda38070538cd357080bbe2c1dea266c1eb55fe7"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Middle.imagestacklayer/Content.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "062fa8fc4d6ce8e07fcf6ab040e0e3e6ecd6d829",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/062fa8fc4d6ce8e07fcf6ab040e0e3e6ecd6d829"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Middle.imagestacklayer/Content.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e003356c75081af56be6c8423bd90006315dbd9",
+      "size": 116,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/2e003356c75081af56be6c8423bd90006315dbd9"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon - App Store.imagestack/Middle.imagestacklayer/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73c00596a7fca3f3d4bdd64053b69d86745f9e10",
+      "size": 63,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/73c00596a7fca3f3d4bdd64053b69d86745f9e10"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1bbe4a7e526c0b27553a72b42f6f4214b30e7288",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/1bbe4a7e526c0b27553a72b42f6f4214b30e7288"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Back.imagestacklayer",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e31c8abf97b4145122aaec28cc253e308e7fd9d5",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/e31c8abf97b4145122aaec28cc253e308e7fd9d5"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Back.imagestacklayer/Content.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4ee75ab80bda2cdba099f5742cb74f270c4c90eb",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/4ee75ab80bda2cdba099f5742cb74f270c4c90eb"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Back.imagestacklayer/Content.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "795cce17243c4963342d31db5b85681fba11e322",
+      "size": 194,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/795cce17243c4963342d31db5b85681fba11e322"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Back.imagestacklayer/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73c00596a7fca3f3d4bdd64053b69d86745f9e10",
+      "size": 63,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/73c00596a7fca3f3d4bdd64053b69d86745f9e10"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de59d885ae8d836da0247d15347fa53397f81254",
+      "size": 250,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/de59d885ae8d836da0247d15347fa53397f81254"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Front.imagestacklayer",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e31c8abf97b4145122aaec28cc253e308e7fd9d5",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/e31c8abf97b4145122aaec28cc253e308e7fd9d5"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Front.imagestacklayer/Content.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4ee75ab80bda2cdba099f5742cb74f270c4c90eb",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/4ee75ab80bda2cdba099f5742cb74f270c4c90eb"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Front.imagestacklayer/Content.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "795cce17243c4963342d31db5b85681fba11e322",
+      "size": 194,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/795cce17243c4963342d31db5b85681fba11e322"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Front.imagestacklayer/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73c00596a7fca3f3d4bdd64053b69d86745f9e10",
+      "size": 63,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/73c00596a7fca3f3d4bdd64053b69d86745f9e10"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Middle.imagestacklayer",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e31c8abf97b4145122aaec28cc253e308e7fd9d5",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/e31c8abf97b4145122aaec28cc253e308e7fd9d5"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Middle.imagestacklayer/Content.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4ee75ab80bda2cdba099f5742cb74f270c4c90eb",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/4ee75ab80bda2cdba099f5742cb74f270c4c90eb"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Middle.imagestacklayer/Content.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "795cce17243c4963342d31db5b85681fba11e322",
+      "size": 194,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/795cce17243c4963342d31db5b85681fba11e322"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/App Icon.imagestack/Middle.imagestacklayer/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73c00596a7fca3f3d4bdd64053b69d86745f9e10",
+      "size": 63,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/73c00596a7fca3f3d4bdd64053b69d86745f9e10"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f47ba43daac4c9d6dbfc2b67bdaa24db32b3e8e9",
+      "size": 663,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/f47ba43daac4c9d6dbfc2b67bdaa24db32b3e8e9"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/Top Shelf Image Wide.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4ee75ab80bda2cdba099f5742cb74f270c4c90eb",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/4ee75ab80bda2cdba099f5742cb74f270c4c90eb"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/Top Shelf Image Wide.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "795cce17243c4963342d31db5b85681fba11e322",
+      "size": 194,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/795cce17243c4963342d31db5b85681fba11e322"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/Top Shelf Image.imageset",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4ee75ab80bda2cdba099f5742cb74f270c4c90eb",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/4ee75ab80bda2cdba099f5742cb74f270c4c90eb"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/App Icon & Top Shelf Image.brandassets/Top Shelf Image.imageset/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "795cce17243c4963342d31db5b85681fba11e322",
+      "size": 194,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/795cce17243c4963342d31db5b85681fba11e322"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/Assets.xcassets/Contents.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73c00596a7fca3f3d4bdd64053b69d86745f9e10",
+      "size": 63,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/73c00596a7fca3f3d4bdd64053b69d86745f9e10"
+    },
+    {
+      "path": "NativetvOSSwiftApp/NativetvOSSwiftApp/NativetvOSSwiftAppApp.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49237e08936146af9aa35a7258ebd8181f7679a0",
+      "size": 7197,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/49237e08936146af9aa35a7258ebd8181f7679a0"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c629a5573fc2e42b9cf9c3f6ceb11a090c050d20",
+      "size": 2368,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/c629a5573fc2e42b9cf9c3f6ceb11a090c050d20"
+    },
+    {
+      "path": "UnityProject",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "78170167ed1535a5eaef1867a26c4432ace6b9d1",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/78170167ed1535a5eaef1867a26c4432ace6b9d1"
+    },
+    {
+      "path": "UnityProject/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "adbe66ac5d5ab0d5f29963cf51b3c2f9b78845d3",
+      "size": 990,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/adbe66ac5d5ab0d5f29963cf51b3c2f9b78845d3"
+    },
+    {
+      "path": "UnityProject/Assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ff78a18bbd1718acebf5303188b3e7c815aa6f7c",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/ff78a18bbd1718acebf5303188b3e7c815aa6f7c"
+    },
+    {
+      "path": "UnityProject/Assets/Cube.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d5c2c46d4417661f93d098dbdce038dc88bded89",
+      "size": 2595,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/d5c2c46d4417661f93d098dbdce038dc88bded89"
+    },
+    {
+      "path": "UnityProject/Assets/Cube.cs.meta",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c7a57e4ef63984bbe1bc10cf248cc9618eac375a",
+      "size": 243,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/c7a57e4ef63984bbe1bc10cf248cc9618eac375a"
+    },
+    {
+      "path": "UnityProject/Assets/Editor.meta",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb4a22e1650e289bf7db9cc79c1e9efc3dd821d2",
+      "size": 172,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/fb4a22e1650e289bf7db9cc79c1e9efc3dd821d2"
+    },
+    {
+      "path": "UnityProject/Assets/Editor",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4d64b279459a6b7410593e5252a221cb2002f74e",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/4d64b279459a6b7410593e5252a221cb2002f74e"
+    },
+    {
+      "path": "UnityProject/Assets/Editor/AndroidGradleProjectModifier.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ce1086c0ef05c1b1a098d775b725ddb6fb0a425c",
+      "size": 3654,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/ce1086c0ef05c1b1a098d775b725ddb6fb0a425c"
+    },
+    {
+      "path": "UnityProject/Assets/Editor/AndroidGradleProjectModifier.cs.meta",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "84e013ba2e6634dd7960cfa6d14ade6c3e137e06",
+      "size": 59,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/84e013ba2e6634dd7960cfa6d14ade6c3e137e06"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins.meta",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1adbe7d6ddd6eed4dc2dcc6d6941040fa0795d31",
+      "size": 172,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/1adbe7d6ddd6eed4dc2dcc6d6941040fa0795d31"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "014d9ebd3d2d8111b373490f968d0d755f30e46d",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/014d9ebd3d2d8111b373490f968d0d755f30e46d"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android.meta",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1beef7f3dee9510ac11bd6ee98e8f0495809f9c7",
+      "size": 172,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/1beef7f3dee9510ac11bd6ee98e8f0495809f9c7"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a87cf68d50ce8d0913ec6b52ead1160db50d3441",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/a87cf68d50ce8d0913ec6b52ead1160db50d3441"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib.meta",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "27d453626af368b2fce85a40c59c8c6f61fd6edf",
+      "size": 1371,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/27d453626af368b2fce85a40c59c8c6f61fd6edf"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "91b5ad10b1ffc1e68aeebc394cff3010b5ec95b4",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/91b5ad10b1ffc1e68aeebc394cff3010b5ec95b4"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/build.gradle",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "92013f11f189a7294c9d8cbac62dc46f06f006cf",
+      "size": 1756,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/92013f11f189a7294c9d8cbac62dc46f06f006cf"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9e7fc8da6eccefa5253d652eef75ddfe77ed6786",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/9e7fc8da6eccefa5253d652eef75ddfe77ed6786"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "870d830963e2a34f5dd47683d4c61e2073cd206b",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/870d830963e2a34f5dd47683d4c61e2073cd206b"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/AndroidManifest.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2260debcbea65fef304d5bef3a0161db9650cc36",
+      "size": 1761,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/2260debcbea65fef304d5bef3a0161db9650cc36"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/java",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "036ed2f8ce5c0afca9af466b3853bed74f239b01",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/036ed2f8ce5c0afca9af466b3853bed74f239b01"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/java/com",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f5ed07b5d9bc72e4e7ccb72f48c7499edc373770",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/f5ed07b5d9bc72e4e7ccb72f48c7499edc373770"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/java/com/unity",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c283bb01b5f9a1b0a9677d8c1cf0279296bf1df5",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/c283bb01b5f9a1b0a9677d8c1cf0279296bf1df5"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/java/com/unity/mynativeapp",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c3faa9d9835b7931cd675366154649e902e9f51c",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/c3faa9d9835b7931cd675366154649e902e9f51c"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/java/com/unity/mynativeapp/MainActivity.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f3834a41278367cef7a312f6cb6b4b9f891cdff6",
+      "size": 5683,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/f3834a41278367cef7a312f6cb6b4b9f891cdff6"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/java/com/unity/mynativeapp/MainUnityActivity.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d0fd71e70b00aeaf0c36bc0672a180ade1152610",
+      "size": 1002,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/d0fd71e70b00aeaf0c36bc0672a180ade1152610"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/java/com/unity/mynativeapp/MainUnityGameActivity.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e5adad51accac9260bc9769f20eda93c03e7f00",
+      "size": 1026,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/2e5adad51accac9260bc9769f20eda93c03e7f00"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/java/com/unity/mynativeapp/SharedClass.java",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7beaad1c301805748ed9a313c37056110b9da6c7",
+      "size": 2679,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/7beaad1c301805748ed9a313c37056110b9da6c7"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f08d96082d5767f3dc7d865b7e850eb5dd7672e8",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/f08d96082d5767f3dc7d865b7e850eb5dd7672e8"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/drawable-v24",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1663a4baafe27f58a8cc9c7218d8d35a53ce1f20",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/1663a4baafe27f58a8cc9c7218d8d35a53ce1f20"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/drawable-v24/ic_launcher_foreground.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c7bd21dbd86990cde81fea8abd3bf904b4546749",
+      "size": 1880,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/c7bd21dbd86990cde81fea8abd3bf904b4546749"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/drawable",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "81bf8b7cbcfcc42ad4ec31fb7bcbbf1ccc80c924",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/81bf8b7cbcfcc42ad4ec31fb7bcbbf1ccc80c924"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/drawable/ic_launcher_background.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2408e30d1751ecd910eace02fa947f67c0bbd1dd",
+      "size": 4867,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/2408e30d1751ecd910eace02fa947f67c0bbd1dd"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/layout",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "618d67067da59a3dd3fc7b897a0767cdf20e6e29",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/618d67067da59a3dd3fc7b897a0767cdf20e6e29"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/layout/activity_main.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "405d77edead45eb73dd09a368a4b6ca5624d725b",
+      "size": 1032,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/405d77edead45eb73dd09a368a4b6ca5624d725b"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/layout/content_main.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2a1f495f03b2cff15653a8ac74c8ffa5f05b6a57",
+      "size": 1897,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/2a1f495f03b2cff15653a8ac74c8ffa5f05b6a57"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/menu",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "277ff42677bce0889fc8cfbaa647ec95b1796d18",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/277ff42677bce0889fc8cfbaa647ec95b1796d18"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/menu/menu_main.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "414f8e8fa0317bfc73cd44ff91b3de80a45a7d3a",
+      "size": 403,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/414f8e8fa0317bfc73cd44ff91b3de80a45a7d3a"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/mipmap-anydpi-v26",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7512f8e5e35c67ad5ddcfd8c64b094db75bb1b25",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/7512f8e5e35c67ad5ddcfd8c64b094db75bb1b25"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bbd3e021239ce758474da78cfc2ca3cf85ed0d91",
+      "size": 270,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/bbd3e021239ce758474da78cfc2ca3cf85ed0d91"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bbd3e021239ce758474da78cfc2ca3cf85ed0d91",
+      "size": 270,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/bbd3e021239ce758474da78cfc2ca3cf85ed0d91"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/mipmap-hdpi",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "14503cd1ae181fadb3b9b7309e2e5293e13358c1",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/14503cd1ae181fadb3b9b7309e2e5293e13358c1"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/mipmap-hdpi/ic_launcher.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "898f3ed59ac9f3248734a00e5902736c9367d455",
+      "size": 2963,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/898f3ed59ac9f3248734a00e5902736c9367d455"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/mipmap-hdpi/ic_launcher_round.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dffca3601eba7bf5f409bdd520820e2eb5122c75",
+      "size": 4905,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/dffca3601eba7bf5f409bdd520820e2eb5122c75"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/mipmap-mdpi",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "774a1c1fe71b622a9fab75655a51595593cbd3b4",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/774a1c1fe71b622a9fab75655a51595593cbd3b4"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/mipmap-mdpi/ic_launcher.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "64ba76f75e9ce021aa3d95c213491f73bcacb597",
+      "size": 2060,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/64ba76f75e9ce021aa3d95c213491f73bcacb597"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/mipmap-mdpi/ic_launcher_round.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dae5e082342fcdeee5db8a6e0b27028e2d2808f5",
+      "size": 2783,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/dae5e082342fcdeee5db8a6e0b27028e2d2808f5"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/mipmap-xhdpi",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "217c90d703526010bd2836a27e6a8f9e879631e3",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/217c90d703526010bd2836a27e6a8f9e879631e3"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/mipmap-xhdpi/ic_launcher.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5ed46597ea8447d91ab1786a34e30f1c26b18bd",
+      "size": 4490,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/e5ed46597ea8447d91ab1786a34e30f1c26b18bd"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/mipmap-xhdpi/ic_launcher_round.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "14ed0af35023e4f1901cf03487b6c524257b8483",
+      "size": 6895,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/14ed0af35023e4f1901cf03487b6c524257b8483"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/mipmap-xxhdpi",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4ac7a9a1276ab517e476dffd7026861340375d2c",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/4ac7a9a1276ab517e476dffd7026861340375d2c"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b0907cac3bfd8fbfdc46e1108247f0a1055387ec",
+      "size": 6387,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/b0907cac3bfd8fbfdc46e1108247f0a1055387ec"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/mipmap-xxhdpi/ic_launcher_round.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8ae03154975f397f8ed1b84f2d4bf9783ecfa26",
+      "size": 10413,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/d8ae03154975f397f8ed1b84f2d4bf9783ecfa26"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/mipmap-xxxhdpi",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a22dec46017e3b4fc1dc50547848235937de400f",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/a22dec46017e3b4fc1dc50547848235937de400f"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c18de9e66108411737e910f5c1972476f03ddbf",
+      "size": 9128,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/2c18de9e66108411737e910f5c1972476f03ddbf"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "beed3cdd2c32af5114a7dc70b9ef5b698eb8797e",
+      "size": 15132,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/beed3cdd2c32af5114a7dc70b9ef5b698eb8797e"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/values",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "bb575918ece1a04c7ab62f686e5cd39148d42c7f",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/bb575918ece1a04c7ab62f686e5cd39148d42c7f"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/values/colors.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69b22338c6510250df3b43672635120dbce2fa49",
+      "size": 208,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/69b22338c6510250df3b43672635120dbce2fa49"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/values/dimens.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59a0b0c4f553276e4bbeb064bd1bd81220ae9115",
+      "size": 67,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/59a0b0c4f553276e4bbeb064bd1bd81220ae9115"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/values/strings.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ed92c128ad1601bbca9fa66d01fdf64e5d638fd5",
+      "size": 364,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/ed92c128ad1601bbca9fa66d01fdf64e5d638fd5"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/Android/MainApp.androidlib/src/main/res/values/styles.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "44f664f202f9d6d4e66caf32cb970fc90a7d553c",
+      "size": 705,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/44f664f202f9d6d4e66caf32cb970fc90a7d553c"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/iOS.meta",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a070ff37122d1a3688750499ad7d60aa2752c86",
+      "size": 172,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/0a070ff37122d1a3688750499ad7d60aa2752c86"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/iOS",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9d87e42c6cc2f7aa0cd8ca60e351476f8c076072",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/9d87e42c6cc2f7aa0cd8ca60e351476f8c076072"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/iOS/NativeCallProxy.h",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3f52fc2ebd64765d830c34db76369888e902e264",
+      "size": 606,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/3f52fc2ebd64765d830c34db76369888e902e264"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/iOS/NativeCallProxy.h.meta",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5ab537ad16b67b066a1b07b1225c0d0d0c6320e",
+      "size": 1326,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/f5ab537ad16b67b066a1b07b1225c0d0d0c6320e"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/iOS/NativeCallProxy.mm",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "366f7b6042071cc12b63205fd1fc013f5930dcb9",
+      "size": 364,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/366f7b6042071cc12b63205fd1fc013f5930dcb9"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/iOS/NativeCallProxy.mm.meta",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b12075dc8e8957c9c442fc01959ff6b231cc5c0",
+      "size": 1326,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/3b12075dc8e8957c9c442fc01959ff6b231cc5c0"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/iOS/NativeCallProxy.swift",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dcbccc77dd0e8a15579bf5a26699c17016906a71",
+      "size": 656,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/dcbccc77dd0e8a15579bf5a26699c17016906a71"
+    },
+    {
+      "path": "UnityProject/Assets/Plugins/iOS/NativeCallProxy.swift.meta",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a08ccb21fc4b7b23dc1f801c1081cfad024ffa97",
+      "size": 1316,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/a08ccb21fc4b7b23dc1f801c1081cfad024ffa97"
+    },
+    {
+      "path": "UnityProject/Assets/Scenes.meta",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b5ebdf26b9129df7ffd306afffd6ce21392fba8c",
+      "size": 172,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/b5ebdf26b9129df7ffd306afffd6ce21392fba8c"
+    },
+    {
+      "path": "UnityProject/Assets/Scenes",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a55f6534f536dfea8f4a695b2f77c679c1b8ea0f",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/a55f6534f536dfea8f4a695b2f77c679c1b8ea0f"
+    },
+    {
+      "path": "UnityProject/Assets/Scenes/SampleScene.unity",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a314543ddcf7b20a0a9c19e2dfe0882e4fcee3c9",
+      "size": 20968,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/a314543ddcf7b20a0a9c19e2dfe0882e4fcee3c9"
+    },
+    {
+      "path": "UnityProject/Assets/Scenes/SampleScene.unity.meta",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "952bd1e9e110583d94b471a30ff4ddd69f4aee7d",
+      "size": 155,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/952bd1e9e110583d94b471a30ff4ddd69f4aee7d"
+    },
+    {
+      "path": "UnityProject/Assets/Tests.meta",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9e829c1ada295035b0f0135a8305522fd30abb9b",
+      "size": 172,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/9e829c1ada295035b0f0135a8305522fd30abb9b"
+    },
+    {
+      "path": "UnityProject/Assets/Tests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6999ea03129314da8bd88cbef08099519a7a417b",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/6999ea03129314da8bd88cbef08099519a7a417b"
+    },
+    {
+      "path": "UnityProject/Assets/Tests/Editor.meta",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9df1a1cea6aa2462839f49ea64d447189f391696",
+      "size": 172,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/9df1a1cea6aa2462839f49ea64d447189f391696"
+    },
+    {
+      "path": "UnityProject/Assets/Tests/Editor",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "dbd68c5500ad02c7fcf173356fd937a17024db7f",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/dbd68c5500ad02c7fcf173356fd937a17024db7f"
+    },
+    {
+      "path": "UnityProject/Assets/Tests/Editor/Basic.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9c9d44ff34a234a82dfbc0c693adf8326ccbac2a",
+      "size": 1023,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/9c9d44ff34a234a82dfbc0c693adf8326ccbac2a"
+    },
+    {
+      "path": "UnityProject/Assets/Tests/Editor/Basic.cs.meta",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bf6b571db18b90c0c0bd4e77a5b7119929d89a9a",
+      "size": 59,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/bf6b571db18b90c0c0bd4e77a5b7119929d89a9a"
+    },
+    {
+      "path": "UnityProject/Assets/Tests/Editor/EditorTestBase.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ef13b19b043b75a51f64fee47a5511a1842f9d1",
+      "size": 5664,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/2ef13b19b043b75a51f64fee47a5511a1842f9d1"
+    },
+    {
+      "path": "UnityProject/Assets/Tests/Editor/EditorTestBase.cs.meta",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "117d23ebfd17f20305dc08a5a863d82ad7b843a3",
+      "size": 59,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/117d23ebfd17f20305dc08a5a863d82ad7b843a3"
+    },
+    {
+      "path": "UnityProject/Assets/Tests/Editor/UAAL.EditorTests.asmdef",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1eb0c205ad5cc8580fc9ae62b48859c430b42444",
+      "size": 513,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/1eb0c205ad5cc8580fc9ae62b48859c430b42444"
+    },
+    {
+      "path": "UnityProject/Assets/Tests/Editor/UAAL.EditorTests.asmdef.meta",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9381a790a1dbc2ecd8a2a40a2702dbb6cdf6b746",
+      "size": 166,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/9381a790a1dbc2ecd8a2a40a2702dbb6cdf6b746"
+    },
+    {
+      "path": "UnityProject/Assets/Tests/Editor/Utilities.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c78dc491cd2d0b30d8993bc05217193c857abd3d",
+      "size": 11465,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/c78dc491cd2d0b30d8993bc05217193c857abd3d"
+    },
+    {
+      "path": "UnityProject/Assets/Tests/Editor/Utilities.cs.meta",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4191554795a968f4c521b63fad11d5f468c5bb7a",
+      "size": 59,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/4191554795a968f4c521b63fad11d5f468c5bb7a"
+    },
+    {
+      "path": "UnityProject/Packages",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7b52c2b6c96b447c78b0186a3b12d9768cc89f8f",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/7b52c2b6c96b447c78b0186a3b12d9768cc89f8f"
+    },
+    {
+      "path": "UnityProject/Packages/manifest.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4438b98b80cda574c442d956385f3717a305e3b6",
+      "size": 1926,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/4438b98b80cda574c442d956385f3717a305e3b6"
+    },
+    {
+      "path": "UnityProject/Packages/packages-lock.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6fd5891c2d6593e5a37780a11c040a4e2c4cd437",
+      "size": 9426,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/6fd5891c2d6593e5a37780a11c040a4e2c4cd437"
+    },
+    {
+      "path": "UnityProject/ProjectSettings",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "49ea6b8822267359efb75934180fadc06b22e851",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/49ea6b8822267359efb75934180fadc06b22e851"
+    },
+    {
+      "path": "UnityProject/ProjectSettings/AudioManager.asset",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "07ebfb05df3b58b4a596eac64cd19529d36ce565",
+      "size": 416,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/07ebfb05df3b58b4a596eac64cd19529d36ce565"
+    },
+    {
+      "path": "UnityProject/ProjectSettings/ClusterInputManager.asset",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e7886b266a005f4d9d80f2fef8d1649dcfd3ed2b",
+      "size": 114,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/e7886b266a005f4d9d80f2fef8d1649dcfd3ed2b"
+    },
+    {
+      "path": "UnityProject/ProjectSettings/DynamicsManager.asset",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cdc1f3eab509699e163f46fd14f0e81eb3a5dbaf",
+      "size": 1190,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/cdc1f3eab509699e163f46fd14f0e81eb3a5dbaf"
+    },
+    {
+      "path": "UnityProject/ProjectSettings/EditorBuildSettings.asset",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "40917b058da46ff0f4816cb68f7a6192028b3aad",
+      "size": 257,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/40917b058da46ff0f4816cb68f7a6192028b3aad"
+    },
+    {
+      "path": "UnityProject/ProjectSettings/EditorSettings.asset",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6269e17a2080dc4e1a5aeb36e722c8e9bf335dc9",
+      "size": 856,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/6269e17a2080dc4e1a5aeb36e722c8e9bf335dc9"
+    },
+    {
+      "path": "UnityProject/ProjectSettings/GraphicsSettings.asset",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "094afdf267c651fe8811db456b6e74a24e315c3f",
+      "size": 2390,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/094afdf267c651fe8811db456b6e74a24e315c3f"
+    },
+    {
+      "path": "UnityProject/ProjectSettings/InputManager.asset",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17c8f538e2152c0a0310b4870979eeecece2153c",
+      "size": 5793,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/17c8f538e2152c0a0310b4870979eeecece2153c"
+    },
+    {
+      "path": "UnityProject/ProjectSettings/NavMeshAreas.asset",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b0b7c3d183abdd300112f56965916ef11667f54",
+      "size": 1308,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/3b0b7c3d183abdd300112f56965916ef11667f54"
+    },
+    {
+      "path": "UnityProject/ProjectSettings/Physics2DSettings.asset",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47880b1c8c8e3b6306101004bb9826527d80e05e",
+      "size": 2028,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/47880b1c8c8e3b6306101004bb9826527d80e05e"
+    },
+    {
+      "path": "UnityProject/ProjectSettings/PresetManager.asset",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "636a595b32ba897972008f0cfacbdf52bf06225e",
+      "size": 120,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/636a595b32ba897972008f0cfacbdf52bf06225e"
+    },
+    {
+      "path": "UnityProject/ProjectSettings/ProjectSettings.asset",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "16aa2289eda3963523fe2777721d982e4e6a59c1",
+      "size": 27558,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/16aa2289eda3963523fe2777721d982e4e6a59c1"
+    },
+    {
+      "path": "UnityProject/ProjectSettings/ProjectVersion.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c56268dbb56de3b57ec8f3bb783e7fc07148d5d",
+      "size": 83,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/6c56268dbb56de3b57ec8f3bb783e7fc07148d5d"
+    },
+    {
+      "path": "UnityProject/ProjectSettings/QualitySettings.asset",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ed26313a8b1daeb2c7d8985b1c61abcd243c8c19",
+      "size": 6437,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/ed26313a8b1daeb2c7d8985b1c61abcd243c8c19"
+    },
+    {
+      "path": "UnityProject/ProjectSettings/TagManager.asset",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1c92a7840ec11895c76785f65d949a3d20d53355",
+      "size": 378,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/1c92a7840ec11895c76785f65d949a3d20d53355"
+    },
+    {
+      "path": "UnityProject/ProjectSettings/TimeManager.asset",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "558a017e1f50b2db73414a1abad3c033922774f8",
+      "size": 202,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/558a017e1f50b2db73414a1abad3c033922774f8"
+    },
+    {
+      "path": "UnityProject/ProjectSettings/UnityConnectSettings.asset",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a88bee0f153ae30ff0dff032a1bea11f363ce4b0",
+      "size": 943,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/a88bee0f153ae30ff0dff032a1bea11f363ce4b0"
+    },
+    {
+      "path": "UnityProject/ProjectSettings/VFXManager.asset",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e0eaca40d51a23fde75fc0183b34888ea942945",
+      "size": 273,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/6e0eaca40d51a23fde75fc0183b34888ea942945"
+    },
+    {
+      "path": "UnityProject/ProjectSettings/XRSettings.asset",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "482590c196f7a82116679f58176b9d1aff21d7f9",
+      "size": 158,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/482590c196f7a82116679f58176b9d1aff21d7f9"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "103decdec781f64a7393ed928841c1150897bdd4",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/103decdec781f64a7393ed928841c1150897bdd4"
+    },
+    {
+      "path": "docs/android.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb2c84a5baa2a6ff7d641d406a1eee21cae07694",
+      "size": 3949,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/eb2c84a5baa2a6ff7d641d406a1eee21cae07694"
+    },
+    {
+      "path": "docs/images",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "256a93728f63af5bd759f3c62bd15e2c16ef8eea",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/256a93728f63af5bd759f3c62bd15e2c16ef8eea"
+    },
+    {
+      "path": "docs/images/android",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b78ae24589fd1e4068c1e362c70394c581151c88",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/b78ae24589fd1e4068c1e362c70394c581151c88"
+    },
+    {
+      "path": "docs/images/android/ApplicationEntryPoint.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3db796af7a21c6fca93546956fe8fb6d8c72d56",
+      "size": 48464,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/b3db796af7a21c6fca93546956fe8fb6d8c72d56"
+    },
+    {
+      "path": "docs/images/android/appNativeSS.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f64c9c7ea6da2a21764d8c0c99b200ea9352b185",
+      "size": 95942,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/f64c9c7ea6da2a21764d8c0c99b200ea9352b185"
+    },
+    {
+      "path": "docs/images/android/appUnitySS.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2fb076d439ff23d0a6e31f7468c02b6c74723223",
+      "size": 232767,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/2fb076d439ff23d0a6e31f7468c02b6c74723223"
+    },
+    {
+      "path": "docs/images/android/buildOnDevice.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a65c28637a63dd8933f1cc48d14bb45d89c6c70f",
+      "size": 7040,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/a65c28637a63dd8933f1cc48d14bb45d89c6c70f"
+    },
+    {
+      "path": "docs/images/android/deleteMainUnityActivity.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "023713ef5fc8055e77d878d228946f8d442be5ca",
+      "size": 236643,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/023713ef5fc8055e77d878d228946f8d442be5ca"
+    },
+    {
+      "path": "docs/images/android/deleteMainUnityGameActivity.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3bdf0ea6682ae94ca086d7d7383851a560ce2830",
+      "size": 240105,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/3bdf0ea6682ae94ca086d7d7383851a560ce2830"
+    },
+    {
+      "path": "docs/images/android/exportProject.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62ef96b312af3b82b2ecfe9389477187a1503985",
+      "size": 305522,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/62ef96b312af3b82b2ecfe9389477187a1503985"
+    },
+    {
+      "path": "docs/images/android/selectActivity.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e2c0d343debc6b474cdc4cb2823842923b5e9be",
+      "size": 58179,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/2e2c0d343debc6b474cdc4cb2823842923b5e9be"
+    },
+    {
+      "path": "docs/images/android/selectGameActivity.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a69015c82b1fdcd2dcc3cea71fcfc24eec9825c3",
+      "size": 48675,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/a69015c82b1fdcd2dcc3cea71fcfc24eec9825c3"
+    },
+    {
+      "path": "docs/images/android/settingsGradle.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e460b43bbeb5b9861eaad3543142997a8ca80caf",
+      "size": 71484,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/e460b43bbeb5b9861eaad3543142997a8ca80caf"
+    },
+    {
+      "path": "docs/images/android/unityLibraryModule.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "563d27424b8c97bacdff15fa7a6076bdd9cfc30a",
+      "size": 24192,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/563d27424b8c97bacdff15fa7a6076bdd9cfc30a"
+    },
+    {
+      "path": "docs/images/ios",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "107dfaa16e3b24571d2e0cf30510258ad1d83668",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/107dfaa16e3b24571d2e0cf30510258ad1d83668"
+    },
+    {
+      "path": "docs/images/ios/addToEmbeddedContent.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "906f378d1f77aae3dd3875b25829ae462bd378fc",
+      "size": 204661,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/906f378d1f77aae3dd3875b25829ae462bd378fc"
+    },
+    {
+      "path": "docs/images/ios/dataTargetMembership.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1373a57aa64a61c89cd1e471b71d8ef404efea37",
+      "size": 156246,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/1373a57aa64a61c89cd1e471b71d8ef404efea37"
+    },
+    {
+      "path": "docs/images/ios/folderStructure.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ab454b0bd5d754d8e3acacb946b42d3a694c9366",
+      "size": 44104,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/ab454b0bd5d754d8e3acacb946b42d3a694c9366"
+    },
+    {
+      "path": "docs/images/ios/iosBuildProject.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e29005a12db8768d40b098a758bc825a4d2dbe7a",
+      "size": 67696,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/e29005a12db8768d40b098a758bc825a4d2dbe7a"
+    },
+    {
+      "path": "docs/images/ios/nativeCallProxyTarget.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "724efeea64e843943a06f4b088bf32173f9a79fe",
+      "size": 217464,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/724efeea64e843943a06f4b088bf32173f9a79fe"
+    },
+    {
+      "path": "docs/images/ios/removeLink.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "13bec400cd564db161b43b46bd09ef6d366371e7",
+      "size": 163612,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/13bec400cd564db161b43b46bd09ef6d366371e7"
+    },
+    {
+      "path": "docs/images/ios/selectTargetToBuild.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7204dae3d61732598ba2e5e7530f81c7fe1a19af",
+      "size": 35080,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/7204dae3d61732598ba2e5e7530f81c7fe1a19af"
+    },
+    {
+      "path": "docs/images/ios/setDataBundleId.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "817c0e75e22512a6aa66c5465ae38ffa24a72b8d",
+      "size": 120370,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/817c0e75e22512a6aa66c5465ae38ffa24a72b8d"
+    },
+    {
+      "path": "docs/images/ios/ssNative.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1a07fb9a396045fa7c368fe3840f4499d475128c",
+      "size": 30444,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/1a07fb9a396045fa7c368fe3840f4499d475128c"
+    },
+    {
+      "path": "docs/images/ios/ssUnity.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "342685c466d59f90dccac925f17f31d7772b52c2",
+      "size": 133241,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/342685c466d59f90dccac925f17f31d7772b52c2"
+    },
+    {
+      "path": "docs/images/ios/workspaceLocation.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d7b73cd715157d663d9e239a154f702a1fc21c8e",
+      "size": 12981,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/d7b73cd715157d663d9e239a154f702a1fc21c8e"
+    },
+    {
+      "path": "docs/images/ios/workspaceProjects.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "86c75c69f9b62490d7acd3b941473ac5567e1bcd",
+      "size": 22619,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/86c75c69f9b62490d7acd3b941473ac5567e1bcd"
+    },
+    {
+      "path": "docs/images/iosSwift",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "67666eca6ba83e52f245ed9794aded38f6fa7005",
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/trees/67666eca6ba83e52f245ed9794aded38f6fa7005"
+    },
+    {
+      "path": "docs/images/iosSwift/addToEmbeddedContent.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "072e517adf02c4acd90400cc000921f52e6f38d5",
+      "size": 112238,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/072e517adf02c4acd90400cc000921f52e6f38d5"
+    },
+    {
+      "path": "docs/images/iosSwift/dataTargetMembership.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9f0dba1abfcfb9d0f5e110d14bd1f163ef4bf84b",
+      "size": 382167,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/9f0dba1abfcfb9d0f5e110d14bd1f163ef4bf84b"
+    },
+    {
+      "path": "docs/images/iosSwift/folderStructure.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "86d9d15d778df222bdf144c79ee2fcd01412c18c",
+      "size": 63055,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/86d9d15d778df222bdf144c79ee2fcd01412c18c"
+    },
+    {
+      "path": "docs/images/iosSwift/iosBuildProject.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "df4ed00e8775f9873e397c615ed15f5fca0e4f49",
+      "size": 210233,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/df4ed00e8775f9873e397c615ed15f5fca0e4f49"
+    },
+    {
+      "path": "docs/images/iosSwift/selectTargetToBuild.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b2d07583e6256081603f61e1adba68cccda50eb7",
+      "size": 360527,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/b2d07583e6256081603f61e1adba68cccda50eb7"
+    },
+    {
+      "path": "docs/images/iosSwift/setDataBundleId.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b4df2ec0adeb5f3f21b9bbf1fd315c8ad65769f0",
+      "size": 527360,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/b4df2ec0adeb5f3f21b9bbf1fd315c8ad65769f0"
+    },
+    {
+      "path": "docs/images/iosSwift/ssNative.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6db2680a0c5a25ae4c04912d9ddcc6cb72bb1d61",
+      "size": 170489,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/6db2680a0c5a25ae4c04912d9ddcc6cb72bb1d61"
+    },
+    {
+      "path": "docs/images/iosSwift/ssUnity.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "04bb873b0cd34082d59df0d538db09f06201a55d",
+      "size": 232607,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/04bb873b0cd34082d59df0d538db09f06201a55d"
+    },
+    {
+      "path": "docs/images/iosSwift/workspaceLocation.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e8824114ab4571be56b1e29815b3db42d32f0992",
+      "size": 79724,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/e8824114ab4571be56b1e29815b3db42d32f0992"
+    },
+    {
+      "path": "docs/images/iosSwift/workspaceProjects.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a70f341382cab6c6d0be305c78b43c0e9bbd22d",
+      "size": 38813,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/9a70f341382cab6c6d0be305c78b43c0e9bbd22d"
+    },
+    {
+      "path": "docs/ios.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fad11108fec420c536e765065f3c0017d5d596d1",
+      "size": 6000,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/fad11108fec420c536e765065f3c0017d5d596d1"
+    },
+    {
+      "path": "docs/iosSwift.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d3fda7b30f937b5d3ba4cecc811cdc3c7bd79783",
+      "size": 7758,
+      "url": "https://api.github.com/repos/Unity-Technologies/uaal-example/git/blobs/d3fda7b30f937b5d3ba4cecc811cdc3c7bd79783"
+    }
+  ],
+  "truncated": false
+}

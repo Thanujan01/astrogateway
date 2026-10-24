@@ -1,0 +1,215 @@
+{
+  "live_supabase": false,
+  "auth_service": "local RSA fixture",
+  "data_gateway": "real local PostgREST16.4",
+  "tests": [
+    {
+      "name": "FastAPI health reflects public configuration only, no DB credential",
+      "status": "PASS"
+    },
+    {
+      "name": "Android-compatible /v1/me contract survives actual gateway",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTP attacker identity headers ignored by backend",
+      "status": "PASS"
+    },
+    {
+      "name": "API owner field still forbidden",
+      "status": "PASS"
+    },
+    {
+      "name": "existing mission initialization contract returns201 and IDs only",
+      "status": "PASS"
+    },
+    {
+      "name": "B cannot complete A via unchanged FastAPI endpoint",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong launch returns conflict",
+      "status": "PASS"
+    },
+    {
+      "name": "completion and idempotent repeat contract preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "email confirmation still required at FastAPI",
+      "status": "PASS"
+    },
+    {
+      "name": "expired original token rejected before data access",
+      "status": "PASS"
+    },
+    {
+      "name": "signout/revocation contract preserved",
+      "status": "PASS"
+    },
+    {
+      "name": "B unaffected after A signout",
+      "status": "PASS"
+    },
+    {
+      "name": "repository forwards no caller identity headers or owner/session parameters",
+      "status": "PASS"
+    },
+    {
+      "name": "even deliberately bypassed FastAPI verifier cannot forge B at independent gateway",
+      "status": "PASS"
+    },
+    {
+      "name": "forged internal Principal B with token A yields only A from gateway",
+      "status": "PASS"
+    },
+    {
+      "name": "valid B bearer replay returns B as expected bearer-token residual",
+      "status": "PASS"
+    }
+  ],
+  "sanitized_rpc_calls": [
+    {
+      "rpc": "session_revoked",
+      "argument_names": [],
+      "identity_header_override": false,
+      "schema": "mission_api"
+    },
+    {
+      "rpc": "current_profile",
+      "argument_names": [],
+      "identity_header_override": false,
+      "schema": "mission_api"
+    },
+    {
+      "rpc": "session_revoked",
+      "argument_names": [],
+      "identity_header_override": false,
+      "schema": "mission_api"
+    },
+    {
+      "rpc": "current_profile",
+      "argument_names": [],
+      "identity_header_override": false,
+      "schema": "mission_api"
+    },
+    {
+      "rpc": "session_revoked",
+      "argument_names": [],
+      "identity_header_override": false,
+      "schema": "mission_api"
+    },
+    {
+      "rpc": "session_revoked",
+      "argument_names": [],
+      "identity_header_override": false,
+      "schema": "mission_api"
+    },
+    {
+      "rpc": "current_profile",
+      "argument_names": [],
+      "identity_header_override": false,
+      "schema": "mission_api"
+    },
+    {
+      "rpc": "initialize_mission",
+      "argument_names": [
+        "p_launch_id",
+        "p_mission_id"
+      ],
+      "identity_header_override": false,
+      "schema": "mission_api"
+    },
+    {
+      "rpc": "session_revoked",
+      "argument_names": [],
+      "identity_header_override": false,
+      "schema": "mission_api"
+    },
+    {
+      "rpc": "complete_mission",
+      "argument_names": [
+        "p_launch_id",
+        "p_outcome",
+        "p_session_id"
+      ],
+      "identity_header_override": false,
+      "schema": "mission_api"
+    },
+    {
+      "rpc": "session_revoked",
+      "argument_names": [],
+      "identity_header_override": false,
+      "schema": "mission_api"
+    },
+    {
+      "rpc": "complete_mission",
+      "argument_names": [
+        "p_launch_id",
+        "p_outcome",
+        "p_session_id"
+      ],
+      "identity_header_override": false,
+      "schema": "mission_api"
+    },
+    {
+      "rpc": "session_revoked",
+      "argument_names": [],
+      "identity_header_override": false,
+      "schema": "mission_api"
+    },
+    {
+      "rpc": "complete_mission",
+      "argument_names": [
+        "p_launch_id",
+        "p_outcome",
+        "p_session_id"
+      ],
+      "identity_header_override": false,
+      "schema": "mission_api"
+    },
+    {
+      "rpc": "session_revoked",
+      "argument_names": [],
+      "identity_header_override": false,
+      "schema": "mission_api"
+    },
+    {
+      "rpc": "complete_mission",
+      "argument_names": [
+        "p_launch_id",
+        "p_outcome",
+        "p_session_id"
+      ],
+      "identity_header_override": false,
+      "schema": "mission_api"
+    },
+    {
+      "rpc": "revoke_session",
+      "argument_names": [],
+      "identity_header_override": false,
+      "schema": "mission_api"
+    },
+    {
+      "rpc": "session_revoked",
+      "argument_names": [],
+      "identity_header_override": false,
+      "schema": "mission_api"
+    },
+    {
+      "rpc": "session_revoked",
+      "argument_names": [],
+      "identity_header_override": false,
+      "schema": "mission_api"
+    },
+    {
+      "rpc": "current_profile",
+      "argument_names": [],
+      "identity_header_override": false,
+      "schema": "mission_api"
+    }
+  ],
+  "bearer_replay_risk_observed": true,
+  "kernel_sandbox": true,
+  "private_keys_or_db_credentials_supplied": false
+}

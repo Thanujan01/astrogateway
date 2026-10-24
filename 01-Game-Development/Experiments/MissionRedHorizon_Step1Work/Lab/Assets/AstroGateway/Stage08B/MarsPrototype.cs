@@ -1,0 +1,87 @@
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using UnityEngine;
+using UnityEngine.InputSystem;
+namespace AstroGateway.Stage08B {
+// Local prototype only. Memory-only provisional events; no network, identity or credential handoff.
+public class MarsPrototype : MonoBehaviour {
+ public CharacterController astronaut, rover; public Transform body,leftArm,rightArm,leftLeg,rightLeg,roverVisual;
+ public Camera follow; public ParticleSystem dust; public Material dustMaterial;
+ public Canvas hud; public UnityEngine.UI.Text status; public Animator animator;
+ public UnityEngine.Rendering.Universal.UniversalRenderPipelineAsset previewPipeline; UnityEngine.Rendering.RenderPipelineAsset priorPipeline;
+ void OnEnable(){priorPipeline=QualitySettings.renderPipeline;if(previewPipeline)QualitySettings.renderPipeline=previewPipeline;}
+ public AstroGateway.Stage08C.MobileControls mobile;
+ public int scenarioSeed=808; public bool driving; public float speed,oxygen=100,power=100,yaw=0,pitch=18;
+ public int weather; public string objective="Explore the habitat, power station and delta";
+ public bool testControl; public Vector2 testMove,testLook; public bool testRun,testBrake;
+ public readonly List<string> events=new List<string>(); public string sessionId;
+ public float elapsed; float vertical,roverVertical,nextSample,lastEvent=-1,stormStart,phase; int sequence; bool completed;
+ readonly HashSet<int> visited=new HashSet<int>(); readonly Vector3[] targets={new Vector3(-45,0,-60),new Vector3(25,0,-45),new Vector3(0,0,75)};
+ Material originalSky; Color baseFog; float baseFogStart,baseFogEnd;
+ static string N(float n)=>n.ToString("0.0000",CultureInfo.InvariantCulture);
+ void Awake(){mobile=gameObject.AddComponent<AstroGateway.Stage08C.MobileControls>();mobile.Initialize(this);astronaut.minMoveDistance=0;rover.minMoveDistance=0;sessionId=Guid.NewGuid().ToString();baseFog=RenderSettings.fogColor;baseFogStart=RenderSettings.fogStartDistance;baseFogEnd=RenderSettings.fogEndDistance;originalSky=RenderSettings.skybox;SetWeather(0);}
+ void OnDisable(){QualitySettings.renderPipeline=priorPipeline;Cursor.lockState=CursorLockMode.None;Cursor.visible=true;RenderSettings.fogColor=baseFog;RenderSettings.fogStartDistance=baseFogStart;RenderSettings.fogEndDistance=baseFogEnd;}
+ Vector2 ReadMove(){var k=Keyboard.current;if(k==null||k.leftMetaKey.isPressed||k.rightMetaKey.isPressed||k.leftCtrlKey.isPressed||k.rightCtrlKey.isPressed)return Vector2.zero;return new Vector2((k.dKey.isPressed?1:0)-(k.aKey.isPressed?1:0),(k.wKey.isPressed?1:0)-(k.sKey.isPressed?1:0));}
+ void Update(){
+  if(mobile)mobile.Frame();
+  float dt=Mathf.Min(Time.deltaTime,.05f); elapsed+=dt;var k=Keyboard.current;var m=Mouse.current;
+  if(!testControl && k!=null&&!k.leftMetaKey.isPressed&&!k.rightMetaKey.isPressed&&!k.leftCtrlKey.isPressed&&!k.rightCtrlKey.isPressed){if(k.eKey.wasPressedThisFrame)Interact();if(k.digit1Key.wasPressedThisFrame)SetWeather(0);if(k.digit2Key.wasPressedThisFrame)SetWeather(1);if(k.digit3Key.wasPressedThisFrame)SetWeather(2);if(k.escapeKey.wasPressedThisFrame){Cursor.lockState=CursorLockMode.None;Cursor.visible=true;}}
+  if(!testControl && m!=null && m.rightButton.wasPressedThisFrame){Cursor.lockState=CursorLockMode.Locked;Cursor.visible=false;}
+  Vector2 look=testControl?testLook:(m!=null&&m.rightButton.isPressed?m.delta.ReadValue():Vector2.zero);if(!testControl&&mobile)look+=mobile.Look; yaw+=look.x*.12f;pitch=Mathf.Clamp(pitch-look.y*.12f,-8,55);
+  Vector2 move=Vector2.ClampMagnitude(testControl?testMove:ReadMove(),1);bool run=testControl?testRun:k!=null&&k.leftShiftKey.isPressed;bool brake=testControl?testBrake:k!=null&&k.spaceKey.isPressed;
+  if(!testControl&&mobile){move=Vector2.ClampMagnitude(move+mobile.Move,1);run|=mobile.Run;brake|=mobile.Brake;if(driving&&mobile.Accelerate)move.y=1;}
+  if(driving)Drive(move,brake,dt);else Walk(move,run,dt);
+  oxygen=Mathf.Max(0,oxygen-dt*(weather==2?.035f:.015f));power=Mathf.Max(0,power-dt*(driving?.035f:.018f));
+  if(dust!=null){dust.transform.position=ActivePosition()+Vector3.up*4;var emission=dust.emission;emission.rateOverTime=weather==0?0:weather==1?14:65;}
+  if(!completed){for(int i=0;i<targets.Length;i++)if(Vector2.Distance(new Vector2(ActivePosition().x,ActivePosition().z),new Vector2(targets[i].x,targets[i].z))<9)visited.Add(i);objective=$"Survey habitat / power / delta: {visited.Count}/3";if(visited.Count==3){Add("completion","\"completed\":true");completed=true;objective="Local exploration complete — provisional";}}
+  if(elapsed>=nextSample&&!completed){nextSample=elapsed+2;Vector3 p=ActivePosition();Add("movement",$"\"x_m\":{N(p.x)},\"z_m\":{N(p.z)},\"speed_mps\":{N(Mathf.Abs(speed))}");Add("resource",$"\"oxygen_used_l\":{N((100-oxygen)*6)},\"water_used_l\":0,\"power_used_wh\":{N((100-power)*18)}");}
+  if(status)status.text=$"ASTROGATEWAY  /  MISSION RED HORIZON\nLOCAL PROTOTYPE • provisional / no witness\nOXYGEN  {oxygen:0.0}%     SUIT POWER  {power:0.0}%\n{objective}\nWEATHER  {WeatherName}     ROVER  {(driving?Mathf.Abs(speed)*3.6f:0):0.0} km/h\n{(mobile&&mobile.Visible?(driving?"Joystick steer / reverse • DRIVE hold • BRAKE hold • EXIT":"Joystick walk • RUN hold • ENTER near rover"):(driving?"E exit (stop first) • WASD drive • Space brake":"WASD walk • Shift run • E enter nearby rover"))}\n{(mobile&&mobile.Visible?"Drag right side to orbit • All events provisional":"Hold RMB / drag to orbit • Esc release cursor • 1/2/3 weather")}";
+ }
+ public Vector3 ActivePosition()=>driving?rover.transform.position:astronaut.transform.position;
+ public string WeatherName=>weather==0?"CLEAR":weather==1?"LIGHT DUST":"DUST STORM";
+ public void Walk(Vector2 input,bool run,float dt){
+  Vector3 direction=Quaternion.Euler(0,yaw,0)*new Vector3(input.x,0,input.y);float target=run?3.8f:2.2f;
+  if(astronaut.isGrounded&&vertical<0)vertical=-1;vertical=Mathf.Max(-15,vertical-3.71f*dt);
+  Vector3 before=astronaut.transform.position;astronaut.Move((direction*target+Vector3.up*vertical)*dt);Constrain(astronaut);
+  speed=Vector3.ProjectOnPlane(astronaut.transform.position-before,Vector3.up).magnitude/Mathf.Max(.0001f,dt);
+  if(direction.sqrMagnitude>.01f)astronaut.transform.rotation=Quaternion.RotateTowards(astronaut.transform.rotation,Quaternion.LookRotation(direction),360*dt);
+  if(animator){animator.SetFloat("Speed",speed);animator.SetBool("Running",run&&speed>.1f);}
+ }
+ public void Drive(Vector2 input,bool brake,float dt){
+  speed=Mathf.MoveTowards(speed,brake?0:input.y*(input.y<0?1.8f:3.8f),(brake?6:input.y==0?1.8f:2)*dt);
+  if(Mathf.Abs(speed)>.1f)rover.transform.Rotate(0,input.x*48*Mathf.Clamp01(Mathf.Abs(speed)/2)*Mathf.Sign(speed)*dt,0);
+  if(rover.isGrounded&&roverVertical<0)roverVertical=-1;roverVertical=Mathf.Max(-15,roverVertical-3.71f*dt);
+  Vector3 before=rover.transform.position;rover.Move((rover.transform.forward*speed+Vector3.up*roverVertical)*dt);Constrain(rover);
+  float actual=Vector3.ProjectOnPlane(rover.transform.position-before,Vector3.up).magnitude/Mathf.Max(dt,.0001f);if(actual<.05f&&Mathf.Abs(speed)>.1f)speed=0;
+  foreach(Transform t in roverVisual)if(t.name.StartsWith("Wheel"))t.Rotate(0,speed*dt*160,0,Space.Self);
+ }
+ void Constrain(CharacterController c){Vector3 p=c.transform.position;Vector3 q=new Vector3(Mathf.Clamp(p.x,-119,119),p.y,Mathf.Clamp(p.z,-119,119));if(p!=q){c.enabled=false;c.transform.position=q;c.enabled=true;}}
+ public bool Interact(){
+  if(!driving){if(Vector3.Distance(astronaut.transform.position,rover.transform.position)>5)return false;driving=true;astronaut.gameObject.SetActive(false);speed=0;Add("equipment","\"equipment\":\"rover\",\"correct\":true");return true;}
+  if(Mathf.Abs(speed)>.2f)return false;
+  // Verify a collision-free grounded exit before reactivating the astronaut.
+  foreach(float side in new[]{-1f,1f}){Vector3 p=rover.transform.position+rover.transform.right*side*3;
+   if(!Physics.Raycast(p+Vector3.up*8,Vector3.down,out RaycastHit hit,20,1<<0,QueryTriggerInteraction.Ignore))continue;
+   // Reject exit points on top of structures or rocks: the landing must be near the rover's own ground level.
+   if(Mathf.Abs(hit.point.y-rover.transform.position.y)>1.2f)continue;
+   p.y=hit.point.y+.15f;if(Mathf.Abs(p.x)>119||Mathf.Abs(p.z)>119||Physics.CheckCapsule(p+Vector3.up*.4f,p+Vector3.up*1.5f,.32f,1<<0,QueryTriggerInteraction.Ignore))continue;
+   driving=false;astronaut.transform.position=p;astronaut.gameObject.SetActive(true);vertical=-1;speed=0;Add("equipment","\"equipment\":\"rover\",\"correct\":true");return true;}
+  return false;
+ }
+ public void SetWeather(int state){state=Mathf.Clamp(state,0,2);bool ended=weather==2&&state!=2;weather=state;if(state==2)stormStart=elapsed;
+  RenderSettings.fog=true;RenderSettings.fogMode=FogMode.Linear;RenderSettings.fogColor=state==2?new Color(.52f,.34f,.23f):new Color(.60f,.48f,.36f);RenderSettings.fogStartDistance=state==0?75:state==1?25:8;RenderSettings.fogEndDistance=state==0?280:state==1?130:48;
+  if(dust){dust.Stop(true,ParticleSystemStopBehavior.StopEmittingAndClear);dust.useAutoRandomSeed=false;dust.randomSeed=(uint)(scenarioSeed+state);if(state==0)dust.Stop(true,ParticleSystemStopBehavior.StopEmitting);else dust.Play();}
+  if(ended)Add("emergency",$"\"incident\":\"dust\",\"resolved\":true,\"response_s\":{N(Mathf.Clamp(elapsed-stormStart,.1f,600))}");
+ }
+ void LateUpdate(){if(!follow)return;Vector3 target=ActivePosition()+Vector3.up*(driving?1.4f:1.25f);Vector3 desired=target+Quaternion.Euler(pitch,yaw,0)*new Vector3(0,0,driving?-7:-4.5f);Vector3 offset=desired-target;
+  if(Physics.SphereCast(target,.2f,offset.normalized,out RaycastHit h,offset.magnitude,1<<0,QueryTriggerInteraction.Ignore))desired=target+offset.normalized*Mathf.Max(.5f,h.distance-.2f);
+  follow.transform.position=Vector3.Lerp(follow.transform.position,desired,1-Mathf.Exp(-12*Time.deltaTime));follow.transform.LookAt(target);
+ }
+ void Add(string kind,string payload){if(events.Count>=128||completed||elapsed>7199)return;float t=Mathf.Max(elapsed,lastEvent+.001f);lastEvent=t;
+  byte[] bytes;using(var md5=System.Security.Cryptography.MD5.Create())bytes=md5.ComputeHash(System.Text.Encoding.UTF8.GetBytes(sessionId+":"+(sequence++)));string id=new Guid(bytes).ToString();
+  events.Add($"{{\"event_id\":\"{id}\",\"elapsed_s\":{N(t)},\"kind\":\"{kind}\",{payload}}}");}
+ public void ResetLocalSession(){sessionId=Guid.NewGuid().ToString();events.Clear();lastEvent=-1;sequence=0;nextSample=elapsed;completed=false;}
+ public string BatchJson()=>"{\"schema_version\":1,\"mission_session_id\":\""+sessionId+"\",\"events\":["+string.Join(",",events)+"]}";
+}
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "job": "BeforeCapture",
+    "exit_code": 0
+  },
+  {
+    "job": "NewScene",
+    "exit_code": 0
+  },
+  {
+    "job": "Native",
+    "exit_code": 0
+  },
+  {
+    "job": "Mars",
+    "exit_code": 0
+  },
+  {
+    "job": "Mission01",
+    "exit_code": 0
+  }
+]

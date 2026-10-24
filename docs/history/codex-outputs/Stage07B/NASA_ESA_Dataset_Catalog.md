@@ -1,0 +1,17 @@
+# Scientific dataset catalogue
+
+Scientific sources are environmental reference data, never player skill labels. No blanket license, NASA endorsement or ESA Creative Commons status is assumed.
+
+| Source/product | Intended fields | Rights/provenance and limitations | Status |
+|---|---|---|---|
+| [PDS InSight atmosphere retrieval](https://atmos.nmsu.edu/data_and_services/atmospheres_data/INSIGHT/retrieving_insight.html), TWINS calibrated collection example urn:nasa:pds:insight_twins:data_calibrated:twins_calib_0004 | Air temperature/wind, original time/quality flags | Product label/version/DOI and units must be checked; InSight landing site is not Jezero; sample intervals/missing values and instrument uncertainty required | No weather observation downloaded; adapter fixture only |
+| [InSight archive](https://pds-geosciences.wustl.edu/insight/), [bundle catalogue](https://an.rsl.wustl.edu/help/Content/About%20the%20data/Data%20sets/INS/InSight%20data%20bundles.htm) | PS pressure (urn:nasa:pds:insight_ps); RAD surface temperature | Air and surface temperatures are different measurements; no merging without time/site/quality alignment | Product-level rights/uncertainty pending |
+| [NASA Mars Trek](https://trek.nasa.gov/), [API](https://trek.nasa.gov/tiles/apidoc/trekAPI.html?body=mars) | Layer references, coordinates, terrain profiles | Tiles are visualization products, not automatically DEM samples; record source layer/product, datum, longitude direction and resolution | Catalogue only, no download |
+| [HiRISE DTM documentation](https://www.uahirise.org/dtm/about.php), [FAQ](https://www.uahirise.org/faq/) | Stereo DTM metadata, map scale, projection, elevation units and uncertainty | Typical documented resolution cannot replace per-product uncertainty. Stereo image labels are not DTMs. Preserve instrument/platform credits and product rights review | Existing 7,729-byte PDS3 image label reused, quarantined |
+| [ESA PSA](https://www.cosmos.esa.int/web/psa), [archive](https://archives.esac.esa.int/psa/) | Mars Express/HRSC or other released planetary product metadata | Release/proprietary state, product credits and license must be individually established; public availability alone does not authorize training | COSMOS access restricted during research; rights unverified; nothing downloaded |
+
+HiRISE sample URL: https://hirise-pds.lpl.arizona.edu/PDS/RDR/PSP/ORB_010500_010599/PSP_010502_2090/PSP_010502_2090_RED.LBL . Product PSP_010502_2090_RED v2.0, MRO-M-HIRISE-3-RDR-V1.1; Uranius Fossae, not Jezero. Approved Stage07A metadata-only use; no new downloads in Stage07B. Its checksum and original retrieval timestamp are retained in Evidence/hirise_ingestion.json.
+
+[PDS search guide](https://nasa-pds.github.io/pds-api/guides/search/quickstart.html) and [PDS policy](https://pds.nasa.gov/datastandards/documents/policy/) support catalogue discovery and archive review. Record original label, collection/version, checksum, retrieval timestamp, instrument, measurement type, SI conversion, coordinates, uncertainty, quality flags, missing sentinels and limitations before admitting any scientific observations.
+
+Scope: local preparation only, 2026-10-09. No remote database operations, live accounts, player collection or changes to Android, Unity or React. Stage05B original-user-JWT → PostgREST validation → native RLS remains the supported user-data path. No service-role/admin credentials in this package.

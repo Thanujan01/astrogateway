@@ -1,0 +1,6 @@
+{
+  "remote_operations": false,
+  "gateway_identity_verified_before_stop": true,
+  "postgres_stopped": true,
+  "gateway_stopped": true
+}

@@ -1,0 +1,3 @@
+Graphics=180
+Canvases=3
+Minimap cameras=0

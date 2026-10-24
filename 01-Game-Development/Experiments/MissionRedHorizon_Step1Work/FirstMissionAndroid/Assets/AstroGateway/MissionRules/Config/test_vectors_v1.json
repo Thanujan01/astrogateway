@@ -1,0 +1,184 @@
+{
+ "rules_version": "mission-rules-1.0.0-proposed",
+ "oxygen_percent_per_real_second": {
+  "idle|clear": 0.034259259,
+  "idle|light_dust": 0.03587963,
+  "idle|dust_storm": 0.03912037,
+  "scanning|clear": 0.043518519,
+  "scanning|light_dust": 0.045601852,
+  "scanning|dust_storm": 0.049768519,
+  "driving|clear": 0.038888889,
+  "driving|light_dust": 0.040740741,
+  "driving|dust_storm": 0.044444444,
+  "walking|clear": 0.057407407,
+  "walking|light_dust": 0.060185185,
+  "walking|dust_storm": 0.065740741,
+  "running|clear": 0.089814815,
+  "running|light_dust": 0.094212963,
+  "running|dust_storm": 0.103009259
+ },
+ "weather": [
+  {
+   "difficulty": 0,
+   "t": 0,
+   "state": "clear",
+   "tau": 0.5,
+   "visibility_m": 280,
+   "solar_power_factor": 0.839457,
+   "advisory": "nominal"
+  },
+  {
+   "difficulty": 0,
+   "t": 250,
+   "state": "clear",
+   "tau": 0.5,
+   "visibility_m": 280,
+   "solar_power_factor": 0.839457,
+   "advisory": "nominal"
+  },
+  {
+   "difficulty": 0,
+   "t": 300,
+   "state": "clear",
+   "tau": 0.5,
+   "visibility_m": 280,
+   "solar_power_factor": 0.839457,
+   "advisory": "nominal"
+  },
+  {
+   "difficulty": 0,
+   "t": 400,
+   "state": "clear",
+   "tau": 0.5,
+   "visibility_m": 280,
+   "solar_power_factor": 0.839457,
+   "advisory": "nominal"
+  },
+  {
+   "difficulty": 0,
+   "t": 650,
+   "state": "clear",
+   "tau": 0.5,
+   "visibility_m": 280,
+   "solar_power_factor": 0.839457,
+   "advisory": "nominal"
+  },
+  {
+   "difficulty": 0,
+   "t": 800,
+   "state": "clear",
+   "tau": 0.5,
+   "visibility_m": 280,
+   "solar_power_factor": 0.839457,
+   "advisory": "nominal"
+  },
+  {
+   "difficulty": 1,
+   "t": 0,
+   "state": "clear",
+   "tau": 0.5,
+   "visibility_m": 280,
+   "solar_power_factor": 0.839457,
+   "advisory": "nominal"
+  },
+  {
+   "difficulty": 1,
+   "t": 250,
+   "state": "clear",
+   "tau": 0.5,
+   "visibility_m": 280,
+   "solar_power_factor": 0.839457,
+   "advisory": "nominal"
+  },
+  {
+   "difficulty": 1,
+   "t": 300,
+   "state": "light_dust",
+   "tau": 1.5,
+   "visibility_m": 130,
+   "solar_power_factor": 0.591555,
+   "advisory": "caution"
+  },
+  {
+   "difficulty": 1,
+   "t": 400,
+   "state": "light_dust",
+   "tau": 1.5,
+   "visibility_m": 130,
+   "solar_power_factor": 0.591555,
+   "advisory": "caution"
+  },
+  {
+   "difficulty": 1,
+   "t": 650,
+   "state": "clear",
+   "tau": 0.5,
+   "visibility_m": 280,
+   "solar_power_factor": 0.839457,
+   "advisory": "nominal"
+  },
+  {
+   "difficulty": 1,
+   "t": 800,
+   "state": "clear",
+   "tau": 0.5,
+   "visibility_m": 280,
+   "solar_power_factor": 0.839457,
+   "advisory": "nominal"
+  },
+  {
+   "difficulty": 2,
+   "t": 0,
+   "state": "clear",
+   "tau": 0.5,
+   "visibility_m": 280,
+   "solar_power_factor": 0.839457,
+   "advisory": "nominal"
+  },
+  {
+   "difficulty": 2,
+   "t": 250,
+   "state": "light_dust",
+   "tau": 1.5,
+   "visibility_m": 130,
+   "solar_power_factor": 0.591555,
+   "advisory": "caution"
+  },
+  {
+   "difficulty": 2,
+   "t": 300,
+   "state": "light_dust",
+   "tau": 1.5,
+   "visibility_m": 130,
+   "solar_power_factor": 0.591555,
+   "advisory": "caution"
+  },
+  {
+   "difficulty": 2,
+   "t": 400,
+   "state": "dust_storm",
+   "tau": 4.0,
+   "visibility_m": 48,
+   "solar_power_factor": 0.246597,
+   "advisory": "shelter"
+  },
+  {
+   "difficulty": 2,
+   "t": 650,
+   "state": "light_dust",
+   "tau": 1.5,
+   "visibility_m": 130,
+   "solar_power_factor": 0.591555,
+   "advisory": "caution"
+  },
+  {
+   "difficulty": 2,
+   "t": 800,
+   "state": "clear",
+   "tau": 0.5,
+   "visibility_m": 280,
+   "solar_power_factor": 0.839457,
+   "advisory": "nominal"
+  }
+ ]
+}

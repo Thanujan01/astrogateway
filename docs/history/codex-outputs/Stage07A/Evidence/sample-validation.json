@@ -1,0 +1,21 @@
+{
+  "checks": {
+    "hash_matches": true,
+    "within_approved_limit": true,
+    "target_is_Mars": true,
+    "product_id_present": true,
+    "label_is_PDS3": true
+  },
+  "metadata": {
+    "PDS_VERSION_ID": "PDS3",
+    "DATA_SET_ID": "MRO-M-HIRISE-3-RDR-V1.1",
+    "PRODUCT_ID": "PSP_010502_2090_RED",
+    "PRODUCT_VERSION_ID": "2.0",
+    "TARGET_NAME": "MARS",
+    "INSTRUMENT_ID": "HIRISE",
+    "PRODUCER_INSTITUTION_NAME": "UNIVERSITY OF ARIZONA",
+    "OBSERVATION_ID": "PSP_010502_2090"
+  },
+  "training_used": false,
+  "site_is_not_Jezero": true
+}

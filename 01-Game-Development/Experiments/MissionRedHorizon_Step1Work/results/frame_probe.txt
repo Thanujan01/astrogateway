@@ -1,0 +1,5 @@
+t 0s frames 0 elapsed 0.02 pos (-42.00, 0.10, -68.00)
+t 5s frames 141 elapsed 4.69 pos (-42.00, 0.04, -68.00)
+t 10s frames 291 elapsed 9.69 pos (-42.00, 0.04, -68.00)
+--- pushing into dome
+t 913s frames 371 elapsed 12.35 pos (-20.00, 0.00, -38.00)

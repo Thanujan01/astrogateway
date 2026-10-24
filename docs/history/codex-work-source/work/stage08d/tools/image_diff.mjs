@@ -1,0 +1,3 @@
+import sharp from 'sharp';import fs from 'node:fs';
+const path='outputs/Stage08D11/Screenshots/';const a=await sharp(path+'Rover_Original.png').removeAlpha().raw().toBuffer();let results=[];
+for(let i=0;i<3;i++){const b=await sharp(path+`Rover_LOD${i}.png`).removeAlpha().raw().toBuffer();let sum=0,n=0;for(let k=0;k<a.length;k++){const d=Math.abs(a[k]-b[k]);sum+=d;if(d>10)n++;}results.push({lod:i,meanAbsolute8bitChannelDifference:sum/a.length,percentChannelsDifferenceOver10:100*n/a.length});}fs.writeFileSync('outputs/Stage08D11/Image_Difference_Metrics.json',JSON.stringify(results,null,2));console.log(results);

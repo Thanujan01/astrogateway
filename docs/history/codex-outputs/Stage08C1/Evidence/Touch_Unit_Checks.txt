@@ -1,0 +1,12 @@
+safe area bottom-to-top conversion: PASS
+buttons inside safe area: PASS
+diagonal joystick normalized: PASS
+second finger cannot steal joystick: PASS
+run and movement simultaneous: PASS
+release run preserves movement: PASS
+camera independent finger: PASS
+throttle and brake distinct: PASS
+cancellation clears held state: PASS
+small landscape layout: PASS
+EnhancedTouch virtual-device delivery: PASS
+EnhancedTouch cancel delivered: PASS

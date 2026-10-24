@@ -1,0 +1,16 @@
+{
+  "main_project": "/Users/kapilash/Projects/MissionRedHorizon",
+  "isolated_lab": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08b/PlayModeLab",
+  "source_sha256": {
+    "Assets/AstroGateway/Stage08B/MarsPrototype.cs": "b3c69089404c7a89a6d0c95c381f04b114f89cee5dc8785318857e3363007b18",
+    "Assets/AstroGateway/Stage08C/MobileControls.cs": "57e3232dc1b8759ef39e214b559f935ba58dbef1b034cd80c45d7daa898e7b7b",
+    "Assets/AstroGateway/Stage08C/AndroidProfileProbe.cs": "1542e1aeffa8c14409fc9264f8b2e8ce9413f2921240f93821f0686bfb4e2e5c"
+  },
+  "main_lab_match": {
+    "Assets/AstroGateway/Stage08B/MarsPrototype.cs": true,
+    "Assets/AstroGateway/Stage08C/MobileControls.cs": true,
+    "Assets/AstroGateway/Stage08C/AndroidProfileProbe.cs": true
+  },
+  "apk_sha256": "9f6322b87cecc9107b130b63e104d81ff04809064d97e3302ae5de264ca0a31f",
+  "editor_harness_changes": "Output redirected to Stage08C, TouchChecks invoked, assertion clock changed to p.elapsed to exclude capture stalls"
+}

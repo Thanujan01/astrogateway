@@ -1,0 +1,143 @@
+AstroGateway First Mission playtest (graphical Editor Play Mode, Mac) — 2026-10-20 21:38:01
+PASS 105  FAIL 0  UNTESTED 1
+Inputs: First Mission HUD widget handlers + one virtual-touchscreen event; MOCK = fake uploader, no network.
+
+Unity 6000.6.4f1 | GPU Apple M4 Pro | Metal | Game View 3024x72
+Scene: Assets/AstroGateway/FirstMission/Scenes/Mars_FirstMission_v1.unity
+Physical input devices disabled for this run: 3
+PASS     First Mission scene loaded with the canonical mission id  [ag.mars.red-horizon.surface-ops]
+PASS     Own save file (never the Visual Upgrade / Cinematic HUD save)  [/Users/kapilash/Library/Application Support/DefaultCompany/MissionRedHorizon/AstroGateway_FirstMission_v1.json]
+PASS     Starts in astronaut mode with astronaut controls only  [driving False speed 0.00 tab Drive paused False modal False rover (-15.0, 0.03, -93.0)]
+PASS     Old HUD canvas not drawn (logic still running)
+PASS     TERRAVEX renderers hidden, ARES-VI renderers visible
+PASS     ARES hover plumes inactive, Animator disabled (no hover behaviour)
+PASS     Gameplay collider is still the TERRAVEX CharacterController
+PASS     AI analysis seam reports NOT CONNECTED
+PASS     Upload default is NOT CONNECTED (nothing transmitted)
+PASS     Safe area lies within the render target (astronaut)  [safe (x:0.00, y:0.00, width:2400.00, height:1080.00) view (x:0.00, y:0.00, width:2400.00, height:1080.00)]
+PASS     Touch targets inside safe area (astronaut)  [3 targets, 0 outside]
+PASS     Touch targets >= 84 ref px (astronaut)  [0 small]
+SHOT     01_astronaut_mode.png — astronaut controls; ARES-VI rover ahead  [3024x1582]
+PASS     BOARD hidden while far from the rover
+PASS     Move joystick walks the astronaut (existing controller)  [3.34 m]
+PASS     BOARD ROVER appears within 5 m
+PASS     Boarding switches to rover mode  [driving True speed 0.00 tab Drive paused False modal False rover (-15.0, 0.03, -93.0)]
+PASS     Rover mode shows tabs + DRIVE controls, hides astronaut controls
+PASS     Seated astronaut hidden inside the ARES canopy
+PASS     Safe area lies within the render target (rover drive)  [safe (x:0.00, y:0.00, width:2400.00, height:1080.00) view (x:0.00, y:0.00, width:2400.00, height:1080.00)]
+PASS     Touch targets inside safe area (rover drive)  [13 targets, 0 outside]
+PASS     Touch targets >= 84 ref px (rover drive)  [0 small]
+UNTESTED Virtual touchscreen press on BRAKE  [Editor did not route the virtual touch to the UI module; widget handlers tested directly below]
+PASS     ACCEL drives forward  [speed 3.80 moved 7.7 m]
+PASS     Speed indicator shows km/h
+PASS     EXIT disabled while moving
+SHOT     02_drive_tab_moving.png — DRIVE tab while driving  [3024x1582]
+PASS     Steering joystick turns the rover  [65 deg]
+INFO     ARES rocker L angle while driving 0.0 deg; wheel FL rotation (30.70, 180.00, 180.00)
+PASS     BRAKE stops the rover  [speed 0.00]
+PASS     REVERSE + ACCEL reverses  [speed -1.80]
+PASS     Camera drag zone turns the camera  [110 -> 136]
+PASS     CAM button toggles chase distance
+PASS     Switching away from DRIVE releases the throttle
+PASS     Tab Drive opens without leaving the game
+PASS     Tab Science opens without leaving the game
+PASS     Tab Data opens without leaving the game
+PASS     Tab Mission opens without leaving the game
+PASS     Tab Systems opens without leaving the game
+INFO     designated site site_3 'Solar inspection' at (25.0, 0.40, -43.0); rover 51 m away
+PASS     Arm sampler rejected out of range  [Out of range • Solar inspection is 50.7 m away (max 6 m)]
+PASS     OBSERVE disabled out of range (arm sampler selected)
+SHOT     03a_science_out_of_range.png — SCIENCE tab: arm sampler out of range  [3024x1582]
+PASS     Mission marks the site reached after driving there  [Drive to Solar inspection (within 15 m)]
+PASS     Context camera allowed at 11 m (max 15 m)
+PASS     Arm sampler still rejected at 11 m (max 6 m)
+SHOT     03_science_context_camera.png — SCIENCE tab, mast context camera observing  [3024x1582]
+PASS     Context camera stores 4 records locally  [4 records, COLLECTED LOCALLY]
+PASS     Research station identified by its registry id
+PASS     Target range equals the real rover-station distance  [11.00 vs 11.00]
+PASS     Arm sampler refused while moving  [speed 0.93: Stop the rover first]
+PASS     Arm sampler allowed when stopped within 6 m
+PASS     ARES arm deploys during the arm observation  [progress 0.55]
+SHOT     04_arm_sample.png — arm sampler deployed at the station  [3024x1582]
+PASS     Arm sample stores a game-assigned sample id
+PASS     Soil composition is UNAVAILABLE with no value (not modelled)
+PASS     Arm stows after the observation  [progress 0.00]
+PASS     Terrain slope matches the ground normal under the rover  [0.000 vs 0.000 deg]
+PASS     Traversability follows the documented rule  [nominal]
+PASS     Plane fit: a flat grid has zero roughness, a 0.2 m step does not  [step residual 0.0497 m]
+PASS     Dust condition reports the game weather state
+PASS     Temperature, pressure and radiation are UNAVAILABLE without values
+PASS     Spectrometer shown UNAVAILABLE and cannot run
+PASS     Safe area lies within the render target (science tab)  [safe (x:0.00, y:0.00, width:2400.00, height:1080.00) view (x:0.00, y:0.00, width:2400.00, height:1080.00)]
+PASS     Touch targets inside safe area (science tab)  [13 targets, 0 outside]
+PASS     Touch targets >= 84 ref px (science tab)  [0 small]
+SHOT     05_science_tab.png — SCIENCE tab after observations  [3024x1582]
+PASS     Every stored record passes local validation
+PASS     Client records are only SIMULATED or UNAVAILABLE
+PASS     No record carries an analysis result
+PASS     Wire JSON has the schema fields and no analysis/user fields  [{"schema_version":1,"event_id":"badb9459-705e-47b8-b024-5dcc133797ed","observation_id":"77b0ffd3-c700-4011-8083-c654ce6ae431","mission_id":"ag.mars.red-horizon.surface-ops","mission_version":1,"build_variant":"first_mission_v1","sensor_id":"nav.position","sensor_type":"navigation","instrument_id":"rover.context_camera","station_id":"site_3","sim_time_s":28.112,"sim_tick":29,"captured_at":"2026-10-20T16:07:10.3884820Z","location":{"x_m":25,"y_m":0.04,"z_m":-32,"frame":"scene_local_m"},"value":null,"value_text":null,"unit":"m","provenance":"SIMULATED","method":"rover_transform_scene_local","sim_config_version":"fm-sensors-1"}]
+PASS     Local validation rejects a client-made BACKEND-ANALYZED record
+PASS     Local validation rejects a number for a not-modelled sensor
+PASS     DATA tab shows OFFLINE upload state and AI NOT CONNECTED  [19 records on device • 19 pending upload • 0 uploaded • 0 failed/rejected
+Sync: Backend NOT CONNECTED • records kept on this device
+AI MODEL • NOT CONNECTED (te]
+SHOT     06_data_tab_offline.png — DATA tab: local records, OFFLINE, AI not connected  [3024x1582]
+PASS     MISSION objectives progress from validated local records  [6 done: x Board the ARES-VI research rover | x Drive to Solar inspection (within 15 m) | x SCIENCE: profile the terrain at the site | x SCIENCE: survey Solar inspection with the mast context camera | x SCIENCE: stop within 6 m and collect an arm sample | x DATA: observations stored on this device | - Backend upload: NOT CONNECTED (no hosted backend yet) | - AI analysis: NOT CONNECTED (team model not yet available) | - NEXT: survey a second research station]
+SHOT     07_mission_tab.png — MISSION tab  [3024x1582]
+SHOT     08_systems_tab.png — SYSTEMS tab  [3024x1582]
+PASS     Records survive an app restart (reload from disk)  [19/19]
+PASS     Re-adding the same records does not duplicate them
+PASS     Bounded store refuses new records instead of dropping pending ones  [Local storage full: 5 records still waiting for sync]
+PASS     Bounded store evicts the oldest already-uploaded record to make room
+PASS     Corrupt store file is ignored safely (no crash)  [load failed: ArgumentException]
+--- MOCK upload tests (in-process fake uploader, no network, no real backend) ---
+PASS     MOCK 503: records show FAILED — RETRY AVAILABLE  [FAILED — RETRY AVAILABLE]
+PASS     MOCK 503: no immediate retry (backoff)
+PASS     MOCK reconnection: retried after backoff and acknowledged
+PASS     MOCK duplicate ack counts as uploaded, sent once (no duplicate processing)
+PASS     MOCK ack without BACKEND-ANALYZED provenance is not shown as an AI result
+PASS     MOCK BACKEND-ANALYZED ack is stored and a later plain ack does not overwrite it
+PASS     MOCK 401: upload stops until RETRY (sign-in)
+PASS     MOCK 422: records marked REJECTED and kept on the device
+PASS     Http uploader refuses plain HTTP to non-local hosts
+PASS     Parses the real backend ack shape (not_connected → no result)
+PASS     EXIT enabled when stopped  [driving True speed 0.00 tab Drive paused False modal False rover (25.0, 0.04, -38.0)]
+PASS     Exit restores astronaut controls automatically  [driving False speed 0.00 tab Drive paused False modal False rover (25.0, 0.04, -38.0)]
+PASS     Astronaut visible again after exit
+PASS     Tabs cannot be opened on foot
+SHOT     09_after_exit.png — astronaut beside the ARES-VI after exit  [3024x1582]
+PASS     Pause (Esc / Android back) shows the First Mission pause card
+SHOT     10_paused.png — pause card  [3024x1582]
+PASS     RESUME unpauses
+PASS     Re-boarding after exit returns to rover mode on DRIVE
+INFO     render target 1920x1080 (16:9)
+PASS     Safe area lies within the render target (16:9)  [safe (x:0.00, y:0.00, width:1920.00, height:1080.00) view (x:0.00, y:0.00, width:1920.00, height:1080.00)]
+PASS     Touch targets inside safe area (16:9)  [13 targets, 0 outside]
+PASS     Touch targets >= 84 ref px (16:9)  [0 small]
+SHOT     11_drive_1920x1080.png — DRIVE tab at 16:9  [3024x1582]
+INFO     render target 2340x1080 (19.5:9)
+PASS     Safe area lies within the render target (19.5:9)  [safe (x:0.00, y:0.00, width:2340.00, height:1080.00) view (x:0.00, y:0.00, width:2340.00, height:1080.00)]
+PASS     Touch targets inside safe area (19.5:9)  [13 targets, 0 outside]
+PASS     Touch targets >= 84 ref px (19.5:9)  [0 small]
+SHOT     11_drive_2340x1080.png — DRIVE tab at 19.5:9  [3024x1582]
+INFO     render target 1600x720 (20:9 low-res)
+PASS     Safe area lies within the render target (20:9 low-res)  [safe (x:0.00, y:0.00, width:1600.00, height:720.00) view (x:0.00, y:0.00, width:1600.00, height:720.00)]
+PASS     Touch targets inside safe area (20:9 low-res)  [13 targets, 0 outside]
+PASS     Touch targets >= 84 ref px (20:9 low-res)  [0 small]
+SHOT     11_drive_1600x720.png — DRIVE tab at 20:9 low-res  [3024x1582]
+PASS     Safe area lies within the render target (cutout 110 px left)  [safe (x:110.00, y:30.00, width:2250.00, height:1050.00) view (x:0.00, y:0.00, width:2400.00, height:1080.00)]
+PASS     Touch targets inside safe area (cutout 110 px left)  [13 targets, 0 outside]
+PASS     Touch targets >= 84 ref px (cutout 110 px left)  [0 small]
+SHOT     12_drive_cutout.png — DRIVE tab with a simulated 110 px left cutout  [3024x1582]
+PASS     Safe area lies within the render target (left-handed + cutout)  [safe (x:110.00, y:30.00, width:2250.00, height:1050.00) view (x:0.00, y:0.00, width:2400.00, height:1080.00)]
+PASS     Touch targets inside safe area (left-handed + cutout)  [13 targets, 0 outside]
+PASS     Touch targets >= 84 ref px (left-handed + cutout)  [0 small]
+PASS     Left-handed mode mirrors the steering stick to the right side  [stick x 1952 of 2400]
+SHOT     13_drive_left_handed.png — left-handed DRIVE layout  [3024x1582]
+PASS     No console errors or exceptions during the run
+
+Performance (Editor Play Mode on this Mac; NOT Android):
+Editor Play Mode, driving, DRIVE tab, 2400x1080: frames=168 mean_ms=35.90 fps=27.9 p95_ms=77.71 max_ms=127.56 cpu_ms=33.08 gpu_ms=3.43 alloc_MB=3002 mono_MB=76 gfx_MB=645 gc_count=223
+Editor Play Mode, parked, DATA tab: frames=111 mean_ms=36.26 fps=27.6 p95_ms=79.27 max_ms=137.37 cpu_ms=76.58 gpu_ms=5.09 alloc_MB=3043 mono_MB=78 gfx_MB=622 gc_count=227
+
+Console errors (0):

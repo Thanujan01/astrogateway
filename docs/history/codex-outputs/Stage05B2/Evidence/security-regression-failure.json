@@ -1,0 +1,97 @@
+{
+  "failure_type": "AssertionError",
+  "tests": [
+    {
+      "name": "real PostgREST independently verifies RSA JWT A/B and returns own profile",
+      "status": "PASS"
+    },
+    {
+      "name": "untrusted training metadata cannot set training level",
+      "status": "PASS"
+    },
+    {
+      "name": "anonymous has no mission RPC execution",
+      "status": "PASS"
+    },
+    {
+      "name": "gateway signed but unconfirmed account rejected independently of FastAPI",
+      "status": "PASS"
+    },
+    {
+      "name": "expired token rejected despite gateway clock skew",
+      "status": "PASS"
+    },
+    {
+      "name": "future nbf rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong audience rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong issuer rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "missing subject rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "missing session rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "privileged role rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "modified signed sub cannot forge gateway identity",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid signature cannot forge gateway identity",
+      "status": "PASS"
+    },
+    {
+      "name": "unsigned algorithm cannot forge gateway identity",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid token cannot forge gateway identity",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTP claim/identity headers cannot override signed subject",
+      "status": "PASS"
+    },
+    {
+      "name": "RPC rejects user-ID override arguments",
+      "status": "PASS"
+    },
+    {
+      "name": "no exposed session-setting RPC",
+      "status": "PASS"
+    },
+    {
+      "name": "private training schema/table not exposed in data API",
+      "status": "PASS"
+    },
+    {
+      "name": "A initializes mission through typed invoker RPC",
+      "status": "PASS"
+    },
+    {
+      "name": "duplicate launch rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "B cannot find or complete A mission through gateway",
+      "status": "PASS"
+    },
+    {
+      "name": "same user different signed Auth session cannot complete launch",
+      "status": "FAIL"
+    }
+  ]
+}

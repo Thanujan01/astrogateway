@@ -1,0 +1,7 @@
+{
+  "postgres_not_listening": true,
+  "gateway_not_listening": true,
+  "isolated_health_not_listening": true,
+  "gateway_process_verified_before_stop": true,
+  "remote_operations": false
+}

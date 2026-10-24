@@ -1,0 +1,86 @@
+{
+  "uid": 501,
+  "isolation": "macOS kernel sandbox; same UID; inherited confinement",
+  "tests": [
+    {
+      "name": "kernel read denial: /Users/kapilash/Projects/AstroGatewayAndroid/database/admin.local.env",
+      "status": "PASS"
+    },
+    {
+      "name": "kernel read denial: /Users/kapilash/Projects/AstroGatewayAndroid/backend/.env",
+      "status": "PASS"
+    },
+    {
+      "name": "kernel read denial: /Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage05b2/private/lab.json",
+      "status": "PASS"
+    },
+    {
+      "name": "kernel read denial: /Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage05b2/private/issuer.key",
+      "status": "PASS"
+    },
+    {
+      "name": "kernel read denial: /Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage05b2/private/postgrest.conf",
+      "status": "PASS"
+    },
+    {
+      "name": "no forbidden inherited environment",
+      "status": "PASS"
+    },
+    {
+      "name": "exec child retains file confinement",
+      "status": "PASS"
+    },
+    {
+      "name": "kernel outbound denial 127.0.0.1:5432",
+      "status": "PASS"
+    },
+    {
+      "name": "kernel outbound denial 127.0.0.1:9",
+      "status": "PASS"
+    },
+    {
+      "name": "kernel outbound denial 1.1.1.1:443",
+      "status": "PASS"
+    },
+    {
+      "name": "parent environment process inspection denied",
+      "status": "PASS"
+    },
+    {
+      "name": "cannot signal operator parent",
+      "status": "PASS"
+    },
+    {
+      "name": "scratch symlink cannot escape file boundary",
+      "status": "PASS"
+    },
+    {
+      "name": "cannot modify trusted code or confinement policy: /Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage07a/runtime/main.py",
+      "status": "PASS"
+    },
+    {
+      "name": "cannot modify trusted code or confinement policy: /Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage07a/runtime.sb",
+      "status": "PASS"
+    },
+    {
+      "name": "privileged system operation unavailable",
+      "status": "PASS"
+    },
+    {
+      "name": "nested sandbox cannot widen child access",
+      "status": "PASS"
+    },
+    {
+      "name": "staged actual application imports",
+      "status": "PASS"
+    }
+  ],
+  "environment_keys": [
+    "HOME",
+    "LANG",
+    "PATH",
+    "PYTHONDONTWRITEBYTECODE",
+    "PYTHONNOUSERSITE",
+    "TMPDIR"
+  ]
+}

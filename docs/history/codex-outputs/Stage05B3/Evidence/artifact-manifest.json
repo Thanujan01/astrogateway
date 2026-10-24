@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-09",
+  "remote_operations": false,
+  "review_artifacts": {
+    "prepare_runtime_tests.py": "b8da978a432efe9d79bc18de60a7d4fd1141d0026a29d0643714cc3ce7757609",
+    "fixture-verification-public.pem": "8e0523e3ee032620a7b24c6fa681f7c68176650023723d193a43bd8549f6a2d4",
+    "test_isolated_api.py": "7f14a8085d7c9dd174ce83b04ad350812851ae5fd06ba929c9146372aa4501b7",
+    "runtime.sb": "23fcc4e4c651bc83a937189dade03735522d56d2d065f4cfd1d389674eb312ee",
+    "serve.py": "ccfe2ad99f35c8289b502e2ff757f402f3630b37a51ad7ee34f8941bbad6684b",
+    "launch.py": "35595112101e299d7adeaa827b9a4d071567d3d9fed87d88861d3ddf3612085c",
+    "prepare_isolation.py": "2215cd19d57862c187ddc82b44c5969c2d43e0faf9a2e2804df5a233a49b0518",
+    "probe.py": "a7569682c3acc9e5e62b6f3bb2ef89351747cb75aefde53c4b76f4eee31eeae4",
+    "Hosted_Read_Only_Inventory.sql": "6a38b81bd15ac0ebb14ce4c3f7ec718686fa211e48ddb261b15ace82ee908244",
+    "unit_probe.py": "0e52290e8d499092bde90eb84bc76daec38665e256223663fccebbd0b96d6c46",
+    "integration_probe.py": "a03401579ede9e6961c694b629dddf21a7208661564ba40cee9b3622a5d10ed6",
+    "service_health.py": "11dbbeb45d599ad3a093a505191a690b421a4635b71d7449dfdfdd3ed8825394"
+  },
+  "sql_manifest_unchanged": {
+    "target": "jvkwofmxtxjhdwtwdboz",
+    "remote_approved": false,
+    "files": {
+      "000_read_only_preflight.sql": "10a0b57a34de6491bbd8367d86545234310c45ebfa8aa3f5ce08db27aa198eea",
+      "001_verified_jwt_training.sql": "f88737a63921642a6646c6883906f820491a7b422a747863aa4b1681f656bd3b",
+      "002_retire_direct_runtime.sql": "9e76d544a44a0815ea4d0263d15be381bba646aa1d68e1cf38dbaf26a19fc22f",
+      "003_read_only_verification.sql": "ee46f60ae220ffa929214e9725020ca115905be0549ff2e2894ea7872839138d"
+    }
+  }
+}

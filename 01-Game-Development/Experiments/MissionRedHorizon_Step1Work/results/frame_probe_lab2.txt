@@ -1,0 +1,8 @@
+t 0s frames 0 elapsed 0.02 pos (-42.00, 0.10, -68.00)
+t 5s frames 142 elapsed 4.73 pos (-42.00, 0.04, -68.00)
+t 10s frames 292 elapsed 9.73 pos (-42.00, 0.04, -68.00)
+t 15s frames 414 elapsed 13.81 pos (-42.00, 0.04, -68.00)
+--- pushing into dome
+collider SphereCollider Laboratory Dome
+cc skin 0.04 step 0.3 slope 32
+t 20s frames 551 elapsed 18.37 pos (-20.00, 0.00, -38.00)

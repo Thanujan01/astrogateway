@@ -1,0 +1,127 @@
+{
+  "local_only": true,
+  "synthetic_users_only": true,
+  "remote_writes": false,
+  "checks": [
+    {
+      "name": "lab is localhost database",
+      "result": "PASS"
+    },
+    {
+      "name": "local migration applies",
+      "result": "PASS"
+    },
+    {
+      "name": "repeat refuses collision transactionally",
+      "result": "PASS"
+    },
+    {
+      "name": "A own display-name update retains UUID",
+      "result": "PASS"
+    },
+    {
+      "name": "B own update isolated",
+      "result": "PASS"
+    },
+    {
+      "name": "A reads only A",
+      "result": "PASS"
+    },
+    {
+      "name": "B reads only B",
+      "result": "PASS"
+    },
+    {
+      "name": "A cannot update B even with direct WHERE override",
+      "result": "PASS"
+    },
+    {
+      "name": "cannot alter training level",
+      "result": "PASS"
+    },
+    {
+      "name": "cannot alter user UUID",
+      "result": "PASS"
+    },
+    {
+      "name": "invalid short name rejected",
+      "result": "PASS"
+    },
+    {
+      "name": "invalid oversize name rejected",
+      "result": "PASS"
+    },
+    {
+      "name": "invalid control name rejected",
+      "result": "PASS"
+    },
+    {
+      "name": "invalid null name rejected",
+      "result": "PASS"
+    },
+    {
+      "name": "expired identity denied",
+      "result": "PASS"
+    },
+    {
+      "name": "unconfirmed identity denied",
+      "result": "PASS"
+    },
+    {
+      "name": "authenticated remains NOLOGIN/NOBYPASSRLS",
+      "result": "PASS"
+    },
+    {
+      "name": "exposed updater is invoker with fixed empty search path",
+      "result": "PASS"
+    },
+    {
+      "name": "anon/PUBLIC cannot execute updater",
+      "result": "PASS"
+    },
+    {
+      "name": "untrusted DB role session settings grant no profile authority",
+      "result": "PASS"
+    },
+    {
+      "name": "retired runtime credentials still NOLOGIN",
+      "result": "PASS"
+    },
+    {
+      "name": "real independent JWT gateway own update Gateway A",
+      "result": "PASS"
+    },
+    {
+      "name": "real independent JWT gateway own update Gateway B",
+      "result": "PASS"
+    },
+    {
+      "name": "gateway rejects user-ID injection",
+      "result": "PASS"
+    },
+    {
+      "name": "independent gateway rejects forged JWT",
+      "result": "PASS"
+    },
+    {
+      "name": "independent gateway rejects expired JWT",
+      "result": "PASS"
+    },
+    {
+      "name": "independent gateway rejects malformed JWT",
+      "result": "PASS"
+    },
+    {
+      "name": "unauthenticated gateway edit denied",
+      "result": "PASS"
+    },
+    {
+      "name": "rollback removes edit privileges and function",
+      "result": "PASS"
+    },
+    {
+      "name": "local migration reapplies after rollback",
+      "result": "PASS"
+    }
+  ]
+}

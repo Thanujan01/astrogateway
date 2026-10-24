@@ -1,0 +1,13 @@
+{
+  "host": "aws-0-ap-southeast-2.pooler.supabase.com",
+  "port": 5432,
+  "postgresql_authentication_attempted": false,
+  "database_modified": false,
+  "dns_resolved": true,
+  "tcp_connected": true,
+  "postgres_ssl_supported": true,
+  "probe_failure_type": "SSLCertVerificationError",
+  "tls_verified": false,
+  "certificate_error_code": 19,
+  "certificate_error_reason": "self-signed certificate in certificate chain"
+}

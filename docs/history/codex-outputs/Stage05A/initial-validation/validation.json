@@ -1,0 +1,54 @@
+{
+  "screens": [
+    "Splash",
+    "Welcome",
+    "Sign up",
+    "Sign in",
+    "Dashboard",
+    "Astronaut profile",
+    "Training progress",
+    "Settings",
+    "Missions",
+    "Launch"
+  ],
+  "navigation": [
+    "Sign up \u2192 Welcome via Back",
+    "Astronaut profile \u2192 Dashboard via Back",
+    "Training progress \u2192 Dashboard via Back",
+    "Settings \u2192 Dashboard via Back",
+    "Launch \u2192 Missions \u2192 Dashboard via Back"
+  ],
+  "cycles": [
+    {
+      "cycle": 1,
+      "launch_id": "88f4c0eb-44a1-416e-8557-6f4b52e7d08b",
+      "return_method": "button",
+      "native_to_unity": true,
+      "ack": true,
+      "result": true,
+      "dashboard_return": true,
+      "host_pid_preserved": true,
+      "unity_pid_reused": true
+    },
+    {
+      "cycle": 2,
+      "launch_id": "bbaa9264-76ba-4e7b-a394-92c44a82464e",
+      "return_method": "key",
+      "native_to_unity": true,
+      "ack": true,
+      "result": true,
+      "dashboard_return": true,
+      "host_pid_preserved": true,
+      "unity_pid_reused": true
+    }
+  ],
+  "passed": false,
+  "installation": "Performing Streamed Install\nSuccess\n",
+  "model": "sdk_gphone64_arm64",
+  "android": "16",
+  "host_launch": "Starting: Intent { cmp=com.sk2lb.astrogateway.poc/.MainActivity }\nStatus: ok\nLaunchState: COLD\nActivity: com.sk2lb.astrogateway.poc/.MainActivity\nTotalTime: 602\nWaitTime: 605\nComplete\n",
+  "error": "Log timeout",
+  "fatal_exception": false,
+  "fatal_signal": false,
+  "anr": false
+}

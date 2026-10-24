@@ -1,0 +1,16 @@
+PASS
+First Mission build 2026-10-20 23:05:40
+source (read only): Assets/AstroGateway/VisualUpgrade/Scenes/Mars_VisualUpgrade_v1.unity
+variant: Assets/AstroGateway/FirstMission/Prefabs/ARES_VI_FirstMission.prefab (base Assets/AstroGateway/VehicleShowroom/ARES_VI/Upgraded/ARES_VI_Upgraded.prefab); Animator disabled; 4 hover plumes inactive; is variant: True
+registry: Assets/AstroGateway/FirstMission/Settings/FirstMissionRegistry.asset mission_id=ag.mars.red-horizon.surface-ops (Visual Upgrade keeps mission.red_horizon.visual_upgrade.v1)
+TERRAVEX renderers hidden: 83; ARES-VI variant instance under Rover_DrivableKinematicPrototype scale 0.9
+gameplay collider unchanged: CharacterController radius 1.15 height 2.3 center (0.00, 1.15, 0.00) layer 8
+ARES visual bounds size (2.61, 2.45, 2.97) min.y 0.000 (relative to rover origin)
+station site_3 'Solar inspection' at (25.00, 0.40, -43.00) distance 64.0 m
+station site_4 'Communications inspection' at (-16.00, 0.51, -24.00) distance 69.0 m
+station site_0 'Rock sample station' at (35.00, 0.42, 23.00) distance 126.3 m
+station site_1 'Soil crater sampler' at (55.00, 0.73, 37.00) distance 147.6 m
+station site_2 'Ridge mineral sensor' at (0.00, 1.80, 74.00) distance 167.7 m
+designated research site: site_3 Solar inspection
+mast cam eye (rover-local) (0.38, 2.42, -0.15)
+camera: VisualUpgradeCameraRig disabled in this scene, FirstMissionCameraRig added (same collision solver); control layer added

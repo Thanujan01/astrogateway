@@ -1,0 +1,3 @@
+Actual project=/Users/kapilash/Projects/MissionRedHorizon/Assets
+Saved scene=Assets/AstroGateway/ProductionVisual/Scenes/Mars_ProductionVisual_v1.unity
+Bound actors/adapters and no missing scripts: PASS

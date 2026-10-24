@@ -1,0 +1,225 @@
+{
+  "native_postgres": true,
+  "gateway": "PostgREST16.4",
+  "live_supabase": false,
+  "remote_write": false,
+  "tests": [
+    {
+      "name": "real PostgREST independently verifies RSA JWT A/B and returns own profile",
+      "status": "PASS"
+    },
+    {
+      "name": "untrusted training metadata cannot set training level",
+      "status": "PASS"
+    },
+    {
+      "name": "anonymous has no mission RPC execution",
+      "status": "PASS"
+    },
+    {
+      "name": "gateway signed but unconfirmed account rejected independently of FastAPI",
+      "status": "PASS"
+    },
+    {
+      "name": "expired token rejected despite gateway clock skew",
+      "status": "PASS"
+    },
+    {
+      "name": "future nbf rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong audience rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong issuer rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "missing subject rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "missing session rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "privileged role rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "modified signed sub cannot forge gateway identity",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid signature cannot forge gateway identity",
+      "status": "PASS"
+    },
+    {
+      "name": "unsigned algorithm cannot forge gateway identity",
+      "status": "PASS"
+    },
+    {
+      "name": "invalid token cannot forge gateway identity",
+      "status": "PASS"
+    },
+    {
+      "name": "HTTP claim/identity headers cannot override signed subject",
+      "status": "PASS"
+    },
+    {
+      "name": "RPC rejects user-ID override arguments",
+      "status": "PASS"
+    },
+    {
+      "name": "no exposed session-setting RPC",
+      "status": "PASS"
+    },
+    {
+      "name": "private training schema/table not exposed in data API",
+      "status": "PASS"
+    },
+    {
+      "name": "A initializes mission through typed invoker RPC",
+      "status": "PASS"
+    },
+    {
+      "name": "duplicate launch rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "B cannot find or complete A mission through gateway",
+      "status": "PASS"
+    },
+    {
+      "name": "same user different signed Auth session cannot complete launch",
+      "status": "PASS"
+    },
+    {
+      "name": "A completion succeeds and receipt is idempotent",
+      "status": "PASS"
+    },
+    {
+      "name": "mission RPC rejects owner override",
+      "status": "PASS"
+    },
+    {
+      "name": "native restricted attacker password login succeeds for actual privilege tests",
+      "status": "PASS"
+    },
+    {
+      "name": "restricted raw credential denied forged context profile",
+      "status": "PASS"
+    },
+    {
+      "name": "restricted raw credential denied forged context mission",
+      "status": "PASS"
+    },
+    {
+      "name": "restricted raw credential denied forged context RPC",
+      "status": "PASS"
+    },
+    {
+      "name": "restricted raw credential denied Auth users",
+      "status": "PASS"
+    },
+    {
+      "name": "restricted raw credential denied SET authenticated",
+      "status": "PASS"
+    },
+    {
+      "name": "restricted raw credential denied SET owner",
+      "status": "PASS"
+    },
+    {
+      "name": "restricted raw credential denied SET gateway",
+      "status": "PASS"
+    },
+    {
+      "name": "restricted raw credential denied schema creation",
+      "status": "PASS"
+    },
+    {
+      "name": "restricted raw credential denied role creation",
+      "status": "PASS"
+    },
+    {
+      "name": "restricted raw credential denied disable RLS",
+      "status": "PASS"
+    },
+    {
+      "name": "row_security off is not an authorization bypass",
+      "status": "PASS"
+    },
+    {
+      "name": "exposed RPCs are invokers with fixed paths",
+      "status": "PASS"
+    },
+    {
+      "name": "schema/table owner is non-login and non-bypass",
+      "status": "PASS"
+    },
+    {
+      "name": "authenticated has no raw password login",
+      "status": "PASS"
+    },
+    {
+      "name": "astrogateway_schema_owner has no raw password login",
+      "status": "PASS"
+    },
+    {
+      "name": "native RLS A cannot select B profile",
+      "status": "PASS"
+    },
+    {
+      "name": "native RLS B cannot select A missions",
+      "status": "PASS"
+    },
+    {
+      "name": "authenticated least privilege denies profile elevation",
+      "status": "PASS"
+    },
+    {
+      "name": "authenticated least privilege denies truncate",
+      "status": "PASS"
+    },
+    {
+      "name": "authenticated least privilege denies delete",
+      "status": "PASS"
+    },
+    {
+      "name": "authenticated least privilege denies owner change",
+      "status": "PASS"
+    },
+    {
+      "name": "authenticated least privilege denies expiry change",
+      "status": "PASS"
+    },
+    {
+      "name": "dedicated owner defaults deny future RPC execution",
+      "status": "PASS"
+    },
+    {
+      "name": "revoke derived signed session succeeds",
+      "status": "PASS"
+    },
+    {
+      "name": "revoked original JWT denied at data boundary without FastAPI",
+      "status": "PASS"
+    },
+    {
+      "name": "independent user session unaffected by revocation",
+      "status": "PASS"
+    },
+    {
+      "name": "20 interleaved pooled gateway requests retain signed-user isolation",
+      "status": "PASS"
+    }
+  ],
+  "remaining_risks": [
+    "Trusted provider gateway/admin credentials and signing authority excluded",
+    "Compromised app can misuse observed valid user tokens",
+    "Actual development service lacks OS/filesystem separation from saved admin file"
+  ]
+}

@@ -1,0 +1,44 @@
+Scene path: PASS
+Separate production save namespace: PASS
+Existing actor identity references: PASS
+No missing scripts: PASS
+Render materials supported: PASS
+Six detailed wheel LOD groups: PASS
+Wheel reductions meaningful: PASS
+Geodesic panels assigned: PASS
+Roughness channels packed: PASS
+Future robot is honest unavailable: PASS
+Only existing follow camera renders gameplay: PASS
+Quality config 0: PASS
+Quality config 1: PASS
+Quality config 2: PASS
+Quality config 3: PASS
+PC W event reaches original movement: PASS
+PC RMB event changes orbit yaw: PASS
+Orbit follows existing yaw: PASS
+Camera obstruction detected: PASS
+Camera kept outside wall: PASS
+Board/exit cycle 0: PASS
+Board/exit cycle 1: PASS
+Board/exit cycle 2: PASS
+Board/exit cycle 3: PASS
+Board/exit cycle 4: PASS
+Board/exit cycle 5: PASS
+Board/exit cycle 6: PASS
+Board/exit cycle 7: PASS
+Board/exit cycle 8: PASS
+Board/exit cycle 9: PASS
+Cinematic mode input lock: PASS
+Cinematic returns same astronaut: PASS
+Drive advances original physics: PASS
+Measured rover travel m=2.395157 wheel angle error deg=3.051758E-05
+Wheel visuals use measured travel: PASS
+Existing braking: PASS
+Safe exit: PASS
+Scanner projection: PASS
+Scientific scan recorded: PASS
+Scientific report source: PASS
+Local save load: PASS
+No cloud sync claim: PASS
+Control tuning blocks input: PASS
+Control tuning restores mode: PASS

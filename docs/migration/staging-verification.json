@@ -1,0 +1,18 @@
+{
+  "source_files": 9592,
+  "staged_bytes": 2097488561,
+  "verified_hashes": 9592,
+  "redacted_files": 5,
+  "original_readme_commit": "cb45c29c27826a7d8b748e6cd140386c650833a4",
+  "groups": {
+    "01-Game-Development": 7925,
+    "02-Software-Development": 523,
+    "docs": 1144
+  },
+  "secret_scan": "passed; four SHA-256 checksum false positives allowlisted by exact 64-hex format",
+  "exact_local_credential_value_scan": "passed",
+  "generated_evidence_media_files_retained_locally": 1119,
+  "archive_unique_files_recovered": 114,
+  "scope": "source snapshots; original local Git histories remain in their original repositories",
+  "application_builds_and_tests": "not run"
+}

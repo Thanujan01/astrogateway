@@ -1,0 +1,13 @@
+
+> astrogateway@0.0.0 test
+> vitest run
+
+
+ RUN  v5.0.3 /Users/kapilash/Projects/astrogateway
+
+
+ Test Files  2 passed (2)
+      Tests  34 passed (34)
+   Start at  20:34:34
+   Duration  1.26s (environment 53%, tests 25%, setup 8%, import 7%, transform 7%)
+

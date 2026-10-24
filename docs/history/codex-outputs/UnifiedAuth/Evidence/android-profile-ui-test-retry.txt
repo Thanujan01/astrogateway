@@ -1,0 +1,8 @@
+INSTRUMENTATION_RESULT: cancel=PASS no profile mutation
+INSTRUMENTATION_RESULT: classification=TEST APK synthetic UI only; no SDK session, live account or successful backend save
+INSTRUMENTATION_RESULT: error=PASS safe error shown; retry enabled
+INSTRUMENTATION_RESULT: loading=PASS Save/Cancel disabled during synthetic busy state
+INSTRUMENTATION_RESULT: prefill=PASS synthetic UI
+INSTRUMENTATION_RESULT: protected_editor=PASS signed-out state denied
+INSTRUMENTATION_RESULT: validation=PASS short name rejected before request
+INSTRUMENTATION_CODE: -1

@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "rules_version": "mission-rules-1.0.0-proposed",
+  "status": "PROPOSED DEFAULTS - pending scientific review and owner approval. Simulation values, not Mars measurements.",
+
+  "missions": {
+    "canonical": [
+      {
+        "mission_id": "ag.mars.red-horizon.surface-ops",
+        "version": 1,
+        "title": "Red Horizon surface operations",
+        "difficulties": [0, 1, 2],
+        "focus_skills": ["observation", "rover_operation", "life_support", "weather_safety", "mission_planning"],
+        "required_scans": 5,
+        "target_duration_s": 900,
+        "max_duration_s": 1800,
+        "storm_scenario_from_difficulty": 2
+      }
+    ],
+    "aliases": [
+      {"alias": "mission-red-horizon-poc", "canonical": "ag.mars.red-horizon.surface-ops", "source": "backend database + Android shell (Stage05B2)"},
+      {"alias": "mission.red_horizon.slice", "canonical": "ag.mars.red-horizon.surface-ops", "source": "Unity NativeControlSlice registry", "build_variant": "native_control_slice"},
+      {"alias": "mission.red_horizon.research_base.v1", "canonical": "ag.mars.red-horizon.surface-ops", "source": "Unity MarsEnvironment registry", "build_variant": "research_base_v1"},
+      {"alias": "mission.red_horizon.visual_polish.v2", "canonical": "ag.mars.red-horizon.surface-ops", "source": "Unity MarsVisualPolish registry", "build_variant": "visual_polish_v2"},
+      {"alias": "mission.red_horizon.cinematic_hud.v1", "canonical": "ag.mars.red-horizon.surface-ops", "source": "Unity CinematicHUD registry", "build_variant": "cinematic_hud_v1"},
+      {"alias": "mission.red_horizon.production_visual.v1", "canonical": "ag.mars.red-horizon.surface-ops", "source": "Unity ProductionVisual registry", "build_variant": "production_visual_v1"}
+    ],
+    "learning_modules": [
+      {"module_id": "learn.dust-storm-protocols", "skill": "weather_safety", "title": "Dust storm protocols: shelter, visibility and return"},
+      {"module_id": "learn.suit-oxygen-budgeting", "skill": "life_support", "title": "Suit oxygen budgeting and turnaround points"},
+      {"module_id": "learn.observation-vs-inference", "skill": "observation", "title": "Recording observations before interpretations"},
+      {"module_id": "learn.rover-egress-safety", "skill": "rover_operation", "title": "Rover stop, egress and boarding checks"},
+      {"module_id": "learn.traverse-planning", "skill": "mission_planning", "title": "Planning a traverse within time and consumable limits"}
+    ]
+  },
+
+  "life_support": {
+    "units": "oxygen mass in kg, rates in kg per simulated hour, time in seconds",
+    "time_compression": 20.0,
+    "suit_o2_capacity_kg": 0.60,
+    "start_fraction": 1.0,
+    "leak_rate_kg_per_h": 0.002,
+    "activity_rate_kg_per_h": {
+      "idle": 0.035,
+      "scanning": 0.045,
+      "driving": 0.040,
+      "walking": 0.060,
+      "running": 0.095
+    },
+    "weather_workload_multiplier": {"clear": 1.0, "light_dust": 1.05, "dust_storm": 1.15},
+    "thresholds_fraction": {"caution": 0.30, "warning": 0.15, "critical": 0.05},
+    "penalties_enabled": false
+  },
+
+  "weather": {
+    "units": "optical depth tau (dimensionless), wind m/s, temperature deg C, visibility m (gameplay)",
+    "states": {
+      "clear":      {"tau": 0.5, "wind_mps": 5.0,  "gust_mps": 10.0, "visibility_m": 280, "temp_offset_c": 0.0},
+      "light_dust": {"tau": 1.5, "wind_mps": 10.0, "gust_mps": 18.0, "visibility_m": 130, "temp_offset_c": 2.0},
+      "dust_storm": {"tau": 4.0, "wind_mps": 18.0, "gust_mps": 28.0, "visibility_m": 48,  "temp_offset_c": 6.0}
+    },
+    "diurnal_temperature_c": {"min": -80.0, "max": -10.0, "peak_hour": 14.0},
+    "solar_power_extinction_k": 0.35,
+    "advisory_by_state": {"clear": "nominal", "light_dust": "caution", "dust_storm": "shelter"},
+    "scenarios": {
+      "0": [{"start_s": 0, "state": "clear"}],
+      "1": [{"start_s": 0, "state": "clear"}, {"start_s": 300, "state": "light_dust"}, {"start_s": 600, "state": "clear"}],
+      "2": [{"start_s": 0, "state": "clear"}, {"start_s": 240, "state": "light_dust"}, {"start_s": 360, "state": "dust_storm"}, {"start_s": 600, "state": "light_dust"}, {"start_s": 720, "state": "clear"}]
+    },
+    "effects_enabled": false
+  },
+
+  "scoring": {
+    "formula": "score = 100 * sum(weight_i * subscore_i), subscore_i in [0,1], weights sum to 1",
+    "weights": {"observation": 0.35, "life_support": 0.25, "weather_safety": 0.20, "rover_operation": 0.10, "mission_planning": 0.10},
+    "rover_operation_target_cycles": 1,
+    "weather_safety_no_storm_value": "not_assessed",
+    "grade_bands": [
+      {"min": 85, "label": "Excellent"},
+      {"min": 70, "label": "Proficient"},
+      {"min": 50, "label": "Developing"},
+      {"min": 0,  "label": "Needs practice"}
+    ],
+    "evidence_sources": "server-timestamped commands only; client tick, oxygen and position values are ignored"
+  },
+
+  "skills": {
+    "skills": ["observation", "life_support", "weather_safety", "rover_operation", "mission_planning"],
+    "demonstration_threshold": 0.70,
+    "rolling_window": 5,
+    "levels": [
+      {"level": 0, "name": "Novice",     "min_demonstrations": 0, "min_distinct_sessions": 0, "min_rolling_mean": 0.0,  "min_difficulty_demonstrated": 0},
+      {"level": 1, "name": "Developing", "min_demonstrations": 1, "min_distinct_sessions": 1, "min_rolling_mean": 0.50, "min_difficulty_demonstrated": 0},
+      {"level": 2, "name": "Proficient", "min_demonstrations": 3, "min_distinct_sessions": 3, "min_rolling_mean": 0.75, "min_difficulty_demonstrated": 1},
+      {"level": 3, "name": "Advanced",   "min_demonstrations": 5, "min_distinct_sessions": 5, "min_rolling_mean": 0.85, "min_difficulty_demonstrated": 2}
+    ],
+    "trainee_level_rule": "minimum level across assessed skills (conservative)"
+  },
+
+  "recommendations": {
+    "engine": "rules-v1",
+    "raise_difficulty_after_scores": [85, 85],
+    "lower_difficulty_after_scores": [50, 50],
+    "max_difficulty": 2,
+    "learning_module_when_subscore_below": 0.5
+  }
+}

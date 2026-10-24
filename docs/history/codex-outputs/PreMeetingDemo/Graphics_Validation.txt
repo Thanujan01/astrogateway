@@ -1,0 +1,6 @@
+Low scale=0.65 shadows=512 distance=20 MSAA=1 mips=2 LOD=0.6 cap=30
+Balanced scale=0.8 shadows=1024 distance=35 MSAA=2 mips=1 LOD=1 cap=30
+High scale=1 shadows=2048 distance=50 MSAA=4 mips=0 LOD=1.5 cap=60
+Ultra Preview scale=1 shadows=4096 distance=75 MSAA=4 mips=0 LOD=2 cap=60
+Glass material slots mapped=36
+Save/reload PASS; batch Editor camera renders, not gameplay/FPS evidence

@@ -1,0 +1,14 @@
+{
+  "local_setup_ready": true,
+  "server_origin": "http://127.0.0.1:8000",
+  "emulator_origin": "http://10.0.2.2:8000",
+  "live_authentication_passed": false,
+  "production_migrations_applied": false,
+  "server_pid": 32534,
+  "missing": [
+    "approved non-production project identification and URL/publishable key",
+    "authorized test DB catalogue and migration/provisioning access",
+    "restricted runtime DB URI",
+    "approved account credentials and inbox workflow"
+  ]
+}

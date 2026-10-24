@@ -1,0 +1,7 @@
+{
+  "administrative_env": "PASS denied by runtime sandbox",
+  "android_private_config": "PASS denied by runtime sandbox",
+  "network": "PASS denied",
+  "environment": "PASS cleared",
+  "source_write": "PASS denied"
+}

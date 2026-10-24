@@ -1,0 +1,10 @@
+{
+  "expected_ca_path_exists": false,
+  "discovered_ca_path": "/Users/kapilash/Projects/AstroGatewayAndroid/backend/certs/prod-ca-2021 (1).crt",
+  "loaded_ca_count": 1,
+  "chain_and_hostname_verified": true,
+  "legacy_ca_profile_compatibility": true,
+  "certificate_verification_required": true,
+  "hostname_checking": true,
+  "tls_version": "TLSv1.3"
+}

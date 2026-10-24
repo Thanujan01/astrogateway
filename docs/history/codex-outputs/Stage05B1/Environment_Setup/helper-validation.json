@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "checks": [
+    "Quoted values preserved without shell expansion",
+    "Non-owner-only configuration rejected",
+    "Unknown configuration keys rejected",
+    "Launcher syntax checked"
+  ],
+  "live_authentication_tested": false
+}

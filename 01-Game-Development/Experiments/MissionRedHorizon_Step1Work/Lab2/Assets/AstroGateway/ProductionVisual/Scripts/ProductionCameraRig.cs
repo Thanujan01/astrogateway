@@ -1,0 +1,11 @@
+using UnityEngine;using AstroGateway.CinematicHUD;
+namespace AstroGateway.ProductionVisual {
+ [DefaultExecutionOrder(520)]public class ProductionCameraRig:MonoBehaviour {
+ public AstroGatewayHUDController hud;public ProductionModeCoordinator modes;public bool nearChase,captureOverride;public Vector3 capturePosition,captureTarget;public float clearance=.24f;public Vector3 LastTarget;public bool LastObstructed;Vector3 smoothed;Quaternion rotation;bool initialized;
+ void LateUpdate(){var p=hud.game.prototype;var cam=p.follow;if(!cam)return;Vector3 target=p.ActivePosition()+Vector3.up*(p.driving?1.45f:1.4f),desired;float fov=p.driving?61:55;
+ if(captureOverride){desired=capturePosition;target=captureTarget;fov=58;}else if(modes.Current==ProductionMode.Cinematic){desired=hud.environment.scenic.transform.position;target=new Vector3(-36,4,-43);fov=58;}else if(modes.Current==ProductionMode.Scanner&&hud.CurrentTarget()){var t=hud.CurrentTarget().transform.position+Vector3.up*.5f;target=Vector3.Lerp(target,t,.6f);desired=p.ActivePosition()+Quaternion.Euler(12,p.yaw-25,0)*new Vector3(0,2,-3.4f);fov=49;}else desired=target+Quaternion.Euler(p.pitch,p.yaw,0)*new Vector3(.35f,.15f,-(p.driving?(nearChase?5.5f:7.5f):4.8f));
+ LastTarget=target;LastObstructed=false;Vector3 d=desired-target;float distance=d.magnitude;if(distance>.01f&&Physics.SphereCast(target,clearance,d.normalized,out var hit,distance,1<<0,QueryTriggerInteraction.Ignore)){desired=target+d.normalized*Mathf.Max(.35f,hit.distance-.12f);LastObstructed=true;}
+ if(!initialized){smoothed=cam.transform.position;rotation=cam.transform.rotation;initialized=true;}float blend=1-Mathf.Exp(-7*Time.unscaledDeltaTime);smoothed=Vector3.Lerp(smoothed,desired,blend);var safe=smoothed-target;if(safe.magnitude>.01f&&Physics.SphereCast(target,clearance,safe.normalized,out var sweep,safe.magnitude,1<<0,QueryTriggerInteraction.Ignore)){smoothed=target+safe.normalized*Mathf.Max(.35f,sweep.distance-.12f);LastObstructed=true;}
+ var aim=Quaternion.LookRotation(target-smoothed,Vector3.up);rotation=Quaternion.Slerp(rotation,aim,blend);cam.transform.SetPositionAndRotation(smoothed,rotation);cam.fieldOfView=Mathf.Lerp(cam.fieldOfView,fov,blend);hud.environment.scenic.enabled=false;cam.enabled=true;}
+ }
+}

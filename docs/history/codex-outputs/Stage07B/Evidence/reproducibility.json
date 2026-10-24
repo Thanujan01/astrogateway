@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "identical_artifacts": {
+    "Evidence/baseline_model.json": true,
+    "Evidence/baseline_evaluation.json": true,
+    "Datasets/synthetic_training.jsonl": true,
+    "Datasets/synthetic_scenarios.json": true
+  },
+  "meaning": "Exact same benchmark replay under offline sandbox; not an independent evaluation cohort"
+}

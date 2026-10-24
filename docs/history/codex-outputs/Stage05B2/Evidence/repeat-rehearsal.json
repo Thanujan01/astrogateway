@@ -1,0 +1,38 @@
+{
+  "localhost_only": true,
+  "auth_users_retained": true,
+  "tests": [
+    {
+      "name": "fresh migration refuses installed-object collision without overwrite",
+      "status": "PASS"
+    },
+    {
+      "name": "local dependency-ordered teardown preserves Auth rows",
+      "status": "PASS"
+    },
+    {
+      "name": "no application schema/owner left after local down",
+      "status": "PASS"
+    },
+    {
+      "name": "late trigger collision rolls back tables/schema/owner atomically",
+      "status": "PASS"
+    },
+    {
+      "name": "null backfill late failure rolls back new role/schema/trigger",
+      "status": "PASS"
+    },
+    {
+      "name": "clean candidate install/re-quarantine after local rollback succeeds",
+      "status": "PASS"
+    },
+    {
+      "name": "fixture Auth administrator trigger still creates bounded default trainee",
+      "status": "PASS"
+    },
+    {
+      "name": "quarantine remains NOLOGIN with no memberships",
+      "status": "PASS"
+    }
+  ]
+}

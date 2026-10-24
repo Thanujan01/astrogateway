@@ -1,0 +1,12 @@
+{
+  "source_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/PSP/ORB_010500_010599/PSP_010502_2090/PSP_010502_2090_RED.LBL",
+  "approval": "One public NASA PDS metadata sample <=32KB; explicit user approval",
+  "purpose": "provenance parser only; no training",
+  "initial_api_result": "HTTP503 https://pds.nasa.gov/api/search/1/products?limit=1",
+  "date": "2026-10-09",
+  "status": "DOWNLOADED",
+  "bytes": 7729,
+  "sha256": "726e8c59a4379c40512408bc8a9681ba04bd4235d139b953487ed091e15da654",
+  "retrieved_at_utc": "2026-10-09T13:14:18.803203+00:00",
+  "license_status": "Per-product license review pending; source PDS archive; no blanket third-party license inferred"
+}

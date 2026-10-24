@@ -1,0 +1,14 @@
+{
+  "live_authentication_tested": false,
+  "emulator": {
+    "/health": {
+      "exit_code": 0,
+      "response": "HTTP/1.1 200 OK\r\ndate: Thu, 08 Oct 2026 16:45:33 GMT\r\nserver: uvicorn\r\ncontent-length: 35\r\ncontent-type: application/json\r\nConnection: close\r\n\r\n{\"status\":\"configuration_required\"}"
+    },
+    "/v1/me": {
+      "exit_code": 0,
+      "response": "HTTP/1.1 401 Unauthorized\r\ndate: Thu, 08 Oct 2026 16:45:33 GMT\r\nserver: uvicorn\r\nwww-authenticate: Bearer\r\ncontent-length: 30\r\ncontent-type: application/json\r\nConnection: close\r\n\r\n{\"detail\":\"Sign-in required.\"}"
+    }
+  },
+  "passed": true
+}

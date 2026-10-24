@@ -1,0 +1,30 @@
+{
+  "astrogateway": [
+    {
+      "path": "/Users/kapilash/Projects/astrogateway/.env",
+      "exists": false
+    },
+    {
+      "path": "/Users/kapilash/Projects/astrogateway/.env.local",
+      "exists": false
+    },
+    {
+      "path": "/Users/kapilash/Projects/astrogateway/supabase/config.toml",
+      "exists": false
+    }
+  ],
+  "MissionRedHorizon": [
+    {
+      "path": "/Users/kapilash/Projects/MissionRedHorizon/.env",
+      "exists": false
+    },
+    {
+      "path": "/Users/kapilash/Projects/MissionRedHorizon/.env.local",
+      "exists": false
+    },
+    {
+      "path": "/Users/kapilash/Projects/MissionRedHorizon/supabase/config.toml",
+      "exists": false
+    }
+  ]
+}

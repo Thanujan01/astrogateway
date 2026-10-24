@@ -1,0 +1,50 @@
+Mission integration tests — 2026-10-17 05:12:05
+PASS 26  FAIL 0
+
+Scene: Assets/AstroGateway/MissionIntegration/Scenes/Mars_MissionIntegration_v1.unity
+PASS  Running the isolated integration scene
+PASS  Bridge, life-support adapter and controller wired
+PASS  Local mission session started from the registry  [mission.red_horizon.production_visual.v1]
+PASS  Backend reported as not connected
+PASS  Account shown as offline, not signed in
+PASS  Panel is labelled provisional
+PASS  No score is shown before the rubric is approved
+PASS  Recommendation is the offline default, not authoritative
+PASS  No cloud sync claim in HUD
+Captured 01_Start_Astronaut_StatusPanel
+PASS  Boarding still works in the integration scene  [Control mode updated]
+PASS  Board command queued
+PASS  Driving still works  [7.9 m]
+Captured 02_Rover_Driving_StatusPanel
+PASS  Exit still works  [Control mode updated]
+PASS  Exit command queued and revision advanced  [rev 0 → 2]
+PASS  Command serialises to the planned FastAPI body  [{"command_id":"a9ea5b64-7f7f-4f92-bb43-7965897aad2f","expected_revision":1,"kind":"exit_rover","payload":{}}]
+PASS  Command ids unique
+PASS  Scans recorded and queued as scan commands  [queued 3, game scans 3]
+PASS  Scan command carries the sample id, labelled simulated
+PASS  Skill evidence counts scans and board/exit cycles  [scans 3, rover cycles 1]
+Captured 03_After_Scans_SkillEvidence
+PASS  Weather feed and command follow the dust storm  [feed DustStorm, weather commands 1, session active]
+PASS  Default oxygen model leaves gameplay unchanged (storm rate)  [used 0.2801%, legacy expects 0.2802%]
+Captured 04_DustStorm_Oxygen_Model
+PASS  A different oxygen model can be plugged in without code changes  [used 1.0001%, model expects 1.0001%]
+PASS  Pause and resume queued, session active again
+PASS  Local save/load still works alongside the bridge  [/Users/kapilash/Library/Application Support/DefaultCompany/MissionRedHorizon_Step1Lab2/AstroGateway_ProductionVisual_v1.json]
+PASS  Status panel hides with the HUD
+Captured 05_Map_With_StatusPanel
+PASS  No errors or exceptions logged  [0 logged]
+
+Queued commands (local only, never sent):
+{"command_id":"cbd558f8-e5a4-419c-bf4e-9fdd979d3cf7","expected_revision":0,"kind":"board_rover","payload":{}}
+{"command_id":"a9ea5b64-7f7f-4f92-bb43-7965897aad2f","expected_revision":1,"kind":"exit_rover","payload":{}}
+{"command_id":"9cc095df-5b15-4111-8ad0-cbd58f4ccf94","expected_revision":2,"kind":"scan_target","payload":{"sample_id":"5b2fbd17-a0e5-42a7-97c2-b5eef4b32ac4","tick":12,"analysis":"unverified_simulated"}}
+{"command_id":"eab0a295-3b25-482b-abb1-44a89be8c499","expected_revision":3,"kind":"scan_target","payload":{"sample_id":"c5a6b3eb-e437-4240-952d-35cdda2bd564","tick":14,"analysis":"unverified_simulated"}}
+{"command_id":"cff5dca7-6530-4e7a-bee5-6ab94b165d01","expected_revision":4,"kind":"scan_target","payload":{"sample_id":"f25442fe-2d11-47be-abcd-8b16b15beff8","tick":16,"analysis":"unverified_simulated"}}
+{"command_id":"b40feafb-f1ae-49ec-afe5-5942938aa2e5","expected_revision":5,"kind":"weather_changed","payload":{"dust":2}}
+{"command_id":"3034aab7-73cc-4f9f-a742-723a619e5e2a","expected_revision":6,"kind":"weather_changed","payload":{"dust":0}}
+{"command_id":"98614dd3-f7cb-49a7-95d8-4ca41ccb8f2d","expected_revision":7,"kind":"pause","payload":{}}
+{"command_id":"772d2614-8b62-4127-9b14-c0452a5ae74c","expected_revision":8,"kind":"resume","payload":{}}
+{"command_id":"468a0917-916e-409a-99cc-b2467bb3cc69","expected_revision":9,"kind":"pause","payload":{}}
+{"command_id":"9158804f-8d66-48eb-96cc-74bc67f8a720","expected_revision":10,"kind":"resume","payload":{}}
+
+Logged errors:

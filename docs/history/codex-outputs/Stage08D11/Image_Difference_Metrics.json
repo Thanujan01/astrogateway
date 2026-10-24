@@ -1,0 +1,17 @@
+[
+  {
+    "lod": 0,
+    "meanAbsolute8bitChannelDifference": 1.1546408333333333,
+    "percentChannelsDifferenceOver10": 3.064
+  },
+  {
+    "lod": 1,
+    "meanAbsolute8bitChannelDifference": 2.003746875,
+    "percentChannelsDifferenceOver10": 4.58625
+  },
+  {
+    "lod": 2,
+    "meanAbsolute8bitChannelDifference": 2.7521204166666666,
+    "percentChannelsDifferenceOver10": 6.086854166666667
+  }
+]

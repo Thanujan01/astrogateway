@@ -1,0 +1,11 @@
+{
+  "database.py": "d417e092a3e6a4050445785e66ef1d82589f54cd5cae75fba6ba14b764b991d5",
+  "main.py": "762ceee852fbb9e736686d551a78cac8acb82544ca5f1e70d2bb6c951d8627e9",
+  "run_local.py": "ca7c6053f91346788da64dcdacee3297337eef721de8585855739a58e3fab49c",
+  ".env.example": "1bedfe279afb950375af2114609d173b69557f74d367656db28e22d5ff53a432",
+  "requirements.txt": "36315a1f6d1ec506a960465bfb3fed3a13b60869c5126e2569c5be533d5d762b",
+  "README.md": "9bf1a2428533cd790769ad414e321238a853de222231d1fa833ee7b5a414326c",
+  "tests/test_security_contract.py": "90e19692ca2b3b8893956bee3df1d19cba304932b34c9f57bc9ef2a31a2e90a4",
+  "tests/test_hardening.py": "7200ee63752230cc3cffcfbf907e01b08588b561352bea13634e4d9927699c00",
+  "tests/test_postgrest_repository.py": "66675fa399d4853d198761357ea4047be2c7aa09602ad573653a7f2e4362ecf1"
+}

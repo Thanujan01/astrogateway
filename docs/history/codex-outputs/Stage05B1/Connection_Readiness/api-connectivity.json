@@ -1,0 +1,24 @@
+{
+  "live_authentication_tested": false,
+  "supabase": {
+    "/auth/v1/health": {
+      "http_status": 200
+    },
+    "/auth/v1/settings": {
+      "http_status": 200,
+      "email_auth_enabled": true,
+      "signup_disabled": false,
+      "email_auto_confirm": false
+    }
+  },
+  "fastapi": {
+    "/health": {
+      "http_status": 200,
+      "body": "{\"status\":\"configuration_required\"}"
+    },
+    "/v1/me": {
+      "http_status": 401,
+      "body": "{\"detail\":\"Sign-in required.\"}"
+    }
+  }
+}

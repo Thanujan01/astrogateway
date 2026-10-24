@@ -1,0 +1,15 @@
+Step 4 Unity rule models — 2026-10-17 08:01:35
+PASS 12  FAIL 0
+
+PASS  Config parses and is labelled proposed  [mission-rules-1.0.0-proposed]
+PASS  Penalties and weather effects are disabled
+PASS  Unity config is identical to the backend config
+PASS  Vectors were generated from the same rules version
+PASS  Oxygen rates match backend vectors (activity × weather)  [15/15]
+PASS  Weather scenario matches backend vectors  [18/18]
+PASS  ILifeSupportModel contract: storm walking uses more O2 than clear idle
+PASS  Existing default model is unchanged (0.015 / 0.035 %/s)
+PASS  Weather feed values are labelled simulation
+PASS  Every MissionRegistry asset resolves via the alias map  [5/5]
+PASS  Backend legacy id resolves; unknown id does not
+PASS  No scene or prefab uses the new rules (not enabled)

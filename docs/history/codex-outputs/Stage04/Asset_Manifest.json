@@ -1,0 +1,492 @@
+[
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/AgricultureG01_ChamferShell.asset",
+    "bytes": 11542,
+    "sha256": "a4a78096d8223557fafae1a994991d1e2b025eeca097fcaf0316538457f6a54f"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/AgricultureG01_Ring.asset",
+    "bytes": 11548,
+    "sha256": "80f8528f8dddf735a571dd3b1564527bc4d88a1c6c7400684780731bcf8bb62b"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/AirlockShell.asset",
+    "bytes": 11527,
+    "sha256": "8da034cb12c6f1859569fff384a103d32486b66926bb4c6df7d9e5e33cdcf48d"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/C_ScienceStaging_Accent_Cyan_Combined.asset",
+    "bytes": 9522,
+    "sha256": "0127db6f86d071b55a8fba7d84d64edbad2d9da42b83a2b35f9b2da44bd84bf4"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/C_ScienceStaging_Accent_SafetyOrange_Combined.asset",
+    "bytes": 12515,
+    "sha256": "c9ac0a9ae9388ddc5b6804b374f2419ed1848bfbaa0cb2e85b75326a9b91fca1"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/C_ScienceStaging_Glass_Utility_Combined.asset",
+    "bytes": 6544,
+    "sha256": "d47a283835c825a8bfcfe9abb46581faf5c4a6c1f8a50938b823f2f2b99a09ec"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/C_ScienceStaging_Habitat_CompositeDark_Combined.asset",
+    "bytes": 12493,
+    "sha256": "48092261ba9be06738368a971a3be6562cb36a751b595248c64c781e2b67dc2f"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/C_ScienceStaging_Habitat_OffWhite_Combined.asset",
+    "bytes": 15466,
+    "sha256": "8dfd262080ddddb67813676bc8aa8175588f3c85fe70de96861d6c857ced45ef"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/C_ScienceStaging_Metal_Industrial_Combined.asset",
+    "bytes": 27239,
+    "sha256": "833efc05d3850b037e6efaa016291d5baff038b115d178d5f2bb31437105e13f"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/G_Greenhouse_Accent_Cyan_Combined.asset",
+    "bytes": 18441,
+    "sha256": "85d4a4cdd427eeab02339e4819d6a0eaa6bf10db9affcb56aaee3c31ab301ace"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/G_Greenhouse_Glass_Utility_Combined.asset",
+    "bytes": 18457,
+    "sha256": "8a2c4d49c45d615f5fa5ff1c8e62ea2008c637ca488d91be028aa1f76f10bfd3"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/G_Greenhouse_Habitat_CompositeDark_Combined.asset",
+    "bytes": 18445,
+    "sha256": "bb43960b61ac300b05bd15add7f161f246ae2c6b9568e919110b645a88a888cf"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/G_Greenhouse_Habitat_OffWhite_Combined.asset",
+    "bytes": 28051,
+    "sha256": "fa0932dea8cc99e9b38cabf7c2db98ec86ab9dea02bce9500b641fb43d493afb"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/G_Greenhouse_Metal_Industrial_Combined.asset",
+    "bytes": 128980,
+    "sha256": "35639651d8be5c54fa43c6f09ccd414889503e4fb2b80c663cc4caf2b9820e16"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/H_CommandHabitat_Accent_Cyan_Combined.asset",
+    "bytes": 21429,
+    "sha256": "7ba0aecefc48105670593c1cf32ed9c506f659a217c56ad43b863ae4301b6326"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/H_CommandHabitat_Glass_Utility_Combined.asset",
+    "bytes": 6542,
+    "sha256": "01ba7477b362d2e102718c76eea42acbb3c658cbbbe893b0a31f5a2e3f375e13"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/H_CommandHabitat_Habitat_CompositeDark_Combined.asset",
+    "bytes": 27386,
+    "sha256": "50fce87740ec517ec7405769f64cf082485a80fca1b198de3b15806612184025"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/H_CommandHabitat_Habitat_OffWhite_Combined.asset",
+    "bytes": 118210,
+    "sha256": "b6e45c1acbc946b92844020bc5d48602b8bcbb8fa6d3e3532c0311c7ca8674f9"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/H_CommandHabitat_Metal_Industrial_Combined.asset",
+    "bytes": 127256,
+    "sha256": "c032a99d828a7a3c7f3ea9ca5746df4203eafa5f4eebcc5e03849fee41c8c14a"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/HabitatH01_ChamferShell.asset",
+    "bytes": 11542,
+    "sha256": "d74682230b37e7efcba868e5609fa2153f98d74c00e4ae360d16101be003a397"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/HabitatH01_Ring.asset",
+    "bytes": 11548,
+    "sha256": "512b2dc7a1f2890f245c5f750e2c466b0cb5c75e4628aaef82c0503c1759ba74"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/P_PowerStation_Accent_Cyan_Combined.asset",
+    "bytes": 6536,
+    "sha256": "7a329f5b5414569df3cb6f65cb63c074141f6c87bb6ce9331ac68f341776095e"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/P_PowerStation_Accent_SafetyOrange_Combined.asset",
+    "bytes": 18459,
+    "sha256": "e74fefa2aa0dd22c2c5b46ac73a91496ed8c36a33e02a3721185587d91fa0ed8"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/P_PowerStation_Glass_Utility_Combined.asset",
+    "bytes": 6528,
+    "sha256": "ea1753f7fd837261ecfa63a460293b781f7d885012d16cc0ce37b356d185552d"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/P_PowerStation_Habitat_CompositeDark_Combined.asset",
+    "bytes": 18409,
+    "sha256": "ba867337b3c8a5044073f07125bceea0bf43d0d98de656f586ae75fca99b0ce9"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/P_PowerStation_Habitat_OffWhite_Combined.asset",
+    "bytes": 18444,
+    "sha256": "435b225f528a0770a86b0dfc2bba575dbf0c175aec4eaf25dda4b7ed57791152"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/P_PowerStation_Metal_Industrial_Combined.asset",
+    "bytes": 51017,
+    "sha256": "d3a83cab06063f423ca0f6d676eee3e13a702be2e62e061199a2e41a75508e7e"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/R_RoverBay_Habitat_CompositeDark_Combined.asset",
+    "bytes": 9500,
+    "sha256": "3bb9d459e2689ab606f4a3f09d731be74fcfe8d421929fce3f28346d54baaa35"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/R_RoverBay_Habitat_OffWhite_Combined.asset",
+    "bytes": 107704,
+    "sha256": "0044aa46e163eaf1cd5913abfe1d70b7953c69afa0a87edd17c5a8fa2290f2dc"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/R_RoverBay_Mars_Regolith_Dark_Combined.asset",
+    "bytes": 6487,
+    "sha256": "92459d5b040cd20927e00a6d587bbc475c012f94092b219e6032718098b3eda2"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/R_RoverBay_Mars_Rock_Basaltic_Combined.asset",
+    "bytes": 50667,
+    "sha256": "4ddbdabf73c8355f767a63fec55b7ae418be60645871b6cfc19ee0e2e02a2df2"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/R_RoverBay_Metal_Industrial_Combined.asset",
+    "bytes": 45173,
+    "sha256": "22b8b289d83a6665e95601840169fc1b1c0ba7f823b301862ec96bb103b42977"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/S_SolarArray_Habitat_CompositeDark_Combined.asset",
+    "bytes": 18465,
+    "sha256": "c88a254c48a664ebcfc1a8ef6b5b94bf215153bd2c1e1bdc0e627fd1df339e06"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/S_SolarArray_Habitat_OffWhite_Combined.asset",
+    "bytes": 6511,
+    "sha256": "de3665ab41c735ca26f5cb08e10043fb21dca2531b015808480104fa34619598"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/S_SolarArray_Metal_Industrial_Combined.asset",
+    "bytes": 384505,
+    "sha256": "aba06cd943f7fcce32c85684e97cf14d79b20d497053ff91cb9994d70de0b3fa"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Architecture/S_SolarArray_SolarPanel_Combined.asset",
+    "bytes": 98778,
+    "sha256": "ea73690d15600fcae6b0c6eb86f202ed65cf58b6f5a81f558e1d03b6a48e5582"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Editor/MarsEnvironmentBuilder.cs",
+    "bytes": 45764,
+    "sha256": "bbbe8874a527037bc62fe4c10760feac5e437919c4343118fabea053d3d2246c"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Materials/Accent_Cyan.mat",
+    "bytes": 3942,
+    "sha256": "49dcd37572c542a070ff0aa7de573b27bcd375edcc7f41cd5feb74ab137f26bc"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Materials/Accent_SafetyOrange.mat",
+    "bytes": 3954,
+    "sha256": "b369f30b5d97f36a7ce576158421a50511e1a752a096c620fedc9f16b3305e9a"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Materials/Basalt_Surface_512.png",
+    "bytes": 305865,
+    "sha256": "6ec2b6dc043637e353b539ca91145acfc3f39174f48e9ce58f60453fbca249fd"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Materials/Composite_DustPaint_512.png",
+    "bytes": 163050,
+    "sha256": "540ae70ba1f1a1e2a21bd2a47c844e0331a0c86beb484760dcf42f1bb46e48b8"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Materials/Delta_Bedding_512.png",
+    "bytes": 286524,
+    "sha256": "96c7f6a6a16ecc127c6f184382a344f16f53adef71c62fc04a5984fd6fad0629"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Materials/Delta_FracturedStrata_512.png",
+    "bytes": 290328,
+    "sha256": "568d20c244fc4f90ba95ad3b3df94373779b60941f83f39434f635ac73dd2019"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Materials/DustSky.shader",
+    "bytes": 889,
+    "sha256": "c84655e77c0ee8258fb19eae2990b6aa0c3f526daffe8b48d25730df7745d754"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Materials/Glass_Utility.mat",
+    "bytes": 3947,
+    "sha256": "c7c5cad09ba8349cbf87abc79c7c08df6526989b3d5c0a6e36c083e6d20e3438"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Materials/Habitat_CompositeDark.mat",
+    "bytes": 3955,
+    "sha256": "33b746072bb0ede498819ce1c49fc8901d176022fd9e0a5ecb1ae57ee03f1907"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Materials/Habitat_OffWhite.mat",
+    "bytes": 4057,
+    "sha256": "256fc4b9d1cdb147add92a23a2da2d8b7c6bc845f7c7a2a5a024c46b531ee80c"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Materials/Mars_DustSky.mat",
+    "bytes": 875,
+    "sha256": "ebb29eb161624e0796f6363f191eecc697d8e1285bf2dd298dc131a6a9f7e186"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Materials/Mars_Regolith.mat",
+    "bytes": 4137,
+    "sha256": "cb1fc33982c27971808658d658d9c586722cdad12dd9796a3d9373167c2eec19"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Materials/Mars_Regolith_Dark.mat",
+    "bytes": 3952,
+    "sha256": "7749aa35fd8986348d64e279a65d820ef6951e707d53b5e828eb8b1dd60b002c"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Materials/Mars_Rock_Basaltic.mat",
+    "bytes": 4078,
+    "sha256": "7f00f195ca3bba357004366de3d7ad9ec1f7c34d6b50fbbb81d4b239bc889e4e"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Materials/Mars_Rock_Layered.mat",
+    "bytes": 4078,
+    "sha256": "4dbdb5bfdf351c830982924c1961bd8105984cb4dbc52ce69814724cea07f0ea"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Materials/Metal_Industrial.mat",
+    "bytes": 3949,
+    "sha256": "be2f85a28bf7c394f1ea05836b3e1b38cfe41968a2050493b0d7a6c46afcfd63"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Materials/Regolith_Grain_512.png",
+    "bytes": 186184,
+    "sha256": "ebdaa0b01365660439268bf4da31fa48c10c858142fc9700edb97d021df305a8"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Materials/Regolith_Macro_Pathwear_1024.png",
+    "bytes": 1224760,
+    "sha256": "00d70cc64063478052604dda4503083d04b35180dc17bd956883f0c408716cc6"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Materials/Regolith_MicroNormal_256.png",
+    "bytes": 134841,
+    "sha256": "fdef47ae9f8cab63061f3cf98fcb94b322587241801927fdca058c380f3ec1e8"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Materials/SolarPanel.mat",
+    "bytes": 4005,
+    "sha256": "74179a583180a1bf793ffd08b446d8072014684728ebd8495ab13b9ba46b4e95"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Materials/Solar_Cells_Dust_512.png",
+    "bytes": 335980,
+    "sha256": "77219658204a220c4a77e52d87bb61f5c3f2c5760f0a9606302054dc812c252f"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Prefabs/AngularBasalt.prefab",
+    "bytes": 10289,
+    "sha256": "e53d364dae025a97875726455790c9cfa490b77736851b81947b357c05507687"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Prefabs/C_ScienceStaging.prefab",
+    "bytes": 21450,
+    "sha256": "3543186ae274cf08cb34d5483398765c2188f1833cf5fd0b5e3f7a71abd62f90"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Prefabs/ErodedLandmark.prefab",
+    "bytes": 10282,
+    "sha256": "8fdf55caa18c389d19cf70beb8e73d6ea0897d326e5a5caec59dfb4df0832a28"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Prefabs/G_Greenhouse.prefab",
+    "bytes": 18793,
+    "sha256": "a0c26895c02bcd4113788804fff3e2e98e8171692f59ce14348bf2b025ae2a91"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Prefabs/H_CommandHabitat.prefab",
+    "bytes": 20293,
+    "sha256": "93c283acbd2ef3ae96fa071a00a8d8b00e88a5f0524b50b80ebc543d849a4b3e"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Prefabs/LayeredDelta.prefab",
+    "bytes": 10260,
+    "sha256": "02843ed94e23a547bb364d1609b6824584a426fa79f83149998b3aab2ba62258"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Prefabs/P_PowerStation.prefab",
+    "bytes": 19944,
+    "sha256": "c6ed8358bdf70e4a73d6ce61253d29588859687204be746e716691c3891d4e9d"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Prefabs/R_RoverBay.prefab",
+    "bytes": 27802,
+    "sha256": "4b470d406d14a3db98985ac6aa11c20129c20585a44b85019d8757ecf05b186d"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Prefabs/RegolithStone.prefab",
+    "bytes": 2648,
+    "sha256": "2272addb2d03d300ddd0e0c087b77b797d27602b81f23e082ebd7d42cefa4ad3"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Prefabs/S_SolarArray.prefab",
+    "bytes": 62300,
+    "sha256": "ac6945e1a0a77582283a35e99f00b50f44177e24d4f346b19ec2558a8b8de931"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Props/ApproachStoneClusters_Mars_Rock_Basaltic_Combined.asset",
+    "bytes": 220309,
+    "sha256": "294610ba3024d8cbfa38306e318a096591d1ab21b5915039f9a1837ce04dbc9c"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Props/HabitatExternalKit_Habitat_CompositeDark_Combined.asset",
+    "bytes": 27396,
+    "sha256": "58bba7d77dd9a56ca9057c262f4bd6da782d88b9214a5269ec1d2368b004466e"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Props/HabitatExternalKit_Habitat_OffWhite_Combined.asset",
+    "bytes": 33205,
+    "sha256": "55a4533210f7894bfdd702c21c0d014e66a7e382a81157a922a5b0dcb3608584"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Props/HabitatExternalKit_Metal_Industrial_Combined.asset",
+    "bytes": 63101,
+    "sha256": "2aabe0d642c2815c813d222c60f10c749170ad0a0518f5f4463500ae1da3c958"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Props/PowerExternalKit_Habitat_CompositeDark_Combined.asset",
+    "bytes": 63094,
+    "sha256": "b2b9a868ef1b62750f8e18f98258f85c63415fe1dbb3154f0cadd93a1047d354"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Props/PowerExternalKit_Mars_Regolith_Dark_Combined.asset",
+    "bytes": 15472,
+    "sha256": "37b10bdc3a5c4ddb84408a7393f65dce677c075b409453d4a3acc377f54506f0"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Props/UtilityRoutePosts_Accent_Cyan_Combined.asset",
+    "bytes": 69047,
+    "sha256": "5ec0539151f9696b0f168a10a8db2e565037269250e777f55b2589b24fe1f0f8"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Props/UtilityRoutePosts_Metal_Industrial_Combined.asset",
+    "bytes": 69042,
+    "sha256": "9ec04d251c8c92744ef43fe4c42cb8706cf29b9d6af6def46efe1f61325a032a"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Rocks/AngularBasalt_LOD0.asset",
+    "bytes": 12132,
+    "sha256": "2ae5edc38f8a675196f9767a45befe7376772d5fdd13f8cfed31d90795a0e0eb"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Rocks/AngularBasalt_LOD1.asset",
+    "bytes": 7336,
+    "sha256": "0e0a9c3d7ee1a8630a71cfcf370e5ff6815644292138ce69beae6c5050599d2e"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Rocks/AngularBasalt_LOD2.asset",
+    "bytes": 5292,
+    "sha256": "6fbffcbcf946fd461e48dcb8b40732c87fa347556486e8492eed9199c0786156"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Rocks/DeltaFractured_LOD0.asset",
+    "bytes": 37843,
+    "sha256": "f446cef71215a3aeeb2377d1b17f13658f57257f0857a0842825c7faabfbe832"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Rocks/DeltaFractured_LOD1.asset",
+    "bytes": 15285,
+    "sha256": "5dd828a07c7b591d2fbbfaa14c3d8d5e817e0cef39c80d1ccb5694e67fd8a625"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Rocks/DeltaFractured_LOD2.asset",
+    "bytes": 7361,
+    "sha256": "21a74891c7bc751af94863ed01e774eb9b6dd19a90ea51e68859f087c232276e"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Rocks/ErodedLandmark_LOD0.asset",
+    "bytes": 18855,
+    "sha256": "a5f8548f0f52cad22d8864ba8e941321a72c49385b88608ae7afa2d145609a29"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Rocks/ErodedLandmark_LOD1.asset",
+    "bytes": 9495,
+    "sha256": "7aeb306ef07cbc5dc74f4fad87dbf816351b56c0f0d4e84daa869eb29dbe8d0f"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Rocks/ErodedLandmark_LOD2.asset",
+    "bytes": 5653,
+    "sha256": "62ac2b35970f011c9ed8025388deb8db0a448020e55c25e48661053ffb753b5c"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Rocks/LayeredDelta_LOD0.asset",
+    "bytes": 37847,
+    "sha256": "c07a6b9b9e32c5cdd6f8ca3c736ea312e2584de5c97550ed5afb1566cf285d25"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Rocks/LayeredDelta_LOD1.asset",
+    "bytes": 15279,
+    "sha256": "da9d1cb75146a3e6541352f6a351e0c9d8c5fb56677b99e5ff80128bb81daf55"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Rocks/LayeredDelta_LOD2.asset",
+    "bytes": 7359,
+    "sha256": "c1744713da3e4a55f43a2938dfd67e9bef115ee53196d8b57275dd5aff37b49b"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Rocks/StonePatch_0_Mars_Rock_Basaltic_Combined.asset",
+    "bytes": 46930,
+    "sha256": "1f84e619ecd2df0b5f16aec7f934001002f16d6b6cea86d27ef771cc1a5ccc8e"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Rocks/StonePatch_1_Mars_Rock_Basaltic_Combined.asset",
+    "bytes": 48986,
+    "sha256": "270aceb218c773fdb02e9454b67746f69f66afdc73a02d97308e75ae34bc2ec6"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Rocks/StonePatch_2_Mars_Rock_Basaltic_Combined.asset",
+    "bytes": 48986,
+    "sha256": "1bd1f3bdc95e104721ac6a97262ae3511e44441aa376ae12fc7d809eaebcf3b6"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Rocks/StonePatch_3_Mars_Rock_Basaltic_Combined.asset",
+    "bytes": 48982,
+    "sha256": "addde48834f7b573b8b126bd23ab166641df7c92d8f14cce72ef85e3b86f1740"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Rocks/StonePatch_4_Mars_Rock_Basaltic_Combined.asset",
+    "bytes": 46922,
+    "sha256": "e07caf06b319f0aa5690f848a183515f94f1efae6ee858af07f7123492eef71f"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Rocks/StonePatch_5_Mars_Rock_Basaltic_Combined.asset",
+    "bytes": 49000,
+    "sha256": "34508f6239451015f5b84c89feb429207d95565890e68831b69a47147e5a9580"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Rocks/StonePatch_6_Mars_Rock_Basaltic_Combined.asset",
+    "bytes": 48994,
+    "sha256": "111ec7c30e412323eb5ee9bdcdc4a247faf4ff4d46252c2392099c7be7519155"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Rocks/StonePatch_7_Mars_Rock_Basaltic_Combined.asset",
+    "bytes": 11832,
+    "sha256": "77523d571bc740ac456603e830d6aab6fa62da8296549c95c5bfe07d989623f8"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Rocks/StonePatch_8_Mars_Rock_Basaltic_Combined.asset",
+    "bytes": 38670,
+    "sha256": "ffdd97296ae32b1261b6bafe2fdd9ebd5bb3222fc392d9b0a31379f7c19fa652"
+  },
+  {
+    "path": "Assets/AstroGateway/Environment/Terrain/Regolith_250m_PreservedCorridor.asset",
+    "bytes": 1222811,
+    "sha256": "b4c9ab418809be639a795487aba9df452f0cd2ca466889389f927066dde2ef0f"
+  }
+]

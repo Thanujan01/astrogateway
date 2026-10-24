@@ -1,0 +1,172 @@
+[
+  {
+    "asset": "rock_07_LOD0.glb",
+    "extensionsUsed": [],
+    "extensionsRequired": [],
+    "imageMimes": [
+      "image/jpeg"
+    ],
+    "materials": 1,
+    "skins": 0,
+    "animations": 0
+  },
+  {
+    "asset": "rock_07_LOD1.glb",
+    "extensionsUsed": [],
+    "extensionsRequired": [],
+    "imageMimes": [
+      "image/jpeg"
+    ],
+    "materials": 1,
+    "skins": 0,
+    "animations": 0
+  },
+  {
+    "asset": "rock_07_LOD2.glb",
+    "extensionsUsed": [],
+    "extensionsRequired": [],
+    "imageMimes": [
+      "image/jpeg"
+    ],
+    "materials": 1,
+    "skins": 0,
+    "animations": 0
+  },
+  {
+    "asset": "rock_09_Original.glb",
+    "extensionsUsed": [],
+    "extensionsRequired": [],
+    "imageMimes": [
+      "image/jpeg"
+    ],
+    "materials": 1,
+    "skins": 0,
+    "animations": 0
+  },
+  {
+    "asset": "Perseverance_LOD2.glb",
+    "extensionsUsed": [
+      "EXT_texture_webp",
+      "KHR_materials_clearcoat",
+      "KHR_materials_ior",
+      "KHR_materials_specular",
+      "KHR_materials_transmission"
+    ],
+    "extensionsRequired": [
+      "EXT_texture_webp"
+    ],
+    "imageMimes": [
+      "image/jpeg",
+      "image/png",
+      "image/webp"
+    ],
+    "materials": 43,
+    "skins": 1,
+    "animations": 23
+  },
+  {
+    "asset": "Perseverance_LOD1.glb",
+    "extensionsUsed": [
+      "EXT_texture_webp",
+      "KHR_materials_clearcoat",
+      "KHR_materials_ior",
+      "KHR_materials_specular",
+      "KHR_materials_transmission"
+    ],
+    "extensionsRequired": [
+      "EXT_texture_webp"
+    ],
+    "imageMimes": [
+      "image/jpeg",
+      "image/png",
+      "image/webp"
+    ],
+    "materials": 43,
+    "skins": 1,
+    "animations": 23
+  },
+  {
+    "asset": "Perseverance_LOD0.glb",
+    "extensionsUsed": [
+      "EXT_texture_webp",
+      "KHR_materials_clearcoat",
+      "KHR_materials_ior",
+      "KHR_materials_specular",
+      "KHR_materials_transmission"
+    ],
+    "extensionsRequired": [
+      "EXT_texture_webp"
+    ],
+    "imageMimes": [
+      "image/jpeg",
+      "image/png",
+      "image/webp"
+    ],
+    "materials": 43,
+    "skins": 1,
+    "animations": 23
+  },
+  {
+    "asset": "rock_09_LOD0.glb",
+    "extensionsUsed": [],
+    "extensionsRequired": [],
+    "imageMimes": [
+      "image/jpeg"
+    ],
+    "materials": 1,
+    "skins": 0,
+    "animations": 0
+  },
+  {
+    "asset": "rock_09_LOD1.glb",
+    "extensionsUsed": [],
+    "extensionsRequired": [],
+    "imageMimes": [
+      "image/jpeg"
+    ],
+    "materials": 1,
+    "skins": 0,
+    "animations": 0
+  },
+  {
+    "asset": "rock_09_LOD2.glb",
+    "extensionsUsed": [],
+    "extensionsRequired": [],
+    "imageMimes": [
+      "image/jpeg"
+    ],
+    "materials": 1,
+    "skins": 0,
+    "animations": 0
+  },
+  {
+    "asset": "Perseverance_Original.glb",
+    "extensionsUsed": [
+      "EXT_texture_webp",
+      "KHR_materials_clearcoat",
+      "KHR_materials_ior",
+      "KHR_materials_specular",
+      "KHR_materials_transmission"
+    ],
+    "extensionsRequired": [],
+    "imageMimes": [
+      "image/jpeg",
+      "image/png",
+      "image/webp"
+    ],
+    "materials": 47,
+    "skins": 1,
+    "animations": 23
+  },
+  {
+    "asset": "rock_07_Original.glb",
+    "extensionsUsed": [],
+    "extensionsRequired": [],
+    "imageMimes": [
+      "image/jpeg"
+    ],
+    "materials": 1,
+    "skins": 0,
+    "animations": 0
+  }
+]

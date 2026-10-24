@@ -1,0 +1,30 @@
+{
+  "Production_Controlled_Tests.txt": {
+    "pass": 43,
+    "fail": 0
+  },
+  "Regression/HUD/HUD_Controlled_Tests.txt": {
+    "pass": 42,
+    "fail": 0
+  },
+  "Regression/Mars/Evidence/Scripted_Play_Mode_Tests.txt": {
+    "pass": 20,
+    "fail": 0
+  },
+  "Regression/Mission01/PlayMode_Controlled_Tests.txt": {
+    "pass": 13,
+    "fail": 0
+  },
+  "Regression/Native/Controlled_PlayMode_Tests.txt": {
+    "pass": 26,
+    "fail": 0
+  },
+  "Regression/VisualPolish/Controlled_PlayMode_Tests.txt": {
+    "pass": 34,
+    "fail": 0
+  },
+  "Regression/HUD/Responsive_Layout_Checks.txt": {
+    "pass": 44,
+    "fail": 0
+  }
+}

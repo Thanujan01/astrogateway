@@ -1,0 +1,15 @@
+{
+  "web_tests": 34,
+  "backend_tests": 68,
+  "local_db_gateway_checks": 30,
+  "confined_api_checks": 21,
+  "isolation_probes": 18,
+  "android_synthetic_ui_checks": 6,
+  "web_build": "PASS",
+  "web_lint": "PASS",
+  "android_build": "PASS",
+  "android_install": "PASS",
+  "initial_android_instrumentation": "ANR; corrected retry PASS",
+  "hosted_authentication": "BLOCKED / NOT EXECUTED",
+  "remote_modifications": false
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "job": "HUD_Final",
+    "exit_code": 0
+  },
+  {
+    "job": "Native",
+    "exit_code": 0
+  },
+  {
+    "job": "Mars",
+    "exit_code": 0
+  },
+  {
+    "job": "Mission01",
+    "exit_code": 0
+  },
+  {
+    "job": "VisualPolish",
+    "exit_code": 0
+  }
+]

@@ -1,0 +1,6 @@
+<linker>
+  <assembly fullname="Assembly-CSharp">
+    <type fullname="AstroGateway.NativeSlice.NativeSliceGame" preserve="methods" />
+    <type fullname="AstroGateway.MarsEnvironment.EnvironmentPresentation" preserve="methods" />
+  </assembly>
+</linker>

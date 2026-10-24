@@ -1,0 +1,8 @@
+Actual Editor batch Play Mode; four presets, stationary spawn, clear weather, full HUD. 1920x1080 requested framebuffer; 2s warmup + >=4s samples per preset.
+Unity=6000.6.4f1 GPU=Apple M4 Pro API=Metal
+Capped cadence and whole-Editor Main Thread recorder are not isolated CPU work, GPU timing or physical Android performance.
+preset=Low framebuffer=1920x1080 frames=100 sample_valid=True mean_ms=40.09 p95_ms=34.13 max_ms=735.94 effective_fps=24.94 MainThread_ms=40.09 batches=unavailable triangles=177075 GC_bytes_per_frame=307199 allocated_memory_bytes=314256118
+preset=Medium framebuffer=1920x1080 frames=121 sample_valid=True mean_ms=33.33 p95_ms=33.93 max_ms=37.04 effective_fps=30.00 MainThread_ms=33.33 batches=unavailable triangles=190660 GC_bytes_per_frame=370722 allocated_memory_bytes=306324643
+preset=High framebuffer=1920x1080 frames=240 sample_valid=True mean_ms=16.67 p95_ms=17.28 max_ms=20.55 effective_fps=60.00 MainThread_ms=16.67 batches=unavailable triangles=198156 GC_bytes_per_frame=173636 allocated_memory_bytes=306421410
+preset=Desktop/Ultra Preview framebuffer=1920x1080 frames=241 sample_valid=True mean_ms=16.67 p95_ms=17.34 max_ms=19.15 effective_fps=60.01 MainThread_ms=16.66 batches=unavailable triangles=212108 GC_bytes_per_frame=160181 allocated_memory_bytes=306675954
+GPU timing unavailable; counters if present include whole Editor rendering, not scene-only/player attribution. No performance improvement or mobile readiness claim.

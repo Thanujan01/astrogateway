@@ -1,0 +1,8 @@
+{
+  "ca_exists": false,
+  "credential_file_exists": true,
+  "credential_mode": "0o600",
+  "credential_available": true,
+  "target_matches": true,
+  "test_ref_matches": true
+}

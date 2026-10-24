@@ -1,0 +1,66 @@
+{
+  "tests": [
+    {
+      "name": "client cannot create server attestation",
+      "status": "PASS"
+    },
+    {
+      "name": "client cannot update telemetry",
+      "status": "PASS"
+    },
+    {
+      "name": "client cannot delete telemetry",
+      "status": "PASS"
+    },
+    {
+      "name": "client cannot disable AI RLS",
+      "status": "PASS"
+    },
+    {
+      "name": "client cannot grant role",
+      "status": "PASS"
+    },
+    {
+      "name": "raw attacker cannot read AI",
+      "status": "PASS"
+    },
+    {
+      "name": "raw attacker cannot invoke AI",
+      "status": "PASS"
+    },
+    {
+      "name": "raw attacker cannot read attestations",
+      "status": "PASS"
+    },
+    {
+      "name": "AI exposed functions invoker with fixed search_path",
+      "status": "PASS"
+    },
+    {
+      "name": "native schema denies malformed movement",
+      "status": "PASS"
+    },
+    {
+      "name": "native schema denies malformed equipment",
+      "status": "PASS"
+    },
+    {
+      "name": "native schema denies malformed completion",
+      "status": "PASS"
+    },
+    {
+      "name": "native schema denies malformed reaction",
+      "status": "PASS"
+    },
+    {
+      "name": "RLS direct B sees no A telemetry",
+      "status": "PASS"
+    },
+    {
+      "name": "six trusted fixtures recorded operator-only",
+      "status": "PASS"
+    }
+  ],
+  "local_only": true,
+  "trusted_records": "operator synthetic fixtures, not real mission outcomes"
+}

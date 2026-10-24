@@ -1,0 +1,9 @@
+{
+  "fastapi_health": "ok (public configuration only)",
+  "unauthenticated_v1_me_http": 401,
+  "vite_proxy_health": "ok",
+  "api_bind": "127.0.0.1:8000",
+  "web_origin": "http://127.0.0.1:5173",
+  "hosted_auth_verified": false,
+  "runtime_outbound": "established localhost gateway only; hosted egress unavailable"
+}

@@ -1,0 +1,14 @@
+{
+  "stage": 3,
+  "frames": 112,
+  "peak_particles": 0,
+  "unsupported_material_renderers": 0,
+  "width": 2340,
+  "height": 1080,
+  "label": "storm_particles_disabled",
+  "seconds": 25.18359375,
+  "average_fps": 4.44734001159668,
+  "p95_frame_ms": 233.33331298828125,
+  "max_frame_ms": 450.0,
+  "peak_unity_allocated_bytes": 95850620
+}

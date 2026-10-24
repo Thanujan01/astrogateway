@@ -1,0 +1,32 @@
+# Stage07A — Local test results
+2026-10-09. **Local foundation PASS; live/production integration BLOCKED. No model trained.**
+
+| Suite | Result | Evidence |
+|---|---:|---|
+| Backend unit tests (48 preserved +55 new) | 103 PASS | `/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/outputs/Stage07A/Evidence/backend-unit.log` |
+| Baseline native PostgreSQL/PostgREST after AI RPC expansion | 53 PASS | `/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/outputs/Stage07A/Evidence/final-native-regression.json` / final-native-regression.log |
+| Native AI privileges/RLS/SQL schema | 15 PASS | `/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/outputs/Stage07A/Evidence/ai-native.json` |
+| Actual AI endpoints in kernel confinement | 27 PASS | `/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/outputs/Stage07A/Evidence/ai-api.json` |
+| Trusted progression/private day credits in confinement | 6 PASS | `/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/outputs/Stage07A/Evidence/ai-trusted.json` |
+| Actual runtime administration-file/process/env isolation | 18 PASS | `/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/outputs/Stage07A/Evidence/isolation.json` |
+| AI collision/local rollback/reinstall | 4 PASS | `/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/outputs/Stage07A/Evidence/ai-rollback.json` |
+| Approved PDS sample hash/size/target/product parser | 5 PASS | `/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/outputs/Stage07A/Evidence/sample-validation.json` |
+
+Unit coverage: all seven telemetry kinds, unknown score/owner/trust fields, finite bounds/strict booleans, batch order/duplicates/completion placement, impossible movement/decreasing resources, empty/insufficient data, explainable penalties, provisional confidence cap, promotion hold/one-step/tier-specific evidence/failure downshift, all seeds/tiers deterministic simulator replay, changing seeds/cycles, 30 days, beginner/intermediate/advanced, weakness weighting/recovery and no-model ARIA. Native/API checks use real disposable PostgreSQL17.11 and PostgREST16.4 with original RSA-signed fixture JWTs; Auth service is a public-key fixture, NOT live Supabase authentication.
+
+API security: missing/invalid/expired/forged tokens denied, malicious owner/score/attestation rejected, B cannot ingest/debrief/read A, changed replay conflict and exact replay idempotency, cross-batch movement invalid, completion closes ingestion, private attestations absent for B, user-chosen previousHard cannot bypass gates, revocation blocks AI, oversized131073-byte request413. Private six operator attestations demonstrate threeEasy+threeMedium→Hard and six distinct trusted training-day credits. Records are synthetic fixtures only; no runtime attestation writer exists.Astronaut competence is not empirically validated.
+
+Native tests: runtime cannot mutate trusted records, update/delete telemetry, disable RLS or grant privileged roles; arbitrary GUCs with restricted raw credentials cannot read/invoke AI; AI RPCs invoker/fixed paths; malformed numeric/boolean/score JSON rejected natively; B sees no A. Candidate collision aborts without event loss; local dependency-ordered teardown preserves Auth and mission records; final SQL fresh reinstall succeeds. Baseline audit now expects seven approved invoker routines (five original +two AI), rather than incorrectly asserting unchanged exposure count5.
+
+Early unit test found confidence rounding .225 to .23; precision corrected to3 decimals and final103 passed. Initial PDS JSON API request503; exactly one approved fallback HiRISE PDS label downloaded7729 bytes, no imagery/DEM/training. Existing TestClient deprecation warning remains; no dependencies rebuilt or installed. Final API/native/trusted tests repeated after all code changes. Runtime isolation probes reused Stage05B3 deny-by-default kernel boundary with new staged AI paths; actual UID501 remains same, confined children cannot read operator config/key/gateway files or widen via nested sandbox. No permanent service account deployment is claimed.
+
+## Branch and preserved projects
+`/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/outputs/Stage07A/Development` is a new backend-only repository because original projects/workspace lacked Git. Baseline-stage05b3 then `stage07/adaptive-ai-foundation`; no credentials copied. Review source/hash manifest `/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/outputs/Stage07A/Evidence/source-manifest.json`. Original Android UI/navigation/Auth, Unity bridge/scenes, Mars design/assets, actual original backend and React source unchanged. New endpoints exist in this development branch only. No Android APK/device/Unity gameplay regression is claimed: those sources were preserved and no collector was implemented.
+
+## Blocked work and next approval gates
+- Remote AI migration/exposure grants/schema-cache updates, provider compatibility/catalogue/key rotation, production host isolation and full-path TLS: not authorized/not executed.
+- Live accounts/real-player data collection, consent/retention/rate limiting/pagination beyond bounded local snapshots, empirical score calibration, and trusted Unity mission evidence: absent. No claim of cheating-proof physical telemetry; client records remain provisional and cannot promote/credit trusted days.
+- Real authoritative evidence producer/attestation policy requires separate design and gameplay/telemetry instrumentation authorization; never inject service-role/admin credentials into FastAPI. Valid observed bearer theft/replay remains possible under compromise.
+- Dataset rights review/large source download/learned-model training: pending; the approved image label is not Jezero weather or a DEM. ESA portal451 and per-product licenses unverified.
+
+Recommended next step: operator review Stage07 branch, telemetry/trust contract and local SQL candidate; then separately authorize a narrow authoritative mission-witness/consent milestone and hosted READ-ONLY compatibility inspection. No remote migration/deployment is recommended until Stage05B3 gates and new AI permission review pass. Stop after this local validation. Local services stopped (`/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/outputs/Stage07A/Evidence/shutdown.json`); no remote Supabase SQL, roles, live accounts, production deployments or gameplay changes.

@@ -1,0 +1,10 @@
+{
+  "/health": {
+    "status": 200,
+    "body": "{\"status\":\"configuration_required\"}"
+  },
+  "/v1/me": {
+    "status": 401,
+    "body": "{\"detail\":\"Sign-in required.\"}"
+  }
+}

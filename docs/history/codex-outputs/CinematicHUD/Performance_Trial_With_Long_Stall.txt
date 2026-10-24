@@ -1,0 +1,8 @@
+Actual Unity Editor batch Play Mode. Not physical Android, not UI-only GPU timing, not an improvement claim.
+Unity=6000.6.4f1 GPU=Apple M4 Pro API=Metal framebuffer=1920x1080
+Medium graphics; fixed astronaut spawn; clear weather. 2s warmup + >=4s per profile; no screenshots or deliberate sleeps during samples.
+Full: frames=100 mean_ms=9044.45 effective_fps=0.11 p95_ms=35.29 MainThread_recorder_ms=36.675 GC_recorder_bytes_per_frame=185630.8 active_graphics=83 actual_profile_index=0 active_cards=Independent camera gesture zone,Mission branding,Survival resources,Weather and clock,Mission objectives,Circular minimap panel,Action 0,Action 1,Action 2,Action 3,Analog movement joystick,Shortcut 0,Shortcut 1,Shortcut 2,Shortcut 3,Rover telemetry,Recent scientific scan,Scan,Context interact,Interaction target,Run or accelerate
+Compact: frames=121 mean_ms=33.29 effective_fps=30.04 p95_ms=34.66 MainThread_recorder_ms=33.289 GC_recorder_bytes_per_frame=210614.5 active_graphics=47 actual_profile_index=1 active_cards=Independent camera gesture zone,Survival resources,Action 0,Action 1,Action 2,Action 3,Analog movement joystick,Rover telemetry,Scan,Context interact,Interaction target,Run or accelerate
+Hidden: frames=120 mean_ms=33.34 effective_fps=30.00 p95_ms=34.70 MainThread_recorder_ms=33.329 GC_recorder_bytes_per_frame=62525.0 active_graphics=3 actual_profile_index=3 active_cards=Independent camera gesture zone,Restore HUD
+Unity reported total allocated bytes=308627426 (Editor process scope; not Android RSS or UI-only memory)
+GPU timing and physical-device thermal behavior not measured. Short capped Editor samples are not proof of Android readiness.

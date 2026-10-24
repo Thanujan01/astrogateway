@@ -1,0 +1,15 @@
+{
+  "baseline_files": 383,
+  "changed": [],
+  "missing": [],
+  "new": [
+    "Assets/AstroGateway/Stage08C1.meta",
+    "Assets/AstroGateway/Stage08C1/Editor.meta",
+    "Assets/AstroGateway/Stage08C1/Editor/EditorPerformanceObserver.cs.meta",
+    "Assets/AstroGateway/Stage08C1/Editor/ManualInputObserver.cs",
+    "Assets/AstroGateway/Stage08C1/Editor/EditorPerformanceObserver.cs",
+    "Assets/AstroGateway/Stage08C1/Editor/ManualInputObserver.cs.meta"
+  ],
+  "changed_or_missing_final": [],
+  "final_existing_files_preserved": true
+}

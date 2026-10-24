@@ -1,0 +1,44 @@
+New scene loaded: PASS
+Inherited game lifecycle initialized: PASS
+Required UI panels: PASS
+Real Canvas and EventSystem: PASS
+No missing scripts: PASS
+Provider not fabricated: PASS
+Oxygen binds provider: PASS
+Panel anchors valid: PASS
+Safe area normalized: PASS
+Joystick observation: rect=(x:-98.98, y:-98.98, width:197.97, height:197.97) movement=(0.00, 0.57)
+Joystick analog movement: PASS
+Joystick reaches original controller: PASS
+Independent camera finger: PASS
+Other finger cannot steal joystick: PASS
+Joystick recenters: PASS
+RMB not duplicated by UI camera: PASS
+Walking displacement=2.216791 simulation seconds=1.007282
+Existing movement advances: PASS
+Board changes mode: PASS
+Identity preserved boarding: PASS
+Rover driving retained: PASS
+Real speed telemetry: PASS
+Real battery telemetry: PASS
+Exit restores astronaut: PASS
+Invalid scan does not increment: PASS
+Valid scan has presentation progress: PASS
+Successful scan updates records and UI: PASS
+Objectives reflect successful locations: PASS
+No fabricated chemistry: PASS
+Save truthful: PASS
+Failure not synced: PASS
+Load existing data model: PASS
+Export existing data model: PASS
+Settings persistence: PASS
+Pause authoritative mode: PASS
+Menu close restores control: PASS
+Inventory honest empty state: PASS
+Expanded world map functional: PASS
+Functional settings sliders: PASS
+All UI materials supported: PASS
+Scan cancellation restores mode without recording: PASS
+Scanning uses canonical input lock: PASS
+Timed scan completes automatically: PASS
+Repeated scan does not inflate unique station objective: PASS

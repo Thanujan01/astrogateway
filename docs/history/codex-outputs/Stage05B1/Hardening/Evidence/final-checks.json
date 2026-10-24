@@ -1,0 +1,10 @@
+{
+  "secret_scan_files": 35,
+  "secret_leak_hits": [],
+  "sql_manifest_matches": true,
+  "project_source_matches_review_copy": true,
+  "original_migration_preserved": true,
+  "sql_pass": 55,
+  "sql_fail": 1,
+  "remote_connection_attempted": false
+}

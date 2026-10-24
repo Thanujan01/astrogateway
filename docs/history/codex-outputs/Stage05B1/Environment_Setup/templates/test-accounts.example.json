@@ -1,0 +1,8 @@
+{
+  "environment": "test",
+  "approved_project_ref": "",
+  "allow_disposable_signup": false,
+  "allow_password_reset_and_change": false,
+  "account_a": {"email": "", "password": "", "inbox_access": "user-assisted"},
+  "account_b": {"email": "", "password": "", "inbox_access": "user-assisted"}
+}

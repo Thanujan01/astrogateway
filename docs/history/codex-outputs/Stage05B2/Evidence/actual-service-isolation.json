@@ -1,0 +1,5 @@
+{
+  "guard_pass": true,
+  "deployment": "BLOCKED: operator credential file readable to service OS account",
+  "remote_request_made": false
+}

@@ -1,0 +1,422 @@
+{
+  "project": "/Users/kapilash/Projects/MissionRedHorizon",
+  "editor_version": "m_EditorVersion: 6000.6.4f1",
+  "main_scene": "/Users/kapilash/Projects/MissionRedHorizon/Assets/AstroGateway/Scenes/MarsOutpost_Environment_v01.unity",
+  "asset_count_excluding_meta": 128,
+  "extension_counts": {
+    ".asset": 75,
+    ".inputactions": 1,
+    ".unity": 4,
+    ".wlt": 1,
+    ".cs": 4,
+    ".png": 9,
+    ".uss": 3,
+    ".mat": 20,
+    ".shader": 1,
+    ".prefab": 10
+  },
+  "scenes": [
+    "Assets/Scenes/SampleScene.unity",
+    "Assets/AstroGateway/Scenes/MarsOutpost_Environment_v01.unity",
+    "Assets/AstroGateway/Greybox/MarsOutpost_Greybox.unity",
+    "Assets/AstroGateway/Greybox/PreGreybox_Untitled_Backup.unity"
+  ],
+  "prefabs": [
+    "Assets/AstroGateway/Environment/Prefabs/G_Greenhouse.prefab",
+    "Assets/AstroGateway/Environment/Prefabs/AngularBasalt.prefab",
+    "Assets/AstroGateway/Environment/Prefabs/S_SolarArray.prefab",
+    "Assets/AstroGateway/Environment/Prefabs/R_RoverBay.prefab",
+    "Assets/AstroGateway/Environment/Prefabs/RegolithStone.prefab",
+    "Assets/AstroGateway/Environment/Prefabs/H_CommandHabitat.prefab",
+    "Assets/AstroGateway/Environment/Prefabs/P_PowerStation.prefab",
+    "Assets/AstroGateway/Environment/Prefabs/LayeredDelta.prefab",
+    "Assets/AstroGateway/Environment/Prefabs/ErodedLandmark.prefab",
+    "Assets/AstroGateway/Environment/Prefabs/C_ScienceStaging.prefab"
+  ],
+  "scripts": [
+    "Assets/TutorialInfo/Readme.cs",
+    "Assets/TutorialInfo/Editor/ReadmeEditor.cs",
+    "Assets/AstroGateway/Environment/Editor/MarsEnvironmentBuilder.cs",
+    "Assets/AstroGateway/Greybox/Editor/MarsGreyboxBuilder.cs"
+  ],
+  "character_model_files": [],
+  "animation_files": [],
+  "scene_unresolved_external_guids": [],
+  "material_unresolved_shader_guids": [],
+  "scene_component_counts": {
+    "Camera": 6,
+    "Light": 1,
+    "Animator": 0,
+    "Animation": 0,
+    "CharacterController": 0,
+    "Canvas": 0,
+    "ParticleSystem": 0,
+    "NavMeshAgent": 0,
+    "MonoBehaviour": 7,
+    "MeshRenderer": 247,
+    "MeshCollider": 1,
+    "LODGroup": 75
+  },
+  "dependencies": {
+    "com.unity.ai.navigation": {
+      "required": "2.0.14",
+      "installed": "2.0.14",
+      "status": "MATCH"
+    },
+    "com.unity.collab-proxy": {
+      "required": "2.13.6",
+      "installed": "2.13.6",
+      "status": "MATCH"
+    },
+    "com.unity.ide.rider": {
+      "required": "3.0.38",
+      "installed": "3.0.38",
+      "status": "MATCH"
+    },
+    "com.unity.ide.visualstudio": {
+      "required": "2.0.26",
+      "installed": "2.0.26",
+      "status": "MATCH"
+    },
+    "com.unity.inputsystem": {
+      "required": "1.20.0",
+      "installed": "1.20.0",
+      "status": "MATCH"
+    },
+    "com.unity.render-pipelines.universal": {
+      "required": "17.6.0",
+      "installed": "17.6.0",
+      "status": "MATCH"
+    },
+    "com.unity.test-framework": {
+      "required": "1.8.0",
+      "installed": "1.8.0",
+      "status": "MATCH"
+    },
+    "com.unity.timeline": {
+      "required": "6.6.0",
+      "installed": "6.6.0",
+      "status": "MATCH"
+    },
+    "com.unity.ugui": {
+      "required": "2.6.0",
+      "installed": "2.6.0",
+      "status": "MATCH"
+    },
+    "com.unity.visualscripting": {
+      "required": "1.9.12",
+      "installed": "1.9.12",
+      "status": "MATCH"
+    },
+    "com.unity.modules.accessibility": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.adaptiveperformance": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.ai": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.androidjni": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.animation": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.assetbundle": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.audio": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.cloth": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.director": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.imageconversion": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.imgui": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.jsonserialize": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.particlesystem": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.physics": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.physics2d": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.physicscore2d": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.screencapture": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.terrain": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.terrainphysics": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.tetgen": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.tilemap": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.timelinefoundation": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.ui": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.uielements": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.umbra": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.unityanalytics": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.unitywebrequest": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.unitywebrequestassetbundle": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.unitywebrequestaudio": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.unitywebrequesttexture": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.unitywebrequestwww": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.vectorgraphics": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.vehicles": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.video": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.wind": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    },
+    "com.unity.modules.xr": {
+      "required": "1.0.0",
+      "installed": "1.0.0",
+      "status": "ENGINE_MODULE"
+    }
+  },
+  "all_assets": [
+    "Assets/Readme.asset",
+    "Assets/InputSystem_Actions.inputactions",
+    "Assets/Settings/DefaultVolumeProfile.asset",
+    "Assets/Settings/PC_RPAsset.asset",
+    "Assets/Settings/UniversalRenderPipelineGlobalSettings.asset",
+    "Assets/Settings/Mobile_RPAsset.asset",
+    "Assets/Settings/SampleSceneProfile.asset",
+    "Assets/Settings/Mobile_Renderer.asset",
+    "Assets/Settings/PC_Renderer.asset",
+    "Assets/Scenes/SampleScene.unity",
+    "Assets/TutorialInfo/Layout.wlt",
+    "Assets/TutorialInfo/Readme.cs",
+    "Assets/TutorialInfo/Icons/URP.png",
+    "Assets/TutorialInfo/Editor/ReadmeEditor.cs",
+    "Assets/TutorialInfo/StyleSheets/ReadmeEditorDark.uss",
+    "Assets/TutorialInfo/StyleSheets/ReadmeEditorLight.uss",
+    "Assets/TutorialInfo/StyleSheets/ReadmeEditor.uss",
+    "Assets/AstroGateway/Scenes/MarsOutpost_Environment_v01.unity",
+    "Assets/AstroGateway/Greybox/MarsOutpost_Greybox.unity",
+    "Assets/AstroGateway/Greybox/PreGreybox_Untitled_Backup.unity",
+    "Assets/AstroGateway/Environment/Materials/Accent_Cyan.mat",
+    "Assets/AstroGateway/Environment/Materials/Solar_Cells_Dust_512.png",
+    "Assets/AstroGateway/Environment/Materials/Glass_Utility.mat",
+    "Assets/AstroGateway/Environment/Materials/Habitat_OffWhite.mat",
+    "Assets/AstroGateway/Environment/Materials/Mars_Rock_Basaltic.mat",
+    "Assets/AstroGateway/Environment/Materials/Mars_Regolith_Dark.mat",
+    "Assets/AstroGateway/Environment/Materials/Regolith_MicroNormal_256.png",
+    "Assets/AstroGateway/Environment/Materials/Mars_DustSky.mat",
+    "Assets/AstroGateway/Environment/Materials/Delta_FracturedStrata_512.png",
+    "Assets/AstroGateway/Environment/Materials/Accent_SafetyOrange.mat",
+    "Assets/AstroGateway/Environment/Materials/Basalt_Surface_512.png",
+    "Assets/AstroGateway/Environment/Materials/Delta_Bedding_512.png",
+    "Assets/AstroGateway/Environment/Materials/Regolith_Grain_512.png",
+    "Assets/AstroGateway/Environment/Materials/SolarPanel.mat",
+    "Assets/AstroGateway/Environment/Materials/Mars_Regolith.mat",
+    "Assets/AstroGateway/Environment/Materials/Metal_Industrial.mat",
+    "Assets/AstroGateway/Environment/Materials/Composite_DustPaint_512.png",
+    "Assets/AstroGateway/Environment/Materials/Regolith_Macro_Pathwear_1024.png",
+    "Assets/AstroGateway/Environment/Materials/Habitat_CompositeDark.mat",
+    "Assets/AstroGateway/Environment/Materials/DustSky.shader",
+    "Assets/AstroGateway/Environment/Materials/Mars_Rock_Layered.mat",
+    "Assets/AstroGateway/Environment/Prefabs/G_Greenhouse.prefab",
+    "Assets/AstroGateway/Environment/Prefabs/AngularBasalt.prefab",
+    "Assets/AstroGateway/Environment/Prefabs/S_SolarArray.prefab",
+    "Assets/AstroGateway/Environment/Prefabs/R_RoverBay.prefab",
+    "Assets/AstroGateway/Environment/Prefabs/RegolithStone.prefab",
+    "Assets/AstroGateway/Environment/Prefabs/H_CommandHabitat.prefab",
+    "Assets/AstroGateway/Environment/Prefabs/P_PowerStation.prefab",
+    "Assets/AstroGateway/Environment/Prefabs/LayeredDelta.prefab",
+    "Assets/AstroGateway/Environment/Prefabs/ErodedLandmark.prefab",
+    "Assets/AstroGateway/Environment/Prefabs/C_ScienceStaging.prefab",
+    "Assets/AstroGateway/Environment/Props/UtilityRoutePosts_Accent_Cyan_Combined.asset",
+    "Assets/AstroGateway/Environment/Props/ApproachStoneClusters_Mars_Rock_Basaltic_Combined.asset",
+    "Assets/AstroGateway/Environment/Props/UtilityRoutePosts_Metal_Industrial_Combined.asset",
+    "Assets/AstroGateway/Environment/Props/HabitatExternalKit_Habitat_OffWhite_Combined.asset",
+    "Assets/AstroGateway/Environment/Props/PowerExternalKit_Mars_Regolith_Dark_Combined.asset",
+    "Assets/AstroGateway/Environment/Props/HabitatExternalKit_Habitat_CompositeDark_Combined.asset",
+    "Assets/AstroGateway/Environment/Props/PowerExternalKit_Habitat_CompositeDark_Combined.asset",
+    "Assets/AstroGateway/Environment/Props/HabitatExternalKit_Metal_Industrial_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/G_Greenhouse_Metal_Industrial_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/C_ScienceStaging_Accent_SafetyOrange_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/S_SolarArray_Habitat_OffWhite_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/H_CommandHabitat_Habitat_OffWhite_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/S_SolarArray_Habitat_CompositeDark_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/P_PowerStation_Metal_Industrial_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/H_CommandHabitat_Accent_Cyan_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/P_PowerStation_Accent_SafetyOrange_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/H_CommandHabitat_Glass_Utility_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/HabitatH01_ChamferShell.asset",
+    "Assets/AstroGateway/Environment/Architecture/R_RoverBay_Mars_Rock_Basaltic_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/P_PowerStation_Habitat_OffWhite_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/G_Greenhouse_Accent_Cyan_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/H_CommandHabitat_Metal_Industrial_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/S_SolarArray_SolarPanel_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/G_Greenhouse_Habitat_OffWhite_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/S_SolarArray_Metal_Industrial_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/AgricultureG01_Ring.asset",
+    "Assets/AstroGateway/Environment/Architecture/R_RoverBay_Habitat_CompositeDark_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/R_RoverBay_Metal_Industrial_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/P_PowerStation_Glass_Utility_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/C_ScienceStaging_Habitat_CompositeDark_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/G_Greenhouse_Habitat_CompositeDark_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/HabitatH01_Ring.asset",
+    "Assets/AstroGateway/Environment/Architecture/C_ScienceStaging_Metal_Industrial_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/H_CommandHabitat_Habitat_CompositeDark_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/AgricultureG01_ChamferShell.asset",
+    "Assets/AstroGateway/Environment/Architecture/AirlockShell.asset",
+    "Assets/AstroGateway/Environment/Architecture/P_PowerStation_Accent_Cyan_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/C_ScienceStaging_Accent_Cyan_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/C_ScienceStaging_Habitat_OffWhite_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/P_PowerStation_Habitat_CompositeDark_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/R_RoverBay_Mars_Regolith_Dark_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/C_ScienceStaging_Glass_Utility_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/R_RoverBay_Habitat_OffWhite_Combined.asset",
+    "Assets/AstroGateway/Environment/Architecture/G_Greenhouse_Glass_Utility_Combined.asset",
+    "Assets/AstroGateway/Environment/Terrain/Regolith_250m_PreservedCorridor.asset",
+    "Assets/AstroGateway/Environment/Rocks/StonePatch_6_Mars_Rock_Basaltic_Combined.asset",
+    "Assets/AstroGateway/Environment/Rocks/AngularBasalt_LOD2.asset",
+    "Assets/AstroGateway/Environment/Rocks/AngularBasalt_LOD0.asset",
+    "Assets/AstroGateway/Environment/Rocks/DeltaFractured_LOD0.asset",
+    "Assets/AstroGateway/Environment/Rocks/DeltaFractured_LOD2.asset",
+    "Assets/AstroGateway/Environment/Rocks/StonePatch_4_Mars_Rock_Basaltic_Combined.asset",
+    "Assets/AstroGateway/Environment/Rocks/StonePatch_7_Mars_Rock_Basaltic_Combined.asset",
+    "Assets/AstroGateway/Environment/Rocks/AngularBasalt_LOD1.asset",
+    "Assets/AstroGateway/Environment/Rocks/StonePatch_8_Mars_Rock_Basaltic_Combined.asset",
+    "Assets/AstroGateway/Environment/Rocks/StonePatch_5_Mars_Rock_Basaltic_Combined.asset",
+    "Assets/AstroGateway/Environment/Rocks/DeltaFractured_LOD1.asset",
+    "Assets/AstroGateway/Environment/Rocks/StonePatch_3_Mars_Rock_Basaltic_Combined.asset",
+    "Assets/AstroGateway/Environment/Rocks/LayeredDelta_LOD2.asset",
+    "Assets/AstroGateway/Environment/Rocks/ErodedLandmark_LOD2.asset",
+    "Assets/AstroGateway/Environment/Rocks/StonePatch_1_Mars_Rock_Basaltic_Combined.asset",
+    "Assets/AstroGateway/Environment/Rocks/ErodedLandmark_LOD0.asset",
+    "Assets/AstroGateway/Environment/Rocks/LayeredDelta_LOD0.asset",
+    "Assets/AstroGateway/Environment/Rocks/StonePatch_2_Mars_Rock_Basaltic_Combined.asset",
+    "Assets/AstroGateway/Environment/Rocks/ErodedLandmark_LOD1.asset",
+    "Assets/AstroGateway/Environment/Rocks/LayeredDelta_LOD1.asset",
+    "Assets/AstroGateway/Environment/Rocks/StonePatch_0_Mars_Rock_Basaltic_Combined.asset",
+    "Assets/AstroGateway/Environment/Editor/MarsEnvironmentBuilder.cs",
+    "Assets/AstroGateway/Greybox/Materials/WayfindingAmber.mat",
+    "Assets/AstroGateway/Greybox/Materials/WayfindingCyan.mat",
+    "Assets/AstroGateway/Greybox/Materials/SandTan.mat",
+    "Assets/AstroGateway/Greybox/Materials/TerrainOchre.mat",
+    "Assets/AstroGateway/Greybox/Materials/DarkRock.mat",
+    "Assets/AstroGateway/Greybox/Materials/LayeredStone.mat",
+    "Assets/AstroGateway/Greybox/Materials/IndustrialGraphite.mat",
+    "Assets/AstroGateway/Greybox/Materials/HabitatPale.mat",
+    "Assets/AstroGateway/Greybox/Meshes/Ground.asset",
+    "Assets/AstroGateway/Greybox/Editor/MarsGreyboxBuilder.cs"
+  ]
+}

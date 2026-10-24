@@ -1,0 +1,14 @@
+Play Mode instantiated scene: PASS
+Missing checkpoint cannot continue: PASS
+New Mission opens setup: PASS
+Short name rejected: PASS
+Setup opens briefing: PASS
+Briefing opens launch: PASS
+Distant interaction rejected: PASS
+Observed start=(0.00, 0.00, -16.00) end=(0.00, 0.08, -4.56) frame=228 screen=Launch updates=228 simulationSeconds=3.622545 keyboardCurrent=True w=True
+Input System W moves player: PASS
+Grounded movement: PASS
+Rocket proximity completion: PASS
+Valid saved checkpoint: PASS
+Continue restores completion: PASS
+Corrupt save rejected: PASS

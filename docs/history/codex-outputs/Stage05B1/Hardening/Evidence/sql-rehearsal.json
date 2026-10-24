@@ -1,0 +1,240 @@
+{
+  "engine": "PostgreSQL 17.5 on wasm32-unknown-linux-gnu, compiled by emcc (Emscripten gcc/clang-like replacement + linker emulating GNU ld) 3.1.74 (1092ec30a3fb1d46b1782ff1b4db5094d3d06ae5), 32-bit",
+  "live_supabase": false,
+  "remote_connections": 0,
+  "tests": [
+    {
+      "name": "read-only preflight executes against fixture",
+      "status": "PASS"
+    },
+    {
+      "name": "baseline migration and Auth backfill",
+      "status": "PASS"
+    },
+    {
+      "name": "runtime provisioning refuses unresolved PUBLIC access",
+      "status": "PASS"
+    },
+    {
+      "name": "ACL hardening and restricted-role provisioning",
+      "status": "PASS"
+    },
+    {
+      "name": "post-migration metadata SQL executes",
+      "status": "PASS"
+    },
+    {
+      "name": "runtime has no administrative or bypass attributes",
+      "status": "PASS"
+    },
+    {
+      "name": "membership is API only: SET true ADMIN/INHERIT false",
+      "status": "PASS"
+    },
+    {
+      "name": "preserved fixture Auth insert trigger and default training level",
+      "status": "PASS"
+    },
+    {
+      "name": "A sees only own profile",
+      "status": "PASS"
+    },
+    {
+      "name": "A cannot read other profile",
+      "status": "PASS"
+    },
+    {
+      "name": "A cannot insert another owner",
+      "status": "PASS"
+    },
+    {
+      "name": "B sees only own profile",
+      "status": "PASS"
+    },
+    {
+      "name": "B cannot read other profile",
+      "status": "PASS"
+    },
+    {
+      "name": "B cannot insert another owner",
+      "status": "PASS"
+    },
+    {
+      "name": "own mission insert permitted",
+      "status": "PASS"
+    },
+    {
+      "name": "B cannot read A mission",
+      "status": "PASS"
+    },
+    {
+      "name": "B cannot complete A mission",
+      "status": "PASS"
+    },
+    {
+      "name": "A completion allowed",
+      "status": "PASS"
+    },
+    {
+      "name": "denied profile escalation",
+      "status": "PASS"
+    },
+    {
+      "name": "denied profile insertion",
+      "status": "PASS"
+    },
+    {
+      "name": "denied delete missions",
+      "status": "PASS"
+    },
+    {
+      "name": "denied truncate profiles",
+      "status": "PASS"
+    },
+    {
+      "name": "denied lease extension",
+      "status": "PASS"
+    },
+    {
+      "name": "denied Auth administration",
+      "status": "PASS"
+    },
+    {
+      "name": "denied unrelated table",
+      "status": "PASS"
+    },
+    {
+      "name": "denied lookalike pg-prefix schema",
+      "status": "PASS"
+    },
+    {
+      "name": "denied unrelated definer routine",
+      "status": "PASS"
+    },
+    {
+      "name": "denied storage schema",
+      "status": "PASS"
+    },
+    {
+      "name": "denied training schema CREATE",
+      "status": "PASS"
+    },
+    {
+      "name": "denied temporary object",
+      "status": "PASS"
+    },
+    {
+      "name": "denied role creation",
+      "status": "PASS"
+    },
+    {
+      "name": "denied grant API role",
+      "status": "PASS"
+    },
+    {
+      "name": "denied change owner column",
+      "status": "PASS"
+    },
+    {
+      "name": "denied SET provider admin",
+      "status": "PASS"
+    },
+    {
+      "name": "denied SET postgres",
+      "status": "PASS"
+    },
+    {
+      "name": "anon cannot access private training",
+      "status": "PASS"
+    },
+    {
+      "name": "authenticated cannot access private training",
+      "status": "PASS"
+    },
+    {
+      "name": "new owner objects do not auto-grant API execution/read",
+      "status": "PASS"
+    },
+    {
+      "name": "no context after prior commits yields no rows",
+      "status": "PASS"
+    },
+    {
+      "name": "intentional error rollback",
+      "status": "PASS"
+    },
+    {
+      "name": "identity cleared after rollback",
+      "status": "PASS"
+    },
+    {
+      "name": "compromised runtime cannot impersonate B",
+      "status": "FAIL",
+      "expected_negative_demonstration": true
+    },
+    {
+      "name": "revoked session blocked",
+      "status": "PASS"
+    },
+    {
+      "name": "other session still permitted",
+      "status": "PASS"
+    },
+    {
+      "name": "ACL hardening repeat execution",
+      "status": "PASS"
+    },
+    {
+      "name": "001_identity_and_mission_sessions.sql collision fails transaction without overwrite",
+      "status": "PASS"
+    },
+    {
+      "name": "003_runtime_role.sql collision fails transaction without overwrite",
+      "status": "PASS"
+    },
+    {
+      "name": "existing profiles survive rejected repeat",
+      "status": "PASS"
+    },
+    {
+      "name": "dependency-ordered local down migration",
+      "status": "PASS"
+    },
+    {
+      "name": "Auth fixture users preserved after local down",
+      "status": "PASS"
+    },
+    {
+      "name": "fixture global function EXECUTE default restored",
+      "status": "PASS"
+    },
+    {
+      "name": "fixture ACL/default privilege recovery restores baseline behavior",
+      "status": "PASS"
+    },
+    {
+      "name": "clean install after local rollback succeeds",
+      "status": "PASS"
+    },
+    {
+      "name": "preexisting role collision leaves no partial training schema",
+      "status": "PASS"
+    },
+    {
+      "name": "trigger_collision late failure rolls back schema and role atomically",
+      "status": "PASS"
+    },
+    {
+      "name": "backfill_null late failure rolls back schema and role atomically",
+      "status": "PASS"
+    }
+  ],
+  "blocking_issues": [
+    "BLOCKING: direct runtime SQL changed identity settings and read B without B JWT."
+  ],
+  "limitations": [
+    "Embedded PostgreSQL WASM, no TCP authentication or asyncpg pool",
+    "Auth schema/roles are minimal fixtures, not a live Supabase stack",
+    "Local ACL recovery is not approved remote rollback"
+  ]
+}

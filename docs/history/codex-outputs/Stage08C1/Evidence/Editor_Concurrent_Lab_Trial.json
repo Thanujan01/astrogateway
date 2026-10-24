@@ -1,0 +1,115 @@
+{
+    "scene": "Assets/AstroGateway/Stage08B/MarsOutpost_Playable_Stage08B.unity",
+    "device": "Apple M4 Pro",
+    "api": "Metal",
+    "seconds": 25.00258975000179,
+    "fps": 687.2088120391116,
+    "p95_observer_interval_ms": 2.388916997006163,
+    "frames": 17182,
+    "sampled_intervals": 17182,
+    "gc0": 20,
+    "gc1": 20,
+    "gc2": 20,
+    "allocated_bytes": 2147355278,
+    "reserved_bytes": 13861158912,
+    "counters": [
+        {
+            "name": "Main Thread",
+            "unit": "TimeNanoseconds",
+            "samples": 17182,
+            "mean": 1453562.659993016,
+            "max": 13723875.0
+        },
+        {
+            "name": "Render Thread",
+            "unit": "unavailable",
+            "samples": 0,
+            "mean": 0.0,
+            "max": 0.0
+        },
+        {
+            "name": "CPU Main Thread Frame Time",
+            "unit": "TimeNanoseconds",
+            "samples": 17182,
+            "mean": 608961.26801304,
+            "max": 11852792.0
+        },
+        {
+            "name": "CPU Render Thread Frame Time",
+            "unit": "TimeNanoseconds",
+            "samples": 17182,
+            "mean": 607390.5921894979,
+            "max": 2825834.0
+        },
+        {
+            "name": "GPU Frame Time",
+            "unit": "TimeNanoseconds",
+            "samples": 17182,
+            "mean": 895475.0000000006,
+            "max": 4681624.0
+        },
+        {
+            "name": "Batches Count",
+            "unit": "Count",
+            "samples": 17182,
+            "mean": 0.0,
+            "max": 0.0
+        },
+        {
+            "name": "Draw Calls Count",
+            "unit": "Count",
+            "samples": 17182,
+            "mean": 0.0,
+            "max": 0.0
+        },
+        {
+            "name": "SetPass Calls Count",
+            "unit": "Count",
+            "samples": 17182,
+            "mean": 12.0,
+            "max": 12.0
+        },
+        {
+            "name": "Triangles Count",
+            "unit": "Count",
+            "samples": 17182,
+            "mean": 99779.0,
+            "max": 99779.0
+        },
+        {
+            "name": "Vertices Count",
+            "unit": "Count",
+            "samples": 17182,
+            "mean": 0.0,
+            "max": 0.0
+        },
+        {
+            "name": "GC Allocated In Frame",
+            "unit": "Bytes",
+            "samples": 17182,
+            "mean": 9136.82109184033,
+            "max": 271281.0
+        },
+        {
+            "name": "GC Used Memory",
+            "unit": "Bytes",
+            "samples": 17182,
+            "mean": 66982710.68047964,
+            "max": 69091328.0
+        },
+        {
+            "name": "GC Reserved Memory",
+            "unit": "Bytes",
+            "samples": 17182,
+            "mean": 99985457.823303,
+            "max": 100286464.0
+        },
+        {
+            "name": "GC.Collect",
+            "unit": "TimeNanoseconds",
+            "samples": 17182,
+            "mean": 7538.201257129526,
+            "max": 4211292.0
+        }
+    ]
+}

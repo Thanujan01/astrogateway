@@ -1,0 +1,2 @@
+System.Exception: refine
+  at MarsEnvironmentBuilder.Poll () [0x000ba] in /Users/kapilash/Projects/MissionRedHorizon/Assets/AstroGateway/Environment/Editor/MarsEnvironmentBuilder.cs:32 

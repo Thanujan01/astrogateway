@@ -1,0 +1,422 @@
+{
+  "rocks": [
+    {
+      "asset": "rock_07",
+      "triangles": 14844,
+      "meshes": 1,
+      "materials": 1,
+      "skins": 0,
+      "animations": 0,
+      "position_bounds": [
+        {
+          "min": [
+            -0.0875801146030426,
+            -0.00190715491771698,
+            -0.17797498404979706
+          ],
+          "max": [
+            0.08130179345607758,
+            0.1418129950761795,
+            0.14230197668075562
+          ]
+        }
+      ]
+    },
+    {
+      "asset": "rock_09",
+      "triangles": 12416,
+      "meshes": 1,
+      "materials": 1,
+      "skins": 0,
+      "animations": 0,
+      "position_bounds": [
+        {
+          "min": [
+            -0.036732789129018784,
+            -0.0005740977358072996,
+            -0.06106271967291832
+          ],
+          "max": [
+            0.03727707266807556,
+            0.03229531645774841,
+            0.08356179296970367
+          ]
+        }
+      ]
+    }
+  ],
+  "nasa_embedded_images": [
+    {
+      "name": "mars_2020_03",
+      "dimensions": null,
+      "bytes": 35318
+    },
+    {
+      "name": "mars_2020_03",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 122603
+    },
+    {
+      "name": "mars_2020_01_n",
+      "dimensions": null,
+      "bytes": 25070
+    },
+    {
+      "name": "mars_2020_01_n",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 59350
+    },
+    {
+      "name": "mars_2020_01",
+      "dimensions": null,
+      "bytes": 55612
+    },
+    {
+      "name": "mars_2020_01",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 168008
+    },
+    {
+      "name": "clear.png",
+      "dimensions": null,
+      "bytes": 102
+    },
+    {
+      "name": "clear.png",
+      "dimensions": [
+        64,
+        64
+      ],
+      "bytes": 250
+    },
+    {
+      "name": "mars_2020_02",
+      "dimensions": null,
+      "bytes": 37192
+    },
+    {
+      "name": "mars_2020_02",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 158781
+    },
+    {
+      "name": "glass",
+      "dimensions": null,
+      "bytes": 126
+    },
+    {
+      "name": "glass",
+      "dimensions": [
+        128,
+        128
+      ],
+      "bytes": 391
+    },
+    {
+      "name": "mars_2020_06_n",
+      "dimensions": null,
+      "bytes": 55390
+    },
+    {
+      "name": "mars_2020_06_n",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 97272
+    },
+    {
+      "name": "mars_2020_06",
+      "dimensions": null,
+      "bytes": 87542
+    },
+    {
+      "name": "mars_2020_06",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 209407
+    },
+    {
+      "name": "mars_2020_05",
+      "dimensions": null,
+      "bytes": 94974
+    },
+    {
+      "name": "mars_2020_05",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 253378
+    },
+    {
+      "name": "mars_2020_02_n",
+      "dimensions": null,
+      "bytes": 56952
+    },
+    {
+      "name": "mars_2020_02_n",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 100277
+    },
+    {
+      "name": "blade",
+      "dimensions": null,
+      "bytes": 52328
+    },
+    {
+      "name": "blade",
+      "dimensions": [
+        1024,
+        512
+      ],
+      "bytes": 172954
+    },
+    {
+      "name": "mars_2020_04",
+      "dimensions": null,
+      "bytes": 44344
+    },
+    {
+      "name": "mars_2020_04",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 162513
+    },
+    {
+      "name": "mars_2020_spring_n",
+      "dimensions": null,
+      "bytes": 1686
+    },
+    {
+      "name": "mars_2020_spring_n",
+      "dimensions": [
+        256,
+        256
+      ],
+      "bytes": 4460
+    },
+    {
+      "name": "mars_2020_hub_n",
+      "dimensions": null,
+      "bytes": 4062
+    },
+    {
+      "name": "mars_2020_hub_n",
+      "dimensions": [
+        256,
+        256
+      ],
+      "bytes": 7560
+    },
+    {
+      "name": "mars_2020_hub",
+      "dimensions": null,
+      "bytes": 7008
+    },
+    {
+      "name": "mars_2020_hub",
+      "dimensions": [
+        256,
+        256
+      ],
+      "bytes": 17511
+    },
+    {
+      "name": "mars_2020_05_n",
+      "dimensions": null,
+      "bytes": 23804
+    },
+    {
+      "name": "mars_2020_05_n",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 743375
+    },
+    {
+      "name": "foil_n.jpg",
+      "dimensions": null,
+      "bytes": 11512
+    },
+    {
+      "name": "foil_n.jpg",
+      "dimensions": [
+        512,
+        512
+      ],
+      "bytes": 43058
+    },
+    {
+      "name": "mars_2020_07",
+      "dimensions": null,
+      "bytes": 17174
+    },
+    {
+      "name": "mars_2020_07",
+      "dimensions": [
+        512,
+        512
+      ],
+      "bytes": 88892
+    },
+    {
+      "name": "arm_graphics",
+      "dimensions": null,
+      "bytes": 16834
+    },
+    {
+      "name": "arm_graphics",
+      "dimensions": [
+        512,
+        512
+      ],
+      "bytes": 63541
+    },
+    {
+      "name": "mars_2020_05_r",
+      "dimensions": null,
+      "bytes": 58592
+    },
+    {
+      "name": "mars_2020_05_r",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 458226
+    },
+    {
+      "name": "foil_n",
+      "dimensions": null,
+      "bytes": 11512
+    },
+    {
+      "name": "foil_n",
+      "dimensions": [
+        512,
+        512
+      ],
+      "bytes": 43058
+    },
+    {
+      "name": "sample_handling_door",
+      "dimensions": null,
+      "bytes": 5920
+    },
+    {
+      "name": "sample_handling_door",
+      "dimensions": [
+        512,
+        512
+      ],
+      "bytes": 33643
+    }
+  ],
+  "staged_textures": [
+    {
+      "file": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/sandy_gravel/sandy_gravel_AO.png",
+      "dimensions": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "file": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/sandy_gravel/sandy_gravel_nor_gl.png",
+      "dimensions": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "file": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/sandy_gravel/sandy_gravel_Diffuse.png",
+      "dimensions": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "file": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/sandy_gravel/sandy_gravel_Rough.png",
+      "dimensions": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "file": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_09/rock_09_AO.png",
+      "dimensions": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "file": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_09/rock_09_Diffuse.png",
+      "dimensions": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "file": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_09/rock_09_nor_gl.png",
+      "dimensions": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "file": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_09/rock_09_Rough.png",
+      "dimensions": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "file": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_07/rock_07_Diffuse.png",
+      "dimensions": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "file": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_07/rock_07_AO.png",
+      "dimensions": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "file": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_07/rock_07_nor_gl.png",
+      "dimensions": [
+        2048,
+        2048
+      ]
+    },
+    {
+      "file": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_07/rock_07_Rough.png",
+      "dimensions": [
+        2048,
+        2048
+      ]
+    }
+  ]
+}

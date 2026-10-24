@@ -1,0 +1,50 @@
+Mission integration tests — 2026-10-17 00:31:45
+PASS 26  FAIL 0
+
+Scene: Assets/AstroGateway/MissionIntegration/Scenes/Mars_MissionIntegration_v1.unity
+PASS  Running the isolated integration scene
+PASS  Bridge, life-support adapter and controller wired
+PASS  Local mission session started from the registry  [mission.red_horizon.production_visual.v1]
+PASS  Backend reported as not connected
+PASS  Account shown as offline, not signed in
+PASS  Panel is labelled provisional
+PASS  No score is shown before the rubric is approved
+PASS  Recommendation is the offline default, not authoritative
+PASS  No cloud sync claim in HUD
+Captured 01_Start_Astronaut_StatusPanel
+PASS  Boarding still works in the integration scene  [Control mode updated]
+PASS  Board command queued
+PASS  Driving still works  [7.9 m]
+Captured 02_Rover_Driving_StatusPanel
+PASS  Exit still works  [Control mode updated]
+PASS  Exit command queued and revision advanced  [rev 0 → 2]
+PASS  Command serialises to the planned FastAPI body  [{"command_id":"401b6ad8-3125-4c96-9d66-23e300e52908","expected_revision":1,"kind":"exit_rover","payload":{}}]
+PASS  Command ids unique
+PASS  Scans recorded and queued as scan commands  [queued 3, game scans 3]
+PASS  Scan command carries the sample id, labelled simulated
+PASS  Skill evidence counts scans and board/exit cycles  [scans 3, rover cycles 1]
+Captured 03_After_Scans_SkillEvidence
+PASS  Weather feed and command follow the dust storm
+PASS  Default oxygen model leaves gameplay unchanged (storm rate)  [used 0.0962%, legacy expects 0.0962%]
+Captured 04_DustStorm_Oxygen_Model
+PASS  A different oxygen model can be plugged in without code changes  [used 1.0083%, model expects 1.0083%]
+PASS  Pause and resume queued, session active again
+PASS  Local save/load still works alongside the bridge  [/Users/kapilash/Library/Application Support/DefaultCompany/MissionRedHorizon_Step1Lab/AstroGateway_ProductionVisual_v1.json]
+PASS  Status panel hides with the HUD
+Captured 05_Map_With_StatusPanel
+PASS  No errors or exceptions logged  [0 logged]
+
+Queued commands (local only, never sent):
+{"command_id":"2f28180e-3d54-4518-99b2-8fb40c241fb2","expected_revision":0,"kind":"board_rover","payload":{}}
+{"command_id":"401b6ad8-3125-4c96-9d66-23e300e52908","expected_revision":1,"kind":"exit_rover","payload":{}}
+{"command_id":"cca141f1-2b54-4c62-a8bd-1b6fd2465b48","expected_revision":2,"kind":"scan_target","payload":{"sample_id":"c4a17ebd-b0b0-4845-b2a7-319b0e4bc94c","tick":11,"analysis":"unverified_simulated"}}
+{"command_id":"6f224c5c-b87b-4217-8fde-534908d10096","expected_revision":3,"kind":"scan_target","payload":{"sample_id":"0395759b-e222-4d46-8454-386b669787d9","tick":13,"analysis":"unverified_simulated"}}
+{"command_id":"a03cc09f-dcae-40a9-ab5b-91324f4c3266","expected_revision":4,"kind":"scan_target","payload":{"sample_id":"08d3a6aa-0b3c-4109-a537-63d36ac58d41","tick":15,"analysis":"unverified_simulated"}}
+{"command_id":"b13e11b0-459f-464f-a877-1e0385501321","expected_revision":5,"kind":"weather_changed","payload":{"dust":2}}
+{"command_id":"b63d2aef-bc21-435e-b0cd-aafe2fe1b0e4","expected_revision":6,"kind":"weather_changed","payload":{"dust":0}}
+{"command_id":"27a5cb08-f8d9-48e9-b4ec-d2aff9dfe073","expected_revision":7,"kind":"pause","payload":{}}
+{"command_id":"7871fdc9-1f22-479e-abae-3bb9399ee7a4","expected_revision":8,"kind":"resume","payload":{}}
+{"command_id":"c034a8a9-01f2-40b3-b0ed-09127b379165","expected_revision":9,"kind":"pause","payload":{}}
+{"command_id":"2e496a7e-73d0-4265-8bb7-bdc3c1a74a37","expected_revision":10,"kind":"resume","payload":{}}
+
+Logged errors:

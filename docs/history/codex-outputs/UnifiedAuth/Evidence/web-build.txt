@@ -1,0 +1,21 @@
+
+> astrogateway@0.0.0 build
+> tsc -b && vite build
+
+vite v8.3.3 building client environment for production...
+transforming...
+✓ 2497 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.53 kB │ gzip:   0.33 kB
+dist/assets/App-BbEwLEJ1.css      1.65 kB │ gzip:   0.69 kB
+dist/assets/index-Ba24Vqt5.css    6.15 kB │ gzip:   1.97 kB
+dist/assets/index-CiTBVHyt.js   463.73 kB │ gzip: 132.47 kB
+dist/assets/App-CSTsUvhX.js     925.03 kB │ gzip: 246.25 kB
+
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 333ms

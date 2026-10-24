@@ -1,0 +1,66 @@
+{
+  "screens": [
+    "Splash",
+    "Welcome",
+    "Sign up",
+    "Sign in",
+    "Dashboard",
+    "Astronaut profile",
+    "Training progress",
+    "Settings",
+    "Missions",
+    "Launch"
+  ],
+  "navigation": [
+    "Sign up \u2192 Welcome via Back",
+    "Astronaut profile \u2192 Dashboard via Back",
+    "Training progress \u2192 Dashboard via Back",
+    "Settings \u2192 Dashboard via Back",
+    "Launch \u2192 Missions \u2192 Dashboard via Back",
+    "Profile \u2192 Dashboard via edge gesture"
+  ],
+  "cycles": [
+    {
+      "cycle": 1,
+      "launch_id": "88ffc062-9a9f-4d5a-9433-d7d041f2ba5b",
+      "return_method": "button",
+      "native_to_unity": true,
+      "ack": true,
+      "result": true,
+      "dashboard_return": true,
+      "host_pid_preserved": true,
+      "unity_pid_reused": true
+    },
+    {
+      "cycle": 2,
+      "launch_id": "ae87bc63-fc35-4cf2-95f5-bbecf083160c",
+      "return_method": "key",
+      "native_to_unity": true,
+      "ack": true,
+      "result": true,
+      "dashboard_return": true,
+      "host_pid_preserved": true,
+      "unity_pid_reused": true
+    },
+    {
+      "cycle": 3,
+      "launch_id": "f112ebd1-3e25-4aea-9e3a-2ed0cd8eac09",
+      "return_method": "gesture",
+      "native_to_unity": true,
+      "ack": true,
+      "result": true,
+      "dashboard_return": true,
+      "host_pid_preserved": true,
+      "unity_pid_reused": true
+    }
+  ],
+  "passed": true,
+  "installation": "Performing Streamed Install\nSuccess\n",
+  "model": "sdk_gphone64_arm64",
+  "android": "16",
+  "host_launch": "Starting: Intent { cmp=com.sk2lb.astrogateway.poc/.MainActivity }\nStatus: ok\nLaunchState: COLD\nActivity: com.sk2lb.astrogateway.poc/.MainActivity\nTotalTime: 841\nWaitTime: 843\nComplete\n",
+  "fatal_exception": false,
+  "fatal_signal": false,
+  "anr": false,
+  "tested_apk_sha256": "8565d2e9acd90d572fe2c143c189346934e11a3a1aa188ded7767d52ae3f7d49"
+}

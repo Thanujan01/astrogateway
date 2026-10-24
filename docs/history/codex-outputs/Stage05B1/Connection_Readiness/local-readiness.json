@@ -1,0 +1,17 @@
+{
+  "approved_project_reference": "jvkwofmxtxjhdwtwdboz",
+  "android_public_config_saved": true,
+  "backend_public_config_saved": true,
+  "private_modes": {
+    "auth.local.properties": "0o600",
+    "backend/.env": "0o600",
+    "database/admin.local.env": "0o600"
+  },
+  "database_password_supplied": false,
+  "migration_applied": false,
+  "direct_db_dns_resolved": false,
+  "migration_matches_delivered": true,
+  "git_repository_present": false,
+  "supabase_cli_available": false,
+  "supabase_initialized": false
+}

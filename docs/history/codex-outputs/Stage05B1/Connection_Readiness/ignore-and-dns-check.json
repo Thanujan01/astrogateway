@@ -1,0 +1,20 @@
+{
+  "ignored_paths": [
+    "auth.local.properties",
+    "backend/.env",
+    "database/admin.local.env",
+    "live.test-secrets.json"
+  ],
+  "all_private_config_ignored": true,
+  "project_repo_present": false,
+  "direct_dns_by_family": {
+    "IPv4": {
+      "resolved": false,
+      "resolver_error_code": 8
+    },
+    "IPv6": {
+      "resolved": false,
+      "resolver_error_code": 8
+    }
+  }
+}

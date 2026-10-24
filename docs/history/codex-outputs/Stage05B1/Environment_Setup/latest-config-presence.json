@@ -1,0 +1,30 @@
+{
+  "backend/.env": {
+    "exists": true,
+    "mode": "0o600",
+    "settings": {
+      "ASTROGATEWAY_ENVIRONMENT": true,
+      "ASTROGATEWAY_APPROVED_PROJECT_REF": false,
+      "SUPABASE_URL": false,
+      "SUPABASE_PUBLISHABLE_KEY": false,
+      "DATABASE_URL": false,
+      "SUPABASE_JWT_ISSUER": false,
+      "CORS_ALLOWED_ORIGINS": false
+    }
+  },
+  "auth.local.properties": {
+    "exists": true,
+    "mode": "0o600",
+    "settings": {
+      "supabase.url": false,
+      "supabase.publishableKey": false,
+      "auth.backendUrl": true
+    }
+  },
+  "live.test-secrets.json": {
+    "exists": true,
+    "mode": "0o600",
+    "account_a_ready": false,
+    "account_b_ready": false
+  }
+}

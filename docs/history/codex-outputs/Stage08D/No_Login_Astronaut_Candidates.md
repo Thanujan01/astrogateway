@@ -1,0 +1,25 @@
+# Astronaut alternatives — 11 October 2026
+
+No candidate has been verified to satisfy **realistic + rigged + clear redistribution rights + downloadable without authentication + Unity-ready idle/walk/run**. No new astronaut archive was downloaded or imported. Public product pages and metadata were researched; no account/login link was followed, no credentials used and no authentication bypass attempted. Public pages can contain unused login widgets; that is not evidence of a download entitlement.
+
+## Candidates and exact primary evidence
+
+| Candidate / exact URL | License evidence | Rig / animation evidence | Textures / format / Unity | Decision |
+|---|---|---|---|---|
+| [EMU suit, jgilhutton](https://blendswap.com/blend/12622) | Listing says CC-BY, requests credit; license version not specified in displayed metadata. Obtain exact archive license before redistribution. | Author says fully rigged, helmet controls, bone fixes; finger problems documented. No idle/walk/run promise. | Blender 2.6x / Cycles, 18.9 MB; packed textures claimed, normal-map artifacts documented. Map sizes and triangles unknown. Export FBX with unpacked maps and rebuild URP materials; no Humanoid validation. | Closest realistic research lead, but no verified anonymous download; **not acquisition-ready**. Do not follow account routes. |
+| [Astronaut, soph](https://blendswap.com/blend/22902) | Listing CC0. | Rig and basic walk claimed; idle/run not established. | 5.35 MB .blend; description says Blender 2.8 but metadata 2.7x. Textures/polycount unknown. FBX export and Humanoid retargeting required. | Futuristic rather than verified realistic EVA; anonymous download unverified. Hold. |
+| [Rigged astronaut, Nico Antoniazzi](https://www.artstation.com/marketplace/p/PkJD/rigged-astronaut) | Displayed Standard Use license limits personal use/one commercial project to 2,000 sales or 20,000 views; not unrestricted redistribution. | Rigged low-poly version claimed; clips not listed. | Rigged FBX 540 KB, rigged .blend 110 MB, diffuse.zip 22 MB; map dimensions/rig topology unknown. | Paid/restricted marketplace; not a verified anonymous acquisition. **Do not purchase/import**. |
+| [MrLentereng rigged astronaut](https://mrlentereng.itch.io/rigged-low-poly-astronaut) | Author explicitly CC0 1.0 for original and rigged version; credits ThunderWare original. | Standard humanoid skeleton and skin weights claimed; exact idle/walk/run clip inventory not stated. | BLEND+FBX ZIP 422 KB; textures mentioned but no resolution/polycount. Unity Humanoid plausible, untested. | Public name-your-price download listing, no required account indicated; actual archive access not exercised. Explicitly stylized low-poly: **fails realistic brief; not proposed as substitute**. |
+| [zisongbr mobile astronaut](https://opengameart.org/content/low-polymobile-astronaut-rigged-and-blend) | CC0 linked to [legal deed](https://creativecommons.org/publicdomain/zero/1.0/); creator notice AstroDev/Fernando Ferreira. Separate MK Toon shader rights not covered. | Rig advertised; clip names not specified. | .blend ZIP 3.8 MB; Unity demonstration with third-party toon shader. Texture dimensions/tris/rig unverified. | Public attached archive listing; toon art fails realism. Do not import shader or character as replacement. |
+
+No table entry has passed local skeleton, texture, license-archive or Unity compatibility inspection; publisher statements are explicitly separated from binary evidence. Preview imagery is available on the linked primary listing pages; no preview is represented as AstroGateway gameplay.
+
+## Rejected sources
+
+[ThunderWare original](https://mariusmopar.itch.io/astronaut-low-poly): CC0 but explicitly unrigged; reject. [Open3DModel space suit](https://open3dmodel.com/3d-models/astronaut-in-space-suit_354637.html): NonCommercial and unrigged; reject. [Grab3D public API](https://grab3d.com/api/v1/models.json) inspected anonymously: its astronaut match is only a stylized helmet, rigged=null; catalog metadata saved in `work/stage08d/grab3d_catalog.json`. [API documentation](https://grab3d.com/developers/) documents keyless access and CC0; that does not create a suitable astronaut. NASA static astronaut downloads are not accepted as rigged substitutes. Muko_Art remains blocked and is not revisited through account routes.
+
+## Approval decisions needed
+
+Recommended: operator supplies a locally licensed realistic rigged EVA FBX/GLB archive, including redistribution license and idle/walk/run provenance, or approves commissioning one with those delivery requirements. A directly supplied archive avoids account navigation and allows actual measurements. No available fallback is approved merely by listing it here.
+
+If the operator explicitly relaxes realism, MrLentereng is a potential CC0 rigged evaluation candidate, but that would change the brief and still needs download/evaluation approval. Until then astronaut replacement remains BLOCKED. Do not silently downgrade to low-poly/toon or unrigged geometry.

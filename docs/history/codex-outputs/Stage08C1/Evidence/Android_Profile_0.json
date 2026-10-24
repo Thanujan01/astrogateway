@@ -1,0 +1,119 @@
+{
+  "stage": 0,
+  "frames": 109,
+  "peak_particles": 0,
+  "unsupported_material_renderers": 0,
+  "width": 2340,
+  "height": 1080,
+  "label": "clear",
+  "device": "Android Emulator OpenGL ES Translator (ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (LLVM 10.0.0) (0x0000C0DE)), SwiftShader driver-5.0.0))",
+  "api": "OpenGLES3",
+  "counters": [
+    {
+      "name": "Main Thread",
+      "unit": "TimeNanoseconds",
+      "samples": 109,
+      "mean": 229782063.52293578,
+      "max": 440798375.0
+    },
+    {
+      "name": "Render Thread",
+      "unit": "unavailable",
+      "samples": 0,
+      "mean": 0.0,
+      "max": 0.0
+    },
+    {
+      "name": "CPU Main Thread Frame Time",
+      "unit": "TimeNanoseconds",
+      "samples": 109,
+      "mean": 20512065.66972477,
+      "max": 91620500.0
+    },
+    {
+      "name": "CPU Render Thread Frame Time",
+      "unit": "TimeNanoseconds",
+      "samples": 109,
+      "mean": 216721473.0642201,
+      "max": 250425834.0
+    },
+    {
+      "name": "GPU Frame Time",
+      "unit": "TimeNanoseconds",
+      "samples": 109,
+      "mean": 231592280.3394496,
+      "max": 259028000.0
+    },
+    {
+      "name": "Batches Count",
+      "unit": "Count",
+      "samples": 109,
+      "mean": 0.0,
+      "max": 0.0
+    },
+    {
+      "name": "Draw Calls Count",
+      "unit": "Count",
+      "samples": 109,
+      "mean": 0.0,
+      "max": 0.0
+    },
+    {
+      "name": "SetPass Calls Count",
+      "unit": "Count",
+      "samples": 109,
+      "mean": 26.0,
+      "max": 26.0
+    },
+    {
+      "name": "Triangles Count",
+      "unit": "Count",
+      "samples": 109,
+      "mean": 100902.96330275231,
+      "max": 100905.0
+    },
+    {
+      "name": "Vertices Count",
+      "unit": "Count",
+      "samples": 109,
+      "mean": 0.0,
+      "max": 0.0
+    },
+    {
+      "name": "GC Allocated In Frame",
+      "unit": "Bytes",
+      "samples": 109,
+      "mean": 9385.816513761465,
+      "max": 657476.0
+    },
+    {
+      "name": "GC Used Memory",
+      "unit": "Bytes",
+      "samples": 109,
+      "mean": 9508995.522935785,
+      "max": 9711616.0
+    },
+    {
+      "name": "GC Reserved Memory",
+      "unit": "Bytes",
+      "samples": 109,
+      "mean": 11722752.0,
+      "max": 11722752.0
+    },
+    {
+      "name": "GC.Collect",
+      "unit": "TimeNanoseconds",
+      "samples": 109,
+      "mean": 0.0,
+      "max": 0.0
+    }
+  ],
+  "gc0": 30,
+  "gc1": 30,
+  "gc2": 30,
+  "seconds": 25.21980094909668,
+  "average_fps": 4.322000980377197,
+  "p95_frame_ms": 250.0,
+  "max_frame_ms": 450.0,
+  "peak_unity_allocated_bytes": 95833510
+}

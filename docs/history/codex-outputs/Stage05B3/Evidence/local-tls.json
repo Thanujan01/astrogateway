@@ -1,0 +1,10 @@
+{
+  "ssl": true,
+  "version": "TLSv1.3",
+  "cipher": "TLS_AES_256_GCM_SHA384",
+  "hostname_checked": true,
+  "chain_required": true,
+  "strict_profile": true,
+  "local_only": true,
+  "hosted_pooler_to_database": "UNVERIFIED"
+}

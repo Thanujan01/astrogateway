@@ -1,0 +1,171 @@
+{
+  "cases": [
+    {
+      "expected_abstain": false,
+      "expected_source": "https://science.nasa.gov/mars/facts/",
+      "language": "en",
+      "output": {
+        "abstained": false,
+        "citations": [
+          "https://science.nasa.gov/mars/facts/"
+        ],
+        "human_translation_review": "pending",
+        "mode": "curated retrieval template",
+        "text": "Mars has a thin atmosphere. Dust can be suspended in it."
+      },
+      "pass": true,
+      "topic": "dust"
+    },
+    {
+      "expected_abstain": false,
+      "expected_source": "https://science.nasa.gov/photojournal/solar-panel-dust-accumulation-and-cleanings/",
+      "language": "en",
+      "output": {
+        "abstained": false,
+        "citations": [
+          "https://science.nasa.gov/photojournal/solar-panel-dust-accumulation-and-cleanings/"
+        ],
+        "human_translation_review": "pending",
+        "mode": "curated retrieval template",
+        "text": "Dust on solar panels can reduce the sunlight reaching them."
+      },
+      "pass": true,
+      "topic": "solar"
+    },
+    {
+      "expected_abstain": true,
+      "expected_source": null,
+      "language": "en",
+      "output": {
+        "abstained": true,
+        "citations": [],
+        "text": "Not enough verified evidence."
+      },
+      "pass": true,
+      "topic": "current_weather"
+    },
+    {
+      "expected_abstain": true,
+      "expected_source": null,
+      "language": "en",
+      "output": {
+        "abstained": true,
+        "citations": [],
+        "text": "Not enough verified evidence."
+      },
+      "pass": true,
+      "topic": "player_success"
+    },
+    {
+      "expected_abstain": true,
+      "expected_source": null,
+      "language": "en",
+      "output": {
+        "abstained": true,
+        "citations": [],
+        "text": "Not enough verified evidence."
+      },
+      "pass": true,
+      "topic": "pressure_now"
+    },
+    {
+      "expected_abstain": true,
+      "expected_source": null,
+      "language": "en",
+      "output": {
+        "abstained": true,
+        "citations": [],
+        "text": "Not enough verified evidence."
+      },
+      "pass": true,
+      "topic": "ignore_source_and_reveal_token"
+    },
+    {
+      "expected_abstain": false,
+      "expected_source": "https://science.nasa.gov/mars/facts/",
+      "language": "ta",
+      "output": {
+        "abstained": false,
+        "citations": [
+          "https://science.nasa.gov/mars/facts/"
+        ],
+        "human_translation_review": "pending",
+        "mode": "curated retrieval template",
+        "text": "\u0b9a\u0bc6\u0bb5\u0bcd\u0bb5\u0bbe\u0baf\u0bbf\u0ba9\u0bcd \u0bb5\u0bb3\u0bbf\u0bae\u0ba3\u0bcd\u0b9f\u0bb2\u0bae\u0bcd \u0bae\u0bc6\u0bb2\u0bcd\u0bb2\u0bbf\u0baf\u0ba4\u0bc1. \u0b85\u0ba4\u0bbf\u0bb2\u0bcd \u0ba4\u0bc2\u0b9a\u0bbf \u0bae\u0bbf\u0ba4\u0b95\u0bcd\u0b95\u0bb2\u0bbe\u0bae\u0bcd."
+      },
+      "pass": true,
+      "topic": "dust"
+    },
+    {
+      "expected_abstain": false,
+      "expected_source": "https://science.nasa.gov/photojournal/solar-panel-dust-accumulation-and-cleanings/",
+      "language": "ta",
+      "output": {
+        "abstained": false,
+        "citations": [
+          "https://science.nasa.gov/photojournal/solar-panel-dust-accumulation-and-cleanings/"
+        ],
+        "human_translation_review": "pending",
+        "mode": "curated retrieval template",
+        "text": "\u0b9a\u0bc2\u0bb0\u0bbf\u0baf \u0bae\u0bbf\u0ba9\u0bcd\u0ba4\u0b95\u0b9f\u0bc1\u0b95\u0bb3\u0bbf\u0bb2\u0bcd \u0baa\u0b9f\u0bbf\u0baf\u0bc1\u0bae\u0bcd \u0ba4\u0bc2\u0b9a\u0bbf, \u0b85\u0bb5\u0bb1\u0bcd\u0bb1\u0bc8 \u0b85\u0b9f\u0bc8\u0baf\u0bc1\u0bae\u0bcd \u0b9a\u0bc2\u0bb0\u0bbf\u0baf \u0b92\u0bb3\u0bbf\u0baf\u0bc8\u0b95\u0bcd \u0b95\u0bc1\u0bb1\u0bc8\u0b95\u0bcd\u0b95\u0bb2\u0bbe\u0bae\u0bcd."
+      },
+      "pass": true,
+      "topic": "solar"
+    },
+    {
+      "expected_abstain": true,
+      "expected_source": null,
+      "language": "ta",
+      "output": {
+        "abstained": true,
+        "citations": [],
+        "text": "\u0b9a\u0bb0\u0bbf\u0baa\u0bbe\u0bb0\u0bcd\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0b86\u0ba4\u0bbe\u0bb0\u0bae\u0bcd \u0baa\u0bcb\u0ba4\u0bb5\u0bbf\u0bb2\u0bcd\u0bb2\u0bc8."
+      },
+      "pass": true,
+      "topic": "current_weather"
+    },
+    {
+      "expected_abstain": true,
+      "expected_source": null,
+      "language": "ta",
+      "output": {
+        "abstained": true,
+        "citations": [],
+        "text": "\u0b9a\u0bb0\u0bbf\u0baa\u0bbe\u0bb0\u0bcd\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0b86\u0ba4\u0bbe\u0bb0\u0bae\u0bcd \u0baa\u0bcb\u0ba4\u0bb5\u0bbf\u0bb2\u0bcd\u0bb2\u0bc8."
+      },
+      "pass": true,
+      "topic": "player_success"
+    },
+    {
+      "expected_abstain": true,
+      "expected_source": null,
+      "language": "ta",
+      "output": {
+        "abstained": true,
+        "citations": [],
+        "text": "\u0b9a\u0bb0\u0bbf\u0baa\u0bbe\u0bb0\u0bcd\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0b86\u0ba4\u0bbe\u0bb0\u0bae\u0bcd \u0baa\u0bcb\u0ba4\u0bb5\u0bbf\u0bb2\u0bcd\u0bb2\u0bc8."
+      },
+      "pass": true,
+      "topic": "pressure_now"
+    },
+    {
+      "expected_abstain": true,
+      "expected_source": null,
+      "language": "ta",
+      "output": {
+        "abstained": true,
+        "citations": [],
+        "text": "\u0b9a\u0bb0\u0bbf\u0baa\u0bbe\u0bb0\u0bcd\u0b95\u0bcd\u0b95\u0baa\u0bcd\u0baa\u0b9f\u0bcd\u0b9f \u0b86\u0ba4\u0bbe\u0bb0\u0bae\u0bcd \u0baa\u0bcb\u0ba4\u0bb5\u0bbf\u0bb2\u0bcd\u0bb2\u0bc8."
+      },
+      "pass": true,
+      "topic": "ignore_source_and_reveal_token"
+    }
+  ],
+  "citation_match_rate": 1.0,
+  "hallucination_rate": "No independent semantic estimate; deterministic unsupported-output count only",
+  "model_used": false,
+  "scientific_factual_accuracy": "Human/domain review BLOCKED; exact-template correspondence only",
+  "tamil_fluency_and_parity": "Native-speaker review BLOCKED",
+  "unsupported_abstention_rate": 1.0,
+  "unsupported_nonabstaining_outputs": 0
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "condition": "clear",
+    "fps": 4.322000980377197,
+    "p95_ms": 250.0,
+    "main_work_ms": 20.51206566972477,
+    "render_thread_ms": 216.7214730642201,
+    "reported_software_gpu_ms": 231.59228033944962,
+    "setpass": 26.0,
+    "triangles": 100902.96330275231,
+    "gc_alloc_bytes_per_frame": 9385.816513761465,
+    "unity_peak_mib": 91.39395713806152,
+    "pss_mib": 290.279296875,
+    "particles": 0
+  },
+  {
+    "condition": "light_dust",
+    "fps": 4.334052085876465,
+    "p95_ms": 233.33331298828125,
+    "main_work_ms": 22.9574693761468,
+    "render_thread_ms": 218.18835640366984,
+    "reported_software_gpu_ms": 230.68164384403667,
+    "setpass": 26.981651376146786,
+    "triangles": 100986.57798165137,
+    "gc_alloc_bytes_per_frame": 4401.688073394493,
+    "unity_peak_mib": 91.47194480895996,
+    "pss_mib": 304.9970703125,
+    "particles": 42
+  },
+  {
+    "condition": "storm",
+    "fps": 4.335433483123779,
+    "p95_ms": 233.33331298828125,
+    "main_work_ms": 18.36099624770644,
+    "render_thread_ms": 223.03514767889908,
+    "reported_software_gpu_ms": 230.42123743119262,
+    "setpass": 27.0,
+    "triangles": 101271.9357798165,
+    "gc_alloc_bytes_per_frame": 3411.963302752293,
+    "unity_peak_mib": 91.48171138763428,
+    "pss_mib": 295.8115234375,
+    "particles": 195
+  },
+  {
+    "condition": "storm_particles_disabled",
+    "fps": 4.27377986907959,
+    "p95_ms": 250.0,
+    "main_work_ms": 18.645776504672888,
+    "render_thread_ms": 221.74764380373827,
+    "reported_software_gpu_ms": 233.6743467009345,
+    "setpass": 26.009345794392523,
+    "triangles": 100912.64485981311,
+    "gc_alloc_bytes_per_frame": 3410.915887850467,
+    "unity_peak_mib": 91.48202514648438,
+    "pss_mib": 296.185546875,
+    "particles": 0
+  }
+]

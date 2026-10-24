@@ -1,0 +1,2 @@
+Reopened saved scene in Unity 6000.6.4f1
+Console after clearing earlier resolved authoring messages and validating: errors=0, warnings=0, logs=0

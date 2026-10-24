@@ -1,0 +1,5 @@
+Entering Playmode with Reload Domain disabled.
+Entering Playmode with Reload Scene disabled. If you experience any issues, please disable "Enter Play Mode Options" in Editor Settings
+Entering Playmode with Reload Domain disabled.
+Entering Playmode with Reload Scene disabled. If you experience any issues, please disable "Enter Play Mode Options" in Editor Settings
+ASTROGATEWAY_ART_CAPTURE_OK

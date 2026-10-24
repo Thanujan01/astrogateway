@@ -1,0 +1,5 @@
+{
+  "gateway_expected_process": false,
+  "disposable_postgres_stopped": true,
+  "remote_operations": false
+}

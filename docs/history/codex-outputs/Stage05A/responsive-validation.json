@@ -1,0 +1,7 @@
+{
+  "dashboard_root_back_backgrounds_task": true,
+  "launcher_reentry_restores_dashboard": true,
+  "reduced_motion_preference_persists": true,
+  "tablet_dashboard_visible": true,
+  "emulated_tablet_size": "1920x1200, density 240 dpi; 1280x800 dp"
+}

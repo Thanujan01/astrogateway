@@ -1,0 +1,50 @@
+[
+  {
+    "path": "/Users/kapilash/Projects/MissionRedHorizon/Assets/AstroGateway/Environment/Materials/Solar_Cells_Dust_512.png",
+    "width": 512,
+    "height": 512,
+    "disk_bytes": 335980
+  },
+  {
+    "path": "/Users/kapilash/Projects/MissionRedHorizon/Assets/AstroGateway/Environment/Materials/Regolith_MicroNormal_256.png",
+    "width": 256,
+    "height": 256,
+    "disk_bytes": 134841
+  },
+  {
+    "path": "/Users/kapilash/Projects/MissionRedHorizon/Assets/AstroGateway/Environment/Materials/Delta_FracturedStrata_512.png",
+    "width": 512,
+    "height": 512,
+    "disk_bytes": 290328
+  },
+  {
+    "path": "/Users/kapilash/Projects/MissionRedHorizon/Assets/AstroGateway/Environment/Materials/Basalt_Surface_512.png",
+    "width": 512,
+    "height": 512,
+    "disk_bytes": 305865
+  },
+  {
+    "path": "/Users/kapilash/Projects/MissionRedHorizon/Assets/AstroGateway/Environment/Materials/Delta_Bedding_512.png",
+    "width": 512,
+    "height": 512,
+    "disk_bytes": 286524
+  },
+  {
+    "path": "/Users/kapilash/Projects/MissionRedHorizon/Assets/AstroGateway/Environment/Materials/Regolith_Grain_512.png",
+    "width": 512,
+    "height": 512,
+    "disk_bytes": 186184
+  },
+  {
+    "path": "/Users/kapilash/Projects/MissionRedHorizon/Assets/AstroGateway/Environment/Materials/Composite_DustPaint_512.png",
+    "width": 512,
+    "height": 512,
+    "disk_bytes": 163050
+  },
+  {
+    "path": "/Users/kapilash/Projects/MissionRedHorizon/Assets/AstroGateway/Environment/Materials/Regolith_Macro_Pathwear_1024.png",
+    "width": 1024,
+    "height": 1024,
+    "disk_bytes": 1224760
+  }
+]

@@ -1,0 +1,191 @@
+[
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_07/rock_07.gltf",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/2k/rock_07/rock_07_2k.gltf",
+    "bytes": 2979,
+    "sha256": "b0ff2386f1225784707df0a07b8bfb0e35e220a42b89a2be5e9e6ac035aa2a85",
+    "publisher_md5_matched": true
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_07/rock_07.bin",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/rock_07/rock_07.bin",
+    "bytes": 468936,
+    "sha256": "e4a532a6d6cf4a08c288f501b790f32cba0528136a29959ce774c3cd39369e7e",
+    "publisher_md5_matched": true
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_07/rock_07.fbx",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/fbx/2k/rock_07/rock_07_2k.fbx",
+    "bytes": 1160220,
+    "sha256": "a49a0fce3da2a976013aac8be3899817b0fe03a1f19628ea0677820df3bdbae1",
+    "publisher_md5_matched": true
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_07/rock_07_Diffuse.png",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/rock_07/rock_07_diff_2k.png",
+    "bytes": 14165138,
+    "sha256": "7fdc09821973bd7cfa3453c4d96ff54bb0d21a13fbc38414878169a114b181a3",
+    "publisher_md5_matched": true
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_07/rock_07_nor_gl.png",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/rock_07/rock_07_nor_gl_2k.png",
+    "bytes": 14247247,
+    "sha256": "36ae9bfe344c8aff81b740df707ea08e42da9180c0f86a7f644aaebb7d52b729",
+    "publisher_md5_matched": true
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_07/rock_07_Rough.png",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/rock_07/rock_07_rough_2k.png",
+    "bytes": 6773194,
+    "sha256": "02476e8cfd71ce523465df942d3bb2d094d471ea10726dbc25f003d0751e3ecb",
+    "publisher_md5_matched": true
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_07/rock_07_AO.png",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/rock_07/rock_07_ao_2k.png",
+    "bytes": 3719788,
+    "sha256": "59ceb23cd296fb227e0e4e3856d7f7e71d209157f63044260638527ecf8d3779",
+    "publisher_md5_matched": true
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_09/rock_09.gltf",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/2k/rock_09/rock_09_2k.gltf",
+    "bytes": 2745,
+    "sha256": "f5f430215ad93e3d95755aa78c1c84a619497dfdc1ee297f8ac35df607ee03a3",
+    "publisher_md5_matched": true
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_09/rock_09.bin",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/rock_09/rock_09.bin",
+    "bytes": 286592,
+    "sha256": "780c37d6fc11ca3a01c3763535ef883908b6007271a46bd446d2289ded820751",
+    "publisher_md5_matched": true
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_09/rock_09.fbx",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/fbx/2k/rock_09/rock_09_2k.fbx",
+    "bytes": 890732,
+    "sha256": "a04920ea816c4a3ca88c57ce8cbe2a9ba9315130df1c32b589640819d5096333",
+    "publisher_md5_matched": true
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_09/rock_09_Diffuse.png",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/rock_09/rock_09_diff_2k.png",
+    "bytes": 14290980,
+    "sha256": "1a6300ec3d4ed414f83a13078b857ba7a0acaa7d15f5d63cb53a13c395579c1b",
+    "publisher_md5_matched": true
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_09/rock_09_nor_gl.png",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/rock_09/rock_09_nor_gl_2k.png",
+    "bytes": 14168673,
+    "sha256": "336230ec8b5c0efd635158e86ab1e90f850665246f9395d7ab065c45264a630d",
+    "publisher_md5_matched": true
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_09/rock_09_Rough.png",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/rock_09/rock_09_rough_2k.png",
+    "bytes": 6729610,
+    "sha256": "020cb6128cfdc65151101d3c7f0e1b071244af875d1124bbed3780dedd9c060c",
+    "publisher_md5_matched": true
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_09/rock_09_AO.png",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/png/2k/rock_09/rock_09_ao_2k.png",
+    "bytes": 3882206,
+    "sha256": "f85542fde3a023d952354ffdb4169b707469b278f5454aa511606352687a1e0b",
+    "publisher_md5_matched": true
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/sandy_gravel/sandy_gravel_Diffuse.png",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/sandy_gravel/sandy_gravel_diff_2k.png",
+    "bytes": 23074666,
+    "sha256": "140144c5f28cc977d05e51347acec66ef71a5141fe8a42a85e088c2d9ced9eef",
+    "publisher_md5_matched": true
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/sandy_gravel/sandy_gravel_nor_gl.png",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/sandy_gravel/sandy_gravel_nor_gl_2k.png",
+    "bytes": 23774859,
+    "sha256": "4252d47bea81ac6f90ab9b1988929f6e0b16a89bed2ce07d648bea0871240d32",
+    "publisher_md5_matched": true
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/sandy_gravel/sandy_gravel_Rough.png",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/sandy_gravel/sandy_gravel_rough_2k.png",
+    "bytes": 9484782,
+    "sha256": "1184bc5d17a61bd6f3b29dc09a0d016ddc54ddad192cf290a28d323b1f8b706e",
+    "publisher_md5_matched": true
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/sandy_gravel/sandy_gravel_AO.png",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/2k/sandy_gravel/sandy_gravel_ao_2k.png",
+    "bytes": 7873431,
+    "sha256": "85b62e170b5cef9818385c25bfc8de72030afabdcc44b02947d2bd6e599ecce8",
+    "publisher_md5_matched": true
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/PolyHaven_License.html",
+    "source_url": "https://polyhaven.com/license",
+    "bytes": 72324,
+    "sha256": "6f4f617c936d14d5a80db6a2ebec145c79277a760672501eef51bff7a0d4cbba",
+    "publisher_md5_matched": null
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/CC0_Legalcode.html",
+    "source_url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+    "bytes": 32223,
+    "sha256": "b43732f4c1463b087cf10d4daf8d8766514b2bf8f21bc5ef50905f95be227726",
+    "publisher_md5_matched": null
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/Perseverance.glb",
+    "source_url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Models/Mars%202020%20Perseverance%20Rover/Mars%202020%20Perseverance%20Rover.glb",
+    "bytes": 4987176,
+    "sha256": "10db7c03a5e63a5a3b3e7baa6243aa4918ba045fa8ff0a731d0217491adc727f",
+    "publisher_md5_matched": null
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_07/textures/rock_07_arm_2k.jpg",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/rock_07/rock_07_arm_2k.jpg",
+    "bytes": 829879,
+    "sha256": "d083f995ad460c53f436b335493e66d08d911df67a3106293a62521f49131fa6",
+    "publisher_md5_matched": true
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_07/textures/rock_07_diff_2k.jpg",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/rock_07/rock_07_diff_2k.jpg",
+    "bytes": 2227207,
+    "sha256": "f83d8439faccbda1c74a37421ef9bada9719eff790db000d87ba34c21bce6f72",
+    "publisher_md5_matched": true
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_07/textures/rock_07_nor_gl_2k.jpg",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/rock_07/rock_07_nor_gl_2k.jpg",
+    "bytes": 2781907,
+    "sha256": "9d5c4dc97891ceb04861ae1194caad64b99b0b486e59572d84537e4e0df4183f",
+    "publisher_md5_matched": true
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_09/textures/rock_09_nor_gl_2k.jpg",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/rock_09/rock_09_nor_gl_2k.jpg",
+    "bytes": 2565303,
+    "sha256": "944b7763b6431671e07b4e7ebe082cf747e791513e27c830a3bb2dbee0246614",
+    "publisher_md5_matched": true
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_09/textures/rock_09_diff_2k.jpg",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/rock_09/rock_09_diff_2k.jpg",
+    "bytes": 2102702,
+    "sha256": "657406a77530db692061b475681f98cbf1c67be81a5c422830dbe6eb36df813a",
+    "publisher_md5_matched": true
+  },
+  {
+    "path": "/Users/kapilash/Documents/Codex/2026-10-08/task-01-create-unity-6-urp/work/stage08d/Acquired/rock_09/textures/rock_09_arm_2k.jpg",
+    "source_url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/2k/rock_09/rock_09_arm_2k.jpg",
+    "bytes": 863180,
+    "sha256": "eaedeb8428079a27bc5e290a61375454035b5fcfb1e9c7d16ce4bc85313789da",
+    "publisher_md5_matched": true
+  }
+]

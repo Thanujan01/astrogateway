@@ -1,0 +1,75 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+using AstroGateway.CinematicHUD;
+using AstroGateway.ProductionVisual;
+
+// Build-copy only (never in the main project). In the macOS player, when VU_PROBE_OUT is set: logs the
+// post-processing state, saves real player screenshots, measures frame times on Medium/High/Ultra (runtime
+// pipeline copy only, nothing persisted), captures the cinematic overview, then quits.
+public class StandaloneProbe : MonoBehaviour
+{
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+    static void Boot()
+    {
+        var dir = System.Environment.GetEnvironmentVariable("VU_PROBE_OUT");
+        if (string.IsNullOrEmpty(dir)) return;
+        var g = new GameObject("Standalone probe (build copy only)");
+        DontDestroyOnLoad(g);
+        g.AddComponent<StandaloneProbe>().dir = dir;
+    }
+
+    string dir;
+    readonly List<string> lines = new List<string>();
+
+    void Log(string s) { lines.Add(s); Debug.Log("[Probe] " + s); File.WriteAllLines(Path.Combine(dir, "standalone_probe.txt"), lines); }
+
+    IEnumerator Measure(string label, float seconds)
+    {
+        var ms = new List<float>();
+        float end = Time.realtimeSinceStartup + seconds;
+        while (Time.realtimeSinceStartup < end) { yield return null; ms.Add(Time.unscaledDeltaTime * 1000); }
+        ms.Sort();
+        float mean = ms.Average();
+        Log($"{label}: frames={ms.Count} mean_ms={mean:F2} fps={1000 / mean:F1} p50_ms={ms[ms.Count / 2]:F2} p95_ms={ms[(int)(ms.Count * .95f)]:F2} p99_ms={ms[(int)(ms.Count * .99f)]:F2} max_ms={ms[ms.Count - 1]:F2} cap={Application.targetFrameRate} focused={Application.isFocused} screen={Screen.width}x{Screen.height}");
+    }
+
+    IEnumerator Start()
+    {
+        yield return new WaitForSecondsRealtime(6);
+        var hud = FindAnyObjectByType<AstroGatewayHUDController>();
+        var cam = hud ? hud.game.prototype.follow : Camera.main;
+        var data = cam ? cam.GetUniversalAdditionalCameraData() : null;
+        var urp = GraphicsSettings.currentRenderPipeline as UniversalRenderPipelineAsset;
+        Log($"camera={cam?.name} renderPostProcessing={data?.renderPostProcessing} pipeline={urp?.name} hdr={urp?.supportsHDR} volumes={FindObjectsByType<Volume>(FindObjectsSortMode.None).Length} gpu={SystemInfo.graphicsDeviceName} api={SystemInfo.graphicsDeviceType}");
+        if (hud) { hud.settings.visibility = 0; hud.ApplySettings(); }
+        int prior = hud ? hud.settings.quality : 1;
+        string[] names = { "Low", "Medium", "High", "Ultra" };
+        foreach (int q in new[] { 1, 2, 3 })
+        {
+            if (hud) hud.environment.ApplyQuality(q);
+            yield return new WaitForSecondsRealtime(2);
+            if (hud) Log("preset " + names[q] + ": " + hud.environment.Readback());
+            yield return Measure("Standalone " + names[q] + " (astronaut idle at spawn, full HUD)", 8);
+            ScreenCapture.CaptureScreenshot(Path.Combine(dir, $"standalone_{names[q]}.png"));
+            yield return new WaitForSecondsRealtime(1);
+        }
+        var coord = FindAnyObjectByType<ProductionModeCoordinator>();
+        if (coord)
+        {
+            coord.ToggleCinematic();
+            yield return new WaitForSecondsRealtime(4);
+            yield return Measure("Standalone Ultra cinematic overview", 6);
+            ScreenCapture.CaptureScreenshot(Path.Combine(dir, "standalone_cinematic.png"));
+            yield return new WaitForSecondsRealtime(1);
+            coord.ToggleCinematic();
+        }
+        if (hud) hud.environment.ApplyQuality(prior); // runtime copy only; settings were never persisted
+        Log("done");
+        Application.Quit();
+    }
+}

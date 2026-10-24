@@ -1,0 +1,30 @@
+PASS lab is localhost database
+PASS local migration applies
+PASS repeat refuses collision transactionally
+PASS A own display-name update retains UUID
+PASS B own update isolated
+PASS A reads only A
+PASS B reads only B
+PASS A cannot update B even with direct WHERE override
+PASS cannot alter training level
+PASS cannot alter user UUID
+PASS invalid short name rejected
+PASS invalid oversize name rejected
+PASS invalid control name rejected
+PASS invalid null name rejected
+PASS expired identity denied
+PASS unconfirmed identity denied
+PASS authenticated remains NOLOGIN/NOBYPASSRLS
+PASS exposed updater is invoker with fixed empty search path
+PASS anon/PUBLIC cannot execute updater
+PASS untrusted DB role session settings grant no profile authority
+PASS retired runtime credentials still NOLOGIN
+PASS real independent JWT gateway own update Gateway A
+PASS real independent JWT gateway own update Gateway B
+PASS gateway rejects user-ID injection
+PASS independent gateway rejects forged JWT
+PASS independent gateway rejects expired JWT
+PASS independent gateway rejects malformed JWT
+PASS unauthenticated gateway edit denied
+PASS rollback removes edit privileges and function
+PASS local migration reapplies after rollback

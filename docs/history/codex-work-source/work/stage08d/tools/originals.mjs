@@ -1,0 +1,3 @@
+import {NodeIO} from '@gltf-transform/core';import {ALL_EXTENSIONS} from '@gltf-transform/extensions';import draco from 'draco3dgltf';
+const io=new NodeIO().registerExtensions(ALL_EXTENSIONS).registerDependencies({'draco3d.decoder':await draco.createDecoderModule()});
+for(const [name,p] of [['Perseverance','Perseverance.glb'],['rock_07','rock_07/rock_07.gltf'],['rock_09','rock_09/rock_09.gltf']]){const d=await io.read('work/stage08d/Acquired/'+p);for(const e of d.getRoot().listExtensionsUsed())if(e.extensionName==='KHR_draco_mesh_compression')e.dispose();await io.write('work/stage08d1/VisualEvaluation/Assets/ApprovedAssets/'+name+'_Original.glb',d);}

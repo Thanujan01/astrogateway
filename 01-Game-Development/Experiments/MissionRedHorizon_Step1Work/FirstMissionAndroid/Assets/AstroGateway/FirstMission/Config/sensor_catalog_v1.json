@@ -1,0 +1,50 @@
+{
+  "catalog_version": "fm-sensors-1",
+  "status": "PROPOSED - units and ranges need science review",
+  "schema_version": 1,
+  "mission": {"mission_id": "ag.mars.red-horizon.surface-ops", "version": 1, "build_variant": "first_mission_v1"},
+  "provenance": {
+    "client_allowed": ["SIMULATED", "UNAVAILABLE"],
+    "reserved": ["MODEL-ESTIMATED", "BACKEND-ANALYZED"],
+    "note": "MODEL-ESTIMATED and BACKEND-ANALYZED may only be produced by the backend; a client record claiming them is rejected."
+  },
+  "analysis_interface": {"version": "ag.science-analysis.v0", "status": "not_connected", "model": null,
+    "note": "No scientific analysis model is connected. The backend returns not_connected; it never invents a result."},
+  "instruments": [
+    {"instrument_id": "rover.terrain_profiler", "name": "Terrain profiler (hazard cameras)", "available": true, "max_range_m": 0, "requires_stopped": false,
+     "sensors": ["nav.position", "nav.heading", "terrain.slope", "terrain.roughness", "terrain.traversability"]},
+    {"instrument_id": "rover.context_camera", "name": "Mast context camera", "available": true, "max_range_m": 15, "requires_stopped": false,
+     "sensors": ["nav.position", "sci.station_id", "sci.target_range", "sci.target_bearing"]},
+    {"instrument_id": "rover.arm_sampler", "name": "Robotic arm sampler", "available": true, "max_range_m": 6, "requires_stopped": true,
+     "sensors": ["nav.position", "sci.station_id", "sci.target_range", "sci.sample_id", "sci.soil_composition"]},
+    {"instrument_id": "rover.env_package", "name": "Environment package", "available": true, "max_range_m": 0, "requires_stopped": false,
+     "sensors": ["nav.position", "env.dust_condition", "env.air_temperature", "env.air_pressure", "env.radiation_dose_rate"]},
+    {"instrument_id": "rover.spectrometer", "name": "Mast spectrometer", "available": false, "max_range_m": 15, "requires_stopped": true,
+     "sensors": ["sci.spectral_reading"], "unavailable_reason": "No reviewed spectral model exists."},
+    {"instrument_id": "rover.navigation", "name": "Navigation computer", "available": true, "max_range_m": 0, "requires_stopped": false,
+     "sensors": ["nav.position", "nav.heading", "nav.speed", "nav.distance_travelled"]}
+  ],
+  "sensors": [
+    {"sensor_id": "nav.position", "sensor_type": "navigation", "kind": "location", "unit": "m", "implemented": true, "method": "rover_transform_scene_local"},
+    {"sensor_id": "nav.heading", "sensor_type": "navigation", "kind": "numeric", "unit": "deg", "min": 0, "max": 360, "implemented": true, "method": "rover_yaw_scene_grid_north"},
+    {"sensor_id": "nav.speed", "sensor_type": "navigation", "kind": "numeric", "unit": "m/s", "min": 0, "max": 10, "implemented": true, "method": "rover_controller_speed"},
+    {"sensor_id": "nav.distance_travelled", "sensor_type": "navigation", "kind": "numeric", "unit": "m", "min": 0, "max": 100000, "implemented": true, "method": "integrated_planar_displacement"},
+    {"sensor_id": "terrain.slope", "sensor_type": "terrain", "kind": "numeric", "unit": "deg", "min": 0, "max": 90, "implemented": true, "method": "ground_normal_raycast"},
+    {"sensor_id": "terrain.roughness", "sensor_type": "terrain", "kind": "numeric", "unit": "m", "min": 0, "max": 5, "implemented": true, "method": "rms_height_residual_3x3_2m"},
+    {"sensor_id": "terrain.traversability", "sensor_type": "terrain", "kind": "category", "unit": "category", "values": ["nominal", "caution", "hazard"], "implemented": true, "method": "rule_traversability_v1"},
+    {"sensor_id": "env.dust_condition", "sensor_type": "environmental", "kind": "category", "unit": "category", "values": ["clear", "light_dust", "dust_storm"], "implemented": true, "method": "game_weather_state"},
+    {"sensor_id": "env.air_temperature", "sensor_type": "environmental", "kind": "numeric", "unit": "K", "min": 100, "max": 330, "implemented": false, "method": "not_modeled"},
+    {"sensor_id": "env.air_pressure", "sensor_type": "environmental", "kind": "numeric", "unit": "Pa", "min": 0, "max": 2000, "implemented": false, "method": "not_modeled"},
+    {"sensor_id": "env.radiation_dose_rate", "sensor_type": "environmental", "kind": "numeric", "unit": "uGy/h", "min": 0, "max": 1000, "implemented": false, "method": "not_modeled"},
+    {"sensor_id": "sci.station_id", "sensor_type": "scientific", "kind": "identifier", "unit": "id", "pattern": "^site_[0-9]{1,3}$", "implemented": true, "method": "research_station_registry"},
+    {"sensor_id": "sci.target_range", "sensor_type": "scientific", "kind": "numeric", "unit": "m", "min": 0, "max": 50, "implemented": true, "method": "planar_distance_rover_to_station"},
+    {"sensor_id": "sci.target_bearing", "sensor_type": "scientific", "kind": "numeric", "unit": "deg", "min": 0, "max": 360, "implemented": true, "method": "bearing_scene_grid_north"},
+    {"sensor_id": "sci.sample_id", "sensor_type": "scientific", "kind": "identifier", "unit": "id", "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$", "implemented": true, "method": "game_assigned_sample_uuid"},
+    {"sensor_id": "sci.soil_composition", "sensor_type": "scientific", "kind": "numeric", "unit": "wt%", "min": 0, "max": 100, "implemented": false, "method": "not_modeled"},
+    {"sensor_id": "sci.spectral_reading", "sensor_type": "scientific", "kind": "numeric", "unit": "reflectance", "min": 0, "max": 1, "implemented": false, "method": "not_modeled"}
+  ],
+  "rules": {
+    "traversability_v1": {"note": "Game design limits for this rover, not a NASA specification.", "caution_slope_deg": 15, "hazard_slope_deg": 25, "caution_roughness_m": 0.15, "hazard_roughness_m": 0.35}
+  },
+  "limits": {"max_batch": 50, "max_records_per_session": 2000, "max_text": 64, "clock_skew_s": 300, "max_age_days": 30}
+}

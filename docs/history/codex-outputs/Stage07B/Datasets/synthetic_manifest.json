@@ -1,0 +1,13 @@
+{
+  "authorized_use": "local_synthetic_experiment",
+  "created_at": "2026-10-09",
+  "evaluation_protocol_sha256": "3c25f6d6cd06573cce6a6c2e649d21d8f4833f1ee5cc9991f522ee85831393c6",
+  "generator_sha256": "a986f3d4e39b90a3e8f4c9cd4f1ab5185e015363e7b7a80d329140de9d01f2c5",
+  "license": "Project-generated local synthetic experiment; no external-data license inferred",
+  "limitations": "Synthetic labels are not measured astronaut skills",
+  "real_player_data_used": false,
+  "scientific_observations_used": false,
+  "seed": 707,
+  "sha256": "aac53acd4b17c0a9ddf1e4fa1408fb51c21a3cd07863a3c9807de90b8bdcbf68",
+  "source": "project-synthetic-generator-07b.1"
+}

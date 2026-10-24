@@ -1,0 +1,15 @@
+Rover world bounds Center: (0.00, 0.92, 0.00), Extents: (1.35, 0.92, 1.55)
+PASS material slots nonnull and shaders supported
+Pipeline Mobile_RPAsset
+LOD Groups 49
+Captured Composition
+Captured Rover_LOD0
+Captured Rover_Original
+Captured Rover_LOD1
+Captured Rover_LOD2
+Captured Rover_Rear
+Captured Rock_Ground
+Captured rock_07_Original
+Captured rock_07_LOD0
+Captured rock_09_Original
+Captured rock_09_LOD0

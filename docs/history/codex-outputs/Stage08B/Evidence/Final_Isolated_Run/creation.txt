@@ -1,0 +1,1 @@
+Created Assets/AstroGateway/Stage08B/MarsOutpost_Playable_Stage08B.unity in Unity 6000.6.4f1; original primitive models and authored clips; no third-party imports.

@@ -1,0 +1,12 @@
+{
+  "success": false,
+  "command": "install-modules",
+  "data": null,
+  "errors": [
+    {
+      "code": "INSTALL_PATH_CONFIG_UNREADABLE",
+      "message": "Could not read /Users/kapilash/Library/Application Support/UnityHub/secondaryInstallPath.json, so the editor install path is unconfirmed. Nothing was installed, because the editors could land outside your configured install path. Close the Unity Hub, then try again."
+    }
+  ],
+  "warnings": []
+}

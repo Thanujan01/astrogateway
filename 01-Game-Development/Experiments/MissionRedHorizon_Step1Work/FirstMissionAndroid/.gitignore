@@ -1,0 +1,16 @@
+# Unity generated / machine-local
+/Library/
+/Temp/
+/Logs/
+/obj/
+/Build/
+/Builds/
+/UserSettings/
+/ProfilerCaptures/
+*.csproj
+*.sln
+*.slnx
+*.pidb
+*.userprefs
+.vscode/
+.DS_Store

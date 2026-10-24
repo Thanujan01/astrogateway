@@ -1,0 +1,31 @@
+{
+  "tests": [
+    {
+      "name": "six private attestations determine assessed skills",
+      "status": "PASS"
+    },
+    {
+      "name": "three Easy then three Medium unlock Hard",
+      "status": "PASS"
+    },
+    {
+      "name": "private attestations absent for B",
+      "status": "PASS"
+    },
+    {
+      "name": "trusted progress recovered from PostgreSQL",
+      "status": "PASS"
+    },
+    {
+      "name": "oversized telemetry body rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "recommended difficulty cannot jump from fresh B previous",
+      "status": "PASS"
+    }
+  ],
+  "local_only": true,
+  "synthetic_server_attestations": true,
+  "kernel_sandbox": true
+}

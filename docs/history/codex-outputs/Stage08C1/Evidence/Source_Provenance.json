@@ -1,0 +1,23 @@
+[
+  {
+    "file": "Assets/AstroGateway/Stage08B/MarsPrototype.cs",
+    "main_sha256": "b3c69089404c7a89a6d0c95c381f04b114f89cee5dc8785318857e3363007b18",
+    "lab_sha256": "b3c69089404c7a89a6d0c95c381f04b114f89cee5dc8785318857e3363007b18",
+    "match": true
+  },
+  {
+    "file": "Assets/AstroGateway/Stage08C/MobileControls.cs",
+    "main_sha256": "57e3232dc1b8759ef39e214b559f935ba58dbef1b034cd80c45d7daa898e7b7b",
+    "lab_sha256": "57e3232dc1b8759ef39e214b559f935ba58dbef1b034cd80c45d7daa898e7b7b",
+    "match": true
+  },
+  {
+    "file": "Assets/AstroGateway/Stage08B/MarsOutpost_Playable_Stage08B.unity",
+    "main_sha256": "e234e41cf934c5b2b6bbeda54a2c79335d9aaf8a4d7e5a39e3ffee4b0d23154d",
+    "lab_sha256": "e234e41cf934c5b2b6bbeda54a2c79335d9aaf8a4d7e5a39e3ffee4b0d23154d",
+    "match": true
+  },
+  {
+    "apk_sha256": "35d0871f1597e3498ae8ce290c4359ace633fc0faf1af0d48760801c59036a1a"
+  }
+]

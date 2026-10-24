@@ -1,0 +1,130 @@
+{
+  "error": "permission denied to set role \"anon\"",
+  "code": "42501",
+  "tests": [
+    {
+      "name": "baseline migration and Auth backfill",
+      "status": "PASS"
+    },
+    {
+      "name": "runtime provisioning refuses unresolved PUBLIC access",
+      "status": "PASS"
+    },
+    {
+      "name": "ACL hardening and restricted-role provisioning",
+      "status": "PASS"
+    },
+    {
+      "name": "post-migration metadata SQL executes",
+      "status": "PASS"
+    },
+    {
+      "name": "runtime has no administrative or bypass attributes",
+      "status": "PASS"
+    },
+    {
+      "name": "membership is API only: SET true ADMIN/INHERIT false",
+      "status": "PASS"
+    },
+    {
+      "name": "preserved fixture Auth insert trigger and default training level",
+      "status": "PASS"
+    },
+    {
+      "name": "A sees only own profile",
+      "status": "PASS"
+    },
+    {
+      "name": "A cannot read other profile",
+      "status": "PASS"
+    },
+    {
+      "name": "A cannot insert another owner",
+      "status": "PASS"
+    },
+    {
+      "name": "B sees only own profile",
+      "status": "PASS"
+    },
+    {
+      "name": "B cannot read other profile",
+      "status": "PASS"
+    },
+    {
+      "name": "B cannot insert another owner",
+      "status": "PASS"
+    },
+    {
+      "name": "own mission insert permitted",
+      "status": "PASS"
+    },
+    {
+      "name": "B cannot read A mission",
+      "status": "PASS"
+    },
+    {
+      "name": "B cannot complete A mission",
+      "status": "PASS"
+    },
+    {
+      "name": "A completion allowed",
+      "status": "PASS"
+    },
+    {
+      "name": "denied profile escalation",
+      "status": "PASS"
+    },
+    {
+      "name": "denied profile insertion",
+      "status": "PASS"
+    },
+    {
+      "name": "denied delete missions",
+      "status": "PASS"
+    },
+    {
+      "name": "denied truncate profiles",
+      "status": "PASS"
+    },
+    {
+      "name": "denied lease extension",
+      "status": "PASS"
+    },
+    {
+      "name": "denied Auth administration",
+      "status": "PASS"
+    },
+    {
+      "name": "denied unrelated table",
+      "status": "PASS"
+    },
+    {
+      "name": "denied unrelated definer routine",
+      "status": "PASS"
+    },
+    {
+      "name": "denied storage schema",
+      "status": "PASS"
+    },
+    {
+      "name": "denied training schema CREATE",
+      "status": "PASS"
+    },
+    {
+      "name": "denied temporary object",
+      "status": "PASS"
+    },
+    {
+      "name": "denied role creation",
+      "status": "PASS"
+    },
+    {
+      "name": "denied SET provider admin",
+      "status": "PASS"
+    },
+    {
+      "name": "denied SET postgres",
+      "status": "PASS"
+    }
+  ]
+}

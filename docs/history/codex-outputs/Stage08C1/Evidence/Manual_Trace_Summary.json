@@ -1,0 +1,45 @@
+{
+  "observer_is_passive": true,
+  "testControl_values": [
+    false
+  ],
+  "keyboard_flags_observed": [
+    ""
+  ],
+  "on_foot_max_speed_mps": 2.2048394680023193,
+  "rover_max_speed_mps": 3.799999952316284,
+  "driving_transitions": [
+    {
+      "time": 86.37379455566406,
+      "speed": 0.0,
+      "yaw": 0.0,
+      "pitch": 18.0,
+      "position": {
+        "x": -15.0,
+        "y": 4.565004825592041,
+        "z": -93.0
+      },
+      "keys": "",
+      "objective": "Survey habitat / power / delta: 1/3",
+      "driving": true,
+      "testControl": false,
+      "weather": 1
+    },
+    {
+      "time": 118.85047149658203,
+      "speed": 0.0,
+      "yaw": 0.0,
+      "pitch": 18.0,
+      "position": {
+        "x": -11.521588325500488,
+        "y": 0.09677460789680481,
+        "z": -63.51832580566406
+      },
+      "keys": "",
+      "objective": "Survey habitat / power / delta: 1/3",
+      "driving": false,
+      "testControl": false,
+      "weather": 1
+    }
+  ]
+}

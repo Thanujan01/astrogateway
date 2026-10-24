@@ -1,0 +1,14 @@
+[
+  {
+    "file": "/Users/kapilash/Projects/AstroGatewayAndroid/app/build/generated/source/buildConfig/debug/com/sk2lb/astrogateway/poc/BuildConfig.java",
+    "SUPABASE_URL_configured": false,
+    "SUPABASE_PUBLISHABLE_KEY_configured": false,
+    "AUTH_BACKEND_URL_configured": false
+  },
+  {
+    "file": "/Users/kapilash/Projects/AstroGatewayAndroid/app/build/generated/source/buildConfig/androidTest/debug/com/sk2lb/astrogateway/poc/test/BuildConfig.java",
+    "SUPABASE_URL_configured": false,
+    "SUPABASE_PUBLISHABLE_KEY_configured": false,
+    "AUTH_BACKEND_URL_configured": false
+  }
+]

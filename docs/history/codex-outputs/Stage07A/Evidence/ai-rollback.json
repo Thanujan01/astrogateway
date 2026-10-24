@@ -1,0 +1,21 @@
+{
+  "tests": [
+    {
+      "name": "candidate collision fails closed without event loss",
+      "status": "PASS"
+    },
+    {
+      "name": "local AI teardown preserves Auth",
+      "status": "PASS"
+    },
+    {
+      "name": "local AI teardown preserves mission records",
+      "status": "PASS"
+    },
+    {
+      "name": "fresh final candidate reinstalls",
+      "status": "PASS"
+    }
+  ],
+  "local_only": true
+}

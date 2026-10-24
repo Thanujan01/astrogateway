@@ -1,0 +1,11 @@
+{
+  "HUD_PC_Input_Final_exit": 0,
+  "Responsive_Verified_exit": 0,
+  "Performance_Verified_exit": 0,
+  "Final_Asset_Audit_exit": 0,
+  "controlled_pass": 179,
+  "controlled_fail": 0,
+  "asset_audit_pass": 6,
+  "reference_match": "BLOCKED_missing_image",
+  "physical_android": "UNTESTED"
+}

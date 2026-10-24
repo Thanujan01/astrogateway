@@ -1,0 +1,55 @@
+import groovy.json.JsonSlurper
+import java.nio.charset.StandardCharsets
+plugins { id 'com.android.application' }
+
+def authValues = new Properties()
+def authFile = new File(projectDir.parentFile, 'auth.local.properties')
+if (authFile.exists()) authFile.withInputStream { authValues.load(it) }
+def supabaseUrl = authValues.getProperty('supabase.url', System.getenv('ASTROGATEWAY_SUPABASE_URL') ?: '').trim()
+def publicKey = authValues.getProperty('supabase.publishableKey', System.getenv('ASTROGATEWAY_SUPABASE_PUBLISHABLE_KEY') ?: '').trim()
+def backendUrl = authValues.getProperty('auth.backendUrl', System.getenv('ASTROGATEWAY_AUTH_BACKEND_URL') ?: '').trim()
+def isPublicKey = { key ->
+    if (key.startsWith('sb_publishable_')) return true
+    try { return new JsonSlurper().parseText(new String(Base64.urlDecoder.decode(key.split('\\.')[1]), StandardCharsets.UTF_8)).role == 'anon' } catch(Exception ignored) { return false }
+}
+if (publicKey && !isPublicKey(publicKey)) throw new GradleException('Only a Supabase publishable key or legacy anon key is allowed. Secret/service-role keys must never enter the APK.')
+if ((supabaseUrl && !publicKey) || (!supabaseUrl && publicKey)) throw new GradleException('Supply both public Supabase URL and publishable key.')
+if (supabaseUrl) { def uri=new URI(supabaseUrl); if(uri.scheme!='https' || !uri.host || uri.userInfo || uri.query || uri.fragment) throw new GradleException('Supabase URL must be an HTTPS project origin.') }
+if (backendUrl) { def uri=new URI(backendUrl); if(!uri.host || uri.userInfo || uri.query || uri.fragment || !(uri.scheme=='https' || (uri.scheme=='http' && uri.host=='10.0.2.2'))) throw new GradleException('Backend URL must be HTTPS; only debug emulator host 10.0.2.2 allows HTTP.') }
+def quoteConfig = { value -> '"' + value.replace('\\','\\\\').replace('"','\\"').replace('\n','').replace('\r','') + '"' }
+android {
+    namespace 'com.sk2lb.astrogateway.poc'
+    compileSdk 36
+    ndkVersion '27.2.12479018'
+    buildFeatures { buildConfig true }
+    defaultConfig {
+        applicationId 'com.sk2lb.astrogateway.poc'
+        minSdk 26
+        targetSdk 36
+        versionCode 2
+        versionName '0.2-auth-foundation'
+        buildConfigField 'String','SUPABASE_URL',quoteConfig(supabaseUrl)
+        buildConfigField 'String','SUPABASE_PUBLISHABLE_KEY',quoteConfig(publicKey)
+        buildConfigField 'String','AUTH_BACKEND_URL',quoteConfig(backendUrl)
+        testInstrumentationRunner 'com.sk2lb.astrogateway.poc.SecuritySmokeInstrumentation'
+        ndk { abiFilters 'arm64-v8a' }
+    }
+    compileOptions { sourceCompatibility JavaVersion.VERSION_17; targetCompatibility JavaVersion.VERSION_17 }
+    packaging { jniLibs { useLegacyPackaging true } }
+    buildTypes {
+        debug { debuggable true; minifyEnabled false }
+        release { }
+    }
+}
+kotlin { compilerOptions { freeCompilerArgs.add('-opt-in=kotlin.time.ExperimentalTime') } }
+dependencies {
+    implementation project(':unityLibrary')
+    implementation fileTree(dir: new File(project(':unityLibrary').projectDir, 'libs'), include: ['*.jar'])
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:2.2.21'
+    // Documented community SDK, pinned to the Kotlin 2.2-compatible stable release.
+    implementation platform('io.github.jan-tennert.supabase:bom:3.2.6')
+    implementation 'io.github.jan-tennert.supabase:auth-kt'
+    implementation 'io.ktor:ktor-client-okhttp:3.3.1'
+}
+
+tasks.configureEach { if(name.toLowerCase().contains('release') && backendUrl.startsWith('http:')) doFirst { throw new GradleException('Release builds require an HTTPS backend.') } }

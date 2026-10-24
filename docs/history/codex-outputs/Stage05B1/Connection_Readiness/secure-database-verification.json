@@ -1,0 +1,30 @@
+{
+  "read_only": true,
+  "database_modified": false,
+  "ca_path": "/Users/kapilash/Projects/AstroGatewayAndroid/backend/certs/supabase-ca.crt",
+  "ca_sha256": "700723581420dd1ac98fd7e9ac529f0ef210eadcaf87fc868a3ad7d114c2f3b7",
+  "sslmode": "verify-full",
+  "hostname_validation": true,
+  "legacy_ca_strict_profile_compatibility": true,
+  "authentication_success": true,
+  "select_1": 1,
+  "current_user": "postgres",
+  "current_database": "postgres",
+  "transaction_read_only": "on",
+  "server_tls": {
+    "ssl": false,
+    "version": null,
+    "cipher": null,
+    "bits": null
+  },
+  "restricted_roles": [],
+  "training_schema_exists": false,
+  "runtime_dsn_configured": false,
+  "actual_asyncpg_client_tls": {
+    "active": true,
+    "version": "TLSv1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384",
+    "chain_verification_required": true,
+    "hostname_validation": true
+  }
+}

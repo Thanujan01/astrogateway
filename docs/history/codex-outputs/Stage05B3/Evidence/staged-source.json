@@ -1,0 +1,12 @@
+{
+  "main.py": {
+    "original_sha256": "762ceee852fbb9e736686d551a78cac8acb82544ca5f1e70d2bb6c951d8627e9",
+    "staged_sha256": "762ceee852fbb9e736686d551a78cac8acb82544ca5f1e70d2bb6c951d8627e9",
+    "equal": true
+  },
+  "database.py": {
+    "original_sha256": "d417e092a3e6a4050445785e66ef1d82589f54cd5cae75fba6ba14b764b991d5",
+    "staged_sha256": "d417e092a3e6a4050445785e66ef1d82589f54cd5cae75fba6ba14b764b991d5",
+    "equal": true
+  }
+}

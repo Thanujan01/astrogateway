@@ -1,0 +1,8 @@
+# Environment — PARTIAL
+Three habitat domes now use original clipped geodesic triangular panels and support meshes in place of sphere render meshes. Existing conservative closed colliders, footprint, scale and routes remain. Panel mesh 168 triangles; frame mesh 8,064 shared triangles per dome instance. Airlocks use original chamfered enclosures with service rail trim. Old decorative rings/floating window-cube renderers are disabled only in this scene. Glazing is opaque dark material, not transparent pressure-rated architecture.
+
+Previously approved ground/rock textures are retained. Roughness is sampled in linear space and mapped to alpha smoothness (1−roughness), with metallic zero in RGB; all three derivative maps are 512×512, linear, Android ASTC6×6 importer override. Other texture assignments/UVs remain. No unrelated texture download or destructive source conversion.
+
+Warm directional sunset: Euler (19,−62,0), intensity 1.3, light colour (1,.85,.70). Cloned sky/horizon, existing distance haze and bounded dust system; cloned volume ACES, exposure +.1, contrast +5, saturation −3, bloom .06/threshold1.2. HDR/post-processing availability depends on quality and camera settings; configuration is not evidence of visible bloom or volumetric scattering.
+
+Actual captures show faceted white domes, dark triangular windows, long shadows and brown/red ground. Surfaces remain unfinished, dark panel seams are conspicuous, terrain variation is limited and distant scenery is sparse. No new detailed habitat interiors, landing infrastructure, erosion simulation, terrain decals or astronaut asset. High-fidelity/cinematic reference acceptance remains blocked.

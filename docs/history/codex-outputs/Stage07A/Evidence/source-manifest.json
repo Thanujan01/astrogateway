@@ -1,0 +1,18 @@
+{
+  "README.md": "35a36a1f702868fbf203208029a0ef355cc0fb4f8151a5246367d7ea2caf0ebc",
+  ".gitignore": "b1fcc5f063533881a8199885c94b2ec7c7f09175b449bc12ba4d226e16cb3985",
+  "database/007a_local_adaptive_candidate.sql": "0c170c73a6785cdf5ef587ef5da9ff8339c1557ba99bdcb471468c609438e717",
+  "backend/requirements.txt": "36315a1f6d1ec506a960465bfb3fed3a13b60869c5126e2569c5be533d5d762b",
+  "backend/database.py": "d417e092a3e6a4050445785e66ef1d82589f54cd5cae75fba6ba14b764b991d5",
+  "backend/run_local.py": "ca7c6053f91346788da64dcdacee3297337eef721de8585855739a58e3fab49c",
+  "backend/main.py": "1c7a691a3f33cbf2e9f99818614d88237bdedae8b57e78ebbdbd37165a2cc0d9",
+  "backend/tests/test_hardening.py": "7200ee63752230cc3cffcfbf907e01b08588b561352bea13634e4d9927699c00",
+  "backend/tests/test_postgrest_repository.py": "66675fa399d4853d198761357ea4047be2c7aa09602ad573653a7f2e4362ecf1",
+  "backend/tests/test_security_contract.py": "90e19692ca2b3b8893956bee3df1d19cba304932b34c9f57bc9ef2a31a2e90a4",
+  "backend/tests/test_adaptive.py": "efaa414df05317a9ccdb0dfe0bc1966224f38005f71fbdf30e3258f9e7349d3e",
+  "backend/adaptive/__init__.py": "4004439f3278bc5b53f3318cd03c23b2c5332e68d3cd3748954ec0fb872094d8",
+  "backend/adaptive/api.py": "c1ff5072b06dfe6d1a54037d376df32861a1ca76815145e042b4acc4d96a6540",
+  "backend/adaptive/engine.py": "54b2cce49c3fc64271204b0af6bf0d295717c446f7f4327c406e660483efd363",
+  "backend/adaptive/schemas.py": "285c366c9c66261f7b6cf80464cc7ecfc113455702c1dccbd1cf5804cf81c144",
+  "backend/adaptive/repository.py": "48f34972a35463eb6d53ca73b9203a8046926c710ca3ecc954de5f028f49138d"
+}

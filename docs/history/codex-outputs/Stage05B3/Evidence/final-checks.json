@@ -1,0 +1,5 @@
+{
+  "output_credential_scan_pass": true,
+  "review_artifact_hashes_match": true,
+  "remote_operations": false
+}

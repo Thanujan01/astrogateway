@@ -1,0 +1,17 @@
+# Mission witness trust design
+
+Status: DESIGN plus offline RSA verification prototype; authoritative Unity producer, durable ledger and attestation writer NOT implemented. Existing client telemetry remains non-authoritative.
+
+Android obtains Supabase session; FastAPI validates issuer, audience, signature, expiration and subject using existing security boundary. Server creates a short-lived launch challenge binding canonical player ID, verified Auth session ID, mission ID, launch UUID, nonce, scenario hash and rules version. Client-supplied player IDs are never authorization evidence. Forward original user JWT to PostgREST for all user-scoped records.
+
+Recommended producer: separate trusted server simulation/witness service observes authoritative equipment/resource/mission transitions and computes scores itself. Unity sends bounded action proposals; a client result or action transcript cannot prove real human performance. Server adjudication validates virtual state only. Hosting latency/cost, movement validation, clock rules and simulator equivalence must be designed before attestation deployment. A hacked client can automate valid actions, lie about sensors or steal its own bearer token. Client-held signatures, obfuscation and device attestation do not eliminate these risks.
+
+Record v07b.1 binds result_id/player_id/auth_session_id/mission_id/launch_id/nonce/scenario_sha256/telemetry_sha256/rules/issued_at/expires_at/evidence_kind/five server scores plus issuer/audience/key_id. Canonical sorted compact JSON and detached RSA-2048 signature; trusted public-key registry; maximum five-minute TTL. Prototype requires server_simulation evidence and matching externally verified player/session/challenge. Signed client evidence is rejected. Key rotation/revocation, bounded canonicalization and immutable source hashes required. Production signer keys belong in isolated key management, never APK, Unity, AI worker or source control.
+
+Consumer verifies signature, bounds, identifiers, timestamps, challenge binding and evidence kind before atomic nonce/result consumption and attestation insert. Offline prototype detects replay under a lock in one process only. Restart-resistant replay prevention needs a durable UNIQUE(result_id) and UNIQUE(player,launch/nonce) ledger in the same transaction as result insertion; no schema changes approved here. Test concurrent and crash-after-consume cases before production. Hashes bind bytes, not truth. Verified producer is the authority.
+
+Separate witness writer must only insert approved attestations through a bounded interface; AI user runtime cannot mint evidence or obtain signer/admin credentials. A compromised runtime with stolen valid user JWT can act as that user within token lifetime; credentials cannot authorize a different user by changing PostgreSQL identity settings. No runtime-controlled database identity is introduced.
+
+Tests: signature tampering, identity/session mismatch, expiration, wrong evidence/key/digest, replay. Missing: actual Unity producer, authenticated launch issuance, trusted observer, durable transaction, signer operational isolation and hosted regression. These block authoritative promotion.
+
+Scope: local preparation only, 2026-10-09. No remote database operations, live accounts, player collection or changes to Android, Unity or React. Stage05B original-user-JWT → PostgREST validation → native RLS remains the supported user-data path. No service-role/admin credentials in this package.

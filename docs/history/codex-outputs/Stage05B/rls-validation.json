@@ -1,0 +1,91 @@
+{
+  "engine": "PGlite PostgreSQL WASM",
+  "live_supabase": false,
+  "passed": true,
+  "tests": [
+    {
+      "name": "migration executes",
+      "passed": true
+    },
+    {
+      "name": "untrusted metadata cannot award a level",
+      "passed": true
+    },
+    {
+      "name": "auth insert trigger creates default trainee profile",
+      "passed": true
+    },
+    {
+      "name": "anon cannot access private profiles",
+      "passed": true
+    },
+    {
+      "name": "authenticated cannot access private profiles",
+      "passed": true
+    },
+    {
+      "name": "profile selection isolated to verified context",
+      "passed": true
+    },
+    {
+      "name": "cross-account profile hidden",
+      "passed": true
+    },
+    {
+      "name": "training level cannot be escalated",
+      "passed": true
+    },
+    {
+      "name": "API cannot insert alternate profiles",
+      "passed": true
+    },
+    {
+      "name": "ownership cannot be changed",
+      "passed": true
+    },
+    {
+      "name": "session cannot bind another auth session",
+      "passed": true
+    },
+    {
+      "name": "authorized mission initializes",
+      "passed": true
+    },
+    {
+      "name": "cross-account mission hidden",
+      "passed": true
+    },
+    {
+      "name": "cross-account completion changes nothing",
+      "passed": true
+    },
+    {
+      "name": "mission expiry cannot be extended by API role",
+      "passed": true
+    },
+    {
+      "name": "authorized completion transition succeeds",
+      "passed": true
+    },
+    {
+      "name": "completed row remains available for idempotent receipt",
+      "passed": true
+    },
+    {
+      "name": "expired initialization cannot complete",
+      "passed": true
+    },
+    {
+      "name": "revoked auth session denied by RLS",
+      "passed": true
+    },
+    {
+      "name": "another unrevoked session of same account remains allowed",
+      "passed": true
+    },
+    {
+      "name": "transaction context cannot leak into next user",
+      "passed": true
+    }
+  ]
+}

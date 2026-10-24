@@ -1,0 +1,93 @@
+{
+  "read_only": true,
+  "remote_modified": false,
+  "database_public_privileges": [
+    {
+      "privilege_type": "TEMPORARY"
+    },
+    {
+      "privilege_type": "CONNECT"
+    }
+  ],
+  "public_definer_return_types": [
+    {
+      "nspname": "public",
+      "proname": "rls_auto_enable",
+      "return_type": "event_trigger"
+    }
+  ],
+  "auth_backfill_preflight": [
+    {
+      "auth_user_count": 0,
+      "null_creation_dates": 0
+    }
+  ],
+  "server_version": [
+    {
+      "server_version": "17.11"
+    }
+  ],
+  "dependencies": [
+    {
+      "auth_users": true,
+      "uuid_generator": true
+    }
+  ],
+  "auth_columns": [
+    {
+      "column_name": "created_at",
+      "data_type": "timestamp with time zone"
+    },
+    {
+      "column_name": "id",
+      "data_type": "uuid"
+    },
+    {
+      "column_name": "raw_user_meta_data",
+      "data_type": "jsonb"
+    }
+  ],
+  "roles": [
+    {
+      "rolname": "anon",
+      "rolcanlogin": false,
+      "rolsuper": false,
+      "rolbypassrls": false,
+      "rolcreaterole": false,
+      "rolcreatedb": false
+    },
+    {
+      "rolname": "authenticated",
+      "rolcanlogin": false,
+      "rolsuper": false,
+      "rolbypassrls": false,
+      "rolcreaterole": false,
+      "rolcreatedb": false
+    },
+    {
+      "rolname": "supabase_auth_admin",
+      "rolcanlogin": true,
+      "rolsuper": false,
+      "rolbypassrls": false,
+      "rolcreaterole": true,
+      "rolcreatedb": false
+    }
+  ],
+  "existing_training_objects": [],
+  "auth_triggers": [],
+  "public_schema_privileges": [
+    {
+      "nspname": "public",
+      "privilege_type": "USAGE"
+    }
+  ],
+  "public_table_privileges": [],
+  "public_definer_functions": [
+    {
+      "nspname": "public",
+      "proname": "rls_auto_enable",
+      "owner": "postgres"
+    }
+  ],
+  "completed": true
+}

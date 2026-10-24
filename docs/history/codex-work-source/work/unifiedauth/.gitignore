@@ -1,0 +1,5 @@
+postgrest.local.conf
+gateway-private.log
+tls/*.key
+scratch/
+backups/

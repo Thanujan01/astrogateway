@@ -1,0 +1,376 @@
+{
+  "$defs": {
+    "Completion": {
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "format": "uuid",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "elapsed_s": {
+          "maximum": 7200,
+          "minimum": 0,
+          "title": "Elapsed S",
+          "type": "number"
+        },
+        "kind": {
+          "const": "completion",
+          "title": "Kind",
+          "type": "string"
+        },
+        "completed": {
+          "title": "Completed",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "event_id",
+        "elapsed_s",
+        "kind",
+        "completed"
+      ],
+      "title": "Completion",
+      "type": "object"
+    },
+    "Emergency": {
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "format": "uuid",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "elapsed_s": {
+          "maximum": 7200,
+          "minimum": 0,
+          "title": "Elapsed S",
+          "type": "number"
+        },
+        "kind": {
+          "const": "emergency",
+          "title": "Kind",
+          "type": "string"
+        },
+        "incident": {
+          "enum": [
+            "dust",
+            "power_loss",
+            "oxygen_leak",
+            "rover_fault"
+          ],
+          "title": "Incident",
+          "type": "string"
+        },
+        "resolved": {
+          "title": "Resolved",
+          "type": "boolean"
+        },
+        "response_s": {
+          "maximum": 600,
+          "minimum": 0.1,
+          "title": "Response S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "event_id",
+        "elapsed_s",
+        "kind",
+        "incident",
+        "resolved",
+        "response_s"
+      ],
+      "title": "Emergency",
+      "type": "object"
+    },
+    "Equipment": {
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "format": "uuid",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "elapsed_s": {
+          "maximum": 7200,
+          "minimum": 0,
+          "title": "Elapsed S",
+          "type": "number"
+        },
+        "kind": {
+          "const": "equipment",
+          "title": "Kind",
+          "type": "string"
+        },
+        "equipment": {
+          "enum": [
+            "airlock",
+            "solar_array",
+            "rover",
+            "water_recycler",
+            "sampler"
+          ],
+          "title": "Equipment",
+          "type": "string"
+        },
+        "correct": {
+          "title": "Correct",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "event_id",
+        "elapsed_s",
+        "kind",
+        "equipment",
+        "correct"
+      ],
+      "title": "Equipment",
+      "type": "object"
+    },
+    "Mistake": {
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "format": "uuid",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "elapsed_s": {
+          "maximum": 7200,
+          "minimum": 0,
+          "title": "Elapsed S",
+          "type": "number"
+        },
+        "kind": {
+          "const": "mistake",
+          "title": "Kind",
+          "type": "string"
+        },
+        "category": {
+          "enum": [
+            "navigation",
+            "survival",
+            "decision_making",
+            "equipment",
+            "emergency"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "retries": {
+          "maximum": 5,
+          "minimum": 0,
+          "title": "Retries",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "event_id",
+        "elapsed_s",
+        "kind",
+        "category",
+        "retries"
+      ],
+      "title": "Mistake",
+      "type": "object"
+    },
+    "Movement": {
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "format": "uuid",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "elapsed_s": {
+          "maximum": 7200,
+          "minimum": 0,
+          "title": "Elapsed S",
+          "type": "number"
+        },
+        "kind": {
+          "const": "movement",
+          "title": "Kind",
+          "type": "string"
+        },
+        "x_m": {
+          "maximum": 125,
+          "minimum": -125,
+          "title": "X M",
+          "type": "number"
+        },
+        "z_m": {
+          "maximum": 125,
+          "minimum": -125,
+          "title": "Z M",
+          "type": "number"
+        },
+        "speed_mps": {
+          "maximum": 4,
+          "minimum": 0,
+          "title": "Speed Mps",
+          "type": "number"
+        }
+      },
+      "required": [
+        "event_id",
+        "elapsed_s",
+        "kind",
+        "x_m",
+        "z_m",
+        "speed_mps"
+      ],
+      "title": "Movement",
+      "type": "object"
+    },
+    "Reaction": {
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "format": "uuid",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "elapsed_s": {
+          "maximum": 7200,
+          "minimum": 0,
+          "title": "Elapsed S",
+          "type": "number"
+        },
+        "kind": {
+          "const": "reaction",
+          "title": "Kind",
+          "type": "string"
+        },
+        "reaction_s": {
+          "maximum": 60,
+          "minimum": 0.1,
+          "title": "Reaction S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "event_id",
+        "elapsed_s",
+        "kind",
+        "reaction_s"
+      ],
+      "title": "Reaction",
+      "type": "object"
+    },
+    "Resource": {
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "format": "uuid",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "elapsed_s": {
+          "maximum": 7200,
+          "minimum": 0,
+          "title": "Elapsed S",
+          "type": "number"
+        },
+        "kind": {
+          "const": "resource",
+          "title": "Kind",
+          "type": "string"
+        },
+        "oxygen_used_l": {
+          "maximum": 1000,
+          "minimum": 0,
+          "title": "Oxygen Used L",
+          "type": "number"
+        },
+        "water_used_l": {
+          "maximum": 20,
+          "minimum": 0,
+          "title": "Water Used L",
+          "type": "number"
+        },
+        "power_used_wh": {
+          "maximum": 5000,
+          "minimum": 0,
+          "title": "Power Used Wh",
+          "type": "number"
+        }
+      },
+      "required": [
+        "event_id",
+        "elapsed_s",
+        "kind",
+        "oxygen_used_l",
+        "water_used_l",
+        "power_used_wh"
+      ],
+      "title": "Resource",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "mission_session_id": {
+      "format": "uuid",
+      "title": "Mission Session Id",
+      "type": "string"
+    },
+    "events": {
+      "items": {
+        "discriminator": {
+          "mapping": {
+            "completion": "#/$defs/Completion",
+            "emergency": "#/$defs/Emergency",
+            "equipment": "#/$defs/Equipment",
+            "mistake": "#/$defs/Mistake",
+            "movement": "#/$defs/Movement",
+            "reaction": "#/$defs/Reaction",
+            "resource": "#/$defs/Resource"
+          },
+          "propertyName": "kind"
+        },
+        "oneOf": [
+          {
+            "$ref": "#/$defs/Movement"
+          },
+          {
+            "$ref": "#/$defs/Reaction"
+          },
+          {
+            "$ref": "#/$defs/Resource"
+          },
+          {
+            "$ref": "#/$defs/Equipment"
+          },
+          {
+            "$ref": "#/$defs/Emergency"
+          },
+          {
+            "$ref": "#/$defs/Mistake"
+          },
+          {
+            "$ref": "#/$defs/Completion"
+          }
+        ]
+      },
+      "maxItems": 128,
+      "minItems": 1,
+      "title": "Events",
+      "type": "array"
+    }
+  },
+  "required": [
+    "mission_session_id",
+    "events"
+  ],
+  "title": "Batch",
+  "type": "object"
+}

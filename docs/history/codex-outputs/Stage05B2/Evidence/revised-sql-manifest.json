@@ -1,0 +1,10 @@
+{
+  "target": "jvkwofmxtxjhdwtwdboz",
+  "remote_approved": false,
+  "files": {
+    "000_read_only_preflight.sql": "10a0b57a34de6491bbd8367d86545234310c45ebfa8aa3f5ce08db27aa198eea",
+    "001_verified_jwt_training.sql": "f88737a63921642a6646c6883906f820491a7b422a747863aa4b1681f656bd3b",
+    "002_retire_direct_runtime.sql": "9e76d544a44a0815ea4d0263d15be381bba646aa1d68e1cf38dbaf26a19fc22f",
+    "003_read_only_verification.sql": "ee46f60ae220ffa929214e9725020ca115905be0549ff2e2894ea7872839138d"
+  }
+}

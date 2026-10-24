@@ -1,0 +1,42 @@
+Step 1 gameplay verification — 2026-10-17 03:18:32
+PASS 22  FAIL 1
+
+Scene: Assets/AstroGateway/ProductionVisual/Scenes/Mars_ProductionVisual_v1.unity
+Astronaut start (-42.00, 0.10, -68.00) radius 0.32 height 1.85 scale (1.00, 1.00, 1.00)
+Rover start (-15.00, 0.03, -93.00) radius 1.15 height 2.3 scale (1.00, 1.00, 1.00)
+Research target Rock sample station (35.00, 0.42, 23.00)
+Research target Soil crater sampler (55.00, 0.73, 37.00)
+Research target Ridge mineral sensor (0.00, 1.80, 74.00)
+Research target Solar inspection (25.00, 0.40, -43.00)
+Research target Communications inspection (-16.00, 0.51, -24.00)
+Airlocks 3
+Open test spots: rover (-24.00, 0.13, -10.00), walk (-8.00, 0.00, -40.00)
+PASS  Scene starts in astronaut mode  [Astronaut]
+PASS  No research target missing
+PASS  Integration bridge starts a local (non-authoritative) session
+PASS  Walk forward moves astronaut  [2.20 m/s, expected ~2.2]
+PASS  Walk follows camera heading (yaw 0 → +Z)  [(0.00, 0.02, 4.47)]
+PASS  Astronaut stays grounded while walking  [y 0.16 ground 0.12]
+PASS  Run is faster than walk  [run 3.80 m/s vs walk 2.20]
+PASS  Turning the camera turns the walk direction (yaw 90 → +X)  [(3.30, 0.00, 0.00)]
+PASS  Astronaut stops when input is released
+WARN  simulation clock stalled during a wait: mode Astronaut/Astronaut, driving False, paused False, modal False, scanning False, cinematic False, parent 02_LocalProvisionalExploration, result 'No scientific samples recorded'
+PASS  Astronaut is blocked by structure 'Laboratory Dome'  [stopped 9.3 m from centre, extents 9.0/9.0, overlaps 0]
+PASS  World boundary holds the astronaut inside ±119 m  [(119.00, 0.08, 0.00)]
+PASS  Boarding is refused when the rover is 9 m away
+PASS  Boarding works within 5 m  [Control mode updated]
+PASS  Mode switches to Rover  [Rover]
+PASS  Astronaut is seated in the rover (same object)
+PASS  Rover accelerates forward  [speed 3.80 m/s (max 3.8), travelled 11.7 m]
+PASS  Rover stays on the ground while driving  [y 0.12 ground 0.08]
+PASS  Exit is refused while the rover is moving
+PASS  Steering turns the rover  [56.4°]
+PASS  Brake stops the rover  [0.00 m/s]
+PASS  Rover reverses  [-1.80 m/s (max -1.8)]
+PASS  Wheels roll with measured travel  [114.4°]
+EXCEPTION: System.Exception: Verification timeout
+  at AstroGateway.Verification.Step1GameplayVerification.Tick () [0x00101] in /Users/kapilash/Projects/MissionRedHorizon_Step1Work/Lab/Assets/AstroGateway/Verification/Editor/Step1GameplayVerification.cs:87 
+
+Monitor samples (first 40):
+
+Logged errors:

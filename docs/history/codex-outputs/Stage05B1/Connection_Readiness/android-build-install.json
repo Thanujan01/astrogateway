@@ -1,0 +1,8 @@
+{
+  "live_authentication_tested": false,
+  "build_config_matches_approved_url": true,
+  "build_config_matches_approved_public_key": true,
+  "apk_sha256": "c7207d063311154b5a1f518dd092daa3ba6bbfc9348e1bc62fdd1f7cf2ed3e52",
+  "install_success": true,
+  "host_launch_success": true
+}

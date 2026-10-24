@@ -1,0 +1,9 @@
+{
+  "error_type": "KeyError",
+  "tests": [
+    {
+      "name": "FastAPI health reflects public configuration only, no DB credential",
+      "status": "PASS"
+    }
+  ]
+}

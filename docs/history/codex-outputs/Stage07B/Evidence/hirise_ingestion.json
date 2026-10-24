@@ -1,0 +1,52 @@
+{
+  "dataset_id": "MRO-M-HIRISE-3-RDR-V1.1/PSP_010502_2090_RED",
+  "rows": [
+    {
+      "PRODUCT_ID": "PSP_010502_2090_RED",
+      "PRODUCT_VERSION_ID": "2.0",
+      "TARGET_NAME": "MARS",
+      "MAP_PROJECTION_TYPE": null,
+      "MAP_SCALE": null,
+      "CENTER_LATITUDE": null,
+      "CENTER_LONGITUDE": null
+    }
+  ],
+  "status": "QUARANTINED",
+  "reasons": [
+    "no trusted operator approval registry entry",
+    "license review incomplete",
+    "training permission absent",
+    "metadata-only; not observations or elevation samples",
+    "uncertainty unresolved"
+  ],
+  "provenance": {
+    "dataset_id": "MRO-M-HIRISE-3-RDR-V1.1/PSP_010502_2090_RED",
+    "source_url": "https://hirise-pds.lpl.arizona.edu/PDS/RDR/PSP/ORB_010500_010599/PSP_010502_2090/PSP_010502_2090_RED.LBL",
+    "organization": "NASA PDS / University of Arizona HiRISE",
+    "version": "2.0",
+    "retrieved_at": "2026-10-09T13:14:18.803203+00:00",
+    "sha256": "726e8c59a4379c40512408bc8a9681ba04bd4235d139b953487ed091e15da654",
+    "license": {
+      "status": "unverified",
+      "evidence_url": "https://www.uahirise.org/faq/"
+    },
+    "attribution": "NASA/JPL/University of Arizona; individual-product review pending",
+    "units": {
+      "map_scale": "label-declared; not decoded elevation"
+    },
+    "coordinates": {
+      "site": "Uranius Fossae, not Jezero",
+      "frame": "retain original label; reviewed transform pending"
+    },
+    "uncertainty": {
+      "vertical_m": null
+    },
+    "missing_data": {
+      "policy": "No raster values loaded"
+    },
+    "limitations": "Projected image label, not DEM or Mars weather observations",
+    "kind": "terrain_metadata",
+    "training_permission": false
+  },
+  "human_skill_training": false
+}

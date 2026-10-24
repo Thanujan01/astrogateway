@@ -1,0 +1,11 @@
+# GLB conversion report
+
+**PASS: texture encoding conversion and structural preservation for all three LODs.** New derivatives in `work/stage08d11/Converted/`, copied as new filenames to the isolated project's Assets/ApprovedAssets. Original GLBs untouched.
+
+Script: `work/stage08d/tools/convert_webp.mjs`, existing staged Sharp decoder/encoder and Khronos validator. It parses GLB JSON/BIN directly, avoiding mesh export/reimport. Each WebP becomes PNG at identical dimensions and decoded RGBA pixels (byte equality asserted). Original BIN prefix remains byte-identical; PNG payloads appended at 4-byte aligned offsets with new bufferViews. PNG MIME and image bufferView updated, buffer length and GLB chunk lengths rebuilt. Texture WebP-extension source promoted to core source; extension removed from texture objects and global declarations only after every referenced image is PNG. Other texture extensions, samplers, material channels and assignments retained.
+
+Assertions: meshes, accessors, nodes, skins, animations, materials and samplers JSON unchanged; original binary prefix identical; decoded pixel equality for every converted image. Thus this conversion does not change UVs, normals, tangents (including their source absence), indices, bone data, transforms or existing LOD simplification. No normal regeneration or geometry repair performed. Other JPEG/PNG payloads are preserved. Old image buffer bytes remain as unreferenced source payload in the new GLB: conservative preservation increases file size, and is not a mobile-size optimization.
+
+Original reference copy converted too, with original 47 materials and 199,521 triangles; its inherited non-normalized skin weights remain documented. No original file normalized or overwritten. SHA256 source checks in Source_Preservation_Checks.json all true, including acquired assets, optimized sources and recorded main Unity scene/script/package baselines.
+
+No unsupported **required** extension remains in the three new LOD files. Optional IOR/specular data is preserved but not implemented by glTFast's selected Unity material path. This renderer limitation prevents full material-fidelity acceptance; see Rover_Material_Comparison.md. No performance claim.

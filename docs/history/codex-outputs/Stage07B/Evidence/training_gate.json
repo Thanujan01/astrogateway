@@ -1,0 +1,13 @@
+{
+  "player_disjoint": true,
+  "real_player_data_used": false,
+  "rows": 800,
+  "scientific_observations_used": false,
+  "split_sizes": {
+    "test": 100,
+    "train": 600,
+    "validation": 100
+  },
+  "status": "PASS",
+  "strict_time_order": true
+}

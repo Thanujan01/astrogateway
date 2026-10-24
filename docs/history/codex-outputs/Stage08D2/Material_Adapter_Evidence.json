@@ -1,0 +1,306 @@
+{
+  "source": "work/stage08d11/Converted/Perseverance_LOD0_PNG.glb",
+  "materials": [
+    {
+      "index": 5,
+      "name": "transparent",
+      "unityName": "transparent",
+      "basePath": "Assets/Stage08D2/Textures/transparent_Base.png",
+      "specPath": "Assets/Stage08D2/Textures/transparent_SpecSmooth.png",
+      "normalPath": "",
+      "normalScale": 1,
+      "alphaMode": "OPAQUE",
+      "doubleSided": true,
+      "ior": 1.4500000476837158,
+      "dielectricF0": 0.03373594919332527,
+      "specularFactor": 0,
+      "metallicFactor": 0,
+      "roughnessFactor": 0.5,
+      "transmission": 0,
+      "width": 64,
+      "height": 64,
+      "sourceMaterial": {
+        "name": "transparent",
+        "doubleSided": true,
+        "pbrMetallicRoughness": {
+          "roughnessFactor": 0.5,
+          "metallicFactor": 0,
+          "baseColorTexture": {
+            "index": 3
+          }
+        },
+        "extensions": {
+          "KHR_materials_ior": {
+            "ior": 1.4500000476837158
+          },
+          "KHR_materials_specular": {
+            "specularFactor": 0
+          }
+        }
+      }
+    },
+    {
+      "index": 8,
+      "name": "glass_trans",
+      "unityName": "glass_trans",
+      "basePath": "Assets/Stage08D2/Textures/glass_trans_Base.png",
+      "specPath": "Assets/Stage08D2/Textures/glass_trans_SpecSmooth.png",
+      "normalPath": "",
+      "normalScale": 1,
+      "alphaMode": "OPAQUE",
+      "doubleSided": true,
+      "ior": 1.3899999856948853,
+      "dielectricF0": 0.026627683454906317,
+      "specularFactor": 1,
+      "metallicFactor": 0,
+      "roughnessFactor": 0.004999999888241291,
+      "transmission": 1,
+      "width": 128,
+      "height": 128,
+      "sourceMaterial": {
+        "name": "glass_trans",
+        "doubleSided": true,
+        "pbrMetallicRoughness": {
+          "roughnessFactor": 0.004999999888241291,
+          "metallicFactor": 0,
+          "baseColorTexture": {
+            "index": 5
+          }
+        },
+        "extensions": {
+          "KHR_materials_clearcoat": {
+            "clearcoatFactor": 0,
+            "clearcoatRoughnessFactor": 0
+          },
+          "KHR_materials_ior": {
+            "ior": 1.3899999856948853
+          },
+          "KHR_materials_specular": {
+            "specularColorTexture": {
+              "index": 5
+            }
+          },
+          "KHR_materials_transmission": {
+            "transmissionFactor": 1
+          }
+        }
+      }
+    },
+    {
+      "index": 12,
+      "name": "glass lens",
+      "unityName": "glass_lens",
+      "basePath": "Assets/Stage08D2/Textures/glass_lens_Base.png",
+      "specPath": "Assets/Stage08D2/Textures/glass_lens_SpecSmooth.png",
+      "normalPath": "",
+      "normalScale": 1,
+      "alphaMode": "OPAQUE",
+      "doubleSided": true,
+      "ior": 1.3899999856948853,
+      "dielectricF0": 0.026627683454906317,
+      "specularFactor": 1,
+      "metallicFactor": 0,
+      "roughnessFactor": 0.004999999888241291,
+      "transmission": 1,
+      "width": 1,
+      "height": 1,
+      "sourceMaterial": {
+        "name": "glass lens",
+        "doubleSided": true,
+        "pbrMetallicRoughness": {
+          "baseColorFactor": [
+            0.45505744218826294,
+            0.6724433898925781,
+            0.5015351176261902,
+            1
+          ],
+          "roughnessFactor": 0.004999999888241291,
+          "metallicFactor": 0
+        },
+        "extensions": {
+          "KHR_materials_clearcoat": {
+            "clearcoatFactor": 0,
+            "clearcoatRoughnessFactor": 0
+          },
+          "KHR_materials_ior": {
+            "ior": 1.3899999856948853
+          },
+          "KHR_materials_specular": {
+            "specularColorFactor": [
+              0.45505744218826294,
+              0.6724433898925781,
+              0.5015351176261902
+            ]
+          },
+          "KHR_materials_transmission": {
+            "transmissionFactor": 1
+          }
+        }
+      }
+    },
+    {
+      "index": 17,
+      "name": "blades",
+      "unityName": "blades",
+      "basePath": "Assets/Stage08D2/Textures/blades_Base.png",
+      "specPath": "Assets/Stage08D2/Textures/blades_SpecSmooth.png",
+      "normalPath": "",
+      "normalScale": 1,
+      "alphaMode": "OPAQUE",
+      "doubleSided": true,
+      "ior": 1.4500000476837158,
+      "dielectricF0": 0.03373594919332527,
+      "specularFactor": 0,
+      "metallicFactor": 0,
+      "roughnessFactor": 1,
+      "transmission": 0,
+      "width": 1024,
+      "height": 512,
+      "sourceMaterial": {
+        "name": "blades",
+        "doubleSided": true,
+        "pbrMetallicRoughness": {
+          "metallicFactor": 0,
+          "baseColorTexture": {
+            "index": 10
+          }
+        },
+        "extensions": {
+          "KHR_materials_ior": {
+            "ior": 1.4500000476837158
+          },
+          "KHR_materials_specular": {
+            "specularFactor": 0
+          }
+        }
+      }
+    },
+    {
+      "index": 28,
+      "name": "mars_2020_06",
+      "unityName": "mars_2020_06",
+      "basePath": "Assets/Stage08D2/Textures/mars_2020_06_Base.png",
+      "specPath": "Assets/Stage08D2/Textures/mars_2020_06_SpecSmooth.png",
+      "normalPath": "",
+      "normalScale": 1,
+      "alphaMode": "OPAQUE",
+      "doubleSided": true,
+      "ior": 1.4500000476837158,
+      "dielectricF0": 0.03373594919332527,
+      "specularFactor": 0.30909091234207153,
+      "metallicFactor": 0.25,
+      "roughnessFactor": 0.5,
+      "transmission": 0,
+      "width": 1024,
+      "height": 1024,
+      "sourceMaterial": {
+        "name": "mars_2020_06",
+        "doubleSided": true,
+        "pbrMetallicRoughness": {
+          "roughnessFactor": 0.5,
+          "metallicFactor": 0.25,
+          "baseColorTexture": {
+            "index": 6
+          }
+        },
+        "extensions": {
+          "KHR_materials_ior": {
+            "ior": 1.4500000476837158
+          },
+          "KHR_materials_specular": {
+            "specularFactor": 0.30909091234207153
+          }
+        }
+      }
+    },
+    {
+      "index": 40,
+      "name": "glass_2",
+      "unityName": "glass_2",
+      "basePath": "Assets/Stage08D2/Textures/glass_2_Base.png",
+      "specPath": "Assets/Stage08D2/Textures/glass_2_SpecSmooth.png",
+      "normalPath": "",
+      "normalScale": 1,
+      "alphaMode": "OPAQUE",
+      "doubleSided": true,
+      "ior": 1.3899999856948853,
+      "dielectricF0": 0.026627683454906317,
+      "specularFactor": 1,
+      "metallicFactor": 0,
+      "roughnessFactor": 0.27272728085517883,
+      "transmission": 1,
+      "width": 128,
+      "height": 128,
+      "sourceMaterial": {
+        "name": "glass_2",
+        "doubleSided": true,
+        "pbrMetallicRoughness": {
+          "roughnessFactor": 0.27272728085517883,
+          "metallicFactor": 0,
+          "baseColorTexture": {
+            "index": 5
+          }
+        },
+        "extensions": {
+          "KHR_materials_clearcoat": {
+            "clearcoatFactor": 0,
+            "clearcoatRoughnessFactor": 0
+          },
+          "KHR_materials_ior": {
+            "ior": 1.3899999856948853
+          },
+          "KHR_materials_specular": {
+            "specularColorTexture": {
+              "index": 5
+            }
+          },
+          "KHR_materials_transmission": {
+            "transmissionFactor": 1
+          }
+        }
+      }
+    },
+    {
+      "index": 41,
+      "name": "mars_2020_06_n",
+      "unityName": "mars_2020_06_n",
+      "basePath": "Assets/Stage08D2/Textures/mars_2020_06_n_Base.png",
+      "specPath": "Assets/Stage08D2/Textures/mars_2020_06_n_SpecSmooth.png",
+      "normalPath": "Assets/Stage08D2/Textures/mars_2020_06_n_Normal.png",
+      "normalScale": 1.5,
+      "alphaMode": "OPAQUE",
+      "doubleSided": true,
+      "ior": 1.4500000476837158,
+      "dielectricF0": 0.03373594919332527,
+      "specularFactor": 0.30909091234207153,
+      "metallicFactor": 0.45000001788139343,
+      "roughnessFactor": 0.25,
+      "transmission": 0,
+      "width": 1024,
+      "height": 1024,
+      "sourceMaterial": {
+        "name": "mars_2020_06_n",
+        "doubleSided": true,
+        "pbrMetallicRoughness": {
+          "roughnessFactor": 0.25,
+          "metallicFactor": 0.45000001788139343,
+          "baseColorTexture": {
+            "index": 6
+          }
+        },
+        "normalTexture": {
+          "index": 7,
+          "scale": 1.5
+        },
+        "extensions": {
+          "KHR_materials_ior": {
+            "ior": 1.4500000476837158
+          },
+          "KHR_materials_specular": {
+            "specularFactor": 0.30909091234207153
+          }
+        }
+      }
+    }
+  ]
+}

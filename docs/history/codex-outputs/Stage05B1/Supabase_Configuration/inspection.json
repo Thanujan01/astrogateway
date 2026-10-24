@@ -1,0 +1,27 @@
+{
+  "approved_project_name": "astrogateway-test",
+  "project_reference_available": false,
+  "migration_sha256": "269a983fe659e98f6083f3a8e46197ebe166d32e77eecc4a520539f1c686b59d",
+  "migration_applied": false,
+  "source_review": {
+    "transactional": true,
+    "creates_auth_profile_trigger": true,
+    "backfills_existing_users": true,
+    "private_schema": true,
+    "no_drop_statements": true
+  },
+  "host_http": {
+    "/health": {
+      "status": 200,
+      "body": "{\"status\":\"configuration_required\"}"
+    },
+    "/v1/me": {
+      "status": 401,
+      "body": "{\"detail\":\"Sign-in required.\"}"
+    },
+    "/": {
+      "status": 404,
+      "body": "{\"detail\":\"Not Found\"}"
+    }
+  }
+}

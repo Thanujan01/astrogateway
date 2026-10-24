@@ -1,0 +1,55 @@
+Adapted transparent: IOR 1.45, metallic 0, roughness 0.5, alpha OPAQUE, transmission 0
+Adapted glass_trans: IOR 1.39, metallic 0, roughness 0.005, alpha OPAQUE, transmission 1
+Adapted glass lens: IOR 1.39, metallic 0, roughness 0.005, alpha OPAQUE, transmission 1
+Adapted blades: IOR 1.45, metallic 0, roughness 1, alpha OPAQUE, transmission 0
+Adapted mars_2020_06: IOR 1.45, metallic 0.25, roughness 0.5, alpha OPAQUE, transmission 0
+Adapted glass_2: IOR 1.39, metallic 0, roughness 0.2727273, alpha OPAQUE, transmission 1
+Adapted mars_2020_06_n: IOR 1.45, metallic 0.45, roughness 0.25, alpha OPAQUE, transmission 0
+Captured Before_LOD0
+Captured Before_LOD1
+Captured Before_LOD2
+LOD0: imported triangles 91916; renderer count 68
+LOD1: imported triangles 91902; renderer count 68
+LOD2: imported triangles 91792; renderer count 68
+Captured After_LOD0
+Captured After_LOD1
+Captured After_LOD2
+Captured Adapted_Source_Reference
+Captured After_Rear
+Final distinct rover materials 43
+PASS shader support/non-null materials
+PASS saved scene reload and three LOD reference lists
+Texture transparent_Base: 64x64 RGBA32, RGBA32 mip estimate 21845
+Texture transparent_SpecSmooth: 64x64 RGBA32, RGBA32 mip estimate 21845
+Texture mars_2020_06: 1024x1024 ARGB32, RGBA32 mip estimate 5592405
+Texture mars_2020_06_n: 1024x1024 ARGB32, RGBA32 mip estimate 5592405
+Texture mars_2020_01: 1024x1024 ARGB32, RGBA32 mip estimate 5592405
+Texture mars_2020_01_n: 1024x1024 ARGB32, RGBA32 mip estimate 5592405
+Texture mars_2020_02: 1024x1024 ARGB32, RGBA32 mip estimate 5592405
+Texture mars_2020_02_n: 1024x1024 ARGB32, RGBA32 mip estimate 5592405
+Texture blades_Base: 1024x512 RGB24, RGBA32 mip estimate 2796202
+Texture blades_SpecSmooth: 1024x512 RGBA32, RGBA32 mip estimate 2796202
+Texture mars_2020_03: 1024x1024 ARGB32, RGBA32 mip estimate 5592405
+Texture glass_lens_Base: 1x1 RGB24, RGBA32 mip estimate 5
+Texture glass_lens_SpecSmooth: 1x1 RGBA32, RGBA32 mip estimate 5
+Texture glass_trans_Base: 128x128 RGBA32, RGBA32 mip estimate 87381
+Texture glass_trans_SpecSmooth: 128x128 RGBA32, RGBA32 mip estimate 87381
+Texture mars_2020_05: 1024x1024 ARGB32, RGBA32 mip estimate 5592405
+Texture mars_2020_04: 1024x1024 ARGB32, RGBA32 mip estimate 5592405
+Texture mars_2020_spring_n: 256x256 ARGB32, RGBA32 mip estimate 349525
+Texture mars_2020_hub: 256x256 ARGB32, RGBA32 mip estimate 349525
+Texture mars_2020_hub_n: 256x256 ARGB32, RGBA32 mip estimate 349525
+Texture mars_2020_05_n: 1024x1024 ARGB32, RGBA32 mip estimate 5592405
+Texture foil_n.jpg: 512x512 ARGB32, RGBA32 mip estimate 1398101
+Texture mars_2020_07: 512x512 ARGB32, RGBA32 mip estimate 1398101
+Texture arm_graphics: 512x512 ARGB32, RGBA32 mip estimate 1398101
+Texture mars_2020_06_Base: 1024x1024 RGB24, RGBA32 mip estimate 5592405
+Texture mars_2020_06_SpecSmooth: 1024x1024 RGBA32, RGBA32 mip estimate 5592405
+Texture mars_2020_05_r: 1024x1024 ARGB32, RGBA32 mip estimate 5592405
+Texture glass_2_Base: 128x128 RGBA32, RGBA32 mip estimate 87381
+Texture glass_2_SpecSmooth: 128x128 RGBA32, RGBA32 mip estimate 87381
+Texture mars_2020_06_n_Base: 1024x1024 RGB24, RGBA32 mip estimate 5592405
+Texture mars_2020_06_n_Normal: 1024x1024 RGBA32, RGBA32 mip estimate 5592405
+Texture mars_2020_06_n_SpecSmooth: 1024x1024 RGBA32, RGBA32 mip estimate 5592405
+Texture sample_handling_door: 512x512 ARGB32, RGBA32 mip estimate 1398101
+Shared texture RGBA32+mips estimate bytes 102105087

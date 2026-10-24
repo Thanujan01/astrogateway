@@ -1,0 +1,117 @@
+{
+  "tests": [
+    {
+      "name": "invalid token denied",
+      "status": "PASS"
+    },
+    {
+      "name": "expired token denied",
+      "status": "PASS"
+    },
+    {
+      "name": "forged token denied",
+      "status": "PASS"
+    },
+    {
+      "name": "missing auth denied",
+      "status": "PASS"
+    },
+    {
+      "name": "AI endpoint contract mounted",
+      "status": "PASS"
+    },
+    {
+      "name": "empty skills insufficient",
+      "status": "PASS"
+    },
+    {
+      "name": "existing mission init intact",
+      "status": "PASS"
+    },
+    {
+      "name": "B cannot ingest A mission",
+      "status": "PASS"
+    },
+    {
+      "name": "owner injection rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "client score rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "attestation injection rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "valid event persisted by RLS",
+      "status": "PASS"
+    },
+    {
+      "name": "whole batch idempotent",
+      "status": "PASS"
+    },
+    {
+      "name": "changed event replay conflict",
+      "status": "PASS"
+    },
+    {
+      "name": "cross-batch impossible movement rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "B skills isolated",
+      "status": "PASS"
+    },
+    {
+      "name": "A score derived provisional",
+      "status": "PASS"
+    },
+    {
+      "name": "B debrief denied",
+      "status": "PASS"
+    },
+    {
+      "name": "all schema types accepted",
+      "status": "PASS"
+    },
+    {
+      "name": "late events after completion denied",
+      "status": "PASS"
+    },
+    {
+      "name": "fake previous cannot skip tiers",
+      "status": "PASS"
+    },
+    {
+      "name": "30 day plan repeatable",
+      "status": "PASS"
+    },
+    {
+      "name": "user scoped seed variation",
+      "status": "PASS"
+    },
+    {
+      "name": "client completion cannot mark trusted progress",
+      "status": "PASS"
+    },
+    {
+      "name": "grounded ARIA cites source without model claims",
+      "status": "PASS"
+    },
+    {
+      "name": "revocation blocks AI",
+      "status": "PASS"
+    },
+    {
+      "name": "B remains accessible",
+      "status": "PASS"
+    }
+  ],
+  "local_only": true,
+  "kernel_sandbox": true,
+  "auth": "public RSA fixture",
+  "data": "real PostgREST16.4/native PostgreSQL17.11",
+  "no_client_final_scores": true
+}

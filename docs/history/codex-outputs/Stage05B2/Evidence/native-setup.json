@@ -1,0 +1,13 @@
+{
+  "server": "PostgreSQL 17.11 on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.3.34.2), 64-bit",
+  "client_tls_verified": true,
+  "backend_tls": {
+    "ssl": true,
+    "version": "TLSv1.3",
+    "cipher": "TLS_AES_256_GCM_SHA384"
+  },
+  "legacy_credential_before_quarantine_can_impersonate": true,
+  "stale_legacy_session_terminated": true,
+  "quarantine_repeat_pass": true,
+  "retired_password_login_denied": true
+}

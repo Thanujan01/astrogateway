@@ -1,0 +1,30 @@
+[
+  {
+    "suite": "HUD",
+    "exit": 0
+  },
+  {
+    "suite": "Responsive",
+    "exit": 0
+  },
+  {
+    "suite": "Performance",
+    "exit": 0
+  },
+  {
+    "suite": "Native",
+    "exit": 0
+  },
+  {
+    "suite": "Mars",
+    "exit": 0
+  },
+  {
+    "suite": "Mission01",
+    "exit": 0
+  },
+  {
+    "suite": "VisualPolish",
+    "exit": 0
+  }
+]

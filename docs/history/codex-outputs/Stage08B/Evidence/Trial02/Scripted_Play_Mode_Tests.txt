@@ -1,0 +1,20 @@
+walk displacement: FAIL
+walk speed: FAIL
+grounded: PASS
+walk animator: FAIL
+run speed: FAIL
+run displacement: FAIL
+camera yaw: PASS
+enter rover: PASS
+rover acceleration: PASS
+rover terrain travel: PASS
+rover grounded: PASS
+exit while moving rejected: PASS
+rover steering: PASS
+rover braking: PASS
+exit rover: PASS
+light dust: PASS
+storm particles bounded: PASS
+storm visibility: PASS
+HUD resources: PASS
+clear transition: PASS

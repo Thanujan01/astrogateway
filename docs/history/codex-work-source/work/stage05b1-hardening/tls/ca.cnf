@@ -1,0 +1,11 @@
+[req]
+distinguished_name=dn
+x509_extensions=ca
+prompt=no
+[dn]
+CN=AstroGateway Disposable CA
+[ca]
+basicConstraints=critical,CA:true
+keyUsage=critical,keyCertSign,cRLSign
+subjectKeyIdentifier=hash
+authorityKeyIdentifier=keyid:always

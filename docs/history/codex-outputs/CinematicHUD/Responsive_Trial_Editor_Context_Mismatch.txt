@@ -1,0 +1,48 @@
+Desktop16x9 requested dimensions match actual: FAIL
+Desktop16x9 actual framebuffer=3024x1694 safe=(x:0.00, y:0.00, width:3024.00, height:1694.00)
+Desktop16x9 Mission branding inside safe area: PASS
+Desktop16x9 Survival resources inside safe area: PASS
+Desktop16x9 Weather and clock inside safe area: PASS
+Desktop16x9 Mission objectives inside safe area: PASS
+Desktop16x9 Circular minimap panel inside safe area: PASS
+Desktop16x9 Analog movement joystick inside safe area: PASS
+Desktop16x9 Scan inside safe area: PASS
+Desktop16x9 Context interact inside safe area: PASS
+Desktop16x9 Rover telemetry inside safe area: PASS
+Desktop16x9 Recent scientific scan inside safe area: PASS
+Android19_5x9 requested dimensions match actual: FAIL
+Android19_5x9 actual framebuffer=3024x1694 safe=(x:0.00, y:0.00, width:3024.00, height:1694.00)
+Android19_5x9 Mission branding inside safe area: PASS
+Android19_5x9 Survival resources inside safe area: PASS
+Android19_5x9 Weather and clock inside safe area: PASS
+Android19_5x9 Mission objectives inside safe area: PASS
+Android19_5x9 Circular minimap panel inside safe area: PASS
+Android19_5x9 Analog movement joystick inside safe area: PASS
+Android19_5x9 Scan inside safe area: PASS
+Android19_5x9 Context interact inside safe area: PASS
+Android19_5x9 Rover telemetry inside safe area: PASS
+Android19_5x9 Recent scientific scan inside safe area: PASS
+Android20x9_NotchSimulation requested dimensions match actual: FAIL
+Android20x9_NotchSimulation actual framebuffer=3024x1694 safe=(x:105.84, y:42.35, width:2812.32, height:1609.30)
+Android20x9_NotchSimulation Mission branding inside safe area: PASS
+Android20x9_NotchSimulation Survival resources inside safe area: PASS
+Android20x9_NotchSimulation Weather and clock inside safe area: PASS
+Android20x9_NotchSimulation Mission objectives inside safe area: PASS
+Android20x9_NotchSimulation Circular minimap panel inside safe area: PASS
+Android20x9_NotchSimulation Analog movement joystick inside safe area: PASS
+Android20x9_NotchSimulation Scan inside safe area: PASS
+Android20x9_NotchSimulation Context interact inside safe area: PASS
+Android20x9_NotchSimulation Rover telemetry inside safe area: PASS
+Android20x9_NotchSimulation Recent scientific scan inside safe area: PASS
+Tablet4x3 requested dimensions match actual: FAIL
+Tablet4x3 actual framebuffer=3024x1694 safe=(x:0.00, y:0.00, width:3024.00, height:1694.00)
+Tablet4x3 Mission branding inside safe area: PASS
+Tablet4x3 Survival resources inside safe area: PASS
+Tablet4x3 Weather and clock inside safe area: PASS
+Tablet4x3 Mission objectives inside safe area: PASS
+Tablet4x3 Circular minimap panel inside safe area: PASS
+Tablet4x3 Analog movement joystick inside safe area: PASS
+Tablet4x3 Scan inside safe area: PASS
+Tablet4x3 Context interact inside safe area: PASS
+Tablet4x3 Rover telemetry inside safe area: PASS
+Tablet4x3 Recent scientific scan inside safe area: PASS

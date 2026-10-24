@@ -1,0 +1,19 @@
+{
+  "url": "http://127.0.0.1:8767/Web/performance.html",
+  "browser": "Codex in-app browser, Chrome/155.0.0.0 reported user agent",
+  "renderer": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4 Pro, Unspecified Version)",
+  "scope": "Stationary arrival camera, 5s warmup + 20s sample; browser presentation cadence and actual intercepted WebGL submissions. Instrumentation overhead present. Not Unity Profiler SetPass/batches or GPU timings.",
+  "samples": 2400,
+  "meanFrameMs": 8.332833333333335,
+  "p50FrameMs": 8.334999999999127,
+  "p95FrameMs": 9.260000000000218,
+  "approxPresentedFPS": 120.0072004320259,
+  "meanGLDrawSubmissions": 61,
+  "meanSubmittedTrianglesIncludingPasses": 56428,
+  "meanUseProgramCalls": 11,
+  "canvasPixels": [1920, 1200],
+  "canvasCssPixels": [960, 600],
+  "devicePixelRatio": 2,
+  "browserErrorsObserved": 0,
+  "browserWarnings": ["Shader 'Hidden/Universal Render Pipeline/Edge Adaptive Spatial Upsampling' is not supported or has been stripped from the build (in 'Blit FSR Upscaling'). PostProcessing render passes will not execute."]
+}

@@ -1,0 +1,9 @@
+Editor source snapshot — not drawn-frame counters or Android GPU memory
+Unique meshes=16
+Unique mesh asset triangles=59940
+Renderer instances=314
+Unique materials=26
+Unique Texture2D=10
+Texture runtime object bytes=10550800
+First trial structural seam triangles=not imported; see development evidence
+Selected structural seam triangles=47088

@@ -1,0 +1,75 @@
+# ARES-VI AAA Production PBR Materials Definition
+# Calibrated to NASA-Inspired Aerospace Palette
+
+# 1. Ceramic White Armor (#E5E6E2)
+newmtl Mat_CeramicWhite
+Ka 0.22 0.22 0.21
+Kd 0.898 0.902 0.886
+Ks 0.45 0.46 0.45
+Ns 45.0
+d 1.0
+illum 2
+
+# 2. Structural Graphite Panels (#252B32)
+newmtl Mat_GraphiteTrim
+Ka 0.06 0.07 0.08
+Kd 0.145 0.169 0.196
+Ks 0.35 0.38 0.40
+Ns 35.0
+d 1.0
+illum 2
+
+# 3. Metallic Titanium Frame & Chassis (#89939B)
+newmtl Mat_TitaniumFrame
+Ka 0.18 0.19 0.20
+Kd 0.537 0.576 0.608
+Ks 0.88 0.90 0.92
+Ns 75.0
+d 1.0
+illum 2
+
+# 4. Aerospace Safety Orange Livery (#D96A29)
+newmtl Mat_MartianOrange
+Ka 0.25 0.12 0.05
+Kd 0.851 0.416 0.161
+Ks 0.60 0.50 0.40
+Ns 55.0
+d 1.0
+illum 2
+
+# 5. Kapton Gold Thermal Insulation Foil
+newmtl Mat_GoldFoil
+Ka 0.28 0.20 0.05
+Kd 0.950 0.780 0.160
+Ks 0.98 0.88 0.45
+Ns 95.0
+d 1.0
+illum 2
+
+# 6. Carbon Cleated All-Terrain Tires
+newmtl Mat_CarbonTreads
+Ka 0.04 0.04 0.05
+Kd 0.110 0.120 0.140
+Ks 0.20 0.20 0.22
+Ns 20.0
+d 1.0
+illum 2
+
+# 7. Polarized Canopy Glass (55% Transmission)
+newmtl Mat_CanopyGlass
+Ka 0.08 0.12 0.15
+Kd 0.160 0.280 0.380
+Ks 0.95 0.98 1.00
+Ns 130.0
+d 0.55
+illum 2
+
+# 8. Anti-Gravity Cyan Plasma Emission (#00C9E8)
+newmtl Mat_CyanEnergy
+Ka 0.00 0.50 0.60
+Kd 0.000 0.788 0.910
+Ks 0.95 0.98 1.00
+Ke 0.000 0.788 0.910
+Ns 160.0
+d 0.95
+illum 2

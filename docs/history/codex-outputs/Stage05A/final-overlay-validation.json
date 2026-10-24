@@ -1,0 +1,39 @@
+{
+  "cycles": [
+    {
+      "launch_id": "f8d51039-4a3a-4e9d-b663-1c9b7aab44f7",
+      "return": "button",
+      "ack": true,
+      "result": true,
+      "return_target_bounds": [
+        675,
+        827,
+        1665,
+        981
+      ],
+      "host_reused": true,
+      "unity_reused": true
+    },
+    {
+      "launch_id": "42e62c87-e0c5-4c2f-b9ae-2212101917a4",
+      "return": "gesture",
+      "ack": true,
+      "result": true,
+      "return_target_bounds": [
+        675,
+        827,
+        1665,
+        981
+      ],
+      "host_reused": true,
+      "unity_reused": true
+    }
+  ],
+  "passed": true,
+  "apk_sha256": "56d812ce1af014320e821a8b27ee9533ab7c0eabd4cf81ae1d604060545b7ade",
+  "installation": "Performing Streamed Install\nSuccess\n",
+  "fatal_exception": false,
+  "fatal_signal": false,
+  "dashboard_result_visibly_verified": true,
+  "anr": false
+}

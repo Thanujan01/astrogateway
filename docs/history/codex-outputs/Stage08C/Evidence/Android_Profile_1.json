@@ -1,0 +1,14 @@
+{
+  "stage": 1,
+  "frames": 111,
+  "peak_particles": 43,
+  "unsupported_material_renderers": 0,
+  "width": 2340,
+  "height": 1080,
+  "label": "light_dust",
+  "seconds": 25.0389404296875,
+  "average_fps": 4.4330949783325195,
+  "p95_frame_ms": 233.33331298828125,
+  "max_frame_ms": 450.0,
+  "peak_unity_allocated_bytes": 95840858
+}

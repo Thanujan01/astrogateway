@@ -1,0 +1,86 @@
+[
+  {
+    "file": "AndroidLandscapeSimulation_GameView.png",
+    "dimensions": [
+      3024,
+      1600
+    ]
+  },
+  {
+    "file": "AstronautFullHUD_GameView.png",
+    "dimensions": [
+      3024,
+      1600
+    ]
+  },
+  {
+    "file": "CompactHUD_GameView.png",
+    "dimensions": [
+      3024,
+      1600
+    ]
+  },
+  {
+    "file": "Layout_Android19_5x9_GameView.png",
+    "dimensions": [
+      2340,
+      1080
+    ]
+  },
+  {
+    "file": "Layout_Android20x9_NotchSimulation_GameView.png",
+    "dimensions": [
+      2400,
+      1080
+    ]
+  },
+  {
+    "file": "Layout_Desktop16x9_GameView.png",
+    "dimensions": [
+      1920,
+      1080
+    ]
+  },
+  {
+    "file": "Layout_Tablet4x3_GameView.png",
+    "dimensions": [
+      1600,
+      1200
+    ]
+  },
+  {
+    "file": "LocalSaveStatus_GameView.png",
+    "dimensions": [
+      3024,
+      1600
+    ]
+  },
+  {
+    "file": "MinimapObjectives_GameView.png",
+    "dimensions": [
+      3024,
+      1600
+    ]
+  },
+  {
+    "file": "ResourceWarning_GameView.png",
+    "dimensions": [
+      3024,
+      1600
+    ]
+  },
+  {
+    "file": "RoverFullHUD_GameView.png",
+    "dimensions": [
+      3024,
+      1600
+    ]
+  },
+  {
+    "file": "ScanCompletion_GameView.png",
+    "dimensions": [
+      3024,
+      1600
+    ]
+  }
+]

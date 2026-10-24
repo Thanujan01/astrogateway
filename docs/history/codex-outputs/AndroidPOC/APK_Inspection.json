@@ -1,0 +1,29 @@
+{
+  "apk_path": "/Users/kapilash/Projects/AstroGatewayAndroid/app/build/outputs/apk/debug/app-debug.apk",
+  "bytes": 36835048,
+  "sha256": "37c9de93f904b812b5e737396bd55fb641f07abd7f4e12a00d99b6437337d269",
+  "native_libraries": [
+    "lib/arm64-v8a/lib_burst_generated.so",
+    "lib/arm64-v8a/libil2cpp.so",
+    "lib/arm64-v8a/libmain.so",
+    "lib/arm64-v8a/libunity.so"
+  ],
+  "host_class_in_dex": true,
+  "unity_activity_in_dex": true,
+  "unity_data_present": true,
+  "activities": [
+    {
+      "name": "com.sk2lb.astrogateway.poc.MainActivity",
+      "exported": "true",
+      "process": null,
+      "launcher": true
+    },
+    {
+      "name": "com.sk2lb.astrogateway.poc.PocUnityActivity",
+      "exported": "false",
+      "process": ":unity",
+      "launcher": false
+    }
+  ],
+  "runtime_tested": false
+}

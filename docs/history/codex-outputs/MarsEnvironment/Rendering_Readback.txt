@@ -1,0 +1,4 @@
+Low: scale=0.65 shadow=512 distance=25 AA=1 mips=2 lod=0.65 cap=30
+Medium: scale=0.8 shadow=1024 distance=45 AA=2 mips=1 lod=1 cap=30
+High: scale=1 shadow=2048 distance=65 AA=4 mips=0 lod=1.5 cap=60
+Ultra: scale=1 shadow=4096 distance=90 AA=4 mips=0 lod=2 cap=60

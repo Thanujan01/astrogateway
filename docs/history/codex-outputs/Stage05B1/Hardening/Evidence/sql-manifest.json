@@ -1,0 +1,11 @@
+{
+  "target": "jvkwofmxtxjhdwtwdboz",
+  "remote_authorized": false,
+  "files": {
+    "000_read_only_preflight.sql": "a170c66c35b965e52138312ac22f16e43a7e941a5e5a175ed97c6cf97d159ef3",
+    "001_identity_and_mission_sessions.sql": "fc95c36e2505b681e308d4ab310dc8cc932ad354daa44231f9eb7608f94825f7",
+    "002_public_acl_isolation.sql": "9e7502d7bb67972d4099f93e8bf26be8bbfef2987f577cf67a5763ca0fdc07e0",
+    "003_runtime_role.sql": "364d991fa3bb10f34876dd2ca0ad89cb4724cb551e41f9f4baec296b01db1c51",
+    "004_post_migration_metadata.sql": "ba8319b0e7f00978ba997a27642405f22b1abd8b59f3e10b0f051ac80f7ff713"
+  }
+}

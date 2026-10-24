@@ -1,0 +1,62 @@
+[
+  {
+    "file": "Perseverance_LOD0.glb.meta",
+    "reportItemsYAML": "  reportItems:\n  - type: 0\n    code: 20\n    messages:\n    - EXT_texture_webp\n",
+    "cleanImportReport": false
+  },
+  {
+    "file": "Perseverance_LOD1.glb.meta",
+    "reportItemsYAML": "  reportItems:\n  - type: 0\n    code: 20\n    messages:\n    - EXT_texture_webp\n",
+    "cleanImportReport": false
+  },
+  {
+    "file": "Perseverance_LOD2.glb.meta",
+    "reportItemsYAML": "  reportItems:\n  - type: 0\n    code: 20\n    messages:\n    - EXT_texture_webp\n",
+    "cleanImportReport": false
+  },
+  {
+    "file": "Perseverance_Original.glb.meta",
+    "reportItemsYAML": "  reportItems:\n  - type: 2\n    code: 20\n    messages:\n    - EXT_texture_webp\n  - type: 2\n    code: 20\n    messages:\n    - KHR_materials_ior\n  - type: 2\n    code: 20\n    messages:\n    - KHR_materials_specular\n  - type: 0\n    code: 45\n    messages:\n    - 0\n  - type: 0\n    code: 45\n    messages:\n    - 1\n  - type: 0\n    code: 45\n    messages:\n    - 2\n  - type: 0\n    code: 45\n    messages:\n    - 3\n  - type: 0\n    code: 45\n    messages:\n    - 0\n  - type: 0\n    code: 45\n    messages:\n    - 4\n  - type: 0\n    code: 45\n    messages:\n    - 5\n  - type: 0\n    code: 45\n    messages:\n    - 6\n  - type: 0\n    code: 45\n    messages:\n    - 7\n  - type: 0\n    code: 45\n    messages:\n    - 8\n  - type: 0\n    code: 45\n    messages:\n    - 4\n  - type: 0\n    code: 45\n    messages:\n    - 9\n  - type: 0\n    code: 45\n    messages:\n    - 10\n  - type: 0\n    code: 45\n    messages:\n    - 1\n  - type: 0\n    code: 45\n    messages:\n    - 11\n  - type: 0\n    code: 45\n    messages:\n    - 11\n  - type: 0\n    code: 45\n    messages:\n    - 12\n  - type: 0\n    code: 45\n    messages:\n    - 11\n  - type: 0\n    code: 45\n    messages:\n    - 13\n  - type: 0\n    code: 45\n    messages:\n    - 14\n  - type: 0\n    code: 45\n    messages:\n    - 8\n  - type: 0\n    code: 45\n    messages:\n    - 15\n  - type: 0\n    code: 45\n    messages:\n    - 16\n  - type: 0\n    code: 45\n    messages:\n    - 8\n  - type: 0\n    code: 45\n    messages:\n    - 17\n  - type: 0\n    code: 45\n    messages:\n    - 6\n  - type: 0\n    code: 45\n    messages:\n    - 16\n  - type: 0\n    code: 45\n    messages:\n    - 18\n  - type: 0\n    code: 45\n    messages:\n    - 8\n  - type: 0\n    code: 45\n    messages:\n    - 15\n  - type: 0\n    code: 45\n    messages:\n    - 8\n  - type: 0\n    code: 45\n    messages:\n    - 8\n  - type: 0\n    code: 45\n    messages:\n    - 19\n  - type: 0\n    code: 45\n    messages:\n    - 20\n  - type: 0\n    code: 45\n    messages:\n    - 5\n  - type: 0\n    code: 45\n    messages:\n    - 6\n  - type: 0\n    code: 45\n    messages:\n    - 7\n  - type: 0\n    code: 45\n    messages:\n    - 21\n",
+    "cleanImportReport": false
+  },
+  {
+    "file": "rock_07_LOD0.glb.meta",
+    "reportItemsYAML": "  reportItems: []\n",
+    "cleanImportReport": true
+  },
+  {
+    "file": "rock_07_LOD1.glb.meta",
+    "reportItemsYAML": "  reportItems: []\n",
+    "cleanImportReport": true
+  },
+  {
+    "file": "rock_07_LOD2.glb.meta",
+    "reportItemsYAML": "  reportItems: []\n",
+    "cleanImportReport": true
+  },
+  {
+    "file": "rock_07_Original.glb.meta",
+    "reportItemsYAML": "  reportItems: []\n",
+    "cleanImportReport": true
+  },
+  {
+    "file": "rock_09_LOD0.glb.meta",
+    "reportItemsYAML": "  reportItems: []\n",
+    "cleanImportReport": true
+  },
+  {
+    "file": "rock_09_LOD1.glb.meta",
+    "reportItemsYAML": "  reportItems: []\n",
+    "cleanImportReport": true
+  },
+  {
+    "file": "rock_09_LOD2.glb.meta",
+    "reportItemsYAML": "  reportItems: []\n",
+    "cleanImportReport": true
+  },
+  {
+    "file": "rock_09_Original.glb.meta",
+    "reportItemsYAML": "  reportItems: []\n",
+    "cleanImportReport": true
+  }
+]

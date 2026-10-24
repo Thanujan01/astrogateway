@@ -1,0 +1,9 @@
+# Fixed local synthetic evaluation protocol — 2026-10-09
+
+Authorization: Stage07B permits clearly labeled project-generated synthetic data only after provenance and evaluation gates. No observed science or real players are used. Earlier numerical unit tests exercised three gradient-descent iterations on synthetic fixtures; they are not the benchmark or a trained deployable artifact.
+
+Freeze seed 707, 100 synthetic player groups, five independent latent Bernoulli next-task-success labels. Train: 60 groups/days 1–10; validation: 20 groups/days 11–15; test: 20 other groups/days 16–20. No group overlap; strict chronological windows. Feature normalization uses train only. Features: five actual Stage07A rule-score proxies plus difficulty index; identifiers, language and time excluded. Labels are generated independently of rule scores, but generator assumptions still favor correlated features and cannot establish real-world utility.
+
+Compare raw rule outputs with five logistic heads (300 epochs, learning rate .15, L2 .005). Select per-head temperature from [.5,.75,1,1.25,1.5,2] using validation log-loss only, for both rules and logistic. Report test accuracy at .5, Brier, log-loss, ten-bin ECE; report difficulty and synthetic language subgroups with counts. Test is evaluated once, with no tuning afterward. No model promotion decision: real-player validity, fairness, uncertainty intervals and externally validated labels are unavailable.
+
+Before fit: verify source and protocol hashes, canonical JSONL checksum, authorization, finite/bounded schema, synthetic-only evidence, duplicates, both classes, disjoint players, temporal order. Scientific files must remain quarantined. Fit produces plain JSON, never executable pickle. No network, credentials or player collection required. Repeat run must reproduce bytes; it is reproducibility validation, not another independent test set.

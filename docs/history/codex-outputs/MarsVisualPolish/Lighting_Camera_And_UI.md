@@ -1,0 +1,9 @@
+# Lighting, camera and HUD
+
+Independent sunset asset: Euler (16, -62, 0), relative intensity 1.25, warm RGB (1, .78, .57); ambient sky (.27, .21, .18), horizon (.67, .44, .30), clear fog end 430m. URP Neutral tone mapping inherited, exposure +.1, contrast +6, saturation -7. No bloom, volumetric fog, ray tracing or extra shadow-casting lights added. Existing weather-controlled bounded dust remains; storm visibility gates remain owned by EnvironmentPresentation. This is art direction, not calibrated Martian radiometry.
+
+The original follow/orbit, touch input, smoothing and sphere-cast camera collision code is unchanged. A late presentation adapter selects FOV 55 on foot / 61 while driving. No camera transition or occlusion-system rewrite. Scenic overview remains optional and off for normal play. Controlled screenshots are fixed-camera evaluation views; manual camera collision/boundary/transition acceptance remains unverified.
+
+PolishHudTheme changes shared IMGUI style backgrounds only during runtime and restores original styles on destruction. It does not replace telemetry values, scan/save/load/export actions or touch finger ownership. Colors are dark translucent slate with readable light text. Existing simulation/provisional labels remain. The bottom quality selector exposes Low, Medium, High, Desktop; the retained left legacy panel still calls the same fourth preset “Ultra”. They are aliases; a consolidated responsive panel is future work. After using legacy controls, the bottom selection dot can be stale (visual only); actual rendering settings are authoritative.
+
+New save namespace: AstroGateway_MarsVisualPolish_v2.json. New registry mission ID: mission.red_horizon.visual_polish.v2. No cross-scene save migration is attempted. Existing snapshot limitations (partial state/orientation/inventory persistence) remain; no new full-game save claim.

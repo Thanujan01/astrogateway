@@ -1,0 +1,36 @@
+Separate environment save path: PASS
+Scene native dependencies: PASS
+Ground under spawn: PASS
+Habitat collider: PASS
+Habitat physically blocks ray: PASS
+Research targets: PASS
+Graphics runtime preset 0: PASS
+Graphics runtime preset 1: PASS
+Graphics runtime preset 2: PASS
+Graphics runtime preset 3: PASS
+Lighting runtime preset 0: PASS
+Lighting runtime preset 1: PASS
+Lighting runtime preset 2: PASS
+Lighting runtime preset 3: PASS
+Scenic does not render gameplay: PASS
+Walking observation: simulation seconds=1.035382 displacement=2.278591 frame=32
+Astronaut movement: PASS
+Grounded terrain collision: PASS
+Follow camera live: PASS
+Boarding: PASS
+Rover drives new surface: PASS
+Measured wheel lower-bound clearance=-0.04740262
+Rover wheel ground clearance: PASS
+Added boots preserve character rig: PASS
+Safe rover exit: PASS
+Persistent astronaut: PASS
+Live rover telemetry: PASS
+Scan and export: PASS
+Local save load: PASS
+Research range gate: PASS
+Shaders supported: PASS
+Research proximity scan: PASS
+Research telemetry association: PASS
+Pause mode switches safely: PASS
+Paused resource clock stable: PASS
+Resume restores astronaut input: PASS

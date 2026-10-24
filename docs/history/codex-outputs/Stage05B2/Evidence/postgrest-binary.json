@@ -1,0 +1,7 @@
+{
+  "version": "v16.4",
+  "asset": "postgrest-v16.4-macos-aarch64.tar.xz",
+  "url": "https://github.com/PostgREST/postgrest/releases/download/v16.4/postgrest-v16.4-macos-aarch64.tar.xz",
+  "digest": "sha256:5720fbde4a19ade9fb189791615c84beb9f0e58201b1b6d17fe3b698faf60776",
+  "verified": true
+}
