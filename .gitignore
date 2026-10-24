@@ -1,0 +1,24 @@
+# Generated caches, local credentials and logs
+**/Library/
+**/Temp/
+**/Logs/
+**/logs/
+**/UserSettings/
+**/node_modules/
+**/.venv/
+**/__pycache__/
+**/.gradle/
+**/build/
+**/dist/
+.DS_Store
+*.log
+.env
+.env.local
+.env.production
+*.key
+*.p12
+*.pfx
+*.keystore
+*.jks
+**/auth.local.properties
+**/live.test-secrets.json

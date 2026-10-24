@@ -1,0 +1,1 @@
+"""AstroGateway local adaptive foundation."""

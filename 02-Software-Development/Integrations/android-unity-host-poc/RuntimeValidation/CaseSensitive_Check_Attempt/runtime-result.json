@@ -1,0 +1,32 @@
+{
+  "started_utc": "2026-10-08T13:25:48.076677+00:00",
+  "apk_path": "/Users/kapilash/Projects/AstroGatewayAndroid/app/build/outputs/apk/debug/app-debug.apk",
+  "apk_sha256": "37c9de93f904b812b5e737396bd55fb641f07abd7f4e12a00d99b6437337d269",
+  "device_model": "sdk_gphone64_arm64",
+  "android_version": "16",
+  "api_level": "36",
+  "emulator": true,
+  "adb_authorization": "device",
+  "cycles": [
+    {
+      "cycle": 1,
+      "passed": false,
+      "launch_id": "f6cd3b71-a641-480a-b2a1-6593f0ac0a6d",
+      "native_to_unity": true,
+      "unity_ack_to_native": true,
+      "unity_result_to_native": true,
+      "host_pid": "4382",
+      "unity_pid": "4500",
+      "unity_process_reused": true,
+      "return_method": "Native return button"
+    }
+  ],
+  "passed": false,
+  "crashes_observed": [],
+  "anrs_observed": [],
+  "installed_apk_sha256": "37c9de93f904b812b5e737396bd55fb641f07abd7f4e12a00d99b6437337d269",
+  "apk_installation": "success in initial attempt; same installed APK reused",
+  "host_launch": "visually verified",
+  "error": "Dashboard did not visibly display returned result",
+  "finished_utc": "2026-10-08T13:26:22.175044+00:00"
+}

@@ -1,0 +1,24 @@
+{
+  "started_utc": "2026-10-08T13:22:34.108438+00:00",
+  "apk_path": "/Users/kapilash/Projects/AstroGatewayAndroid/app/build/outputs/apk/debug/app-debug.apk",
+  "apk_sha256": "37c9de93f904b812b5e737396bd55fb641f07abd7f4e12a00d99b6437337d269",
+  "device_model": "sdk_gphone64_arm64",
+  "android_version": "16",
+  "api_level": "36",
+  "emulator": true,
+  "adb_authorization": "device",
+  "cycles": [
+    {
+      "cycle": 1,
+      "passed": false,
+      "launch_id": "9ca12a9b-85ba-4274-b707-3c086ae87585"
+    }
+  ],
+  "passed": false,
+  "crashes_observed": [],
+  "anrs_observed": [],
+  "apk_installation": "success",
+  "host_launch": "visually verified",
+  "error": "Expected native button not found: Return to AstroGateway dashboard",
+  "finished_utc": "2026-10-08T13:23:09.883741+00:00"
+}

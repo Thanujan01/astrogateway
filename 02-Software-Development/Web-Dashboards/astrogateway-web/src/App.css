@@ -1,0 +1,166 @@
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.game {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  background: #151b23;
+  color: white;
+}
+
+.game canvas {
+  display: block;
+}
+
+.hud-top {
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  pointer-events: none;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.brand strong {
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+
+.brand span {
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #ffc29a;
+}
+
+.resources {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.resources span {
+  background: #0a1828d9;
+  border: 1px solid #ffffff33;
+  padding: 11px 15px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.mission {
+  position: absolute;
+  top: 115px;
+  left: 24px;
+  max-width: 330px;
+  background: #081522cc;
+  border-left: 3px solid #ff873e;
+  padding: 17px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.mission small {
+  color: #ffb079;
+  letter-spacing: 2px;
+}
+
+.mission h2 {
+  font-size: 19px;
+  margin: 10px 0;
+}
+
+.mission p {
+  font-size: 13px;
+  color: #cbd5e1;
+}
+
+.help {
+  position: absolute;
+  right: 24px;
+  bottom: 65px;
+  width: 270px;
+  padding: 20px;
+  border-radius: 12px;
+  background: #091725e8;
+  border: 1px solid #ffffff30;
+}
+
+.help button {
+  float: right;
+  background: transparent;
+  border: 0;
+  color: white;
+  cursor: pointer;
+}
+
+.help h3 {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #ffb079;
+}
+
+.help p {
+  font-size: 13px;
+}
+
+.help small {
+  color: #94a3b8;
+}
+
+.bottom-label {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #d6d6d6;
+}
+
+@media (max-width: 700px) {
+  .hud-top {
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    flex-direction: column;
+  }
+
+  .brand strong {
+    font-size: 15px;
+  }
+
+  .resources span {
+    padding: 7px;
+    font-size: 10px;
+  }
+
+  .mission {
+    top: 125px;
+    left: 12px;
+    max-width: 240px;
+  }
+
+  .help {
+    right: 12px;
+    bottom: 40px;
+    width: 220px;
+  }
+}

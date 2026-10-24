@@ -1,0 +1,7 @@
+title = "AstroGateway migration secret scan"
+[extend]
+useDefault = true
+[[allowlists]]
+description = "SHA-256 checksums in source manifests are not credentials"
+regexTarget = "secret"
+regexes = ['''^[a-f0-9]{64}$''']

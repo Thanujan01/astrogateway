@@ -1,0 +1,6 @@
+# Copy to auth.local.properties (git-ignored) in AstroGatewayAndroid.
+# Only public client configuration belongs here. NEVER put a password or service-role/secret key here.
+supabase.url=https://YOUR-PROJECT.supabase.co
+supabase.publishableKey=sb_publishable_REPLACE_ME
+# Deployed HTTPS API; emulator-only debug development may use http://10.0.2.2:8000.
+auth.backendUrl=
