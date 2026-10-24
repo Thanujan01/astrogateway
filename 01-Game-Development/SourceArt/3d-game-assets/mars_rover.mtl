@@ -1,0 +1,42 @@
+# Material Definitions for Advanced Mars Research Rover
+
+newmtl BodyMaterial
+Ka 0.20 0.22 0.25
+Kd 0.88 0.90 0.94
+Ks 0.40 0.40 0.45
+Ns 35.0
+d 1.0
+illum 2
+
+newmtl ChassisMaterial
+Ka 0.08 0.09 0.11
+Kd 0.22 0.24 0.28
+Ks 0.50 0.52 0.55
+Ns 45.0
+d 1.0
+illum 2
+
+newmtl WheelMaterial
+Ka 0.05 0.05 0.06
+Kd 0.14 0.15 0.17
+Ks 0.20 0.20 0.22
+Ns 15.0
+d 1.0
+illum 2
+
+newmtl GoldFoilMaterial
+Ka 0.25 0.18 0.04
+Kd 0.92 0.72 0.15
+Ks 0.95 0.85 0.40
+Ns 75.0
+d 1.0
+illum 2
+
+newmtl OpticsMaterial
+Ka 0.0 0.4 0.6
+Kd 0.1 0.7 0.95
+Ks 0.95 0.95 1.0
+Ke 0.0 0.85 1.0
+Ns 120.0
+d 0.95
+illum 2

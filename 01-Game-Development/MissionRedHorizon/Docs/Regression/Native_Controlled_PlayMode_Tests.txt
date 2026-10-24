@@ -1,0 +1,27 @@
+Initial astronaut mode: PASS
+Future robot/cockpit unsupported: PASS
+Far boarding rejected: PASS
+Independent synthetic multitouch: PASS
+Move owner release clears movement: PASS
+Mode change clears touch: PASS
+Left-handed mirrored joystick: PASS
+Safe-area joystick contained: PASS
+Walk observed simulation seconds=1.20445 distance=2.484499
+Synthetic touch bus moves astronaut: PASS
+Boarding succeeds: PASS
+Astronaut identity and seat preserved: PASS
+Rover mode active: PASS
+Rover acceleration/travel: PASS
+Exit while moving rejected: PASS
+Save and reload seated astronaut: PASS
+Rover braking: PASS
+Safe exit succeeds: PASS
+Astronaut restored unchanged: PASS
+Battery consumption: PASS
+Typed telemetry fields: PASS
+Scientific scan: PASS
+Save local state: PASS
+Load consistency: PASS
+JSON CSV export: PASS
+Corrupt snapshot rejected: PASS
+Telemetry bounded history: PASS

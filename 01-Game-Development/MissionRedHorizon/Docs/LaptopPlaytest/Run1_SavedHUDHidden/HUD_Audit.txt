@@ -1,0 +1,4 @@
+--- launch, default HUD: 1 visible text elements at 1796x1582
+ok    'Restore HUD/Restore HUD label' rect=(702,949,109x27) font~15px text="HUD / F1" 
+--- after scans, full HUD: 1 visible text elements at 1796x1582
+ok    'Restore HUD/Restore HUD label' rect=(702,949,109x27) font~15px text="HUD / F1" 

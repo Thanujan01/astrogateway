@@ -1,0 +1,139 @@
+--- astronaut: render target 2400x1080, safe (x:0.00, y:0.00, width:2400.00, height:1080.00)
+astronaut | Pause | rect 2272,968 112x96 px | short side 96 ref px | in safe area
+astronaut | Astronaut camera | rect 2000,840 180x112 px | short side 112 ref px | in safe area
+astronaut | Astronaut recenter | rect 2196,840 188x112 px | short side 112 ref px | in safe area
+astronaut | Run | rect 2140,40 220x160 px | short side 160 ref px | in safe area
+astronaut | Move joystick | rect 48,48 360x360 px | short side 360 ref px | in safe area
+--- rover drive: render target 2400x1080, safe (x:0.00, y:0.00, width:2400.00, height:1080.00)
+rover drive | Pause | rect 2272,968 112x96 px | short side 96 ref px | in safe area
+rover drive | Tab DRIVE | rect 744,968 176x96 px | short side 96 ref px | in safe area
+rover drive | Tab SCIENCE | rect 928,968 176x96 px | short side 96 ref px | in safe area
+rover drive | Tab DATA | rect 1112,968 176x96 px | short side 96 ref px | in safe area
+rover drive | Tab MISSION | rect 1296,968 176x96 px | short side 96 ref px | in safe area
+rover drive | Tab SYSTEMS | rect 1480,968 176x96 px | short side 96 ref px | in safe area
+rover drive | Reverse | rect 1900,220 220x100 px | short side 100 ref px | in safe area
+rover drive | Exit rover | rect 2000,840 384x112 px | short side 112 ref px | in safe area
+rover drive | Camera distance | rect 2000,708 180x116 px | short side 116 ref px | in safe area
+rover drive | Overview | rect 2196,708 188x116 px | short side 116 ref px | in safe area
+rover drive | Rover recenter | rect 2000,576 384x116 px | short side 116 ref px | in safe area
+rover drive | Accelerate | rect 2140,40 220x260 px | short side 220 ref px | in safe area
+rover drive | Brake | rect 1900,40 220x160 px | short side 160 ref px | in safe area
+rover drive | Steering joystick | rect 48,48 360x360 px | short side 360 ref px | in safe area
+--- science tab: render target 2400x1080, safe (x:0.00, y:0.00, width:2400.00, height:1080.00)
+science tab | Pause | rect 2272,968 112x96 px | short side 96 ref px | in safe area
+science tab | Tab DRIVE | rect 744,968 176x96 px | short side 96 ref px | in safe area
+science tab | Tab SCIENCE | rect 928,968 176x96 px | short side 96 ref px | in safe area
+science tab | Tab DATA | rect 1112,968 176x96 px | short side 96 ref px | in safe area
+science tab | Tab MISSION | rect 1296,968 176x96 px | short side 96 ref px | in safe area
+science tab | Tab SYSTEMS | rect 1480,968 176x96 px | short side 96 ref px | in safe area
+science tab | Instrument rover.terrain_profiler | rect 1527,750 327x114 px | short side 114 ref px | in safe area
+science tab | Instrument rover.context_camera | rect 1527,628 327x114 px | short side 114 ref px | in safe area
+science tab | Instrument rover.arm_sampler | rect 1527,506 327x114 px | short side 114 ref px | in safe area
+science tab | Instrument rover.env_package | rect 1527,384 327x114 px | short side 114 ref px | in safe area
+science tab | Instrument rover.spectrometer | rect 1527,262 327x114 px | short side 114 ref px | in safe area
+science tab | Instrument rover.navigation | rect 1527,139 327x114 px | short side 114 ref px | in safe area
+science tab | Select target | rect 1889,395 230x111 px | short side 111 ref px | in safe area
+science tab | Cancel observation | rect 2136,395 221x111 px | short side 111 ref px | in safe area
+science tab | Observe | rect 1889,256 469x121 px | short side 121 ref px | in safe area
+--- 16:9: render target 1920x1080, safe (x:0.00, y:0.00, width:1920.00, height:1080.00)
+16:9 | Pause | rect 1792,968 112x96 px | short side 96 ref px | in safe area
+16:9 | Tab DRIVE | rect 504,968 176x96 px | short side 96 ref px | in safe area
+16:9 | Tab SCIENCE | rect 688,968 176x96 px | short side 96 ref px | in safe area
+16:9 | Tab DATA | rect 872,968 176x96 px | short side 96 ref px | in safe area
+16:9 | Tab MISSION | rect 1056,968 176x96 px | short side 96 ref px | in safe area
+16:9 | Tab SYSTEMS | rect 1240,968 176x96 px | short side 96 ref px | in safe area
+16:9 | Reverse | rect 1420,220 220x100 px | short side 100 ref px | in safe area
+16:9 | Exit rover | rect 1520,840 384x112 px | short side 112 ref px | in safe area
+16:9 | Camera distance | rect 1520,708 180x116 px | short side 116 ref px | in safe area
+16:9 | Overview | rect 1716,708 188x116 px | short side 116 ref px | in safe area
+16:9 | Rover recenter | rect 1520,576 384x116 px | short side 116 ref px | in safe area
+16:9 | Science shortcut | rect 730,186 460x114 px | short side 114 ref px | in safe area
+16:9 | Accelerate | rect 1660,40 220x260 px | short side 220 ref px | in safe area
+16:9 | Brake | rect 1420,40 220x160 px | short side 160 ref px | in safe area
+16:9 | Steering joystick | rect 48,48 360x360 px | short side 360 ref px | in safe area
+--- 19.5:9: render target 2340x1080, safe (x:0.00, y:0.00, width:2340.00, height:1080.00)
+19.5:9 | Pause | rect 2212,968 112x96 px | short side 96 ref px | in safe area
+19.5:9 | Tab DRIVE | rect 714,968 176x96 px | short side 96 ref px | in safe area
+19.5:9 | Tab SCIENCE | rect 898,968 176x96 px | short side 96 ref px | in safe area
+19.5:9 | Tab DATA | rect 1082,968 176x96 px | short side 96 ref px | in safe area
+19.5:9 | Tab MISSION | rect 1266,968 176x96 px | short side 96 ref px | in safe area
+19.5:9 | Tab SYSTEMS | rect 1450,968 176x96 px | short side 96 ref px | in safe area
+19.5:9 | Reverse | rect 1840,220 220x100 px | short side 100 ref px | in safe area
+19.5:9 | Exit rover | rect 1940,840 384x112 px | short side 112 ref px | in safe area
+19.5:9 | Camera distance | rect 1940,708 180x116 px | short side 116 ref px | in safe area
+19.5:9 | Overview | rect 2136,708 188x116 px | short side 116 ref px | in safe area
+19.5:9 | Rover recenter | rect 1940,576 384x116 px | short side 116 ref px | in safe area
+19.5:9 | Science shortcut | rect 940,186 460x114 px | short side 114 ref px | in safe area
+19.5:9 | Accelerate | rect 2080,40 220x260 px | short side 220 ref px | in safe area
+19.5:9 | Brake | rect 1840,40 220x160 px | short side 160 ref px | in safe area
+19.5:9 | Steering joystick | rect 48,48 360x360 px | short side 360 ref px | in safe area
+--- 20:9 low-res: render target 1600x720, safe (x:0.00, y:0.00, width:1600.00, height:720.00)
+20:9 low-res | Pause | rect 1515,645 75x64 px | short side 96 ref px | in safe area
+20:9 low-res | Tab DRIVE | rect 496,645 117x64 px | short side 96 ref px | in safe area
+20:9 low-res | Tab SCIENCE | rect 619,645 117x64 px | short side 96 ref px | in safe area
+20:9 low-res | Tab DATA | rect 741,645 117x64 px | short side 96 ref px | in safe area
+20:9 low-res | Tab MISSION | rect 864,645 117x64 px | short side 96 ref px | in safe area
+20:9 low-res | Tab SYSTEMS | rect 987,645 117x64 px | short side 96 ref px | in safe area
+20:9 low-res | Reverse | rect 1267,147 147x67 px | short side 100 ref px | in safe area
+20:9 low-res | Exit rover | rect 1333,560 256x75 px | short side 112 ref px | in safe area
+20:9 low-res | Camera distance | rect 1333,472 120x77 px | short side 116 ref px | in safe area
+20:9 low-res | Overview | rect 1464,472 125x77 px | short side 116 ref px | in safe area
+20:9 low-res | Rover recenter | rect 1333,384 256x77 px | short side 116 ref px | in safe area
+20:9 low-res | Science shortcut | rect 647,124 307x76 px | short side 114 ref px | in safe area
+20:9 low-res | Accelerate | rect 1427,27 147x173 px | short side 220 ref px | in safe area
+20:9 low-res | Brake | rect 1267,27 147x107 px | short side 160 ref px | in safe area
+20:9 low-res | Steering joystick | rect 32,32 240x240 px | short side 360 ref px | in safe area
+--- cutout 110 px left: render target 2400x1080, safe (x:110.00, y:30.00, width:2250.00, height:1050.00)
+cutout 110 px left | Pause | rect 2232,968 112x96 px | short side 96 ref px | in safe area
+cutout 110 px left | Tab DRIVE | rect 779,968 176x96 px | short side 96 ref px | in safe area
+cutout 110 px left | Tab SCIENCE | rect 963,968 176x96 px | short side 96 ref px | in safe area
+cutout 110 px left | Tab DATA | rect 1147,968 176x96 px | short side 96 ref px | in safe area
+cutout 110 px left | Tab MISSION | rect 1331,968 176x96 px | short side 96 ref px | in safe area
+cutout 110 px left | Tab SYSTEMS | rect 1515,968 176x96 px | short side 96 ref px | in safe area
+cutout 110 px left | Reverse | rect 1860,250 220x100 px | short side 100 ref px | in safe area
+cutout 110 px left | Exit rover | rect 1960,840 384x112 px | short side 112 ref px | in safe area
+cutout 110 px left | Camera distance | rect 1960,708 180x116 px | short side 116 ref px | in safe area
+cutout 110 px left | Overview | rect 2156,708 188x116 px | short side 116 ref px | in safe area
+cutout 110 px left | Rover recenter | rect 1960,576 384x116 px | short side 116 ref px | in safe area
+cutout 110 px left | Science shortcut | rect 1005,216 460x114 px | short side 114 ref px | in safe area
+cutout 110 px left | Accelerate | rect 2100,70 220x260 px | short side 220 ref px | in safe area
+cutout 110 px left | Brake | rect 1860,70 220x160 px | short side 160 ref px | in safe area
+cutout 110 px left | Steering joystick | rect 158,78 360x360 px | short side 360 ref px | in safe area
+--- left-handed + cutout: render target 2400x1080, safe (x:110.00, y:30.00, width:2250.00, height:1050.00)
+left-handed + cutout | Pause | rect 2232,968 112x96 px | short side 96 ref px | in safe area
+left-handed + cutout | Tab DRIVE | rect 779,968 176x96 px | short side 96 ref px | in safe area
+left-handed + cutout | Tab SCIENCE | rect 963,968 176x96 px | short side 96 ref px | in safe area
+left-handed + cutout | Tab DATA | rect 1147,968 176x96 px | short side 96 ref px | in safe area
+left-handed + cutout | Tab MISSION | rect 1331,968 176x96 px | short side 96 ref px | in safe area
+left-handed + cutout | Tab SYSTEMS | rect 1515,968 176x96 px | short side 96 ref px | in safe area
+left-handed + cutout | Reverse | rect 390,250 220x100 px | short side 100 ref px | in safe area
+left-handed + cutout | Exit rover | rect 126,840 384x112 px | short side 112 ref px | in safe area
+left-handed + cutout | Camera distance | rect 330,708 180x116 px | short side 116 ref px | in safe area
+left-handed + cutout | Overview | rect 126,708 188x116 px | short side 116 ref px | in safe area
+left-handed + cutout | Rover recenter | rect 126,576 384x116 px | short side 116 ref px | in safe area
+left-handed + cutout | Science shortcut | rect 1005,216 460x114 px | short side 114 ref px | in safe area
+left-handed + cutout | Accelerate | rect 150,70 220x260 px | short side 220 ref px | in safe area
+left-handed + cutout | Brake | rect 390,70 220x160 px | short side 160 ref px | in safe area
+left-handed + cutout | Steering joystick | rect 1952,78 360x360 px | short side 360 ref px | in safe area
+--- settings panel: render target 2400x1080, safe (x:0.00, y:0.00, width:2400.00, height:1080.00)
+settings panel | Pause | rect 2272,968 112x96 px | short side 96 ref px | in safe area
+settings panel | Tab DRIVE | rect 744,968 176x96 px | short side 96 ref px | in safe area
+settings panel | Tab SCIENCE | rect 928,968 176x96 px | short side 96 ref px | in safe area
+settings panel | Tab DATA | rect 1112,968 176x96 px | short side 96 ref px | in safe area
+settings panel | Tab MISSION | rect 1296,968 176x96 px | short side 96 ref px | in safe area
+settings panel | Tab SYSTEMS | rect 1480,968 176x96 px | short side 96 ref px | in safe area
+settings panel | Settings | rect 2119,850 239x93 px | short side 93 ref px | in safe area
+settings panel | Setting Handedness | rect 1531,727 407x105 px | short side 105 ref px | in safe area
+settings panel | Setting Joystick position | rect 1946,727 407x105 px | short side 105 ref px | in safe area
+settings panel | Setting Controls smaller | rect 1531,613 407x105 px | short side 105 ref px | in safe area
+settings panel | Setting Controls larger | rect 1946,613 407x105 px | short side 105 ref px | in safe area
+settings panel | Setting Opacity lower | rect 1531,500 407x105 px | short side 105 ref px | in safe area
+settings panel | Setting Opacity higher | rect 1946,500 407x105 px | short side 105 ref px | in safe area
+settings panel | Setting Look slower | rect 1531,387 407x105 px | short side 105 ref px | in safe area
+settings panel | Setting Look faster | rect 1946,387 407x105 px | short side 105 ref px | in safe area
+settings panel | Setting Invert camera | rect 1531,273 407x105 px | short side 105 ref px | in safe area
+settings panel | Setting Reduced motion | rect 1946,273 407x105 px | short side 105 ref px | in safe area
+settings panel | Setting Auto-sprint | rect 1531,160 407x105 px | short side 105 ref px | in safe area
+settings panel | Setting Run mode | rect 1946,160 407x105 px | short side 105 ref px | in safe area
+settings panel | Setting Shoulder side | rect 1531,47 407x105 px | short side 105 ref px | in safe area
+settings panel | Setting Graphics | rect 1946,47 407x105 px | short side 105 ref px | in safe area

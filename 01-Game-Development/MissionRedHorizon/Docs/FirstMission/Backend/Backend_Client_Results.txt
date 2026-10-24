@@ -1,0 +1,17 @@
+First Mission Unity client vs LOCAL backend — 2026-10-20 21:49:43
+PASS 12  FAIL 0
+Local FastAPI app with mock Auth + in-memory repository. Not a hosted service. No AI model exists, so no inference was called.
+
+Backend: http://127.0.0.1:8767 — local FastAPI routes, mock Auth, in-memory repository (no hosted service, no AI model)
+PASS  Mission session created on the local server  [201 {"id":"07960edb-223a-488c-acdc-bd972269ed4d","user_id":"11111111-1111-4111-8111-111111111111","launch_id":"3c98615e-1dc4-4a5a-947a-947558731a78","mission_id":"mission-red-horizon-poc","status":"initialized","created_at":"2026-10-20T16:19:43.212618Z","expires_at":"2026-10-20T16:49:43.212618Z","completed_at":null}]
+PASS  All test records pass local validation  [;;;;]
+PASS  Without a signed-in session nothing is sent (OFFLINE)
+PASS  Records uploaded to the local backend and acknowledged  [UPLOADED/]
+PASS  Backend analysis status is NOT CONNECTED / UNAVAILABLE (no model)
+PASS  Retried records are acknowledged as duplicates, not stored twice
+PASS  Server reports duplicates=1 accepted=0 for a resend  [{"session_id":"07960edb-223a-488c-acdc-bd972269ed4d","accepted":0,"duplicates":1,"records":[{"event_id":"050a3a7f-d419-4661-9865-06e3d978da33","duplicate":true,"stored_at":"2026-10-20T16:19:43.411092Z","provenance":"SIMULATED","analysis":{"interface_version":"ag.science-analysis.v0","status":"not_connected","model_version":null,"result":null,"confidence":null,"reason":"No scientific analysis model is connected."}}]}]
+PASS  Server rejects a client record claiming BACKEND-ANALYZED (422)  [422]
+PASS  Same event id with different content conflicts (409)  [409]
+PASS  Analysis status endpoint: not_connected, no model version  [{"interface_version":"ag.science-analysis.v0","status":"not_connected","model_version":null,"result":null,"confidence":null,"reason":"No scientific analysis model is connected."}]
+PASS  Unreachable server: FAILED — RETRY AVAILABLE, record kept, retry scheduled  [no connection / Waiting for sync]
+PASS  Revoked session: upload stops with sign-in required  [Waiting for sync / sign-in required]

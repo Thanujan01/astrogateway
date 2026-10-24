@@ -1,0 +1,11 @@
+PASS scene built 10/18/2026 9:05:07 PM
+Assets/AstroGateway/VisualUpgrade/Scenes/Mars_VisualUpgrade_v1.unity
+Far terrain 201x201 vertices, 6.0 m spacing, 5 craters
+Scatter: 760 pebbles in 36 combined chunks (skipped 62 near structures)
+URP copy: depth texture, soft shadows, HDR (High/Ultra), per-pixel lights; renderer copy with half-res SSAO
+Post: ACES, exposure/contrast grade, white balance, bloom, vignette, split toning; DoF for cinematic only
+Environment applied: terrain shader, far terrain, scatter, sky, presets, URP copy, SSAO, post, probe, haze
+Astronaut: 11 primitive renderers hidden (kept), procedural suit + helmet/visor/backpack/emblem added, procedural walk/run blend
+Rover: tinted cockpit glass + interior, headlights (2 spot lights, on while aboard), tail/brake lights, beacon, shocks, fenders, antenna, softer wheel dust
+Comms tower: dish, feed, guy wires, blinking beacon
+Stations: 5 instruments; habitats: 3 domes with lit windows, 48 foundation lights, airlock lights/floods; solar renderers updated: 15

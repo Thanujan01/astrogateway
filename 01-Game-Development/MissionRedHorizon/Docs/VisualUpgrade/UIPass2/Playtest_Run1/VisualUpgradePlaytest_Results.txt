@@ -1,0 +1,90 @@
+AstroGateway Visual Upgrade v1 playtest (graphical Editor, scripted real-input) — 2026-10-19 15:14:42
+PASS 47  FAIL 0  UNTESTED 0
+
+Unity 6000.6.4f1 | GPU Apple M4 Pro | API Metal | CPU Apple M4 Pro x12 | RAM 24576 MB
+Scene: Assets/AstroGateway/VisualUpgrade/Scenes/Mars_VisualUpgrade_v1.unity
+Scene open (Editor) 49 ms; Play Mode request -> game initialized 1.3 s (includes domain reload)
+Game View framebuffer 3024x1694; editor focused True; batch False
+HUD settings: quality 1, visibility 3; graphics preset readback scale=0.8 shadow=1024 distance=45 AA=2 mips=1 lod=1 cap=30
+Research targets: Rock sample station (35.00, 0.42, 23.00), Soil crater sampler (55.00, 0.73, 37.00), Ridge mineral sensor (0.00, 1.80, 74.00), Solar inspection (25.00, 0.40, -43.00), Communications inspection (-16.00, 0.51, -24.00)
+Objective at start: Survey habitat / power / delta: 1/3
+Saved HUD visibility profile is 3 (0 = full). Switching to full HUD for this run only (ApplySettings, not persisted).
+SHOT     01_game_launch.png — first frames after Play Mode, spawn view  [1796x1582, mode Astronaut/Astronaut, driving False, paused False, modal False, scanning False, cinematic False, result 'No scientific samples recorded']
+PASS     Scene starts in astronaut mode  [mode Astronaut/Astronaut, driving False, paused False, modal False, scanning False, cinematic False, result 'No scientific samples recorded']
+PASS     Astronaut and rover visible (renderers enabled)  [astronaut renderers 65, rover renderers 87]
+SHOT     02_astronaut_walking.png — holding W, third-person camera follows  [1796x1582, mode Astronaut/Astronaut, driving False, paused False, modal False, scanning False, cinematic False, result 'No scientific samples recorded']
+PASS     W walks the astronaut  [2.20 m/s]
+PASS     Shift+W runs faster than walking  [run 3.80 vs walk 2.20 m/s]
+PASS     Key S back moves the astronaut  [2.27 m]
+PASS     Key A left moves the astronaut  [2.27 m]
+PASS     Key D right moves the astronaut  [2.20 m]
+PASS     Astronaut grounded after walking  [y 0.04 ground 0.00]
+PASS     Camera follows astronaut (3-8 m behind)  [5.45 m]
+PASS     Right-mouse drag rotates the camera  [yaw 0.0 -> 28.8]
+INFO     Mouse move WITHOUT right button changes yaw by 0.0 deg (design: look only while right button held)
+PASS     Astronaut is blocked by 'Crew Dome' (walked into it 5 s)  [stopped 13.4 m from centre]
+PASS     Camera avoids clipping into the structure (obstruction handled)  [rig obstructed True, camera (-49.54, 4.33, -56.09), inside: ]
+PASS     Camera stays outside Crew Dome airlock (approach 0 deg)  [camera (-49.55, 4.35, -56.23), astronaut (-46.55, 0.04, -56.00), frames inside 0, in: ]
+SHOT     12_airlock_camera.png — astronaut backed onto Crew Dome airlock, camera outside  [1796x1582, mode Astronaut/Astronaut, driving False, paused False, modal False, scanning False, cinematic False, result 'No scientific samples recorded']
+PASS     Camera stays outside Crew Dome airlock (approach +90 deg)  [camera (-49.28, 4.64, -53.73), astronaut (-48.92, 0.04, -58.47), frames inside 0, in: ]
+PASS     Camera stays outside Crew Dome airlock (approach -90 deg)  [camera (-48.55, 4.64, -58.27), astronaut (-48.92, 0.04, -53.53), frames inside 0, in: ]
+PASS     Camera stays outside Crew Dome airlock (approach +180 deg)  [camera (-46.84, 10.05, -55.65), astronaut (-51.36, 7.03, -56.00), frames inside 0, in: ]
+PASS     World boundary holds astronaut inside ±119 m  [(119.00, 0.08, 0.00)]
+SHOT     03_rover_exterior.png — astronaut 4 m beside the rover  [1796x1582, mode Astronaut/Astronaut, driving False, paused False, modal False, scanning False, cinematic False, result 'No scientific samples recorded']
+PASS     E does not board from 9 m  [mode Astronaut/Astronaut, driving False, paused False, modal False, scanning False, cinematic False, result 'No scientific samples recorded']
+SHOT     04_boarding_rover.png — immediately after pressing E within 3.5 m  [1796x1582, mode Rover/Rover, driving True, paused False, modal False, scanning False, cinematic False, result 'Control mode updated']
+PASS     E boards the rover within 5 m  [mode Rover/Rover, driving True, paused False, modal False, scanning False, cinematic False, result 'Control mode updated']
+SHOT     05_rover_driving.png — holding W in the rover, chase camera  [1796x1582, mode Rover/Rover, driving True, paused False, modal False, scanning False, cinematic False, result 'Control mode updated']
+PASS     W drives the rover forward  [speed 3.80 m/s, 12.9 m]
+PASS     E exit refused while moving  [Action blocked: stop rover / clear exit]
+PASS     D steers the rover  [67.9 deg]
+PASS     A steers the rover the other way  [-68.9 deg]
+PASS     Space brakes the rover to a stop  [0.00 m/s]
+PASS     S reverses the rover  [-1.80 m/s]
+PASS     Wheels animate with travel  [roll 171 deg]
+PASS     CHASE DISTANCE button switches near/far chase  [near False->True, distance 8.10 -> 6.15 m]
+PASS     Rover is blocked by 'Laboratory Dome'  [stopped 10.1 m from centre, speed 0.00]
+PASS     E exit beside Laboratory Dome lands on the ground (roof bug)  [astronaut (-27.75, 0.07, -25.00), 0.07 m above rover ground, mode Astronaut/Astronaut, driving False, paused False, modal False, scanning False, cinematic False, result 'Control mode updated']
+PASS     Astronaut back on foot and can walk  [mode Astronaut/Astronaut, driving False, paused False, modal False, scanning False, cinematic False, result 'Control mode updated']
+PASS     K far from any station is rejected  [No valid target in range]
+SHOT     06_research_scanning.png — K pressed beside Rock sample station, scan progress  [1796x1582, mode Astronaut/Astronaut, driving False, paused False, modal False, scanning False, cinematic False, result 'Simulated scan recorded']
+PASS     K scan at 'Rock sample station' recorded  [began True, Simulated scan recorded]
+PASS     K scan at 'Soil crater sampler' recorded  [began True, Simulated scan recorded]
+PASS     K scan at 'Ridge mineral sensor' recorded  [began True, Simulated scan recorded]
+PASS     K scan at 'Solar inspection' recorded  [began True, Simulated scan recorded]
+PASS     K scan at 'Communications inspection' recorded  [began True, Simulated scan recorded]
+PASS     Scan rejected when astronaut leaves 3 m range mid-scan  [Scan cancelled or rejected]
+INFO     Objective before scans: 'Survey habitat / power / delta: 1/3' | after: 'Local exploration complete — provisional' | scans 0 -> 5
+PASS     Completed scans recorded in mission data  [0 -> 5]
+SHOT     08_full_hud.png — full HUD after science scans  [1796x1582, mode Astronaut/Astronaut, driving False, paused False, modal False, scanning False, cinematic False, result 'Scan cancelled or rejected']
+SHOT     07_cinematic_camera.png — C cinematic overview  [1796x1582, mode Cinematic/Menu, driving False, paused False, modal False, scanning False, cinematic True, result 'Scan cancelled or rejected']
+PASS     C enters cinematic overview  [mode Cinematic/Menu, driving False, paused False, modal False, scanning False, cinematic True, result 'Scan cancelled or rejected']
+PASS     C returns to gameplay camera  [mode Astronaut/Astronaut, driving False, paused False, modal False, scanning False, cinematic False, result 'Scan cancelled or rejected']
+PASS     Esc pauses (simulation clock frozen)  [paused True, clock +0.03s, mode Menu/Menu, driving False, paused True, modal True, scanning False, cinematic False, result 'Scan cancelled']
+PASS     Gameplay input blocked while paused  [mode Menu/Menu, driving False, paused True, modal True, scanning False, cinematic False, result 'Scan cancelled']
+SHOT     09b_pause_menu.png — Esc pause modal  [1796x1582, mode Menu/Menu, driving False, paused True, modal True, scanning False, cinematic False, result 'Scan cancelled']
+PASS     Esc resumes  [mode Astronaut/Astronaut, driving False, paused False, modal False, scanning False, cinematic False, result 'Scan cancelled']
+SHOT     09_mission_status.png — SAMPLES shortcut: scientific sample records  [3024x1694, mode Menu/Menu, driving False, paused True, modal True, scanning False, cinematic False, result 'Scan cancelled']
+PASS     Modal closed and play resumed  [mode Astronaut/Astronaut, driving False, paused False, modal False, scanning False, cinematic False, result 'Scan cancelled']
+SHOT     11_hud_profile_f1.png — F1 pressed twice: reduced HUD profile 2  [1796x1582, mode Astronaut/Astronaut, driving False, paused False, modal False, scanning False, cinematic False, result 'Scan cancelled']
+PASS     F1 cycles HUD profiles and returns after 4 presses  [1>2>3>0]
+PASS     Keys 1/2/3 switch weather preview  [2/1/0]
+INFO     Editor selection: Readme; Game View gizmos: False
+SHOT     10a_overview_editor_state_as_found.png — overview with Editor gizmo/selection state as found  [1796x1582, mode Astronaut/Astronaut, driving False, paused False, modal False, scanning False, cinematic False, result 'Scan cancelled']
+SHOT     10_mars_overview.png — high overview of the research base (Game View gizmos off, nothing selected)  [1796x1582, mode Astronaut/Astronaut, driving False, paused False, modal False, scanning False, cinematic False, result 'Scan cancelled']
+Graphics preset restored to q=1 (runtime pipeline copy only; project assets untouched)
+PASS     No astronaut/rover below terrain during the session  [0 of 5248 frames]
+INFO     camera-inside-geometry frames: 0 of 5248
+
+Performance (Editor Play Mode on this laptop; includes Editor overhead):
+Current preset (q=1) astronaut walking, full HUD: frames=298 mean_ms=33.63 fps=29.7 p50_ms=33.31 p95_ms=51.80 p99_ms=68.22 max_ms=71.33 stdev_ms=8.46 frames_over_50ms=15 cpu_frame_ms=33.38 gpu_frame_ms=1.77 alloc_MB=3349 reserved_MB=4825 mono_MB=66 gfx_MB=679 targetFrameRate=30 vSync=0 focused=True
+Current preset (q=1) astronaut running loop: frames=179 mean_ms=33.64 fps=29.7 p50_ms=33.31 p95_ms=48.65 p99_ms=68.40 max_ms=73.63 stdev_ms=8.13 frames_over_50ms=8 cpu_frame_ms=33.38 gpu_frame_ms=1.99 alloc_MB=3367 reserved_MB=4825 mono_MB=65 gfx_MB=685 targetFrameRate=30 vSync=0 focused=True
+Current preset (q=1) rover driving in circles: frames=296 mean_ms=33.80 fps=29.6 p50_ms=33.38 p95_ms=48.52 p99_ms=65.30 max_ms=71.72 stdev_ms=8.10 frames_over_50ms=14 cpu_frame_ms=33.37 gpu_frame_ms=1.95 alloc_MB=3394 reserved_MB=4825 mono_MB=67 gfx_MB=672 targetFrameRate=30 vSync=0 focused=True
+Preset Low (stationary in rover, full HUD): frames=149 mean_ms=33.69 fps=29.7 p50_ms=33.30 p95_ms=41.32 p99_ms=69.95 max_ms=73.41 stdev_ms=7.86 frames_over_50ms=6 cpu_frame_ms=69.95 gpu_frame_ms=3.12 alloc_MB=3390 reserved_MB=4825 mono_MB=66 gfx_MB=644 targetFrameRate=30 vSync=0 focused=True
+Preset Medium (stationary in rover, full HUD): frames=149 mean_ms=33.70 fps=29.7 p50_ms=33.32 p95_ms=53.76 p99_ms=66.22 max_ms=66.69 stdev_ms=8.50 frames_over_50ms=8 cpu_frame_ms=15.31 gpu_frame_ms=1.37 alloc_MB=3384 reserved_MB=4825 mono_MB=66 gfx_MB=657 targetFrameRate=30 vSync=0 focused=True
+Preset High (stationary in rover, full HUD): frames=287 mean_ms=17.45 fps=57.3 p50_ms=16.70 p95_ms=19.25 p99_ms=50.36 max_ms=55.72 stdev_ms=6.25 frames_over_50ms=3 cpu_frame_ms=16.50 gpu_frame_ms=1.86 alloc_MB=3280 reserved_MB=4825 mono_MB=67 gfx_MB=689 targetFrameRate=60 vSync=0 focused=True
+Preset Desktop/Ultra Preview (stationary in rover, full HUD): frames=274 mean_ms=18.31 fps=54.6 p50_ms=16.68 p95_ms=20.84 p99_ms=51.67 max_ms=250.78 stdev_ms=15.48 frames_over_50ms=6 cpu_frame_ms=16.51 gpu_frame_ms=2.14 alloc_MB=3158 reserved_MB=5337 mono_MB=69 gfx_MB=684 targetFrameRate=60 vSync=0 focused=True
+
+Console errors/exceptions during playtest (0):
+
+Console warnings during playtest (0, distinct first 30):

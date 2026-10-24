@@ -1,0 +1,381 @@
+AstroGateway First Mission playtest (graphical Editor Play Mode, Mac) — 2026-10-23 09:41:37
+PASS 290  FAIL 0  UNTESTED 0
+Inputs: First Mission HUD widget handlers + one virtual-touchscreen event; MOCK = fake uploader, no network.
+
+Unity 6000.6.4f1 | GPU Apple M4 Pro | Metal | Game View 3024x1694
+Scene: Assets/AstroGateway/FirstMission/Scenes/Mars_FirstMission_Missions.unity
+SHOT     50_explorer_intro_flyin.png — intro fly-in (cinematic camera, HUD fading in)  [3024x1582]
+PASS     Cinematic intro fly-in plays at start (camera override, HUD faded)
+PASS     Intro can be skipped and hands the camera back
+Physical input devices disabled for this run: 3
+PASS     First Mission scene loaded with the canonical mission id  [ag.mars.red-horizon.surface-ops]
+PASS     Own save file (never the Visual Upgrade / Cinematic HUD save)  [/Users/kapilash/Library/Application Support/DefaultCompany/MissionRedHorizon/AstroGateway_FirstMission_v1.json]
+PASS     Starts in astronaut mode with astronaut controls only  [driving False speed 0.00 tab Drive paused False modal False rover (-15.0, 0.03, -93.0)]
+PASS     Old HUD canvas not drawn (logic still running)
+PASS     TERRAVEX renderers hidden, ARES-VI renderers visible
+PASS     ARES hover plumes inactive, Animator disabled (no hover behaviour)
+PASS     Gameplay collider is still the TERRAVEX CharacterController
+PASS     AI analysis seam reports NOT CONNECTED
+PASS     Upload default is NOT CONNECTED (nothing transmitted)
+PASS     Safe area lies within the render target (astronaut)  [safe (x:0.00, y:0.00, width:2400.00, height:1080.00) view (x:0.00, y:0.00, width:2400.00, height:1080.00)]
+PASS     Touch targets inside safe area (astronaut)  [9 targets, 0 outside]
+PASS     Touch targets >= 84 ref px (astronaut)  [0 small]
+SHOT     01_astronaut_mode.png — astronaut controls; ARES-VI rover ahead  [3024x1582]
+PASS     BOARD hidden while far from the rover
+PASS     Move joystick walks the astronaut (existing controller)  [3.34 m]
+PASS     BOARD ROVER appears within 5 m
+PASS     Boarding switches to rover mode  [driving True speed 0.00 tab Drive paused False modal False rover (-15.0, 0.03, -93.0)]
+PASS     Rover mode shows tabs + DRIVE controls, hides astronaut controls
+PASS     Seated astronaut hidden inside the ARES canopy
+PASS     Safe area lies within the render target (rover drive)  [safe (x:0.00, y:0.00, width:2400.00, height:1080.00) view (x:0.00, y:0.00, width:2400.00, height:1080.00)]
+PASS     Touch targets inside safe area (rover drive)  [18 targets, 0 outside]
+PASS     Touch targets >= 84 ref px (rover drive)  [0 small]
+PASS     Virtual touchscreen press/release on BRAKE goes through the EventSystem
+PASS     ACCEL drives forward  [speed 3.80 moved 7.9 m]
+PASS     Speed indicator shows the controller speed
+PASS     EXIT disabled while moving
+SHOT     02_drive_tab_moving.png — DRIVE tab while driving  [3024x1582]
+PASS     Steering joystick turns the rover  [50 deg]
+INFO     ARES rocker L angle while driving 0.0 deg; wheel FL rotation (22.54, 180.00, 180.00)
+PASS     BRAKE stops the rover  [speed 0.00]
+PASS     REVERSE + ACCEL reverses  [speed -1.80]
+PASS     Camera drag zone turns the camera  [110 -> 136]
+PASS     CAMERA button cycles the rover view  [CHASE NEAR]
+PASS     Switching away from DRIVE releases the throttle
+PASS     Tab Drive opens without leaving the game
+PASS     Tab Science opens without leaving the game
+PASS     Tab Data opens without leaving the game
+PASS     Tab Mission opens without leaving the game
+PASS     Tab Systems opens without leaving the game
+INFO     designated site site_3 'Solar inspection' at (25.0, 0.40, -43.0); rover 51 m away
+PASS     Arm sampler rejected out of range  [Out of range • Solar inspection is 50.8 m away (max 6 m)]
+PASS     OBSERVE disabled out of range (arm sampler selected)
+SHOT     03a_science_out_of_range.png — SCIENCE tab: arm sampler out of range  [3024x1582]
+PASS     Mission marks the site reached after driving there  [Drive to Solar inspection (within 15 m)]
+PASS     Context camera allowed at 11 m (max 15 m)
+PASS     Arm sampler still rejected at 11 m (max 6 m)
+SHOT     03_science_context_camera.png — SCIENCE tab, mast context camera observing  [3024x1582]
+PASS     Context camera stores 4 records locally  [4 records, COLLECTED LOCALLY]
+PASS     Research station identified by its registry id
+PASS     Target range equals the real rover-station distance  [11.00 vs 11.00]
+PASS     Arm sampler refused while moving  [speed 0.93: Stop the rover first]
+PASS     Arm sampler allowed when stopped within 6 m
+PASS     ARES arm deploys during the arm observation  [progress 0.54]
+SHOT     04_arm_sample.png — arm sampler deployed at the station  [3024x1582]
+PASS     Arm sample stores a game-assigned sample id
+PASS     Soil composition is UNAVAILABLE with no value (not modelled)
+PASS     Arm stows after the observation  [progress 0.00]
+PASS     Terrain slope matches the ground normal under the rover  [0.000 vs 0.000 deg]
+PASS     Traversability follows the documented rule  [nominal]
+PASS     Plane fit: a flat grid has zero roughness, a 0.2 m step does not  [step residual 0.0497 m]
+PASS     Dust condition reports the game weather state
+PASS     Temperature, pressure and radiation are UNAVAILABLE without values
+PASS     Spectrometer shown UNAVAILABLE and cannot run
+PASS     Safe area lies within the render target (science tab)  [safe (x:0.00, y:0.00, width:2400.00, height:1080.00) view (x:0.00, y:0.00, width:2400.00, height:1080.00)]
+PASS     Touch targets inside safe area (science tab)  [15 targets, 0 outside]
+PASS     Touch targets >= 84 ref px (science tab)  [0 small]
+SHOT     05_science_tab.png — SCIENCE tab after observations  [3024x1582]
+PASS     Every stored record passes local validation
+PASS     Client records are only SIMULATED or UNAVAILABLE
+PASS     No record carries an analysis result
+PASS     Wire JSON has the schema fields and no analysis/user fields  [{"schema_version":1,"event_id":"18da7733-6cdc-484f-84e3-c4eb342c36b4","observation_id":"620491e6-a342-4091-b01c-55eb54bce12c","mission_id":"ag.mars.red-horizon.surface-ops","mission_version":1,"build_variant":"first_mission_v1","sensor_id":"nav.position","sensor_type":"navigation","instrument_id":"rover.context_camera","station_id":"site_3","sim_time_s":29.933,"sim_tick":30,"captured_at":"2026-10-23T04:06:26.4085220Z","location":{"x_m":25,"y_m":0.04,"z_m":-32,"frame":"scene_local_m"},"value":null,"value_text":null,"unit":"m","provenance":"SIMULATED","method":"rover_transform_scene_local","sim_config_version":"fm-sensors-1"}]
+PASS     Local validation rejects a client-made BACKEND-ANALYZED record
+PASS     Local validation rejects a number for a not-modelled sensor
+PASS     DATA tab shows OFFLINE upload state and AI NOT CONNECTED  [19 records   LOCAL ONLY 19   QUEUED 0   SYNCING 0   SYNCED 0   FAILED 0   •   backend: OFFLINE / NOT CONNECTED   •   AI: NOT CONNECTED 09:36:41 env.radiation_do]
+SHOT     06_data_tab_offline.png — DATA tab: local records, OFFLINE, AI not connected  [3024x1582]
+PASS     MISSION objectives progress from validated local records  [6 done: x Board the ARES-VI research rover | x Drive to Solar inspection (within 15 m) | x SCIENCE: profile the terrain at the site | x SCIENCE: survey Solar inspection with the mast context camera | x SCIENCE: stop within 6 m and collect an arm sample | x DATA: observations stored on this device | - Backend upload: NOT CONNECTED (no hosted backend yet) | - AI analysis: NOT CONNECTED (team model not yet available) | - NEXT: survey a second research station]
+SHOT     07_mission_tab.png — MISSION tab  [3024x1582]
+SHOT     08_systems_tab.png — SYSTEMS tab  [3024x1582]
+PASS     Records survive an app restart (reload from disk)  [19/19]
+PASS     Re-adding the same records does not duplicate them
+PASS     Bounded store refuses new records instead of dropping pending ones  [Local storage full: 5 records still waiting for sync]
+PASS     Bounded store evicts the oldest already-uploaded record to make room
+PASS     Corrupt store file is ignored safely (no crash)  [load failed: ArgumentException]
+--- MOCK upload tests (in-process fake uploader, no network, no real backend) ---
+PASS     MOCK 503: records show FAILED — RETRY AVAILABLE  [FAILED — RETRY AVAILABLE]
+PASS     MOCK 503: no immediate retry (backoff)
+PASS     MOCK reconnection: retried after backoff and acknowledged
+PASS     MOCK duplicate ack counts as uploaded, sent once (no duplicate processing)
+PASS     MOCK ack without BACKEND-ANALYZED provenance is not shown as an AI result
+PASS     MOCK BACKEND-ANALYZED ack is stored and a later plain ack does not overwrite it
+PASS     MOCK 401: upload stops until RETRY (sign-in)
+PASS     MOCK 422: records marked REJECTED and kept on the device
+PASS     Http uploader refuses plain HTTP to non-local hosts
+PASS     Parses the real backend ack shape (not_connected → no result)
+PASS     EXIT enabled when stopped  [driving True speed 0.00 tab Drive paused False modal False rover (25.0, 0.04, -38.0)]
+PASS     Exit restores astronaut controls automatically  [driving False speed 0.00 tab Drive paused False modal False rover (25.0, 0.04, -38.0)]
+PASS     Astronaut visible again after exit
+PASS     Tabs cannot be opened on foot
+SHOT     09_after_exit.png — astronaut beside the ARES-VI after exit  [3024x1582]
+PASS     Pause (Esc / Android back) shows the First Mission pause card
+SHOT     10_paused.png — pause card  [3024x1694]
+PASS     RESUME unpauses
+PASS     Re-boarding after exit returns to rover mode on DRIVE
+INFO     render target 1920x1080 (16:9)
+PASS     Safe area lies within the render target (16:9)  [safe (x:0.00, y:0.00, width:1920.00, height:1080.00) view (x:0.00, y:0.00, width:1920.00, height:1080.00)]
+PASS     Touch targets inside safe area (16:9)  [19 targets, 0 outside]
+PASS     Touch targets >= 84 ref px (16:9)  [0 small]
+SHOT     11_drive_1920x1080.png — DRIVE tab at 16:9  [3024x1582]
+INFO     render target 2340x1080 (19.5:9)
+PASS     Safe area lies within the render target (19.5:9)  [safe (x:0.00, y:0.00, width:2340.00, height:1080.00) view (x:0.00, y:0.00, width:2340.00, height:1080.00)]
+PASS     Touch targets inside safe area (19.5:9)  [19 targets, 0 outside]
+PASS     Touch targets >= 84 ref px (19.5:9)  [0 small]
+SHOT     11_drive_2340x1080.png — DRIVE tab at 19.5:9  [3024x1582]
+INFO     render target 1600x720 (20:9 low-res)
+PASS     Safe area lies within the render target (20:9 low-res)  [safe (x:0.00, y:0.00, width:1600.00, height:720.00) view (x:0.00, y:0.00, width:1600.00, height:720.00)]
+PASS     Touch targets inside safe area (20:9 low-res)  [19 targets, 0 outside]
+PASS     Touch targets >= 84 ref px (20:9 low-res)  [0 small]
+SHOT     11_drive_1600x720.png — DRIVE tab at 20:9 low-res  [3024x1582]
+PASS     Safe area lies within the render target (cutout 110 px left)  [safe (x:110.00, y:30.00, width:2250.00, height:1050.00) view (x:0.00, y:0.00, width:2400.00, height:1080.00)]
+PASS     Touch targets inside safe area (cutout 110 px left)  [19 targets, 0 outside]
+PASS     Touch targets >= 84 ref px (cutout 110 px left)  [0 small]
+SHOT     12_drive_cutout.png — DRIVE tab with a simulated 110 px left cutout  [3024x1582]
+PASS     Safe area lies within the render target (left-handed + cutout)  [safe (x:110.00, y:30.00, width:2250.00, height:1050.00) view (x:0.00, y:0.00, width:2400.00, height:1080.00)]
+PASS     Touch targets inside safe area (left-handed + cutout)  [19 targets, 0 outside]
+PASS     Touch targets >= 84 ref px (left-handed + cutout)  [0 small]
+PASS     Left-handed mode mirrors the steering stick to the right side  [stick x 2034 of 2400]
+SHOT     13_drive_left_handed.png — left-handed DRIVE layout  [3024x1582]
+--- Control system batch ---
+PASS     State ASTRONAUT on foot  [Astronaut]
+PASS     Keyboard W walks (camera-relative, existing controller)  [2.50 m]
+PASS     Movement follows the camera heading  [move dir 90° for camera yaw 90°]
+PASS     Keyboard E boards (5 m rule)
+PASS     State ROVER_DRIVE after boarding
+PASS     Keyboard W drives in ROVER_DRIVE  [1.93 m]
+PASS     Keyboard Space brakes
+PASS     State DATA_REVIEW on the DATA tab
+PASS     W does not drive while a data panel is open  [0.000 m]
+PASS     State ROVER_SCIENCE on the SCIENCE tab
+PASS     W does not drive while aiming science
+PASS     Tab key returns to DRIVE
+PASS     State PAUSE_MENU while paused; look input blocked
+PASS     ACCEL throttle ramps progressively  [0.3 s 0.43, 1.1 s 1.00]
+PASS     Steering authority reduced at speed (documented curve)  [scale 0.80 (expected 0.80) at 2.69 m/s]
+PASS     RECENTER puts the camera behind the rover
+PASS     CHASE NEAR is closer than CHASE  [7.9 -> 6.1 m]
+PASS     Zoom out increases chase distance  [6.1 -> 8.7 m]
+PASS     MAST CAM view sits on the rover mast  [cam (26.7, 2.52, -8.3)]
+SHOT     20_rover_mast_camera.png — rover MAST CAM (first-person) view  [3024x1582]
+PASS     View changes glide (camera speed <= 9.5 m/s, no snap)  [peak 9.0 m/s, largest frame move 0.90 m]
+PASS     SCIENCE shortcut appears when stopped near a station
+PASS     Shortcut opens SCIENCE
+PASS     TARGET selects a station in range  [Solar inspection]
+SHOT     21_science_target_framing.png — ROVER_SCIENCE camera framing the selected target  [3024x1582]
+PASS     CANCEL enabled during an observation
+PASS     CANCEL stops the observation and stores nothing
+PASS     Observation uses the selected target
+PASS     Context button reads BOARD ROVER next to the rover
+PASS     Context button reads SCAN at a research station  [SCAN SOLAR INSPECTION]
+PASS     Context SCAN runs the existing on-foot scan  [0 -> 1]
+PASS     RUN toggle latches run and unlatches  [run 2.66 / walk 1.54 m/s]
+PASS     Auto-sprint after holding the stick at full deflection  [speed 3.80]
+PASS     Walk speed limits unchanged (run cap 3.8 m/s)
+PASS     SHOULDER view is closer and offset  [5.4 -> 3.5 m]
+SHOT     22_astronaut_shoulder.png — astronaut SHOULDER camera  [3024x1582]
+PASS     INSPECT is first person and hides the astronaut
+SHOT     23_astronaut_inspect.png — first-person INSPECT camera  [3024x1582]
+PASS     Back to FOLLOW shows the astronaut again
+PASS     Camera inversion flips vertical look  [normal -9.6° inverted 9.6°]
+PASS     Look sensitivity scales orbit speed  [x2 12.0° vs x1 6.0°]
+PASS     Reduced motion keeps a fixed FOV  [fov 55.0]
+PASS     Two-finger pinch on the gameplay zone zooms the camera  [1.00 -> 0.72]
+PASS     Crew Dome airlock: camera never inside geometry while backing onto the airlock  [0/69 frames blocked, fallback frames 0, airlock 'Crew Dome closed door']
+SHOT     24_airlock_camera.png — backing onto the Crew Dome airlock  [3024x1582]
+PASS     Joystick position preset raises the stick  [56 -> 166]
+PASS     Control opacity setting applies  [0.65]
+PASS     Button size setting applies
+PASS     Settings persisted locally (PlayerPrefs, no secrets)  [{"version":2,"leftHanded":false,"invertY":false,"reducedMotion":false,"autoSprint":false,"runToggle":false,"controlScale":1.100000023841858,"opacity":0.6499999761581421,"lookSensitivity":1.0,"shoulderSide":1.0,"joystickPosition":2}]
+SHOT     25_settings_applied_astronaut.png — astronaut controls with raised joystick, lower opacity, larger buttons  [3024x1694]
+PASS     Safe area lies within the render target (settings panel)  [safe (x:0.00, y:0.00, width:2400.00, height:1080.00) view (x:0.00, y:0.00, width:2400.00, height:1080.00)]
+PASS     Touch targets inside safe area (settings panel)  [19 targets, 0 outside]
+PASS     Touch targets >= 84 ref px (settings panel)  [0 small]
+SHOT     26_settings_panel.png — SYSTEMS > SETTINGS  [3024x1582]
+PASS     New control layers cost < 1 ms per frame on average (Editor)  [0.088 ms]
+PASS     Touch-to-controller input latency <= 2 frames  [2 frames]
+--- Premium HUD v2 ---
+PASS     Status: rover power is SIMULATED (game battery), not the phone battery
+PASS     Status: vehicle temperature NOT AVAILABLE (no thermal model)
+PASS     Status: link NOT CONNECTED
+PASS     Status: storage counts the real local store
+PASS     Status: speed equals the controller speed
+PASS     Status: 10 categories present
+PASS     Status widgets expose accessible text with source  [POWER: 100 %, source SIMULATED]
+PASS     Unavailable value is shown as N/A, not a number
+PASS     Explorer DRIVE: speed gauge shown, permanent cards removed
+PASS     SCIENCE: driving controls replaced by science panel, nav hidden
+SHOT     30_hudv2_science.png — HUD v2 SCIENCE  [3024x1582]
+PASS     DATA: dashboard visible, side panels hidden
+PASS     DATA table row 1 is the newest record with its real fields  [09:37:36 | sci.target_bearing | site_3 | scientific | 180 | deg | SIMULATED | LOCAL ONLY | OFFLINE | NOT CONNECTED]
+PASS     DATA sync states use LOCAL ONLY while offline
+PASS     Sync label mapping (SYNCED/SYNCING/FAILED/QUEUED/LOCAL ONLY)
+SHOT     31_hudv2_data.png — HUD v2 DATA dashboard  [3024x1582]
+SHOT     32_hudv2_mission.png — HUD v2 MISSION  [3024x1694]
+PASS     SYSTEMS shows all 10 status widgets
+SHOT     33_hudv2_systems.png — HUD v2 SYSTEMS status  [3024x1582]
+PASS     Minimap rendered once from the real scene
+PASS     Waypoint distance and bearing come from transforms  [COMMUNICATIONS INSPECTION • 41 m • BRG 301° vs 41.3]
+PASS     Position labelled scene frame, not GPS
+PASS     Mission and nav panels collapse; status expands to 10
+SHOT     34_hudv2_collapsed_expanded.png — HUD v2 with mission/nav collapsed and status expanded  [3024x1582]
+PASS     Critical alert banner appears for low (simulated) rover power
+SHOT     35_hudv2_alert.png — HUD v2 critical alert  [3024x1694]
+PASS     Alert banner hides itself (does not block the view)
+PASS     Paused: settings shown in the pause card
+SHOT     36_hudv2_paused_settings.png — HUD v2 pause + settings  [3024x1582]
+PASS     No overlap between HUD panels and drive controls (2400x1080)
+PASS     Safe area lies within the render target (HUD v2 desktop 1512x982)  [safe (x:0.00, y:0.00, width:1512.00, height:982.00) view (x:0.00, y:0.00, width:1512.00, height:982.00)]
+PASS     Touch targets inside safe area (HUD v2 desktop 1512x982)  [19 targets, 0 outside]
+PASS     Touch targets >= 84 ref px (HUD v2 desktop 1512x982)  [0 small]
+SHOT     37_hudv2_drive_1512x982.png — HUD v2 DRIVE at desktop 1512x982  [3024x1582]
+PASS     Safe area lies within the render target (HUD v2 16:9)  [safe (x:0.00, y:0.00, width:1920.00, height:1080.00) view (x:0.00, y:0.00, width:1920.00, height:1080.00)]
+PASS     Touch targets inside safe area (HUD v2 16:9)  [19 targets, 0 outside]
+PASS     Touch targets >= 84 ref px (HUD v2 16:9)  [0 small]
+SHOT     37_hudv2_drive_1920x1080.png — HUD v2 DRIVE at 16:9  [3024x1582]
+PASS     Safe area lies within the render target (HUD v2 1440p)  [safe (x:0.00, y:0.00, width:2560.00, height:1440.00) view (x:0.00, y:0.00, width:2560.00, height:1440.00)]
+PASS     Touch targets inside safe area (HUD v2 1440p)  [19 targets, 0 outside]
+PASS     Touch targets >= 84 ref px (HUD v2 1440p)  [0 small]
+SHOT     37_hudv2_drive_2560x1440.png — HUD v2 DRIVE at 1440p  [3024x1582]
+SHOT     38_hudv2_drive_2400x1080.png — HUD v2 DRIVE at 2400x1080  [3024x1582]
+--- Explorer HUD ---
+PASS     Traversability grid built from scene colliders  [125x125 cells, blocked 2032, steep 0]
+PASS     Grid marks the Crew Dome as blocked
+PASS     Location registry uses real scene objects  [rover.ares6, site_0, site_1, site_2, site_3, site_4, hab.crew, hab.lab, hab.lifesupport, airlock.crew, airlock.lab, airlock.lifesupport, power.solarfarm, power.cabinet, comms.mast, ls.tanks, store.crates, fac.charging, fac.checkpoint1, fac.checkpoint2, fac.checkpoint3, fac.dock, fac.generator, fac.tents]
+PASS     Built mission facilities replace the design proposals  [fac.charging, fac.checkpoint1, fac.checkpoint2, fac.checkpoint3, fac.dock, fac.generator, fac.tents]
+PASS     Compact HUD: big panels gone, compass, map icon and ⋯ menu shown
+PASS     Centre of the screen is clear of HUD elements on foot
+SHOT     40_explorer_onfoot_compact.png — Explorer compact HUD on foot  [3024x1582]
+PASS     NAVIGATE TO ROVER offered when away from the rover
+PASS     Waypoint beacon light pillar appears at the rover
+PASS     Ambient dust motes running
+PASS     Navigation target is the live rover transform
+PASS     Route to the rover available (grid A*)  [ROUTE AVAILABLE • 37 m • 0%]
+PASS     Navigation does not move the player by itself
+PASS     Waypoint marker, route chip and compass pin shown
+SHOT     41_explorer_navigate_to_rover.png — NAVIGATE TO ROVER: waypoint marker and route chip  [3024x1582]
+PASS     Following the route reaches the rover (arrival detected)  [remaining 0.0 m of 36.6 m, replans 1]
+PASS     BOARD ROVER available on arrival (existing 5 m rule)
+PASS     Boarding switches to rover controls, mode pill and rover camera
+PASS     PRECISION profile caps speed (45 % throttle)  [1.71 m/s]
+PASS     NORMAL profile reaches the controller maximum  [3.80 m/s]
+PASS     Driving camera motion: FOV kick and gentle shake at speed  [fov +4.8°, shake 0.012 m]
+PASS     Reduced motion turns camera shake off
+PASS     Displayed speed derives from measured motion  [measured 3.71 vs controller 3.80 m/s]
+SHOT     42_explorer_driving.png — Explorer driving HUD  [3024x1582]
+PASS     TRAVERSE refused (needs approval to raise the shared 3.8 m/s limit)
+PASS     Map opens fullscreen and blocks gameplay input
+PASS     No driving while the map is open
+PASS     One-finger drag pans the map  [(0.60, 0.52) -> (0.51, 0.52)]
+PASS     Pinch zooms in and out  [3.00 -> 5.70 -> 1.20]
+PASS     Double tap zooms in  [1.20 -> 2.40]
+PASS     Centre on rover uses the live rover position
+PASS     Rover marker sits at the converted rover position
+PASS     Heading-up rotates the map to the rover heading
+SHOT     43_explorer_map_heading_up.png — fullscreen map, heading up  [3024x1582]
+PASS     North-up restores 0° rotation
+PASS     Layer toggles: hazards shown, science markers hidden
+SHOT     44_explorer_map_hazards.png — map with hazard layer  [3024x1582]
+PASS     Tapping a marker selects it and previews a route  [Route 89 m]
+PASS     Route stays on traversable cells (obstacle-aware, not a straight line)  [route 89 m vs straight 71 m, 5 points]
+SHOT     45_explorer_map_route_preview.png — map with selected location and route preview  [3024x1582]
+PASS     Invalid destination handled (outside the map)
+PASS     Proposal locations are not navigable
+PASS     NAVIGATE sets the target, closes the map and shows guidance  [ROUTE AVAILABLE • 89 m • 0%]
+PASS     Live route progress updates  [ROUTE AVAILABLE • 91 m • 0%]
+PASS     CANCEL ROUTE clears navigation
+PASS     Reset view restores zoom and centre
+PASS     Map closes and gameplay input returns
+PASS     Systems drawer: every section has content
+PASS     Drawer labels sources (LIVE / SIMULATED / UNAVAILABLE)  [POWER      94 %   [SIMULATED]   Game battery model (drains while driving); not a real power system
+TEMP       NOT AVAILA]
+SHOT     46_explorer_drawer_rover.png — systems drawer: rover  [3024x1582]
+PASS     Drawer Controls shows the settings
+PASS     Scan beam from the mast to the station + expanding ring during the observation
+SHOT     51_explorer_scan_beam.png — scan beam and ring during a rover observation  [3024x1582]
+PASS     Scan beam stops when the observation ends
+PASS     Scan result popup appears (not over the centre)  [sci.station_id: site_3  [SIMULATED] | sci.target_range: 9 m  [SIMULATED] | sci.target_bearing: 180 deg  [SIMULATED] | Saved: LOCAL ONLY • sync LOCAL ONLY • 09:39:28]
+SHOT     47_explorer_scan_popup.png — scan result popup  [3024x1582]
+PASS     Popup collapses into the record icon after ~4.5 s
+PASS     Record view shows provenance, storage, sync and AI status
+SHOT     48_explorer_record_view.png — detailed scientific record  [3024x1582]
+PASS     On-foot scan shows an honest popup (no invented values)  [Solar inspection • SIMULATED surface scan recorded | No measurement values are modelled for on-foot scans | Saved: game session (local) • not in the sensor upload queue]
+PASS     Safe area lies within the render target (Explorer 16:9)  [safe (x:0.00, y:0.00, width:1920.00, height:1080.00) view (x:0.00, y:0.00, width:1920.00, height:1080.00)]
+PASS     Touch targets inside safe area (Explorer 16:9)  [11 targets, 0 outside]
+PASS     Touch targets >= 84 ref px (Explorer 16:9)  [0 small]
+PASS     Safe area lies within the render target (Explorer desktop)  [safe (x:0.00, y:0.00, width:1512.00, height:982.00) view (x:0.00, y:0.00, width:1512.00, height:982.00)]
+PASS     Touch targets inside safe area (Explorer desktop)  [11 targets, 0 outside]
+PASS     Touch targets >= 84 ref px (Explorer desktop)  [0 small]
+--- Missions: structures, mission chain, guide popups ---
+PASS     Mission director present with 6 missions  [WAKE-UP CALL, POWER UP THE ROVER, RESTORE LIFE SUPPORT, SCOUT THE SUPPLY SITE, LIGHT THE STORM BEACONS, TAKE SHELTER]
+PASS     Structures placed: generator, charging pad, tents, dock, 3 gates
+PASS     Route grid: generator blocked, charging pad drivable  [gen 0 pad 1]
+PASS     Generator starts in FAULT with sparks
+PASS     Mission title card (letterbox + big title) opens the mission
+SHOT     59_missions_title_card.png — cinematic mission title card  [3024x1582]
+PASS     Guide popup opens for the first step  [Grab your EVA kit at the crew camp]
+PASS     Objective chip shows the mission step  [M1 • Grab your EVA kit at the crew camp]
+PASS     Survival: base oxygen reserve drains while the generator is down  [39.61 -> 39.42 | BASE O2  39%  ON RESERVE | ROVER BATTERY  70%]
+PASS     Oxygen running out fails the mission (MISSION FAILED + RETRY)  [LIFE SUPPORT FAILED
+The oxygen reserve ran out before the generator was restarted.]
+SHOT     70_survival_mission_failed.png — mission failed: oxygen reserve ran out  [3024x1582]
+PASS     RETRY resumes the mission with a top-up  [o2 29.9]
+PASS     Step sets a navigation target (beacon at the tents)
+PASS     Navigation guidance never moves the player
+SHOT     60_missions_guide_popup.png — mission guide popup: walk to the research tents  [3024x1582]
+PASS     GOT IT collapses the guide into the objective chip
+PASS     Tapping the objective chip reopens the guide
+PASS     Walking to the tents completes the step (STEP COMPLETE flash)  [mission 0 step 1]
+SHOT     61_missions_step_complete.png — STEP COMPLETE flash  [3024x1694]
+PASS     Next step guide: walk to the rover, target the rover  [Run to the ARES-VI rover]
+PASS     Boarding finishes MISSION 1 with a banner  [1/0 MISSION COMPLETE WAKE-UP CALL
+Reward: Rover ready to roll
+Next: MISSION 2 • POWER UP THE ROVER]
+SHOT     62_missions_mission_complete.png — MISSION COMPLETE banner  [3024x1582]
+PASS     MISSION 2 guide: drive onto the charging pad  [Drive onto the charging pad]
+PASS     Rover drove onto the pad (real driving)  [1.2 m from pad centre]
+PASS     Pad charges the rover battery while stopped (SIMULATED game battery)  [34.8 -> 44.9%]
+PASS     Charge progress bar shown in the guide
+PASS     Energy stream flows from the pylon to the rover while charging  [37 particles]
+SHOT     63_missions_charging.png — charging on the pad: progress bar + glowing pad  [3024x1582]
+PASS     Charge cycle completes MISSION 2 at 100 %  [battery 99.6, mission 2]
+PASS     Driving to the generator completes step 1 (exit next)  [step 1]
+PASS     At the fault panel: HOLD TO REPAIR appears  [step 3 range True]
+PASS     Holding REPAIR fills the repair bar  [0.47]
+SHOT     64_missions_repair.png — repairing the generator fault panel (sparks, progress)  [3024x1582]
+PASS     Generator repaired: beacons ONLINE, sparks stop, MISSION 3 complete  [mission 3]
+PASS     Map shows the generator state ONLINE  [ONLINE • life support running • SIMULATED]
+PASS     Survival: oxygen reserve refills once life support is back  [26.8 -> 28.8]
+PASS     Completion effects: rings and bursts (power wave on repair)  [rings 19, bursts 5]
+SHOT     65_missions_generator_online.png — generator back online  [3024x1582]
+PASS     SCIENCE SURVEY completes from the real sensor records  [mission 4 step 0; objectives x Board the ARES-VI research rover | x Drive to Solar inspection (within 15 m) | x SCIENCE: profile the terrain at the site | x SCIENCE: survey Solar inspection with the mast context camera | x SCIENCE: stop within 6 m and collect an arm sample | x DATA: observations stored on this device | - Backend upload: NOT CONNECTED (no hosted backend yet) | - AI analysis: NOT CONNECTED (team model not yet available) | - NEXT: survey a second research station]
+PASS     Storm warning: countdown starts after the supply site  [BASE O2  40%  RESTORING | STORM IN  3:13]
+PASS     Checkpoint 1 gate active (light curtain), others idle
+SHOT     66_missions_checkpoint.png — checkpoint gate active (light curtain)  [3024x1694]
+PASS     Driving through gate 1 passes it in order  [passed 1]
+PASS     Driving through gate 2 passes it in order  [passed 2]
+PASS     Driving through gate 3 passes it in order  [passed 3]
+PASS     STORM BEACONS complete  [mission 5]
+PASS     Storm build-up: dust weather and thicker haze as the storm nears  [weather 1, haze 0.32]
+PASS     Storm arriving before shelter fails the mission  [CAUGHT IN THE STORM
+The dust storm hit before the rover reached shelter.]
+PASS     RETRY gives extra time before the storm  [eta 149]
+PASS     Parking in the dock finishes every mission  [in dock True, mission 6, YOU SURVIVED THE STORM Life support is running, the beacons are lit and the landing site is recorded. The crew is safe.
+Progress saved on this device (local, unscored).]
+SHOT     67_missions_all_complete.png — rover parked in the dock, all missions complete  [3024x1582]
+PASS     Objective chip after the chain  [All missions complete • free exploration]
+PASS     Mission progress saved on this device
+PASS     Systems drawer lists all six missions as DONE  [MISSIONS • 6 of 6 complete (saved on this device, not scored)
+
+DONE     1. WAKE-UP CALL — Last night's dust storm knocked out base power. Life support is running on reserve oxygen. Get moving.
+DONE   ]
+SHOT     68_missions_drawer.png — mission list in the systems drawer  [3024x1582]
+PASS     Facilities have map markers
+SHOT     69_missions_map_facilities.png — map with the new facilities  [3024x1582]
+PASS     No console errors or exceptions during the run
+
+Performance (Editor Play Mode on this Mac; NOT Android):
+Per-frame cost over 120 driving frames (Editor, Stopwatch): camera rig mean 0.013 ms max 0.027; control layer mean 0.001 ms; First Mission HUD mean 0.074 ms max 0.289
+GC allocated per frame (Editor Play Mode, parked on DRIVE): whole game 329.8 KB; with First Mission HUD + control layer disabled 330.3 KB; First Mission share ≈ -0.5 KB/frame
+Editor Play Mode, driving, DRIVE tab, 2400x1080: frames=165 mean_ms=36.39 fps=27.5 p95_ms=87.83 max_ms=133.17 cpu_ms=34.04 gpu_ms=3.33 alloc_MB=3648 mono_MB=82 gfx_MB=857 gc_count=481
+Editor Play Mode, parked, DATA tab: frames=110 mean_ms=36.49 fps=27.4 p95_ms=80.57 max_ms=173.64 cpu_ms=33.51 gpu_ms=3.58 alloc_MB=3634 mono_MB=80 gfx_MB=843 gc_count=487
+
+Console errors (0):

@@ -1,0 +1,78 @@
+{
+  "asset_name": "ARES_VI_AntiGravity_Mars_Rover",
+  "unity_target_version": "Unity 6000.6.4f1 (URP)",
+  "dimensions_meters": {
+    "length": 4.82,
+    "width": 2.84,
+    "height": 2.45
+  },
+  "lod_levels": [
+    {
+      "level": "LOD0",
+      "screen_relative_transition_height": 0.60,
+      "triangle_count": 1401,
+      "vertex_count": 1172,
+      "submeshes": 87,
+      "draw_calls_estimate": 8,
+      "features": [
+        "Full Hard-Surface Bevel Geometry",
+        "Dual-Seat Astronaut Cockpit & Panoramic Polarized Glass",
+        "4x Underbody Electromagnetic Hover Emitters + Vectoring Gimbal Vanes",
+        "6-Wheel Rocker-Bogie Suspension with In-Hub Planetary Motors",
+        "Dual-Axis ChemCam Mast with LIBS Laser & Stereo NavCams",
+        "5-Axis Articulated Science Arm with Core Drill & Spectrometer",
+        "Active Radiative MMRTG Nuclear Generator & Fins",
+        "Gold Thermal Parabolic High-Gain Dish Antenna"
+      ]
+    },
+    {
+      "level": "LOD1",
+      "screen_relative_transition_height": 0.30,
+      "triangle_count": 760,
+      "vertex_count": 620,
+      "submeshes": 24,
+      "draw_calls_estimate": 4,
+      "features": [
+        "Consolidated Cockpit Interior (Opaque canopy)",
+        "Simplified Rocker-Bogie Linkages",
+        "Merged Hover Modules (Single draw call per corner)",
+        "Static Science Arm & Antenna Dish"
+      ]
+    },
+    {
+      "level": "LOD2",
+      "screen_relative_transition_height": 0.12,
+      "triangle_count": 310,
+      "vertex_count": 240,
+      "submeshes": 6,
+      "draw_calls_estimate": 2,
+      "features": [
+        "Low-Poly Silhouette Mesh",
+        "Cylindrical Approximations for Wheels and RTG",
+        "Merged Exterior Texture Atlas"
+      ]
+    },
+    {
+      "level": "LOD3",
+      "screen_relative_transition_height": 0.04,
+      "triangle_count": 88,
+      "vertex_count": 64,
+      "submeshes": 1,
+      "draw_calls_estimate": 1,
+      "features": [
+        "Convex Hull Box/Capsule Silhouette for Distant Horizon Rendering",
+        "Zero Shadows Cast, Culled at < 4% Screen Size"
+      ]
+    }
+  ],
+  "material_slots": [
+    "Mat_CeramicWhite (Primary Hull)",
+    "Mat_GraphiteTrim (Structural Composites)",
+    "Mat_TitaniumFrame (Mechanical Suspension & Chassis Spine)",
+    "Mat_MartianOrange (High-Visibility Livery & Safety Strakes)",
+    "Mat_GoldFoil (Thermal Insulation Foil)",
+    "Mat_CarbonTreads (Rough-Terrain Exploration Wheels)",
+    "Mat_CanopyGlass (Polarized Cockpit Canopy)",
+    "Mat_CyanEnergy (Anti-Gravity Plasma Emitters & Optics)"
+  ]
+}

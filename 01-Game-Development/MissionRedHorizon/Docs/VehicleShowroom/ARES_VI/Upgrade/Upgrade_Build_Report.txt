@@ -1,0 +1,43 @@
+ARES-VI upgraded build (Unity 6000.6.4f1, 2026-10-20 15:02:43)
+source parts 211, source triangles 15518
+Mast_* parts overlapping canopy glass bounds after move: 0
+Arm_* parts overlapping canopy glass bounds after move: 0
+static body source parts 62 (incl. generated detail); replaced source parts: rocker/bogie bars, shocks, tie rods (24), 6 tyre bodies, 6 lug rings
+materials: ARES2_PaintWhite, ARES2_PaintOrange, ARES2_Graphite, ARES2_Titanium, ARES2_GoldFoil, ARES2_Rubber, ARES2_Glass, ARES2_CyanEmissive, ARES2_HoverPlasma, ARES2_Plume, ARES2_LED, ARES2_MarsRegolith; procedural 1024px albedo/normal/metal-smoothness/AO sets for paint (panel lines, rivets, Mars dust), graphite, brushed titanium, crinkled gold foil, dusty rubber, regolith
+repair: input triangles 21606, triangles re-wound 11954, inside-out components flipped 126, open components 194 (back faces added 1430), smoothing angle 40 deg, box-projected UVs (2 m tile)
+output: 30 meshes/renderers, 82 submeshes, 23036 triangles, 69108 vertices
+  ARES_VI_Upgraded pivot (0.000, 0.000, 0.000)
+  ARES_VI_Upgraded/Chassis pivot (0.000, 0.000, 0.000)
+  ARES_VI_Upgraded/Chassis/Body pivot (0.000, 0.000, 0.000) tris 3280 submeshes 8
+  ARES_VI_Upgraded/Chassis/Rocker_L pivot (-0.740, 0.760, 0.000) tris 408 submeshes 3
+  ARES_VI_Upgraded/Chassis/Rocker_L/Bogie_L pivot (-1.030, 0.600, -0.620) tris 232 submeshes 3
+  ARES_VI_Upgraded/Chassis/Rocker_L/Wheel_FL pivot (-1.260, 0.380, 1.180) tris 2152 submeshes 4
+  ARES_VI_Upgraded/Chassis/Rocker_L/Bogie_L/Wheel_ML pivot (-1.260, 0.380, 0.000) tris 2152 submeshes 4
+  ARES_VI_Upgraded/Chassis/Rocker_L/Bogie_L/Wheel_RL pivot (-1.260, 0.380, -1.180) tris 2152 submeshes 4
+  ARES_VI_Upgraded/Chassis/Rocker_R pivot (0.740, 0.760, 0.000) tris 408 submeshes 3
+  ARES_VI_Upgraded/Chassis/Rocker_R/Bogie_R pivot (1.030, 0.600, -0.620) tris 232 submeshes 3
+  ARES_VI_Upgraded/Chassis/Rocker_R/Wheel_FR pivot (1.260, 0.380, 1.180) tris 2152 submeshes 4
+  ARES_VI_Upgraded/Chassis/Rocker_R/Bogie_R/Wheel_MR pivot (1.260, 0.380, 0.000) tris 2152 submeshes 4
+  ARES_VI_Upgraded/Chassis/Rocker_R/Bogie_R/Wheel_RR pivot (1.260, 0.380, -1.180) tris 2152 submeshes 4
+  ARES_VI_Upgraded/Chassis/Arm_Yaw pivot (-0.440, 1.140, 1.070) tris 48 submeshes 1
+  ARES_VI_Upgraded/Chassis/Arm_Yaw/Arm_Upper pivot (-0.440, 1.140, 1.070) tris 152 submeshes 2
+  ARES_VI_Upgraded/Chassis/Arm_Yaw/Arm_Upper/Arm_Fore pivot (-0.440, 1.130, 1.650) tris 176 submeshes 2
+  ARES_VI_Upgraded/Chassis/Arm_Yaw/Arm_Upper/Arm_Fore/Arm_Wrist pivot (-0.440, 0.580, 1.640) tris 152 submeshes 2
+  ARES_VI_Upgraded/Chassis/Arm_Yaw/Arm_Upper/Arm_Fore/Arm_Wrist/Arm_Drill pivot (-0.440, 0.220, 1.640) tris 224 submeshes 1
+  ARES_VI_Upgraded/Chassis/Mast_Pan pivot (0.420, 1.220, -0.550) tris 1336 submeshes 2
+  ARES_VI_Upgraded/Chassis/Mast_Pan/Mast_Tilt pivot (0.420, 2.380, -0.550) tris 372 submeshes 4
+  ARES_VI_Upgraded/Chassis/Hover_FL pivot (-0.560, 0.510, 0.680) tris 584 submeshes 4
+  ARES_VI_Upgraded/Chassis/Hover_FL/Hover_FL_Vanes pivot (-0.560, 0.370, 0.680) tris 96 submeshes 1
+  ARES_VI_Upgraded/Chassis/Hover_FL/Hover_FL_Plume pivot (-0.560, 0.360, 0.680) tris 96 submeshes 1
+  ARES_VI_Upgraded/Chassis/Hover_FR pivot (0.560, 0.510, 0.680) tris 584 submeshes 4
+  ARES_VI_Upgraded/Chassis/Hover_FR/Hover_FR_Vanes pivot (0.560, 0.370, 0.680) tris 96 submeshes 1
+  ARES_VI_Upgraded/Chassis/Hover_FR/Hover_FR_Plume pivot (0.560, 0.360, 0.680) tris 96 submeshes 1
+  ARES_VI_Upgraded/Chassis/Hover_RL pivot (-0.560, 0.510, -0.680) tris 584 submeshes 4
+  ARES_VI_Upgraded/Chassis/Hover_RL/Hover_RL_Vanes pivot (-0.560, 0.370, -0.680) tris 96 submeshes 1
+  ARES_VI_Upgraded/Chassis/Hover_RL/Hover_RL_Plume pivot (-0.560, 0.360, -0.680) tris 96 submeshes 1
+  ARES_VI_Upgraded/Chassis/Hover_RR pivot (0.560, 0.510, -0.680) tris 584 submeshes 4
+  ARES_VI_Upgraded/Chassis/Hover_RR/Hover_RR_Vanes pivot (0.560, 0.370, -0.680) tris 96 submeshes 1
+  ARES_VI_Upgraded/Chassis/Hover_RR/Hover_RR_Plume pivot (0.560, 0.360, -0.680) tris 96 submeshes 1
+rocker-bogie body lift per key (m): 0.000, 0.047, 0.086, 0.112, 0.121, 0.112, 0.086, 0.047, 0.000, 0.047, 0.086, 0.112, 0.121, 0.112, 0.086, 0.047, 0.000
+animation clips: ARES_WheelRotation 2.0s loop (18 curves), ARES_RockerBogie 4.0s loop (33 curves), ARES_ArmDeploy 4.8s (12 curves), ARES_ChemCamScan 6.0s loop (10 curves), ARES_HoverActivation 3.0s (71 curves), ARES_HoverStabilization 4.0s loop (86 curves), ARES_Landing 3.5s (71 curves)
+scene: Assets/AstroGateway/VehicleShowroom/Scenes/ARES_VI_Showroom.unity now holds ARES_VI_Upgraded (active), the original import (inactive, for before/after), a post-processing volume (ACES, bloom, vignette) and an inactive Mars preset

@@ -1,0 +1,7 @@
+09:43:44 BUILD 0
+09:48:44 PLAYTEST 0
+09:50:17 AUDIT 0
+09:51:27 CAPTURE 0
+PASS 50  FAIL 0  UNTESTED 0
+Responsive HUD audit — 2026-10-20 09:50:15 — layout issues 0, failed checks 0
+09:51:27 DONE

@@ -1,0 +1,224 @@
+== Roots
+02_LocalProvisionalExploration children=5
+Native control and provisional telemetry children=0
+Adaptive touch input provider children=0
+Mars Research Base — 250m playable world children=88
+Configurable Mars presentation children=0
+Warm directional sunlight children=0
+Non-gameplay scenic overview children=0
+Restrained color grade children=0
+AstroGateway cinematic HUD adapters children=0
+HUD EventSystem children=0
+Production presentation adapters — protected gameplay children=0
+== Astronaut
+Astronaut_OriginalPrimitivePrototype pos=(-42.00, 0.10, -68.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) col=CharacterController layer=8 comps=CharacterController
+  SuitRig pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) layer=0 comps=Animator
+    Torso pos=(0.00, 1.10, 0.00) rot=(0.00, 0.00, 0.00) scale=(0.52, 0.38, 0.35) mesh=Capsule(550v) mat=Inherited_12 on=True layer=0 comps=
+    Backpack pos=(0.00, 1.20, -0.26) rot=(0.00, 0.00, 0.00) scale=(0.45, 0.60, 0.20) mesh=Cube(24v) mat=Inherited_17 on=True layer=0 comps=
+    Helmet pos=(0.00, 1.68, 0.00) rot=(0.00, 0.00, 0.00) scale=(0.45, 0.45, 0.45) mesh=Sphere(515v) mat=Inherited_12 on=True layer=0 comps=
+    DarkVisor pos=(0.00, 1.68, 0.15) rot=(0.00, 0.00, 0.00) scale=(0.35, 0.27, 0.18) mesh=Sphere(515v) mat=Inherited_17 on=True layer=0 comps=
+    ChestPanel pos=(0.00, 1.20, 0.20) rot=(0.00, 0.00, 0.00) scale=(0.28, 0.20, 0.06) mesh=Cube(24v) mat=Inherited_7 on=True layer=0 comps=
+    LeftArm pos=(-0.32, 1.40, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) layer=0 comps=
+      SuitSegment pos=(0.00, -0.30, 0.00) rot=(0.00, 0.00, 0.00) scale=(0.17, 0.27, 0.17) mesh=Capsule(550v) mat=Inherited_12 on=True layer=0 comps=
+    RightArm pos=(0.32, 1.40, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) layer=0 comps=
+      SuitSegment pos=(0.00, -0.30, 0.00) rot=(0.00, 0.00, 0.00) scale=(0.17, 0.27, 0.17) mesh=Capsule(550v) mat=Inherited_12 on=True layer=0 comps=
+    LeftLeg pos=(-0.15, 0.76, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) layer=0 comps=
+      SuitSegment pos=(0.00, -0.30, 0.00) rot=(0.00, 0.00, 0.00) scale=(0.19, 0.30, 0.19) mesh=Capsule(550v) mat=Inherited_12 on=True layer=0 comps=
+      Added EVA boot pos=(0.00, -0.66, 0.06) rot=(0.00, 0.00, 0.00) scale=(0.19, 0.20, 0.30) mesh=Cube(24v) mat=Inherited_3 on=True layer=0 comps=
+    RightLeg pos=(0.15, 0.76, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) layer=0 comps=
+      SuitSegment pos=(0.00, -0.30, 0.00) rot=(0.00, 0.00, 0.00) scale=(0.19, 0.30, 0.19) mesh=Capsule(550v) mat=Inherited_12 on=True layer=0 comps=
+      Added EVA boot pos=(0.00, -0.66, 0.06) rot=(0.00, 0.00, 0.00) scale=(0.19, 0.20, 0.30) mesh=Cube(24v) mat=Inherited_3 on=True layer=0 comps=
+== Rover
+Rover_DrivableKinematicPrototype pos=(-15.00, 0.03, -93.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) col=CharacterController layer=8 comps=CharacterController
+  RoverVisual pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) layer=0 comps=
+    Chassis pos=(0.00, 0.80, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.90, 0.55, 3.20) mesh=ChamferedEnclosure(72v) mat=Pressure shell ceramic composite on=True layer=0 comps=
+    Cab pos=(0.00, 1.35, 0.35) rot=(0.00, 0.00, 0.00) scale=(1.50, 0.75, 1.45) mesh=CrewCabEnclosure(72v) mat=Pressure shell ceramic composite,Opaque protective visor glazing on=True layer=0 comps=
+    RoofMarker pos=(0.00, 1.77, 0.35) rot=(0.00, 0.00, 0.00) scale=(1.40, 0.08, 1.20) mesh=Cube(24v) mat=Restrained identification orange on=True layer=0 comps=
+    Wheel_-1_0 pos=(-1.10, 0.38, -1.05) rot=(0.00, 0.00, 90.00) scale=(0.72, 0.20, 0.72) mesh=Cylinder(88v) mat=Inherited_16 on=False layer=0 comps=LODGroup
+      Detailed wheel LOD0 pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) mesh=RoverWheel_LOD0(2496v) mat=Dusty tire elastomer,Brushed aluminum on=True layer=0 comps=
+      Detailed wheel LOD1 pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) mesh=RoverWheel_LOD1(1536v) mat=Dusty tire elastomer,Brushed aluminum on=True layer=0 comps=
+      Detailed wheel LOD2 pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) mesh=RoverWheel_LOD2(768v) mat=Dusty tire elastomer,Brushed aluminum on=True layer=0 comps=
+    Wheel_-1_1 pos=(-1.10, 0.38, 0.00) rot=(0.00, 0.00, 90.00) scale=(0.72, 0.20, 0.72) mesh=Cylinder(88v) mat=Inherited_23 on=False layer=0 comps=LODGroup
+      Detailed wheel LOD0 pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) mesh=RoverWheel_LOD0(2496v) mat=Dusty tire elastomer,Brushed aluminum on=True layer=0 comps=
+      Detailed wheel LOD1 pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) mesh=RoverWheel_LOD1(1536v) mat=Dusty tire elastomer,Brushed aluminum on=True layer=0 comps=
+      Detailed wheel LOD2 pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) mesh=RoverWheel_LOD2(768v) mat=Dusty tire elastomer,Brushed aluminum on=True layer=0 comps=
+    Wheel_-1_2 pos=(-1.10, 0.38, 1.05) rot=(0.00, 0.00, 90.00) scale=(0.72, 0.20, 0.72) mesh=Cylinder(88v) mat=Inherited_4 on=False layer=0 comps=LODGroup
+      Detailed wheel LOD0 pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) mesh=RoverWheel_LOD0(2496v) mat=Dusty tire elastomer,Brushed aluminum on=True layer=0 comps=
+      Detailed wheel LOD1 pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) mesh=RoverWheel_LOD1(1536v) mat=Dusty tire elastomer,Brushed aluminum on=True layer=0 comps=
+      Detailed wheel LOD2 pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) mesh=RoverWheel_LOD2(768v) mat=Dusty tire elastomer,Brushed aluminum on=True layer=0 comps=
+    Wheel_1_0 pos=(1.10, 0.38, -1.05) rot=(0.00, 0.00, 90.00) scale=(0.72, 0.20, 0.72) mesh=Cylinder(88v) mat=Inherited_22 on=False layer=0 comps=LODGroup
+      Detailed wheel LOD0 pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) mesh=RoverWheel_LOD0(2496v) mat=Dusty tire elastomer,Brushed aluminum on=True layer=0 comps=
+      Detailed wheel LOD1 pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) mesh=RoverWheel_LOD1(1536v) mat=Dusty tire elastomer,Brushed aluminum on=True layer=0 comps=
+      Detailed wheel LOD2 pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) mesh=RoverWheel_LOD2(768v) mat=Dusty tire elastomer,Brushed aluminum on=True layer=0 comps=
+    Wheel_1_1 pos=(1.10, 0.38, 0.00) rot=(0.00, 0.00, 90.00) scale=(0.72, 0.20, 0.72) mesh=Cylinder(88v) mat=Inherited_24 on=False layer=0 comps=LODGroup
+      Detailed wheel LOD0 pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) mesh=RoverWheel_LOD0(2496v) mat=Dusty tire elastomer,Brushed aluminum on=True layer=0 comps=
+      Detailed wheel LOD1 pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) mesh=RoverWheel_LOD1(1536v) mat=Dusty tire elastomer,Brushed aluminum on=True layer=0 comps=
+      Detailed wheel LOD2 pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) mesh=RoverWheel_LOD2(768v) mat=Dusty tire elastomer,Brushed aluminum on=True layer=0 comps=
+    Wheel_1_2 pos=(1.10, 0.38, 1.05) rot=(0.00, 0.00, 90.00) scale=(0.72, 0.20, 0.72) mesh=Cylinder(88v) mat=Inherited_13 on=False layer=0 comps=LODGroup
+      Detailed wheel LOD0 pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) mesh=RoverWheel_LOD0(2496v) mat=Dusty tire elastomer,Brushed aluminum on=True layer=0 comps=
+      Detailed wheel LOD1 pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) mesh=RoverWheel_LOD1(1536v) mat=Dusty tire elastomer,Brushed aluminum on=True layer=0 comps=
+      Detailed wheel LOD2 pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) mesh=RoverWheel_LOD2(768v) mat=Dusty tire elastomer,Brushed aluminum on=True layer=0 comps=
+    Protective flank -1 pos=(-0.88, 1.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(0.08, 0.50, 2.70) mesh=Cube(24v) mat=Inherited_9 on=True layer=0 comps=
+    Headlight -1 pos=(-0.65, 1.00, 1.62) rot=(0.00, 0.00, 0.00) scale=(0.20, 0.20, 0.20) mesh=Sphere(515v) mat=Inherited_6 on=True layer=0 comps=
+    Suspension link -1_0 pos=(-0.80, 0.45, -1.05) rot=(0.00, 0.00, 0.00) scale=(0.70, 0.10, 0.10) mesh=Cube(24v) mat=Inherited_3 on=True layer=0 comps=
+    Suspension link -1_1 pos=(-0.80, 0.45, 0.00) rot=(0.00, 0.00, 0.00) scale=(0.70, 0.10, 0.10) mesh=Cube(24v) mat=Inherited_3 on=True layer=0 comps=
+    Suspension link -1_2 pos=(-0.80, 0.45, 1.05) rot=(0.00, 0.00, 0.00) scale=(0.70, 0.10, 0.10) mesh=Cube(24v) mat=Inherited_3 on=True layer=0 comps=
+    Protective flank 1 pos=(0.88, 1.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(0.08, 0.50, 2.70) mesh=Cube(24v) mat=Inherited_9 on=True layer=0 comps=
+    Headlight 1 pos=(0.65, 1.00, 1.62) rot=(0.00, 0.00, 0.00) scale=(0.20, 0.20, 0.20) mesh=Sphere(515v) mat=Inherited_6 on=True layer=0 comps=
+    Suspension link 1_0 pos=(0.80, 0.45, -1.05) rot=(0.00, 0.00, 0.00) scale=(0.70, 0.10, 0.10) mesh=Cube(24v) mat=Inherited_3 on=True layer=0 comps=
+    Suspension link 1_1 pos=(0.80, 0.45, 0.00) rot=(0.00, 0.00, 0.00) scale=(0.70, 0.10, 0.10) mesh=Cube(24v) mat=Inherited_3 on=True layer=0 comps=
+    Suspension link 1_2 pos=(0.80, 0.45, 1.05) rot=(0.00, 0.00, 0.00) scale=(0.70, 0.10, 0.10) mesh=Cube(24v) mat=Inherited_3 on=True layer=0 comps=
+    Scientific sensor mast pos=(0.00, 2.10, -1.00) rot=(0.00, 0.00, 0.00) scale=(0.08, 0.45, 0.08) mesh=Cylinder(88v) mat=Inherited_3 on=True layer=0 comps=
+    Camera sensor pos=(0.00, 2.55, -1.00) rot=(0.00, 0.00, 0.00) scale=(0.25, 0.20, 0.25) mesh=Cube(24v) mat=Inherited_6 on=True layer=0 comps=
+    TERRAVEX static rocker and protective frame pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) mesh=RoverMechanicalFrame(1152v) mat=Machined graphite alloy on=True layer=0 comps=
+    Battery enclosure pos=(0.00, 1.05, -1.10) rot=(0.00, 0.00, 0.00) scale=(1.25, 0.40, 0.50) mesh=ChamferedEnclosure(72v) mat=Pressure shell ceramic composite on=True layer=0 comps=
+  Persistent astronaut seat anchor pos=(0.00, 0.45, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) layer=0 comps=
+  Bounded rover wheel dust pos=(0.00, 0.10, -1.50) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) mat=Inherited_25 on=True layer=0 comps=ParticleSystem,ParticleSystemRenderer
+== Research target Rock sample station
+Research station 0 pos=(35.00, 0.42, 23.00) rot=(0.00, 0.00, 0.00) scale=(0.35, 0.40, 0.35) mesh=Cylinder(88v) mat=Inherited_14 on=True col=CapsuleCollider layer=0 comps=CapsuleCollider,ResearchTarget
+== Research target Soil crater sampler
+Research station 1 pos=(55.00, 0.73, 37.00) rot=(0.00, 0.00, 0.00) scale=(0.35, 0.40, 0.35) mesh=Cylinder(88v) mat=Inherited_14 on=True col=CapsuleCollider layer=0 comps=CapsuleCollider,ResearchTarget
+== Research target Ridge mineral sensor
+Research station 2 pos=(0.00, 1.80, 74.00) rot=(0.00, 0.00, 0.00) scale=(0.35, 0.40, 0.35) mesh=Cylinder(88v) mat=Inherited_14 on=True col=CapsuleCollider layer=0 comps=CapsuleCollider,ResearchTarget
+== Research target Solar inspection
+Research station 3 pos=(25.00, 0.40, -43.00) rot=(0.00, 0.00, 0.00) scale=(0.35, 0.40, 0.35) mesh=Cylinder(88v) mat=Inherited_14 on=True col=CapsuleCollider layer=0 comps=CapsuleCollider,ResearchTarget
+== Research target Communications inspection
+Research station 4 pos=(-16.00, 0.51, -24.00) rot=(0.00, 0.00, 0.00) scale=(0.35, 0.40, 0.35) mesh=Cylinder(88v) mat=Inherited_14 on=True col=CapsuleCollider layer=0 comps=CapsuleCollider,ResearchTarget
+== World
+Mars Research Base — 250m playable world pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) layer=0 comps=
+  Traversable terrain pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) mesh=Terrain250m(16641v) mat=Inherited_10 on=True col=MeshCollider layer=0 comps=MeshCollider
+  Distant dust plain pos=(0.00, -1.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(100.00, 1.00, 100.00) mesh=Plane(121v) mat=Inherited_20 on=True layer=0 comps=
+  Zone A — ARESYN habitat complex pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) layer=0 comps=
+  Life support storage tank 0 pos=(-81.00, 1.60, -21.00) rot=(0.00, 0.00, 0.00) scale=(2.00, 1.60, 2.00) mesh=Cylinder(88v) mat=Inherited_9 on=True col=CapsuleCollider layer=0 comps=CapsuleCollider
+  Life support storage tank 1 pos=(-78.00, 1.60, -21.00) rot=(0.00, 0.00, 0.00) scale=(2.00, 1.60, 2.00) mesh=Cylinder(88v) mat=Inherited_9 on=True col=CapsuleCollider layer=0 comps=CapsuleCollider
+  Life support storage tank 2 pos=(-75.00, 1.60, -21.00) rot=(0.00, 0.00, 0.00) scale=(2.00, 1.60, 2.00) mesh=Cylinder(88v) mat=Inherited_9 on=True col=CapsuleCollider layer=0 comps=CapsuleCollider
+  Life support storage tank 3 pos=(-72.00, 1.60, -21.00) rot=(0.00, 0.00, 0.00) scale=(2.00, 1.60, 2.00) mesh=Cylinder(88v) mat=Inherited_9 on=True col=CapsuleCollider layer=0 comps=CapsuleCollider
+  Zone C — solar farm pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) layer=0 comps=
+  Power distribution cabinet pos=(25.00, 1.00, -45.00) rot=(0.00, 0.00, 0.00) scale=(2.00, 2.00, 1.00) mesh=Cube(24v) mat=Inherited_9 on=True col=BoxCollider layer=0 comps=BoxCollider
+  Communications node mast pos=(-16.00, 5.00, -29.00) rot=(0.00, 0.00, 0.00) scale=(0.25, 5.00, 0.25) mesh=Cylinder(88v) mat=Inherited_3 on=True col=CapsuleCollider layer=0 comps=CapsuleCollider
+  Communication reflector pos=(-16.00, 10.00, -29.00) rot=(45.00, 0.00, 0.00) scale=(3.00, 0.30, 3.00) mesh=Sphere(515v) mat=Inherited_9 on=True layer=0 comps=
+  Storage crate 0 pos=(-16.00, 0.60, -24.00) rot=(0.00, 0.00, 0.00) scale=(2.00, 1.20, 1.20) mesh=Cube(24v) mat=Inherited_9 on=True col=BoxCollider layer=0 comps=BoxCollider
+  Storage crate 1 pos=(-13.00, 0.60, -24.00) rot=(0.00, 0.00, 0.00) scale=(2.00, 1.20, 1.20) mesh=Cube(24v) mat=Inherited_9 on=True col=BoxCollider layer=0 comps=BoxCollider
+  Storage crate 2 pos=(-10.00, 0.60, -24.00) rot=(0.00, 0.00, 0.00) scale=(2.00, 1.20, 1.20) mesh=Cube(24v) mat=Inherited_9 on=True col=BoxCollider layer=0 comps=BoxCollider
+  Storage crate 3 pos=(-7.00, 0.60, -24.00) rot=(0.00, 0.00, 0.00) scale=(2.00, 1.20, 1.20) mesh=Cube(24v) mat=Inherited_9 on=True col=BoxCollider layer=0 comps=BoxCollider
+  Approved rock_07 cluster 0 pos=(84.13, 3.77, 91.06) rot=(0.00, 225.48, 0.00) scale=(1.76, 1.76, 1.76) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 1 pos=(-19.77, 3.76, 93.05) rot=(0.00, 228.23, 0.00) scale=(2.33, 2.33, 2.33) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 2 pos=(-46.49, 3.44, 91.74) rot=(0.00, 156.30, 0.00) scale=(2.54, 2.54, 2.54) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 3 pos=(86.44, 0.08, -44.79) rot=(0.00, 352.16, 0.00) scale=(1.81, 1.81, 1.81) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 4 pos=(48.91, 1.27, 67.91) rot=(0.00, 168.13, 0.00) scale=(1.96, 1.96, 1.96) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 6 pos=(35.10, 3.33, 101.44) rot=(0.00, 151.47, 0.00) scale=(2.07, 2.07, 2.07) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 7 pos=(-45.74, 0.09, -15.47) rot=(0.00, 77.99, 0.00) scale=(2.70, 2.70, 2.70) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 8 pos=(85.56, 0.09, -39.04) rot=(0.00, 214.03, 0.00) scale=(1.90, 1.90, 1.90) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 10 pos=(114.84, 0.92, 66.89) rot=(0.00, 114.63, 0.00) scale=(1.78, 1.78, 1.78) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 11 pos=(110.99, 0.17, 25.60) rot=(0.00, 79.02, 0.00) scale=(0.98, 0.98, 0.98) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 13 pos=(107.67, 0.14, 34.60) rot=(0.00, 296.62, 0.00) scale=(2.44, 2.44, 2.44) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 14 pos=(40.29, 1.98, 72.86) rot=(0.00, 131.72, 0.00) scale=(0.72, 0.72, 0.72) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 15 pos=(-62.77, 0.12, 39.24) rot=(0.00, 87.60, 0.00) scale=(2.34, 2.34, 2.34) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 16 pos=(-110.53, 2.14, 78.69) rot=(0.00, 217.25, 0.00) scale=(1.18, 1.18, 1.18) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 17 pos=(-8.89, 0.11, -7.72) rot=(0.00, 9.67, 0.00) scale=(0.95, 0.95, 0.95) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 22 pos=(9.36, 1.19, 70.72) rot=(0.00, 351.25, 0.00) scale=(1.99, 1.99, 1.99) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 24 pos=(23.86, 0.06, 34.66) rot=(0.00, 219.16, 0.00) scale=(1.88, 1.88, 1.88) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 26 pos=(106.81, 0.13, 19.50) rot=(0.00, 97.69, 0.00) scale=(2.76, 2.76, 2.76) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 28 pos=(62.42, 0.03, -5.46) rot=(0.00, 304.71, 0.00) scale=(2.58, 2.58, 2.58) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 29 pos=(-80.51, 0.65, 58.20) rot=(0.00, 32.24, 0.00) scale=(2.18, 2.18, 2.18) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 30 pos=(94.66, 0.07, 20.88) rot=(0.00, 314.24, 0.00) scale=(2.32, 2.32, 2.32) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 31 pos=(-54.96, 0.75, 58.28) rot=(0.00, 122.38, 0.00) scale=(1.54, 1.54, 1.54) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 32 pos=(-7.12, 0.09, -18.49) rot=(0.00, 250.17, 0.00) scale=(2.40, 2.40, 2.40) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 34 pos=(-60.17, 3.50, 104.14) rot=(0.00, 213.28, 0.00) scale=(3.03, 3.03, 3.03) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 35 pos=(-43.66, 4.65, 108.48) rot=(0.00, 50.22, 0.00) scale=(2.11, 2.11, 2.11) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 36 pos=(-90.62, 3.82, 96.70) rot=(0.00, 201.95, 0.00) scale=(1.06, 1.06, 1.06) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 38 pos=(-75.73, 0.76, 59.66) rot=(0.00, 236.71, 0.00) scale=(1.23, 1.23, 1.23) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 39 pos=(-12.28, 0.18, 24.08) rot=(0.00, 152.94, 0.00) scale=(0.73, 0.73, 0.73) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 40 pos=(63.89, 2.19, 99.54) rot=(0.00, 83.01, 0.00) scale=(1.67, 1.67, 1.67) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 41 pos=(49.51, 0.10, 26.60) rot=(0.00, 41.68, 0.00) scale=(2.74, 2.74, 2.74) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 42 pos=(-77.69, 2.01, 87.36) rot=(0.00, 305.86, 0.00) scale=(0.91, 0.91, 0.91) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 43 pos=(-60.28, 2.36, 90.54) rot=(0.00, 68.00, 0.00) scale=(1.13, 1.13, 1.13) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 49 pos=(-74.06, 0.20, 48.22) rot=(0.00, 274.35, 0.00) scale=(1.83, 1.83, 1.83) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 50 pos=(-55.08, 2.92, 82.73) rot=(0.00, 92.95, 0.00) scale=(1.24, 1.24, 1.24) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 51 pos=(-74.75, 0.13, 36.72) rot=(0.00, 266.10, 0.00) scale=(2.88, 2.88, 2.88) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 52 pos=(-56.04, 0.09, 5.48) rot=(0.00, 170.01, 0.00) scale=(1.31, 1.31, 1.31) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 53 pos=(59.39, -0.16, 41.66) rot=(0.00, 108.13, 0.00) scale=(0.85, 0.85, 0.85) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 55 pos=(16.21, 0.11, -5.22) rot=(0.00, 280.71, 0.00) scale=(1.49, 1.49, 1.49) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 58 pos=(73.08, 0.15, -87.51) rot=(0.00, 287.96, 0.00) scale=(1.60, 1.60, 1.60) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 60 pos=(-94.37, 0.09, 43.68) rot=(0.00, 222.95, 0.00) scale=(3.08, 3.08, 3.08) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 61 pos=(75.94, 0.08, -112.12) rot=(0.00, 258.71, 0.00) scale=(1.97, 1.97, 1.97) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 62 pos=(-13.56, 0.10, 8.19) rot=(0.00, 310.17, 0.00) scale=(2.99, 2.99, 2.99) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 63 pos=(80.79, 0.12, -61.98) rot=(0.00, 69.92, 0.00) scale=(1.74, 1.74, 1.74) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 64 pos=(71.45, 0.13, 9.42) rot=(0.00, 207.62, 0.00) scale=(2.86, 2.86, 2.86) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 66 pos=(44.28, 3.73, 99.32) rot=(0.00, 263.43, 0.00) scale=(1.08, 1.08, 1.08) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 68 pos=(78.65, 0.04, 27.52) rot=(0.00, 38.66, 0.00) scale=(2.81, 2.81, 2.81) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 72 pos=(-61.67, 0.65, 57.53) rot=(0.00, 201.04, 0.00) scale=(0.80, 0.80, 0.80) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 78 pos=(68.81, 0.14, 8.45) rot=(0.00, 96.11, 0.00) scale=(2.63, 2.63, 2.63) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 79 pos=(114.40, 0.12, 43.13) rot=(0.00, 92.94, 0.00) scale=(2.32, 2.32, 2.32) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 81 pos=(43.07, 2.09, 73.92) rot=(0.00, 154.16, 0.00) scale=(3.05, 3.05, 3.05) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 82 pos=(84.34, 1.01, 65.59) rot=(0.00, 23.75, 0.00) scale=(1.00, 1.00, 1.00) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 83 pos=(-29.42, 0.05, 0.05) rot=(0.00, 111.28, 0.00) scale=(2.68, 2.68, 2.68) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 85 pos=(-57.86, 0.12, -11.87) rot=(0.00, 167.28, 0.00) scale=(2.04, 2.04, 2.04) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_07 cluster 86 pos=(93.58, 0.10, -23.13) rot=(0.00, 258.67, 0.00) scale=(1.80, 1.80, 1.80) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Approved rock_09 cluster 87 pos=(-43.52, 2.65, 80.15) rot=(0.00, 29.27, 0.00) scale=(2.02, 2.02, 2.02) col=BoxCollider layer=0 comps=LODGroup,BoxCollider
+  Distant rocky massif 0 pos=(-330.00, -10.00, 220.00) rot=(0.00, 0.00, 0.00) scale=(110.00, 65.00, 85.00) mesh=rock_09_LOD2(420v) mat=Inherited_1 on=True layer=0 comps=
+  Distant rocky massif 1 pos=(-270.00, -10.00, 240.00) rot=(0.00, 0.00, 0.00) scale=(110.00, 75.00, 85.00) mesh=rock_09_LOD2(420v) mat=Inherited_1 on=True layer=0 comps=
+  Distant rocky massif 2 pos=(-210.00, -10.00, 260.00) rot=(0.00, 0.00, 0.00) scale=(110.00, 50.00, 85.00) mesh=rock_09_LOD2(420v) mat=Inherited_1 on=True layer=0 comps=
+  Distant rocky massif 3 pos=(-150.00, -10.00, 220.00) rot=(0.00, 0.00, 0.00) scale=(110.00, 60.00, 85.00) mesh=rock_09_LOD2(420v) mat=Inherited_1 on=True layer=0 comps=
+  Distant rocky massif 4 pos=(-90.00, -10.00, 240.00) rot=(0.00, 0.00, 0.00) scale=(110.00, 70.00, 85.00) mesh=rock_09_LOD2(420v) mat=Inherited_1 on=True layer=0 comps=
+  Distant rocky massif 5 pos=(-30.00, -10.00, 260.00) rot=(0.00, 0.00, 0.00) scale=(110.00, 80.00, 85.00) mesh=rock_09_LOD2(420v) mat=Inherited_1 on=True layer=0 comps=
+  Distant rocky massif 6 pos=(30.00, -10.00, 220.00) rot=(0.00, 0.00, 0.00) scale=(110.00, 80.00, 85.00) mesh=rock_09_LOD2(420v) mat=Inherited_1 on=True layer=0 comps=
+  Distant rocky massif 7 pos=(90.00, -10.00, 240.00) rot=(0.00, 0.00, 0.00) scale=(110.00, 70.00, 85.00) mesh=rock_09_LOD2(420v) mat=Inherited_1 on=True layer=0 comps=
+  Distant rocky massif 8 pos=(150.00, -10.00, 260.00) rot=(0.00, 0.00, 0.00) scale=(110.00, 60.00, 85.00) mesh=rock_09_LOD2(420v) mat=Inherited_1 on=True layer=0 comps=
+  Distant rocky massif 9 pos=(210.00, -10.00, 220.00) rot=(0.00, 0.00, 0.00) scale=(110.00, 50.00, 85.00) mesh=rock_09_LOD2(420v) mat=Inherited_1 on=True layer=0 comps=
+  Distant rocky massif 10 pos=(270.00, -10.00, 240.00) rot=(0.00, 0.00, 0.00) scale=(110.00, 75.00, 85.00) mesh=rock_09_LOD2(420v) mat=Inherited_1 on=True layer=0 comps=
+  Distant rocky massif 11 pos=(330.00, -10.00, 260.00) rot=(0.00, 0.00, 0.00) scale=(110.00, 65.00, 85.00) mesh=rock_09_LOD2(420v) mat=Inherited_1 on=True layer=0 comps=
+  Research station 0 pos=(35.00, 0.42, 23.00) rot=(0.00, 0.00, 0.00) scale=(0.35, 0.40, 0.35) mesh=Cylinder(88v) mat=Inherited_14 on=True col=CapsuleCollider layer=0 comps=CapsuleCollider,ResearchTarget
+  Research station 1 pos=(55.00, 0.73, 37.00) rot=(0.00, 0.00, 0.00) scale=(0.35, 0.40, 0.35) mesh=Cylinder(88v) mat=Inherited_14 on=True col=CapsuleCollider layer=0 comps=CapsuleCollider,ResearchTarget
+  Research station 2 pos=(0.00, 1.80, 74.00) rot=(0.00, 0.00, 0.00) scale=(0.35, 0.40, 0.35) mesh=Cylinder(88v) mat=Inherited_14 on=True col=CapsuleCollider layer=0 comps=CapsuleCollider,ResearchTarget
+  Research station 3 pos=(25.00, 0.40, -43.00) rot=(0.00, 0.00, 0.00) scale=(0.35, 0.40, 0.35) mesh=Cylinder(88v) mat=Inherited_14 on=True col=CapsuleCollider layer=0 comps=CapsuleCollider,ResearchTarget
+  Research station 4 pos=(-16.00, 0.51, -24.00) rot=(0.00, 0.00, 0.00) scale=(0.35, 0.40, 0.35) mesh=Cylinder(88v) mat=Inherited_14 on=True col=CapsuleCollider layer=0 comps=CapsuleCollider,ResearchTarget
+  Communications support truss pos=(-16.00, 0.00, -29.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) mesh=CommsTruss(720v) mat=Machined graphite alloy on=True layer=0 comps=
+== Exploration
+02_LocalProvisionalExploration pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) layer=0 comps=MarsPrototype
+  Astronaut_OriginalPrimitivePrototype pos=(-42.00, 0.10, -68.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) col=CharacterController layer=8 comps=CharacterController
+  Rover_DrivableKinematicPrototype pos=(-15.00, 0.03, -93.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) col=CharacterController layer=8 comps=CharacterController
+  ThirdPerson_RoverFollowCamera pos=(-42.00, 2.70, -72.50) rot=(16.70, 0.00, 0.00) scale=(1.00, 1.00, 1.00) layer=0 comps=Camera,UniversalAdditionalCameraData,AudioListener
+  BoundedLocalDust_NoVolumetrics pos=(0.00, 0.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(1.00, 1.00, 1.00) mat=Inherited_25 on=True layer=8 comps=ParticleSystem,ParticleSystemRenderer
+  MissionHUD_Prototype pos=(320.00, 240.00, 0.00) rot=(0.00, 0.00, 0.00) scale=(0.58, 0.58, 0.58) layer=0 comps=RectTransform,Canvas,CanvasScaler
+== Materials
+Inherited_9 | Universal Render Pipeline/Lit | base=- normal=- color=RGBA(0.760, 0.780, 0.740, 1.000) smooth=0.16 metal=0 | Assets/AstroGateway/ProductionVisual/Materials/Inherited_9.mat
+Inherited_6 | Universal Render Pipeline/Lit | base=- normal=- color=RGBA(0.120, 0.200, 0.220, 1.000) smooth=0.55 metal=0 | Assets/AstroGateway/ProductionVisual/Materials/Inherited_6.mat
+Inherited_12 | Universal Render Pipeline/Lit | base=- normal=- color=RGBA(0.780, 0.800, 0.790, 1.000) smooth=0.5 metal=0 | Assets/AstroGateway/ProductionVisual/Materials/Inherited_12.mat
+Inherited_0 | Universal Render Pipeline/Lit | base=rock_07_Diffuse tile=(1.00, 1.00) normal=rock_07_nor_gl color=RGBA(0.620, 0.490, 0.370, 1.000) smooth=1 metal=0 | Assets/AstroGateway/ProductionVisual/Materials/Inherited_0.mat
+Inherited_2 | Universal Render Pipeline/Lit | base=PhotovoltaicGrid tile=(1.00, 1.00) normal=- color=RGBA(1.000, 1.000, 1.000, 1.000) smooth=0.32 metal=0 | Assets/AstroGateway/ProductionVisual/Materials/Inherited_2.mat
+Inherited_1 | Universal Render Pipeline/Lit | base=rock_09_Diffuse tile=(1.00, 1.00) normal=rock_09_nor_gl color=RGBA(0.530, 0.430, 0.330, 1.000) smooth=1 metal=0 | Assets/AstroGateway/ProductionVisual/Materials/Inherited_1.mat
+Dusty tire elastomer | Universal Render Pipeline/Lit | base=- normal=- color=RGBA(0.065, 0.055, 0.045, 1.000) smooth=0.08 metal=0 | Assets/AstroGateway/ProductionVisual/Materials/Dusty tire elastomer.mat
+Brushed aluminum | Universal Render Pipeline/Lit | base=- normal=- color=RGBA(0.550, 0.600, 0.620, 1.000) smooth=0.3 metal=0.75 | Assets/AstroGateway/ProductionVisual/Materials/Brushed aluminum.mat
+Inherited_5 | Universal Render Pipeline/Lit | base=- normal=- color=RGBA(0.320, 0.340, 0.330, 1.000) smooth=0.3 metal=0.55 | Assets/AstroGateway/ProductionVisual/Materials/Inherited_5.mat
+Inherited_17 | Universal Render Pipeline/Lit | base=- normal=- color=RGBA(0.065, 0.090, 0.110, 1.000) smooth=0.5 metal=0 | Assets/AstroGateway/ProductionVisual/Materials/Inherited_17.mat
+Machined graphite alloy | Universal Render Pipeline/Lit | base=- normal=- color=RGBA(0.220, 0.250, 0.260, 1.000) smooth=0.28 metal=0.55 | Assets/AstroGateway/ProductionVisual/Materials/Machined graphite alloy.mat
+Inherited_3 | Universal Render Pipeline/Lit | base=- normal=- color=RGBA(0.170, 0.180, 0.160, 1.000) smooth=0.16 metal=0 | Assets/AstroGateway/ProductionVisual/Materials/Inherited_3.mat
+Inherited_14 | Universal Render Pipeline/Lit | base=- normal=- color=RGBA(0.620, 0.270, 0.120, 1.000) smooth=0.16 metal=0 | Assets/AstroGateway/ProductionVisual/Materials/Inherited_14.mat
+Pressure shell ceramic composite | Universal Render Pipeline/Lit | base=- normal=- color=RGBA(0.790, 0.810, 0.790, 1.000) smooth=0.22 metal=0 | Assets/AstroGateway/ProductionVisual/Materials/Pressure shell ceramic composite.mat
+Opaque protective visor glazing | Universal Render Pipeline/Lit | base=- normal=- color=RGBA(0.035, 0.075, 0.090, 1.000) smooth=0.68 metal=0.15 | Assets/AstroGateway/ProductionVisual/Materials/Opaque protective visor glazing.mat
+Inherited_24 | Universal Render Pipeline/Lit | base=- normal=- color=RGBA(0.065, 0.090, 0.110, 1.000) smooth=0.18 metal=0 | Assets/AstroGateway/ProductionVisual/Materials/Inherited_24.mat
+Inherited_4 | Universal Render Pipeline/Lit | base=- normal=- color=RGBA(0.065, 0.090, 0.110, 1.000) smooth=0.18 metal=0 | Assets/AstroGateway/ProductionVisual/Materials/Inherited_4.mat
+Inherited_23 | Universal Render Pipeline/Lit | base=- normal=- color=RGBA(0.065, 0.090, 0.110, 1.000) smooth=0.18 metal=0 | Assets/AstroGateway/ProductionVisual/Materials/Inherited_23.mat
+Inherited_8 | Universal Render Pipeline/Lit | base=- normal=- color=RGBA(0.650, 0.300, 0.130, 1.000) smooth=0.25 metal=0 | Assets/AstroGateway/ProductionVisual/Materials/Inherited_8.mat
+Inherited_16 | Universal Render Pipeline/Lit | base=- normal=- color=RGBA(0.065, 0.090, 0.110, 1.000) smooth=0.18 metal=0 | Assets/AstroGateway/ProductionVisual/Materials/Inherited_16.mat
+Inherited_11 | Universal Render Pipeline/Lit | base=- normal=- color=RGBA(0.080, 0.100, 0.105, 1.000) smooth=0.2 metal=0 | Assets/AstroGateway/ProductionVisual/Materials/Inherited_11.mat
+Inherited_22 | Universal Render Pipeline/Lit | base=- normal=- color=RGBA(0.065, 0.090, 0.110, 1.000) smooth=0.18 metal=0 | Assets/AstroGateway/ProductionVisual/Materials/Inherited_22.mat
+Inherited_7 | Universal Render Pipeline/Lit | base=- normal=- color=RGBA(0.780, 0.280, 0.090, 1.000) smooth=0.5 metal=0 | Assets/AstroGateway/ProductionVisual/Materials/Inherited_7.mat
+Restrained identification orange | Universal Render Pipeline/Lit | base=- normal=- color=RGBA(0.500, 0.220, 0.085, 1.000) smooth=0.2 metal=0 | Assets/AstroGateway/ProductionVisual/Materials/Restrained identification orange.mat
+Inherited_10 | Universal Render Pipeline/Lit | base=sandy_gravel_Diffuse tile=(1.00, 1.00) normal=sandy_gravel_nor_gl color=RGBA(0.550, 0.390, 0.270, 1.000) smooth=1 metal=0 | Assets/AstroGateway/ProductionVisual/Materials/Inherited_10.mat
+Inherited_13 | Universal Render Pipeline/Lit | base=- normal=- color=RGBA(0.065, 0.090, 0.110, 1.000) smooth=0.18 metal=0 | Assets/AstroGateway/ProductionVisual/Materials/Inherited_13.mat
+Inherited_20 | Universal Render Pipeline/Lit | base=sandy_gravel_Diffuse tile=(125.00, 125.00) normal=sandy_gravel_nor_gl color=RGBA(0.550, 0.390, 0.270, 1.000) smooth=1 metal=0 | Assets/AstroGateway/ProductionVisual/Materials/Inherited_20.mat
+Inherited_25 | Universal Render Pipeline/Particles/Unlit | base=- normal=- color=RGBA(0.630, 0.420, 0.260, 0.180) smooth=-1 metal=-1 | Assets/AstroGateway/ProductionVisual/Materials/Inherited_25.mat
+== Lights
+Warm directional sunlight Directional int=1.25 color=RGBA(1.000, 0.780, 0.570, 1.000) shadows=Soft rot=(16.00, 298.00, 0.00)
+== Cameras
+ThirdPerson_RoverFollowCamera enabled=True fov=62 near=0.15 far=330 pos=(-42.00, 2.70, -72.50)
+Non-gameplay scenic overview enabled=False fov=58 near=0.3 far=800 pos=(63.00, 28.00, -102.00)
+== URP VisualUpgrade_URP hdr=False msaa=2 shadowDist=55 cascades=2 softShadows=False depthTex=False opaqueTex=False renderer=Assets/Settings/Mobile_Renderer.asset features=
+== Volume
+Bloom active=True
+DepthOfField active=False
+PaniniProjection active=False
+== Render settings fog=True Linear sky=VisualUpgradeSky/AstroGateway/MarsGradient ambient=Trilight
+== Totals renderers=341 approx_triangles_submesh0=536588

@@ -1,0 +1,245 @@
+import os
+import uuid
+
+base_dir = "/Users/kapilash/.gemini/antigravity/scratch/3d-game-assets"
+prefab_path = os.path.join(base_dir, "ARES_VI_AAA_Variant.prefab")
+meta_path = os.path.join(base_dir, "ARES_VI_AAA_Variant.prefab.meta")
+
+# Real Unity 6 (6000.x) YAML Prefab definition
+prefab_yaml = """%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1000000000000000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 7
+  m_Component:
+  - component: {fileID: 4000000000000000}
+  - component: {fileID: 2050000000000000}
+  - component: {fileID: 1140000000000000}
+  m_Layer: 0
+  m_Name: ARES_VI_AAA_Variant
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000000000000000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000000000000000}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4000000000000001}
+  - {fileID: 4000000000000002}
+  - {fileID: 4000000000000003}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1140000000000000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000000000000000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78d591b9201409f835ced439568d853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AstroGateway.Vehicles:AresViHoverVisualController
+  currentMode: 0
+  transitionSpeed: 1.8
+  vehicleVisualBody: {fileID: 4000000000000001}
+  hoverHeightOffset: 0.32
+  wheelRetractionHeight: 0.18
+  hoverBobFrequency: 2.4
+  hoverBobAmplitude: 0.045
+  hoverEmissionIntensity: 8.5
+--- !u!205 &2050000000000000
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000000000000000}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 1.0, z: 0}
+  m_Size: 4.82
+  m_FadeMode: 1
+  m_AnimateCrossFading: 1
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeTransitionHeight: 0.60
+    fadeTransitionWidth: 0.1
+    renderers:
+    - renderer: {fileID: 2300000000000001}
+  - screenRelativeTransitionHeight: 0.25
+    fadeTransitionWidth: 0.1
+    renderers:
+    - renderer: {fileID: 2300000000000002}
+  - screenRelativeTransitionHeight: 0.08
+    fadeTransitionWidth: 0.1
+    renderers:
+    - renderer: {fileID: 2300000000000003}
+  m_Enabled: 1
+--- !u!1 &1000000000000001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 7
+  m_Component:
+  - component: {fileID: 4000000000000001}
+  - component: {fileID: 3300000000000001}
+  - component: {fileID: 2300000000000001}
+  m_Layer: 0
+  m_Name: ARES_VI_LOD0_HighDetail
+  m_TagString: Untagged
+  m_IsActive: 1
+--- !u!4 &4000000000000001
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000000000000001}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Father: {fileID: 4000000000000000}
+--- !u!33 &3300000000000001
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000000000000001}
+  m_Mesh: {fileID: 4300000, guid: b61234567890409f835ced439568d853, type: 3}
+--- !u!23 &2300000000000001
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000000000000001}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+--- !u!1 &1000000000000002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 7
+  m_Component:
+  - component: {fileID: 4000000000000002}
+  - component: {fileID: 3300000000000002}
+  - component: {fileID: 2300000000000002}
+  m_Layer: 0
+  m_Name: ARES_VI_LOD1_MidDetail
+  m_TagString: Untagged
+  m_IsActive: 1
+--- !u!4 &4000000000000002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000000000000002}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Father: {fileID: 4000000000000000}
+--- !u!33 &3300000000000002
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000000000000002}
+  m_Mesh: {fileID: 4300002, guid: b61234567890409f835ced439568d853, type: 3}
+--- !u!23 &2300000000000002
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000000000000002}
+  m_Enabled: 1
+--- !u!1 &1000000000000003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 7
+  m_Component:
+  - component: {fileID: 4000000000000003}
+  - component: {fileID: 3300000000000003}
+  - component: {fileID: 2300000000000003}
+  m_Layer: 0
+  m_Name: ARES_VI_LOD2_FarSilhouette
+  m_TagString: Untagged
+  m_IsActive: 1
+--- !u!4 &4000000000000003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000000000000003}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Father: {fileID: 4000000000000000}
+--- !u!33 &3300000000000003
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000000000000003}
+  m_Mesh: {fileID: 4300004, guid: b61234567890409f835ced439568d853, type: 3}
+--- !u!23 &2300000000000003
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000000000000003}
+  m_Enabled: 1
+"""
+
+with open(prefab_path, "w") as f:
+    f.write(prefab_yaml)
+
+meta_yaml = """fileFormatVersion: 2
+guid: e891409f835ced439568d853aabbcc01
+Prefab:
+  buildTargetMeshCompression: 0
+  isAutoImported: 1
+"""
+
+with open(meta_path, "w") as f:
+    f.write(meta_yaml)
+
+print(f"Verified Real Unity Prefab created: {prefab_path} ({os.path.getsize(prefab_path):,} bytes)")

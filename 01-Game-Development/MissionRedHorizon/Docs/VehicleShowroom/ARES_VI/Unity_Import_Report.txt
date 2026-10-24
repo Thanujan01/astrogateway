@@ -1,0 +1,259 @@
+ARES-VI Unity import report (measured in Unity 6000.6.4f1, 2026-10-20 14:09:26)
+
+== Default import (before any material remap)
+ares_vi_aaa_master.obj: embedded materials 8: Mat_CanopyGlass [Universal Render Pipeline/Lit], Mat_GoldFoil [Universal Render Pipeline/Lit], Mat_GraphiteTrim [Universal Render Pipeline/Lit], Mat_CyanEnergy [Universal Render Pipeline/Lit], Mat_TitaniumFrame [Universal Render Pipeline/Lit], Mat_CarbonTreads [Universal Render Pipeline/Lit], Mat_CeramicWhite [Universal Render Pipeline/Lit], Mat_MartianOrange [Universal Render Pipeline/Lit]
+ares_vi_aaa_lod1.obj: embedded materials 8: Mat_TitaniumFrame [Universal Render Pipeline/Lit], Mat_CarbonTreads [Universal Render Pipeline/Lit], Mat_CeramicWhite [Universal Render Pipeline/Lit], Mat_MartianOrange [Universal Render Pipeline/Lit], Mat_CanopyGlass [Universal Render Pipeline/Lit], Mat_GoldFoil [Universal Render Pipeline/Lit], Mat_GraphiteTrim [Universal Render Pipeline/Lit], Mat_CyanEnergy [Universal Render Pipeline/Lit]
+ares_vi_aaa_lod2.obj: embedded materials 7: Mat_TitaniumFrame [Universal Render Pipeline/Lit], Mat_CarbonTreads [Universal Render Pipeline/Lit], Mat_CeramicWhite [Universal Render Pipeline/Lit], Mat_MartianOrange [Universal Render Pipeline/Lit], Mat_GoldFoil [Universal Render Pipeline/Lit], Mat_GraphiteTrim [Universal Render Pipeline/Lit], Mat_CyanEnergy [Universal Render Pipeline/Lit]
+ares_vi_aaa_master.glb: importer AssetImporter, main asset type DefaultAsset (no glTF importer package in Packages/manifest.json; GLB is not importable as a model here)
+
+== URP materials created from ares_vi_aaa_master.mtl (no texture maps referenced by the MTL)
+Mat_CeramicWhite: base #E5E6E2 metallic 0.00 smoothness 0.47 surface Opaque emission off maps: none
+Mat_GraphiteTrim: base #252B32 metallic 0.00 smoothness 0.42 surface Opaque emission off maps: none
+Mat_TitaniumFrame: base #89939B metallic 0.85 smoothness 0.61 surface Opaque emission off maps: none
+Mat_MartianOrange: base #D96A29 metallic 0.00 smoothness 0.52 surface Opaque emission off maps: none
+Mat_GoldFoil: base #F2C729 metallic 0.85 smoothness 0.69 surface Opaque emission off maps: none
+Mat_CarbonTreads: base #1C1F24 metallic 0.00 smoothness 0.32 surface Opaque emission off maps: none
+Mat_CanopyGlass: base #294761 metallic 0.00 smoothness 0.81 surface Transparent emission off maps: none
+Mat_CyanEnergy: base #00C9E8 metallic 0.00 smoothness 0.89 surface Transparent emission #00FFFF maps: none
+
+== ares_vi_aaa_master.obj (globalScale 1, useFileScale True, fileScale 1)
+GameObjects 212 (root + children), hierarchy depth 1, mesh renderers 211
+triangles 15518, vertices 38110, submeshes 211, meshes without normals 0, meshes without UVs 0
+triangles whose imported normal opposes Unity front-face winding: 7010 (45.2%)
+materials used 8: ARES_Mat_TitaniumFrame [Universal Render Pipeline/Lit], ARES_Mat_GoldFoil [Universal Render Pipeline/Lit], ARES_Mat_GraphiteTrim [Universal Render Pipeline/Lit], ARES_Mat_CyanEnergy [Universal Render Pipeline/Lit], ARES_Mat_CanopyGlass [Universal Render Pipeline/Lit], ARES_Mat_CeramicWhite [Universal Render Pipeline/Lit], ARES_Mat_MartianOrange [Universal Render Pipeline/Lit], ARES_Mat_CarbonTreads [Universal Render Pipeline/Lit]
+animation clips 0 (none)
+bounds as imported (no rotation): centre (0.000, 0.000, 1.342) size (2.899, 3.206, 2.757)
+children and pivots (localPosition / mesh-bounds centre / pivot-to-centre distance):
+  Antenna_FeedHorn: pivot (0.000, 0.000, 0.000) centre (0.380, -0.500, 1.810) offset 1.916 m tris 32 mat ARES_Mat_TitaniumFrame
+  Antenna_GoldDish: pivot (0.000, 0.000, 0.000) centre (0.380, -0.680, 1.860) offset 2.017 m tris 6 mat ARES_Mat_GoldFoil
+  Antenna_Pillar: pivot (0.000, 0.000, 0.000) centre (0.380, -0.650, 1.480) offset 1.661 m tris 32 mat ARES_Mat_TitaniumFrame
+  Arm_CableClamp1: pivot (0.000, 0.000, 0.000) centre (0.440, 1.390, 0.950) offset 1.740 m tris 24 mat ARES_Mat_TitaniumFrame
+  Arm_CableClamp2: pivot (0.000, 0.000, 0.000) centre (0.440, 1.390, 0.750) offset 1.640 m tris 24 mat ARES_Mat_TitaniumFrame
+  Arm_DrillBit_Core: pivot (0.000, 0.000, 0.000) centre (0.440, 1.390, 0.220) offset 1.474 m tris 32 mat ARES_Mat_TitaniumFrame
+  Arm_DrillHousing: pivot (0.000, 0.000, 0.000) centre (0.440, 1.390, 0.420) offset 1.517 m tris 44 mat ARES_Mat_GraphiteTrim
+  Arm_DrillTeeth: pivot (0.000, 0.000, 0.000) centre (0.440, 1.390, 0.110) offset 1.462 m tris 192 mat ARES_Mat_TitaniumFrame
+  Arm_ElbowActuator: pivot (0.000, 0.000, 0.000) centre (0.440, 1.400, 1.130) offset 1.852 m tris 40 mat ARES_Mat_TitaniumFrame
+  Arm_ForearmBoom: pivot (0.000, 0.000, 0.000) centre (0.440, 1.390, 0.875) offset 1.700 m tris 44 mat ARES_Mat_GoldFoil
+  Arm_LiftCylinder: pivot (0.000, 0.000, 0.000) centre (0.440, 0.950, 0.980) offset 1.434 m tris 32 mat ARES_Mat_TitaniumFrame
+  Arm_LiftPiston: pivot (0.000, 0.000, 0.000) centre (0.440, 1.100, 0.980) offset 1.538 m tris 32 mat ARES_Mat_TitaniumFrame
+  Arm_ShoulderBase: pivot (0.000, 0.000, 0.000) centre (0.440, 0.820, 1.140) offset 1.472 m tris 48 mat ARES_Mat_TitaniumFrame
+  Arm_UpperBoom: pivot (0.000, 0.000, 0.000) centre (0.440, 1.100, 1.130) offset 1.637 m tris 44 mat ARES_Mat_GoldFoil
+  Arm_WristPitch: pivot (0.000, 0.000, 0.000) centre (0.440, 1.390, 0.500) offset 1.541 m tris 32 mat ARES_Mat_TitaniumFrame
+  Arm_WristRoll: pivot (0.000, 0.000, 0.000) centre (0.440, 1.390, 0.580) offset 1.569 m tris 32 mat ARES_Mat_TitaniumFrame
+  AuxThruster_ML: pivot (0.000, 0.000, 0.000) centre (0.700, 0.000, 0.540) offset 0.884 m tris 48 mat ARES_Mat_CyanEnergy
+  AuxThruster_ML_Coils: pivot (0.000, 0.000, 0.000) centre (0.700, 0.000, 0.540) offset 0.884 m tris 192 mat ARES_Mat_TitaniumFrame
+  AuxThruster_MR: pivot (0.000, 0.000, 0.000) centre (-0.700, 0.000, 0.540) offset 0.884 m tris 48 mat ARES_Mat_CyanEnergy
+  AuxThruster_MR_Coils: pivot (0.000, 0.000, 0.000) centre (-0.700, 0.000, 0.540) offset 0.884 m tris 192 mat ARES_Mat_TitaniumFrame
+  Chassis_MainSpine: pivot (0.000, 0.000, 0.000) centre (0.000, -0.025, 0.600) offset 0.601 m tris 44 mat ARES_Mat_TitaniumFrame
+  Cockpit_CanopyGlass: pivot (0.000, 0.000, 0.000) centre (0.000, 0.650, 1.420) offset 1.562 m tris 16 mat ARES_Mat_CanopyGlass
+  Cockpit_CenterConsole: pivot (0.000, 0.000, 0.000) centre (0.000, 0.350, 0.920) offset 0.984 m tris 44 mat ARES_Mat_TitaniumFrame
+  Cockpit_DashBezel: pivot (0.000, 0.000, 0.000) centre (0.000, 0.640, 1.130) offset 1.299 m tris 12 mat ARES_Mat_GraphiteTrim
+  Cockpit_HeaderRollbar: pivot (0.000, 0.000, 0.000) centre (0.000, 0.410, 1.650) offset 1.700 m tris 12 mat ARES_Mat_CeramicWhite
+  Cockpit_HUD_Center: pivot (0.000, 0.000, 0.000) centre (0.000, 0.700, 1.170) offset 1.363 m tris 12 mat ARES_Mat_CyanEnergy
+  Cockpit_HUD_Pilot: pivot (0.000, 0.000, 0.000) centre (0.340, 0.700, 1.150) offset 1.389 m tris 12 mat ARES_Mat_CyanEnergy
+  Cockpit_HUD_Spec: pivot (0.000, 0.000, 0.000) centre (-0.340, 0.700, 1.150) offset 1.389 m tris 12 mat ARES_Mat_CyanEnergy
+  Cockpit_Pillar_L: pivot (0.000, 0.000, 0.000) centre (0.590, 0.620, 1.420) offset 1.658 m tris 32 mat ARES_Mat_CeramicWhite
+  Cockpit_Pillar_R: pivot (0.000, 0.000, 0.000) centre (-0.590, 0.620, 1.420) offset 1.658 m tris 32 mat ARES_Mat_CeramicWhite
+  Cockpit_SeatPilot: pivot (0.000, 0.000, 0.000) centre (0.280, 0.127, 1.151) offset 1.191 m tris 236 mat ARES_Mat_GraphiteTrim
+  Cockpit_SeatSpecialist: pivot (0.000, 0.000, 0.000) centre (-0.280, 0.127, 1.151) offset 1.191 m tris 236 mat ARES_Mat_GraphiteTrim
+  Cockpit_Yoke_L_Col: pivot (0.000, 0.000, 0.000) centre (0.280, 0.450, 0.960) offset 1.097 m tris 24 mat ARES_Mat_TitaniumFrame
+  Cockpit_Yoke_L_Grip: pivot (0.000, 0.000, 0.000) centre (0.280, 0.450, 1.050) offset 1.176 m tris 12 mat ARES_Mat_GraphiteTrim
+  Cockpit_Yoke_L_Trig: pivot (0.000, 0.000, 0.000) centre (0.280, 0.480, 1.050) offset 1.188 m tris 24 mat ARES_Mat_MartianOrange
+  Cockpit_Yoke_R_Col: pivot (0.000, 0.000, 0.000) centre (-0.280, 0.450, 0.960) offset 1.097 m tris 24 mat ARES_Mat_TitaniumFrame
+  Cockpit_Yoke_R_Grip: pivot (0.000, 0.000, 0.000) centre (-0.280, 0.450, 1.050) offset 1.176 m tris 12 mat ARES_Mat_GraphiteTrim
+  Cockpit_Yoke_R_Trig: pivot (0.000, 0.000, 0.000) centre (-0.280, 0.480, 1.050) offset 1.188 m tris 24 mat ARES_Mat_MartianOrange
+  FrontBumper_MainBar: pivot (0.000, 0.000, 0.000) centre (0.000, 1.180, 0.720) offset 1.382 m tris 48 mat ARES_Mat_TitaniumFrame
+  FrontBumper_Shackle_L: pivot (0.000, 0.000, 0.000) centre (0.450, 1.200, 0.680) offset 1.451 m tris 32 mat ARES_Mat_MartianOrange
+  FrontBumper_Shackle_R: pivot (0.000, 0.000, 0.000) centre (-0.450, 1.200, 0.680) offset 1.451 m tris 32 mat ARES_Mat_MartianOrange
+  FrontBumper_Support_L: pivot (0.000, 0.000, 0.000) centre (0.600, 1.100, 0.620) offset 1.398 m tris 32 mat ARES_Mat_TitaniumFrame
+  FrontBumper_Support_R: pivot (0.000, 0.000, 0.000) centre (-0.600, 1.100, 0.620) offset 1.398 m tris 32 mat ARES_Mat_TitaniumFrame
+  FrontBumper_WinchCable: pivot (0.000, 0.000, 0.000) centre (0.000, 1.150, 0.720) offset 1.357 m tris 40 mat ARES_Mat_TitaniumFrame
+  FrontBumper_WinchDrum: pivot (0.000, 0.000, 0.000) centre (0.000, 1.150, 0.720) offset 1.357 m tris 48 mat ARES_Mat_GraphiteTrim
+  Hover_FL_Nacelle: pivot (0.000, 0.000, 0.000) centre (0.560, 0.680, 0.510) offset 1.018 m tris 44 mat ARES_Mat_TitaniumFrame
+  Hover_FL_PlasmaNozzle: pivot (0.000, 0.000, 0.000) centre (0.560, 0.680, 0.400) offset 0.967 m tris 48 mat ARES_Mat_CeramicWhite
+  Hover_FL_StatorCoil: pivot (0.000, 0.000, 0.000) centre (0.560, 0.680, 0.420) offset 0.976 m tris 64 mat ARES_Mat_CyanEnergy
+  Hover_FL_StatorPoles: pivot (0.000, 0.000, 0.000) centre (0.560, 0.680, 0.420) offset 0.976 m tris 384 mat ARES_Mat_GraphiteTrim
+  Hover_FL_VectorVane_0: pivot (0.000, 0.000, 0.000) centre (0.420, 0.680, 0.370) offset 0.881 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_FL_VectorVane_1: pivot (0.000, 0.000, 0.000) centre (0.461, 0.779, 0.370) offset 0.978 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_FL_VectorVane_2: pivot (0.000, 0.000, 0.000) centre (0.560, 0.820, 0.370) offset 1.060 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_FL_VectorVane_3: pivot (0.000, 0.000, 0.000) centre (0.659, 0.779, 0.370) offset 1.085 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_FL_VectorVane_4: pivot (0.000, 0.000, 0.000) centre (0.700, 0.680, 0.370) offset 1.044 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_FL_VectorVane_5: pivot (0.000, 0.000, 0.000) centre (0.659, 0.581, 0.370) offset 0.953 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_FL_VectorVane_6: pivot (0.000, 0.000, 0.000) centre (0.560, 0.540, 0.370) offset 0.861 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_FL_VectorVane_7: pivot (0.000, 0.000, 0.000) centre (0.461, 0.581, 0.370) offset 0.829 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_FR_Nacelle: pivot (0.000, 0.000, 0.000) centre (-0.560, 0.680, 0.510) offset 1.018 m tris 44 mat ARES_Mat_TitaniumFrame
+  Hover_FR_PlasmaNozzle: pivot (0.000, 0.000, 0.000) centre (-0.560, 0.680, 0.400) offset 0.967 m tris 48 mat ARES_Mat_CeramicWhite
+  Hover_FR_StatorCoil: pivot (0.000, 0.000, 0.000) centre (-0.560, 0.680, 0.420) offset 0.976 m tris 64 mat ARES_Mat_CyanEnergy
+  Hover_FR_StatorPoles: pivot (0.000, 0.000, 0.000) centre (-0.560, 0.680, 0.420) offset 0.976 m tris 384 mat ARES_Mat_GraphiteTrim
+  Hover_FR_VectorVane_0: pivot (0.000, 0.000, 0.000) centre (-0.700, 0.680, 0.370) offset 1.044 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_FR_VectorVane_1: pivot (0.000, 0.000, 0.000) centre (-0.659, 0.779, 0.370) offset 1.085 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_FR_VectorVane_2: pivot (0.000, 0.000, 0.000) centre (-0.560, 0.820, 0.370) offset 1.060 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_FR_VectorVane_3: pivot (0.000, 0.000, 0.000) centre (-0.461, 0.779, 0.370) offset 0.978 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_FR_VectorVane_4: pivot (0.000, 0.000, 0.000) centre (-0.420, 0.680, 0.370) offset 0.881 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_FR_VectorVane_5: pivot (0.000, 0.000, 0.000) centre (-0.461, 0.581, 0.370) offset 0.829 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_FR_VectorVane_6: pivot (0.000, 0.000, 0.000) centre (-0.560, 0.540, 0.370) offset 0.861 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_FR_VectorVane_7: pivot (0.000, 0.000, 0.000) centre (-0.659, 0.581, 0.370) offset 0.953 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_RL_Nacelle: pivot (0.000, 0.000, 0.000) centre (0.560, -0.680, 0.510) offset 1.018 m tris 44 mat ARES_Mat_TitaniumFrame
+  Hover_RL_PlasmaNozzle: pivot (0.000, 0.000, 0.000) centre (0.560, -0.680, 0.400) offset 0.967 m tris 48 mat ARES_Mat_CeramicWhite
+  Hover_RL_StatorCoil: pivot (0.000, 0.000, 0.000) centre (0.560, -0.680, 0.420) offset 0.976 m tris 64 mat ARES_Mat_CyanEnergy
+  Hover_RL_StatorPoles: pivot (0.000, 0.000, 0.000) centre (0.560, -0.680, 0.420) offset 0.976 m tris 384 mat ARES_Mat_GraphiteTrim
+  Hover_RL_VectorVane_0: pivot (0.000, 0.000, 0.000) centre (0.420, -0.680, 0.370) offset 0.881 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_RL_VectorVane_1: pivot (0.000, 0.000, 0.000) centre (0.461, -0.581, 0.370) offset 0.829 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_RL_VectorVane_2: pivot (0.000, 0.000, 0.000) centre (0.560, -0.540, 0.370) offset 0.861 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_RL_VectorVane_3: pivot (0.000, 0.000, 0.000) centre (0.659, -0.581, 0.370) offset 0.953 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_RL_VectorVane_4: pivot (0.000, 0.000, 0.000) centre (0.700, -0.680, 0.370) offset 1.044 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_RL_VectorVane_5: pivot (0.000, 0.000, 0.000) centre (0.659, -0.779, 0.370) offset 1.085 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_RL_VectorVane_6: pivot (0.000, 0.000, 0.000) centre (0.560, -0.820, 0.370) offset 1.060 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_RL_VectorVane_7: pivot (0.000, 0.000, 0.000) centre (0.461, -0.779, 0.370) offset 0.978 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_RR_Nacelle: pivot (0.000, 0.000, 0.000) centre (-0.560, -0.680, 0.510) offset 1.018 m tris 44 mat ARES_Mat_TitaniumFrame
+  Hover_RR_PlasmaNozzle: pivot (0.000, 0.000, 0.000) centre (-0.560, -0.680, 0.400) offset 0.967 m tris 48 mat ARES_Mat_CeramicWhite
+  Hover_RR_StatorCoil: pivot (0.000, 0.000, 0.000) centre (-0.560, -0.680, 0.420) offset 0.976 m tris 64 mat ARES_Mat_CyanEnergy
+  Hover_RR_StatorPoles: pivot (0.000, 0.000, 0.000) centre (-0.560, -0.680, 0.420) offset 0.976 m tris 384 mat ARES_Mat_GraphiteTrim
+  Hover_RR_VectorVane_0: pivot (0.000, 0.000, 0.000) centre (-0.700, -0.680, 0.370) offset 1.044 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_RR_VectorVane_1: pivot (0.000, 0.000, 0.000) centre (-0.659, -0.581, 0.370) offset 0.953 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_RR_VectorVane_2: pivot (0.000, 0.000, 0.000) centre (-0.560, -0.540, 0.370) offset 0.861 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_RR_VectorVane_3: pivot (0.000, 0.000, 0.000) centre (-0.461, -0.581, 0.370) offset 0.829 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_RR_VectorVane_4: pivot (0.000, 0.000, 0.000) centre (-0.420, -0.680, 0.370) offset 0.881 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_RR_VectorVane_5: pivot (0.000, 0.000, 0.000) centre (-0.461, -0.779, 0.370) offset 0.978 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_RR_VectorVane_6: pivot (0.000, 0.000, 0.000) centre (-0.560, -0.820, 0.370) offset 1.060 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hover_RR_VectorVane_7: pivot (0.000, 0.000, 0.000) centre (-0.659, -0.779, 0.370) offset 1.085 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hull_ArmorUpper: pivot (0.000, 0.000, 0.000) centre (0.000, -0.020, 0.960) offset 0.960 m tris 44 mat ARES_Mat_CeramicWhite
+  Hull_DoorLatch_L: pivot (0.000, 0.000, 0.000) centre (0.745, 0.520, 0.920) offset 1.293 m tris 24 mat ARES_Mat_TitaniumFrame
+  Hull_DoorLatch_R: pivot (0.000, 0.000, 0.000) centre (-0.745, 0.520, 0.920) offset 1.293 m tris 24 mat ARES_Mat_TitaniumFrame
+  Hull_SafetyChevron_F: pivot (0.000, 0.000, 0.000) centre (0.000, 1.120, 0.595) offset 1.268 m tris 12 mat ARES_Mat_MartianOrange
+  Hull_SafetyStrake_L: pivot (0.000, 0.000, 0.000) centre (0.740, -0.040, 0.900) offset 1.166 m tris 12 mat ARES_Mat_MartianOrange
+  Hull_SafetyStrake_R: pivot (0.000, 0.000, 0.000) centre (-0.740, -0.040, 0.900) offset 1.166 m tris 12 mat ARES_Mat_MartianOrange
+  Hull_SeamLongitudinal: pivot (0.000, 0.000, 0.000) centre (0.000, -0.020, 1.200) offset 1.200 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hull_SeamTransverse: pivot (0.000, 0.000, 0.000) centre (0.000, -0.135, 0.960) offset 0.969 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hull_ServiceDoor_L: pivot (0.000, 0.000, 0.000) centre (0.740, 0.350, 0.915) offset 1.228 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hull_ServiceDoor_R: pivot (0.000, 0.000, 0.000) centre (-0.740, 0.350, 0.915) offset 1.228 m tris 12 mat ARES_Mat_GraphiteTrim
+  Hull_VentLouvers_L: pivot (0.000, 0.000, 0.000) centre (0.745, -0.489, 0.951) offset 1.303 m tris 24 mat ARES_Mat_TitaniumFrame
+  Hull_VentLouvers_R: pivot (0.000, 0.000, 0.000) centre (-0.745, -0.489, 0.951) offset 1.303 m tris 24 mat ARES_Mat_TitaniumFrame
+  Mast_AzimuthBolts: pivot (0.000, 0.000, 0.000) centre (-0.420, 0.650, 1.270) offset 1.487 m tris 192 mat ARES_Mat_TitaniumFrame
+  Mast_AzimuthTurret: pivot (0.000, 0.000, 0.000) centre (-0.420, 0.650, 1.220) offset 1.445 m tris 48 mat ARES_Mat_TitaniumFrame
+  Mast_CableHarness: pivot (0.000, 0.000, 0.000) centre (-0.420, 0.650, 1.800) offset 1.959 m tris 480 mat ARES_Mat_GraphiteTrim
+  Mast_ChemCamHead: pivot (0.000, 0.000, 0.000) centre (-0.420, 0.670, 2.580) offset 2.698 m tris 44 mat ARES_Mat_CeramicWhite
+  Mast_CollarClamp: pivot (0.000, 0.000, 0.000) centre (-0.420, 0.650, 1.920) offset 2.070 m tris 48 mat ARES_Mat_TitaniumFrame
+  Mast_ElevationGimbal: pivot (0.000, 0.000, 0.000) centre (-0.420, 0.650, 2.380) offset 2.503 m tris 12 mat ARES_Mat_TitaniumFrame
+  Mast_ElevationServo: pivot (0.000, 0.000, 0.000) centre (-0.340, 0.650, 2.380) offset 2.490 m tris 32 mat ARES_Mat_GraphiteTrim
+  Mast_LaserAperture: pivot (0.000, 0.000, 0.000) centre (-0.420, 0.830, 2.600) offset 2.761 m tris 48 mat ARES_Mat_TitaniumFrame
+  Mast_LaserLens: pivot (0.000, 0.000, 0.000) centre (-0.420, 0.840, 2.600) offset 2.764 m tris 48 mat ARES_Mat_CyanEnergy
+  Mast_NavCam_L_Hood: pivot (0.000, 0.000, 0.000) centre (-0.310, 0.830, 2.490) offset 2.643 m tris 40 mat ARES_Mat_GraphiteTrim
+  Mast_NavCam_L_Lens: pivot (0.000, 0.000, 0.000) centre (-0.310, 0.840, 2.490) offset 2.646 m tris 32 mat ARES_Mat_CyanEnergy
+  Mast_NavCam_R_Hood: pivot (0.000, 0.000, 0.000) centre (-0.530, 0.830, 2.490) offset 2.678 m tris 40 mat ARES_Mat_GraphiteTrim
+  Mast_NavCam_R_Lens: pivot (0.000, 0.000, 0.000) centre (-0.530, 0.840, 2.490) offset 2.681 m tris 32 mat ARES_Mat_CyanEnergy
+  Mast_Stage1_Col: pivot (0.000, 0.000, 0.000) centre (-0.420, 0.650, 1.600) offset 1.777 m tris 48 mat ARES_Mat_GraphiteTrim
+  Mast_Stage2_Col: pivot (0.000, 0.000, 0.000) centre (-0.420, 0.650, 2.150) offset 2.285 m tris 40 mat ARES_Mat_TitaniumFrame
+  MMRTG_Fin_Horiz: pivot (0.000, 0.000, 0.000) centre (0.000, -1.265, 1.050) offset 1.644 m tris 12 mat ARES_Mat_TitaniumFrame
+  MMRTG_Fin_Vert: pivot (0.000, 0.000, 0.000) centre (0.000, -1.265, 1.050) offset 1.644 m tris 12 mat ARES_Mat_TitaniumFrame
+  MMRTG_MainCore: pivot (0.000, 0.000, 0.000) centre (0.000, -1.260, 1.050) offset 1.640 m tris 64 mat ARES_Mat_GraphiteTrim
+  MMRTG_WarningStripe: pivot (0.000, 0.000, 0.000) centre (0.000, -1.020, 1.270) offset 1.629 m tris 12 mat ARES_Mat_MartianOrange
+  Suspension_Left_BogieBridge: pivot (0.000, 0.000, 0.000) centre (1.100, 0.575, 0.430) offset 1.314 m tris 44 mat ARES_Mat_TitaniumFrame
+  Suspension_Left_PivotBolts: pivot (0.000, 0.000, 0.000) centre (0.830, 0.000, 0.760) offset 1.125 m tris 144 mat ARES_Mat_TitaniumFrame
+  Suspension_Left_PivotHousing: pivot (0.000, 0.000, 0.000) centre (0.740, 0.000, 0.760) offset 1.061 m tris 48 mat ARES_Mat_TitaniumFrame
+  Suspension_Left_RearArm: pivot (0.000, 0.000, 0.000) centre (1.100, -0.575, 0.430) offset 1.314 m tris 44 mat ARES_Mat_TitaniumFrame
+  Suspension_Left_RockerArm: pivot (0.000, 0.000, 0.000) centre (0.740, 0.000, 0.770) offset 1.068 m tris 44 mat ARES_Mat_TitaniumFrame
+  Suspension_Left_RockerCutout: pivot (0.000, 0.000, 0.000) centre (0.740, 0.000, 0.760) offset 1.061 m tris 12 mat ARES_Mat_GraphiteTrim
+  Suspension_Left_ShockF_Body: pivot (0.000, 0.000, 0.000) centre (0.950, 0.600, 0.620) offset 1.283 m tris 40 mat ARES_Mat_GraphiteTrim
+  Suspension_Left_ShockF_Shaft: pivot (0.000, 0.000, 0.000) centre (0.950, 0.600, 0.520) offset 1.238 m tris 32 mat ARES_Mat_TitaniumFrame
+  Suspension_Left_ShockF_Spring: pivot (0.000, 0.000, 0.000) centre (0.950, 0.600, 0.570) offset 1.260 m tris 480 mat ARES_Mat_MartianOrange
+  Suspension_Left_ShockR_Body: pivot (0.000, 0.000, 0.000) centre (0.950, -0.600, 0.620) offset 1.283 m tris 40 mat ARES_Mat_GraphiteTrim
+  Suspension_Left_ShockR_Shaft: pivot (0.000, 0.000, 0.000) centre (0.950, -0.600, 0.520) offset 1.238 m tris 32 mat ARES_Mat_TitaniumFrame
+  Suspension_Left_ShockR_Spring: pivot (0.000, 0.000, 0.000) centre (0.950, -0.600, 0.570) offset 1.260 m tris 480 mat ARES_Mat_MartianOrange
+  Suspension_Left_TieRodF: pivot (0.000, 0.000, 0.000) centre (1.100, 0.850, 0.420) offset 1.452 m tris 32 mat ARES_Mat_TitaniumFrame
+  Suspension_Left_TieRodR: pivot (0.000, 0.000, 0.000) centre (1.100, -0.850, 0.420) offset 1.452 m tris 32 mat ARES_Mat_TitaniumFrame
+  Suspension_Right_BogieBridge: pivot (0.000, 0.000, 0.000) centre (-1.100, 0.575, 0.430) offset 1.314 m tris 44 mat ARES_Mat_TitaniumFrame
+  Suspension_Right_PivotBolts: pivot (0.000, 0.000, 0.000) centre (-0.830, 0.000, 0.760) offset 1.125 m tris 144 mat ARES_Mat_TitaniumFrame
+  Suspension_Right_PivotHousing: pivot (0.000, 0.000, 0.000) centre (-0.740, 0.000, 0.760) offset 1.061 m tris 48 mat ARES_Mat_TitaniumFrame
+  Suspension_Right_RearArm: pivot (0.000, 0.000, 0.000) centre (-1.100, -0.575, 0.430) offset 1.314 m tris 44 mat ARES_Mat_TitaniumFrame
+  Suspension_Right_RockerArm: pivot (0.000, 0.000, 0.000) centre (-0.740, 0.000, 0.770) offset 1.068 m tris 44 mat ARES_Mat_TitaniumFrame
+  Suspension_Right_RockerCutout: pivot (0.000, 0.000, 0.000) centre (-0.740, 0.000, 0.760) offset 1.061 m tris 12 mat ARES_Mat_GraphiteTrim
+  Suspension_Right_ShockF_Body: pivot (0.000, 0.000, 0.000) centre (-0.950, 0.600, 0.620) offset 1.283 m tris 40 mat ARES_Mat_GraphiteTrim
+  Suspension_Right_ShockF_Shaft: pivot (0.000, 0.000, 0.000) centre (-0.950, 0.600, 0.520) offset 1.238 m tris 32 mat ARES_Mat_TitaniumFrame
+  Suspension_Right_ShockF_Spring: pivot (0.000, 0.000, 0.000) centre (-0.950, 0.600, 0.570) offset 1.260 m tris 480 mat ARES_Mat_MartianOrange
+  Suspension_Right_ShockR_Body: pivot (0.000, 0.000, 0.000) centre (-0.950, -0.600, 0.620) offset 1.283 m tris 40 mat ARES_Mat_GraphiteTrim
+  Suspension_Right_ShockR_Shaft: pivot (0.000, 0.000, 0.000) centre (-0.950, -0.600, 0.520) offset 1.238 m tris 32 mat ARES_Mat_TitaniumFrame
+  Suspension_Right_ShockR_Spring: pivot (0.000, 0.000, 0.000) centre (-0.950, -0.600, 0.570) offset 1.260 m tris 480 mat ARES_Mat_MartianOrange
+  Suspension_Right_TieRodF: pivot (0.000, 0.000, 0.000) centre (-1.100, 0.850, 0.420) offset 1.452 m tris 32 mat ARES_Mat_TitaniumFrame
+  Suspension_Right_TieRodR: pivot (0.000, 0.000, 0.000) centre (-1.100, -0.850, 0.420) offset 1.452 m tris 32 mat ARES_Mat_TitaniumFrame
+  Undercarriage_ArgonTank_L: pivot (0.000, 0.000, 0.000) centre (0.320, -0.850, 0.570) offset 1.072 m tris 48 mat ARES_Mat_TitaniumFrame
+  Undercarriage_ArgonTank_R: pivot (0.000, 0.000, 0.000) centre (-0.320, -0.850, 0.570) offset 1.072 m tris 48 mat ARES_Mat_TitaniumFrame
+  Undercarriage_Battery_L: pivot (0.000, 0.000, 0.000) centre (0.325, -0.100, 0.570) offset 0.664 m tris 44 mat ARES_Mat_GraphiteTrim
+  Undercarriage_Battery_R: pivot (0.000, 0.000, 0.000) centre (-0.325, -0.100, 0.570) offset 0.664 m tris 44 mat ARES_Mat_GraphiteTrim
+  Undercarriage_SampleLockbox: pivot (0.000, 0.000, 0.000) centre (0.000, -0.100, 0.570) offset 0.579 m tris 44 mat ARES_Mat_CeramicWhite
+  Wheel_FL_BeadlockRing: pivot (0.000, 0.000, 0.000) centre (1.407, 1.180, 0.380) offset 1.875 m tris 80 mat ARES_Mat_MartianOrange
+  Wheel_FL_BrakeCaliper: pivot (0.000, 0.000, 0.000) centre (1.126, 1.293, 0.493) offset 1.784 m tris 12 mat ARES_Mat_MartianOrange
+  Wheel_FL_BrakeRotor: pivot (0.000, 0.000, 0.000) centre (1.126, 1.180, 0.380) offset 1.674 m tris 64 mat ARES_Mat_TitaniumFrame
+  Wheel_FL_CenterNut: pivot (0.000, 0.000, 0.000) centre (1.432, 1.180, 0.380) offset 1.894 m tris 32 mat ARES_Mat_TitaniumFrame
+  Wheel_FL_HubMotor: pivot (0.000, 0.000, 0.000) centre (1.210, 1.180, 0.380) offset 1.732 m tris 64 mat ARES_Mat_TitaniumFrame
+  Wheel_FL_LugTreads: pivot (0.000, 0.000, 0.000) centre (1.260, 1.180, 0.380) offset 1.768 m tris 288 mat ARES_Mat_CarbonTreads
+  Wheel_FL_RimBolts: pivot (0.000, 0.000, 0.000) centre (1.422, 1.180, 0.380) offset 1.887 m tris 288 mat ARES_Mat_TitaniumFrame
+  Wheel_FL_RimDish: pivot (0.000, 0.000, 0.000) centre (1.362, 1.180, 0.380) offset 1.842 m tris 72 mat ARES_Mat_GraphiteTrim
+  Wheel_FL_TireBody: pivot (0.000, 0.000, 0.000) centre (1.260, 1.180, 0.380) offset 1.768 m tris 96 mat ARES_Mat_CarbonTreads
+  Wheel_FR_BeadlockRing: pivot (0.000, 0.000, 0.000) centre (-1.407, 1.180, 0.380) offset 1.875 m tris 80 mat ARES_Mat_MartianOrange
+  Wheel_FR_BrakeCaliper: pivot (0.000, 0.000, 0.000) centre (-1.126, 1.293, 0.493) offset 1.784 m tris 12 mat ARES_Mat_MartianOrange
+  Wheel_FR_BrakeRotor: pivot (0.000, 0.000, 0.000) centre (-1.126, 1.180, 0.380) offset 1.674 m tris 64 mat ARES_Mat_TitaniumFrame
+  Wheel_FR_CenterNut: pivot (0.000, 0.000, 0.000) centre (-1.432, 1.180, 0.380) offset 1.894 m tris 32 mat ARES_Mat_TitaniumFrame
+  Wheel_FR_HubMotor: pivot (0.000, 0.000, 0.000) centre (-1.210, 1.180, 0.380) offset 1.732 m tris 64 mat ARES_Mat_TitaniumFrame
+  Wheel_FR_LugTreads: pivot (0.000, 0.000, 0.000) centre (-1.260, 1.180, 0.380) offset 1.768 m tris 288 mat ARES_Mat_CarbonTreads
+  Wheel_FR_RimBolts: pivot (0.000, 0.000, 0.000) centre (-1.422, 1.180, 0.380) offset 1.887 m tris 288 mat ARES_Mat_TitaniumFrame
+  Wheel_FR_RimDish: pivot (0.000, 0.000, 0.000) centre (-1.362, 1.180, 0.380) offset 1.842 m tris 72 mat ARES_Mat_GraphiteTrim
+  Wheel_FR_TireBody: pivot (0.000, 0.000, 0.000) centre (-1.260, 1.180, 0.380) offset 1.768 m tris 96 mat ARES_Mat_CarbonTreads
+  Wheel_ML_BeadlockRing: pivot (0.000, 0.000, 0.000) centre (1.407, 0.000, 0.380) offset 1.458 m tris 80 mat ARES_Mat_MartianOrange
+  Wheel_ML_BrakeCaliper: pivot (0.000, 0.000, 0.000) centre (1.126, 0.113, 0.493) offset 1.234 m tris 12 mat ARES_Mat_MartianOrange
+  Wheel_ML_BrakeRotor: pivot (0.000, 0.000, 0.000) centre (1.126, 0.000, 0.380) offset 1.188 m tris 64 mat ARES_Mat_TitaniumFrame
+  Wheel_ML_CenterNut: pivot (0.000, 0.000, 0.000) centre (1.432, 0.000, 0.380) offset 1.482 m tris 32 mat ARES_Mat_TitaniumFrame
+  Wheel_ML_HubMotor: pivot (0.000, 0.000, 0.000) centre (1.210, 0.000, 0.380) offset 1.268 m tris 64 mat ARES_Mat_TitaniumFrame
+  Wheel_ML_LugTreads: pivot (0.000, 0.000, 0.000) centre (1.260, 0.000, 0.380) offset 1.316 m tris 288 mat ARES_Mat_CarbonTreads
+  Wheel_ML_RimBolts: pivot (0.000, 0.000, 0.000) centre (1.422, 0.000, 0.380) offset 1.472 m tris 288 mat ARES_Mat_TitaniumFrame
+  Wheel_ML_RimDish: pivot (0.000, 0.000, 0.000) centre (1.362, 0.000, 0.380) offset 1.414 m tris 72 mat ARES_Mat_GraphiteTrim
+  Wheel_ML_TireBody: pivot (0.000, 0.000, 0.000) centre (1.260, 0.000, 0.380) offset 1.316 m tris 96 mat ARES_Mat_CarbonTreads
+  Wheel_MR_BeadlockRing: pivot (0.000, 0.000, 0.000) centre (-1.407, 0.000, 0.380) offset 1.458 m tris 80 mat ARES_Mat_MartianOrange
+  Wheel_MR_BrakeCaliper: pivot (0.000, 0.000, 0.000) centre (-1.126, 0.113, 0.493) offset 1.234 m tris 12 mat ARES_Mat_MartianOrange
+  Wheel_MR_BrakeRotor: pivot (0.000, 0.000, 0.000) centre (-1.126, 0.000, 0.380) offset 1.188 m tris 64 mat ARES_Mat_TitaniumFrame
+  Wheel_MR_CenterNut: pivot (0.000, 0.000, 0.000) centre (-1.432, 0.000, 0.380) offset 1.482 m tris 32 mat ARES_Mat_TitaniumFrame
+  Wheel_MR_HubMotor: pivot (0.000, 0.000, 0.000) centre (-1.210, 0.000, 0.380) offset 1.268 m tris 64 mat ARES_Mat_TitaniumFrame
+  Wheel_MR_LugTreads: pivot (0.000, 0.000, 0.000) centre (-1.260, 0.000, 0.380) offset 1.316 m tris 288 mat ARES_Mat_CarbonTreads
+  Wheel_MR_RimBolts: pivot (0.000, 0.000, 0.000) centre (-1.422, 0.000, 0.380) offset 1.472 m tris 288 mat ARES_Mat_TitaniumFrame
+  Wheel_MR_RimDish: pivot (0.000, 0.000, 0.000) centre (-1.362, 0.000, 0.380) offset 1.414 m tris 72 mat ARES_Mat_GraphiteTrim
+  Wheel_MR_TireBody: pivot (0.000, 0.000, 0.000) centre (-1.260, 0.000, 0.380) offset 1.316 m tris 96 mat ARES_Mat_CarbonTreads
+  Wheel_RL_BeadlockRing: pivot (0.000, 0.000, 0.000) centre (1.407, -1.180, 0.380) offset 1.875 m tris 80 mat ARES_Mat_MartianOrange
+  Wheel_RL_BrakeCaliper: pivot (0.000, 0.000, 0.000) centre (1.126, -1.067, 0.493) offset 1.627 m tris 12 mat ARES_Mat_MartianOrange
+  Wheel_RL_BrakeRotor: pivot (0.000, 0.000, 0.000) centre (1.126, -1.180, 0.380) offset 1.674 m tris 64 mat ARES_Mat_TitaniumFrame
+  Wheel_RL_CenterNut: pivot (0.000, 0.000, 0.000) centre (1.432, -1.180, 0.380) offset 1.894 m tris 32 mat ARES_Mat_TitaniumFrame
+  Wheel_RL_HubMotor: pivot (0.000, 0.000, 0.000) centre (1.210, -1.180, 0.380) offset 1.732 m tris 64 mat ARES_Mat_TitaniumFrame
+  Wheel_RL_LugTreads: pivot (0.000, 0.000, 0.000) centre (1.260, -1.180, 0.380) offset 1.768 m tris 288 mat ARES_Mat_CarbonTreads
+  Wheel_RL_RimBolts: pivot (0.000, 0.000, 0.000) centre (1.422, -1.180, 0.380) offset 1.887 m tris 288 mat ARES_Mat_TitaniumFrame
+  Wheel_RL_RimDish: pivot (0.000, 0.000, 0.000) centre (1.362, -1.180, 0.380) offset 1.842 m tris 72 mat ARES_Mat_GraphiteTrim
+  Wheel_RL_TireBody: pivot (0.000, 0.000, 0.000) centre (1.260, -1.180, 0.380) offset 1.768 m tris 96 mat ARES_Mat_CarbonTreads
+  Wheel_RR_BeadlockRing: pivot (0.000, 0.000, 0.000) centre (-1.407, -1.180, 0.380) offset 1.875 m tris 80 mat ARES_Mat_MartianOrange
+  Wheel_RR_BrakeCaliper: pivot (0.000, 0.000, 0.000) centre (-1.126, -1.067, 0.493) offset 1.627 m tris 12 mat ARES_Mat_MartianOrange
+  Wheel_RR_BrakeRotor: pivot (0.000, 0.000, 0.000) centre (-1.126, -1.180, 0.380) offset 1.674 m tris 64 mat ARES_Mat_TitaniumFrame
+  Wheel_RR_CenterNut: pivot (0.000, 0.000, 0.000) centre (-1.432, -1.180, 0.380) offset 1.894 m tris 32 mat ARES_Mat_TitaniumFrame
+  Wheel_RR_HubMotor: pivot (0.000, 0.000, 0.000) centre (-1.210, -1.180, 0.380) offset 1.732 m tris 64 mat ARES_Mat_TitaniumFrame
+  Wheel_RR_LugTreads: pivot (0.000, 0.000, 0.000) centre (-1.260, -1.180, 0.380) offset 1.768 m tris 288 mat ARES_Mat_CarbonTreads
+  Wheel_RR_RimBolts: pivot (0.000, 0.000, 0.000) centre (-1.422, -1.180, 0.380) offset 1.887 m tris 288 mat ARES_Mat_TitaniumFrame
+  Wheel_RR_RimDish: pivot (0.000, 0.000, 0.000) centre (-1.362, -1.180, 0.380) offset 1.842 m tris 72 mat ARES_Mat_GraphiteTrim
+  Wheel_RR_TireBody: pivot (0.000, 0.000, 0.000) centre (-1.260, -1.180, 0.380) offset 1.768 m tris 96 mat ARES_Mat_CarbonTreads
+children whose pivot is the model origin: 211 / 211
+
+== ares_vi_aaa_lod1.obj (globalScale 1, useFileScale True, fileScale 1)
+GameObjects 199 (root + children), hierarchy depth 1, mesh renderers 198
+triangles 9950, vertices 19655, submeshes 198, meshes without normals 0, meshes without UVs 198
+triangles whose imported normal opposes Unity front-face winding: 4562 (45.8%)
+materials used 8: ARES_Mat_TitaniumFrame [Universal Render Pipeline/Lit], ARES_Mat_GoldFoil [Universal Render Pipeline/Lit], ARES_Mat_GraphiteTrim [Universal Render Pipeline/Lit], ARES_Mat_CyanEnergy [Universal Render Pipeline/Lit], ARES_Mat_CanopyGlass [Universal Render Pipeline/Lit], ARES_Mat_CeramicWhite [Universal Render Pipeline/Lit], ARES_Mat_MartianOrange [Universal Render Pipeline/Lit], ARES_Mat_CarbonTreads [Universal Render Pipeline/Lit]
+animation clips 0 (none)
+bounds as imported (no rotation): centre (0.000, 0.000, 1.342) size (2.899, 3.206, 2.757)
+
+== ares_vi_aaa_lod2.obj (globalScale 1, useFileScale True, fileScale 1)
+GameObjects 74 (root + children), hierarchy depth 1, mesh renderers 73
+triangles 1185, vertices 3264, submeshes 73, meshes without normals 0, meshes without UVs 73
+triangles whose imported normal opposes Unity front-face winding: 638 (53.8%)
+materials used 7: ARES_Mat_GoldFoil [Universal Render Pipeline/Lit], ARES_Mat_TitaniumFrame [Universal Render Pipeline/Lit], ARES_Mat_CeramicWhite [Universal Render Pipeline/Lit], ARES_Mat_CyanEnergy [Universal Render Pipeline/Lit], ARES_Mat_GraphiteTrim [Universal Render Pipeline/Lit], ARES_Mat_MartianOrange [Universal Render Pipeline/Lit], ARES_Mat_CarbonTreads [Universal Render Pipeline/Lit]
+animation clips 0 (none)
+bounds as imported (no rotation): centre (0.000, 0.000, 1.360) size (2.808, 3.120, 2.720)
+
+== Showroom placement (measured after placing LOD0)
+parent rotation (270.000, 180.000, 0.000); mast above body centre: True; front bumper z 1.18 (front = +Z)
+Wheel_FL x -1.26, Wheel_FR x 1.26 -> left/right consistent (FL on -X when facing +Z)
+world bounds size (W x H x L) 2.899 x 2.757 x 3.206 m, lowest point y 0.000

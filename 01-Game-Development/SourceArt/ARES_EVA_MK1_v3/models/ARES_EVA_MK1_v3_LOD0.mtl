@@ -1,0 +1,76 @@
+# Blender 5.2.2 LTS MTL File: 'ARES_EVA_MK1_v3_Master.blend'
+# www.blender.org
+
+newmtl Mat_ClearVisor
+Ns 846.400024
+Ka 1.000000 1.000000 1.000000
+Kd 0.970000 0.980000 0.990000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl Mat_CyanLED
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 9.455999 10.920000
+Ni 1.500000
+d 1.000000
+illum 2
+
+newmtl Mat_EVA_Suit
+Ns 250.000000
+Ka 0.050000 0.050000 0.050000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Kd /Users/kapilash/.gemini/antigravity/scratch/ARES_EVA_MK1_v3/textures/ARES_EVA_BaseColor.png
+map_Bump -bm 1.000000 /Users/kapilash/.gemini/antigravity/scratch/ARES_EVA_MK1_v3/textures/ARES_EVA_Normal.png
+
+newmtl Mat_GoldVisor
+Ns 902.500000
+Ka 0.980000 0.980000 0.980000
+Kd 0.950000 0.780000 0.160000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+
+newmtl Mat_GraphiteNomex
+Ns 159.999985
+Ka 0.120000 0.120000 0.120000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Kd /Users/kapilash/.gemini/antigravity/scratch/ARES_EVA_MK1_v3/textures/ARES_EVA_BaseColor.png
+map_Bump -bm 1.000000 /Users/kapilash/.gemini/antigravity/scratch/ARES_EVA_MK1_v3/textures/ARES_EVA_Normal.png
+
+newmtl Mat_SafetyOrange
+Ns 302.500000
+Ka 0.150000 0.150000 0.150000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Kd /Users/kapilash/.gemini/antigravity/scratch/ARES_EVA_MK1_v3/textures/ARES_EVA_BaseColor.png
+map_Bump -bm 1.000000 /Users/kapilash/.gemini/antigravity/scratch/ARES_EVA_MK1_v3/textures/ARES_EVA_Normal.png
+
+newmtl Mat_Titanium
+Ns 562.500000
+Ka 0.880000 0.880000 0.880000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+map_Kd /Users/kapilash/.gemini/antigravity/scratch/ARES_EVA_MK1_v3/textures/ARES_EVA_BaseColor.png
+map_Bump -bm 1.000000 /Users/kapilash/.gemini/antigravity/scratch/ARES_EVA_MK1_v3/textures/ARES_EVA_Normal.png
