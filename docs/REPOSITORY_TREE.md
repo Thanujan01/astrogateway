@@ -2,9 +2,9 @@
 
 [README](../README.md) · [Architecture](ARCHITECTURE.md) · [Setup](SETUP_GUIDE.md)
 
-Generated from the actual Git index plus the seven documentation files being added in this update. Every leaf below is an actual tracked/being-committed file; directory nodes are derived solely from those paths. The tree includes itself, all Unity assets and `.meta` files, experimental copies, hidden tracked configuration and historical source. There are no wildcard placeholders or elided children in the complete tree.
+Generated from the actual Git index plus the team-plan document being added in this update. Every leaf below is an actual tracked/being-committed file; directory nodes are derived solely from those paths. The tree includes itself, all Unity assets and `.meta` files, experimental copies, hidden tracked configuration and historical source. There are no wildcard placeholders or elided children in the complete tree.
 
-The source baseline is `a7f699e50e11f2c07de30017468625eb608bad8b`; the inventory describes this documentation commit's resulting file set. Local caches, secrets, Git internals and ignored/untracked files are not repository source and are not listed. Counts will change with later commits. The fixed migration manifest describes the earlier import, not this live inventory.
+The source baseline is `678bf88c3fec3be7dedad343eb3bf775528df744`; the inventory describes this team-plan documentation commit's resulting file set. Local caches, secrets, Git internals and ignored/untracked files are not repository source and are not listed. Counts will change with later commits. The fixed migration manifest describes the earlier import, not this live inventory.
 
 Use GitHub's Raw/download view or a local text editor if the rendered viewer truncates this large inventory. From the clone root, `git ls-files` prints the full repository-relative paths; the hierarchy below is the same complete set arranged as a terminal tree.
 
@@ -19,8 +19,8 @@ Use GitHub's Raw/download view or a local text editor if the rendered viewer tru
 | `02-Software-Development` | 523 |
 | `MIGRATION.md` | 1 |
 | `README.md` | 1 |
-| `docs` | 1,153 |
-| **Total** | **9,606** |
+| `docs` | 1,154 |
+| **Total** | **9,607** |
 
 ## Orientation
 
@@ -10927,7 +10927,8 @@ Kabylash-Development-SK2LB/
 │   ├── DEVELOPER_RESPONSIBILITIES.md
 │   ├── DEVELOPMENT_WORKFLOW.md
 │   ├── REPOSITORY_TREE.md
-│   └── SETUP_GUIDE.md
+│   ├── SETUP_GUIDE.md
+│   └── TEAM_PLAN.md
 ├── .gitattributes
 ├── .gitignore
 ├── .gitleaks.toml

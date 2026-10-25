@@ -17,7 +17,8 @@ Stage07A adaptive APIs and Stage07B synthetic-data modelling/ARIA retrieval are 
 | Complete tracked hierarchy | [Repository tree](docs/REPOSITORY_TREE.md) |
 | Runtime boundaries and source evidence | [Architecture](docs/ARCHITECTURE.md) |
 | Prerequisites and component commands | [Setup guide](docs/SETUP_GUIDE.md) |
-| Roles and proposed ownership | [Developer responsibilities](docs/DEVELOPER_RESPONSIBILITIES.md) |
+| Named team responsibilities | [Developer responsibilities](docs/DEVELOPER_RESPONSIBILITIES.md) |
+| Structured team delivery plan | [Team plan](docs/TEAM_PLAN.md) |
 | Branches, reviews and terminal usage | [Development workflow](docs/DEVELOPMENT_WORKFLOW.md) |
 | Migration scope and checksums | [Migration notes](MIGRATION.md), [import manifest](docs/migration/file-manifest.csv) |
 | Primary playable scene | [Mars_FirstMission_Missions.unity](01-Game-Development/MissionRedHorizon/Assets/AstroGateway/FirstMission/Scenes/Mars_FirstMission_Missions.unity) |
@@ -93,6 +94,7 @@ Kabylash-Development-SK2LB/
 │   ├── DEVELOPMENT_WORKFLOW.md
 │   ├── REPOSITORY_TREE.md
 │   ├── SETUP_GUIDE.md
+│   ├── TEAM_PLAN.md
 │   ├── history/
 │   ├── migration/
 │   └── reference-material/
@@ -211,17 +213,17 @@ SVG previews above are generated from the same Mermaid source (validated with Me
 
 ## 7. Developer responsibility and access map
 
-| Role | Recommended source area |
-|---|---|
-| Unity / Gameplay | `MissionRedHorizon/Assets`, especially FirstMission, Integration and MissionRules |
-| Backend | `Backend/astrogateway-api`, reviewed SQL contracts |
-| Web | `Web-Dashboards/astrogateway-web` |
-| Android | `Integrations/android-unity-host-poc` and dedicated FirstMissionAndroid experiments |
-| AI / Mission Systems | Stage07A/07B, mission rules/catalogs, mission evidence contracts |
-| Technical Artist | SourceArt and Unity environment/visual/showroom assets |
-| DevOps / Maintainer | Root configuration, dependency review, documentation and migration manifests |
+| Team member | Role supplied by Kapilash | Main responsibility |
+|---|---|---|
+| **Kapilash** | Lead game developer | Build the Unity game, gameplay and mission systems; integrate accepted art and software changes into a playable experience. |
+| **Bawantha** | Software developer | Develop software services and integrations; proposed work areas are backend, web, database contracts and Android integration. |
+| **Layanthini** | 3D objects / character developer; planning and research contributor | Create 3D objects and characters; also contribute project ideas, data gathering, PPTs and documents with Shinojan. |
+| **Shinojan** | Project planning, ideas, data gathering, PPTs and documents | Work with Layanthini on the project brief, references, requirements, presentation and documentation. |
+| **Jkutralan** | Innovation contributor | Suggest innovative ideas and explain their user benefit; help the team compare and refine concepts before implementation. |
 
-These are recommendations, not assignments to named collaborators. Repository write access is not per-folder write access. CODEOWNERS routes reviews; it does not impose filesystem-style folder restrictions. No CODEOWNERS or enforcement policy is installed by this documentation update. See the [proposed ownership/workflow guide](docs/DEVELOPER_RESPONSIBILITIES.md) and [GitHub CODEOWNERS documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners).
+Layanthini and Shinojan share project planning, research/data gathering, ideas, PPTs and documents. Layanthini also develops 3D objects and characters. The [structured team plan](docs/TEAM_PLAN.md) proposes milestone order, workstreams and handoffs around those roles; the [responsibility guide](docs/DEVELOPER_RESPONSIBILITIES.md) maps technical review areas.
+
+These names and roles were supplied by Kapilash; detailed task allocation and cadence remain proposals. Repository write access is not per-folder write access. CODEOWNERS routes reviews and does not impose folder access restrictions. No collaborator permissions, CODEOWNERS or enforcement policy is changed by this plan. See [GitHub CODEOWNERS documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners).
 
 ## 8. Terminal navigation guide
 

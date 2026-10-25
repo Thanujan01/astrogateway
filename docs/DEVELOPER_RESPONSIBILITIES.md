@@ -1,8 +1,30 @@
-# Proposed developer responsibilities and access map
+# Team responsibilities and access map
 
 [README](../README.md) · [Architecture](ARCHITECTURE.md) · [Workflow](DEVELOPMENT_WORKFLOW.md)
 
-This is a recommendation for future ownership discussions. It assigns no real collaborator, grants no access, creates no CODEOWNERS file and asserts no existing enforcement policy.
+The named roles below were supplied by Kapilash. The detailed work allocation and delivery sequence are planning recommendations; they do not imply that every team member has accepted a schedule. GitHub usernames and access assignments have not been provided or changed.
+
+## Named team roles
+
+| Team member | Role supplied by Kapilash | Main responsibility |
+|---|---|---|
+| **Kapilash** | Lead game developer | Build the Unity game, gameplay and mission systems; integrate accepted art and software changes into a playable experience. |
+| **Bawantha** | Software developer | Develop software services and integrations; proposed work areas are backend, web, database contracts and Android integration. |
+| **Layanthini** | 3D objects / character developer; planning and research contributor | Create 3D objects and characters; also contribute project ideas, data gathering, PPTs and documents with Shinojan. |
+| **Shinojan** | Project planning, ideas, data gathering, PPTs and documents | Work with Layanthini on the project brief, references, requirements, presentation and documentation. |
+| **Jkutralan** | Innovation contributor | Suggest innovative ideas and explain their user benefit; help the team compare and refine concepts before implementation. |
+
+Layanthini and Shinojan share planning, idea development, research/data gathering, PPTs and documents. Layanthini also has a separate 3D production role. To balance that workload, the [structured team plan](TEAM_PLAN.md) proposes Shinojan coordinating the document/presentation draft while Layanthini contributes research and visual material. This coordination split is a proposal, not an additional role supplied by Kapilash.
+
+## Working agreements
+
+- Kapilash and Bawantha agree game/software contracts before integration work.
+- Kapilash gives Layanthini a small asset brief before modelling; Layanthini returns a preview and a Unity-ready asset package with agreed scale, naming and materials.
+- Layanthini and Shinojan keep sources, project decisions and presentation claims traceable to evidence.
+- Jkutralan adds ideas to the shared shortlist; planning and technical feasibility review happen before a feature enters implementation.
+- Each contributor records their work and checks; relevant teammates review cross-module changes. No dedicated QA, DevOps or deployed AI owner has been assigned by this plan.
+
+See [TEAM_PLAN.md](TEAM_PLAN.md) for workstreams, handoffs, milestone exit criteria and a proposed weekly rhythm.
 
 ## Module recommendations
 
