@@ -6,6 +6,10 @@
 
 Application dependency installation, execution, tests, Unity compilation, Android/device checks and provider deployment were **NOT TESTED in this documentation update**. The commands below were derived from tracked entry points and configurations; they are not claims of successful builds. Documentation checks are separate. Historical stage reports describe their own snapshots and environments.
 
+## Credential configuration status
+
+See [CREDENTIALS_GUIDE.md](CREDENTIALS_GUIDE.md) for the approved test profile: local app files are configured and ignored; 13 offline checks and 13 synthetic scenarios passed. Live credential verification remains blocked by the configured project hostname DNS failure and dashboard sign-in availability. This does not establish admin/service isolation or resolve the six SQL validation failures.
+
 ## Clone and prerequisites
 
 ```bash

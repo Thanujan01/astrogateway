@@ -22,3 +22,12 @@
 *.jks
 **/auth.local.properties
 **/live.test-secrets.json
+# Private operator/test configuration; templates remain trackable.
+**/admin.local.env
+**/admin.local.env.*
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+**/credentials.local.json
+**/secrets.local.json

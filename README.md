@@ -20,6 +20,7 @@ Stage07A adaptive APIs and Stage07B synthetic-data modelling/ARIA retrieval are 
 | Named team responsibilities | [Developer responsibilities](docs/DEVELOPER_RESPONSIBILITIES.md) |
 | Structured team delivery plan | [Team plan](docs/TEAM_PLAN.md) |
 | Sentinel database validation | [Measured validation report](docs/SENTINEL_DATABASE_VALIDATION.md) |
+| Test-project credentials | [Configuration and live-verification status](docs/CREDENTIALS_GUIDE.md) |
 | Branches, reviews and terminal usage | [Development workflow](docs/DEVELOPMENT_WORKFLOW.md) |
 | Migration scope and checksums | [Migration notes](MIGRATION.md), [import manifest](docs/migration/file-manifest.csv) |
 | Primary playable scene | [Mars_FirstMission_Missions.unity](01-Game-Development/MissionRedHorizon/Assets/AstroGateway/FirstMission/Scenes/Mars_FirstMission_Missions.unity) |
@@ -92,6 +93,7 @@ Kabylash-Development-SK2LB/
 │           └── stage07b-aria/
 ├── docs/
 │   ├── ARCHITECTURE.md
+│   ├── CREDENTIALS_GUIDE.md
 │   ├── DEVELOPER_RESPONSIBILITIES.md
 │   ├── DEVELOPMENT_WORKFLOW.md
 │   ├── REPOSITORY_TREE.md
@@ -264,7 +266,7 @@ Only pull while on the intended branch with a clean working tree. `git lfs pull`
 | Android POC | SDK **36**, min SDK **26**, build-tools **36.0.0**, ARM64, NDK **27.2.12479018**, JDK **17**, Gradle **9.3.1**, AGP **9.1.1**; Android Studio optional |
 | Source art | Python; Blender `bpy` for Blender-specific scripts. Blender version is not pinned |
 
-Use component-local `.env.example` / `auth.local.properties.example` templates and your approved test configuration. Never put database, signing or service-role secrets into the API process or public web/Android configuration. [Detailed setup and configuration gates](docs/SETUP_GUIDE.md).
+Use component-local `.env.example` / `auth.local.properties.example` templates and your approved test configuration. The [credential guide](docs/CREDENTIALS_GUIDE.md) records the local setup, ignored files, validation commands and current provider DNS blocker. Never put database, signing or service-role secrets into the API process or public web/Android configuration. [Detailed setup and configuration gates](docs/SETUP_GUIDE.md).
 
 ## 10. Build, run and test
 
