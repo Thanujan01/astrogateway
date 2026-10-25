@@ -58,7 +58,7 @@ Do not fill an ownership file with invented handles. Once the owner chooses actu
 
 ## Sentinel database validation ownership
 
-As part of the software workstream, **Bawantha** is the proposed primary contributor for Sentinel validation, with **Kapilash** reviewing game payload contracts. **Layanthini and Shinojan** record evidence and limitations in the project documents/PPT. The [validation report](SENTINEL_DATABASE_VALIDATION.md) records a disposable PostgreSQL 17.11 rehearsal: **25 checks passed, 6 failed**. Resolve and re-test the payload/error-code gaps before sign-off. This task added validation tooling and evidence; it did not modify existing application SQL or access a hosted database.
+As part of the software workstream, **Bawantha** is the proposed primary contributor for Sentinel validation, with **Kapilash** reviewing game payload contracts. **Layanthini and Shinojan** record evidence and limitations in the project documents/PPT. The [validation report](SENTINEL_DATABASE_VALIDATION.md) records a disposable PostgreSQL 17.11 rehearsal: **35 checks passed, 0 failed**. The observed payload/error-code gaps are fixed in candidate SQL and retested locally; hosted integration remains unverified.
 
 ## Current handoff priorities
 

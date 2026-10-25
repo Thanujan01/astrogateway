@@ -114,7 +114,7 @@ def main():
     checks,key = audit(ROOT)
     report = {'scope':'approved Supabase test configuration only','checks':checks,
               'admin_credentials_read':False,'credentials_in_output':False,
-              'not_verified':['Service/admin filesystem isolation','Live login, refresh, callbacks and application integration','Database migration/RLS deployment; six SQL validation failures remain open']}
+              'not_verified':['Service/admin filesystem isolation','Live login, refresh, callbacks and application integration','Database migration/RLS deployment; local SQL checks pass; hosted deployment remains unverified']}
     if args.check_provider and key:
         actual = provider_status(key)
         control = provider_status('invalid-diagnostic-key')

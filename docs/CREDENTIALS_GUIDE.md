@@ -15,7 +15,7 @@ Target selected by Kapilash: **the existing Supabase test project**, not product
 | Dashboard project status | Sign-in required in the browser session available during the check; no active/paused/deleted status inferred from DNS alone |
 | Administrative credential rotation/storage | Not performed; no administrator DSN/password or secret/service-role key was read or copied |
 | Service/admin isolation | **NOT VERIFIED**; owner-only files do not isolate two processes running as the same OS user |
-| Database readiness | Separate local SQL rehearsal remains **25 PASS / 6 FAIL**; credential setup does not resolve those failures |
+| Database readiness | Separate local SQL rehearsal remains **35 PASS / 0 FAIL**; candidate SQL fixes were retested locally; hosted integration remains unverified |
 
 The local files are intentionally absent from GitHub and fresh clones. A matching format/project reference does not prove a key is accepted by Supabase. Do not describe the deployment as ready until provider access, isolated runtime configuration and the remaining database checks are verified.
 
@@ -74,6 +74,6 @@ Synthetic scenarios cover valid input, secret-key rejection, mismatched client k
 3. Confirm the existing publishable key belongs to the approved target. If a replacement/rotation is needed, the owner should perform that explicit credential action and update local files privately; never paste it into chat, issues, PPTs or commit messages.
 4. Re-run the provider check. Only successful configured-key access plus the rejected invalid-key control counts as that limited public-endpoint check passing.
 5. Run the user-facing service with a genuinely isolated identity/filesystem that cannot read operator/gateway/signing credentials. The current known-path guard and mode `600` alone do not prove this boundary.
-6. Resolve and re-test the [six SQL validation failures](SENTINEL_DATABASE_VALIDATION.md), then perform separately scoped login, refresh, callback and game/client integration checks.
+6. Review the [local SQL fixes and passing results](SENTINEL_DATABASE_VALIDATION.md), then perform separately scoped login, refresh, callback and game/client integration checks.
 
 Database connection/admin credentials are a separate operator workflow; consult [official database connection documentation](https://supabase.com/docs/guides/database/connecting-to-postgres) for the chosen target and connection method. This application does not gain a raw PostgreSQL password by completing public app configuration. No hosted settings, accounts, roles, keys or passwords were changed in this task.

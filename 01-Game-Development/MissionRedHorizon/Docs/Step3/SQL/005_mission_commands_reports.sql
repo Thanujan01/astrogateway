@@ -33,9 +33,11 @@ CREATE FUNCTION training.command_payload_valid(p_kind text,p_payload jsonb) RETU
 BEGIN
  IF p_payload IS NULL OR jsonb_typeof(p_payload)<>'object' OR octet_length(p_payload::text)>1024 THEN RETURN false; END IF;
  IF p_kind='scan_target' THEN
+  IF NOT (p_payload ?& ARRAY['sample_id','tick','analysis']) OR jsonb_typeof(p_payload->'tick') IS DISTINCT FROM 'number' THEN RETURN false; END IF;
   RETURN (SELECT count(*) FROM jsonb_object_keys(p_payload))=3
    AND (p_payload->>'sample_id') ~ '^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$'
    AND jsonb_typeof(p_payload->'tick')='number' AND (p_payload->>'tick')::numeric BETWEEN 0 AND 1000000000
+   AND (p_payload->>'tick')::numeric=trunc((p_payload->>'tick')::numeric)
    AND p_payload->>'analysis'='unverified_simulated';
  ELSIF p_kind='weather_changed' THEN
   RETURN (SELECT count(*) FROM jsonb_object_keys(p_payload))=1 AND jsonb_typeof(p_payload->'dust')='number' AND (p_payload->>'dust') IN ('0','1','2');
@@ -61,7 +63,7 @@ BEGIN
  IF NOT training.session_allowed() THEN RAISE SQLSTATE 'PT401' USING MESSAGE='Session revoked'; END IF;
  SELECT * INTO s FROM training.mission_sessions WHERE id=p_session_id AND user_id=auth.uid();
  IF NOT FOUND THEN RAISE SQLSTATE 'PT404' USING MESSAGE='Mission unavailable'; END IF;
- IF p_command_id IS NULL OR p_expected_revision IS NULL OR NOT training.command_payload_valid(p_kind,p_payload) THEN
+ IF p_command_id IS NULL OR p_expected_revision IS NULL OR training.command_payload_valid(p_kind,p_payload) IS NOT TRUE THEN
   RAISE SQLSTATE 'PC422' USING MESSAGE='Invalid mission command';
  END IF;
  -- Idempotency: the same command id with identical content returns the saved acknowledgement.

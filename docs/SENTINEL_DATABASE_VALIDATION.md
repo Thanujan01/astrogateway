@@ -4,7 +4,7 @@
 
 ## Current decision
 
-**Local validation gate: FAIL — 25 checks passed and 6 failed on PostgreSQL 17.11.** Six fixture/candidate SQL files installed successfully, and all 11 RPC names expected by the current backend were present. This is a disposable local rehearsal with synthetic users and claim helpers, not a live Supabase certification. The temporary cluster was stopped and removed. Existing SQL and application implementation were not changed.
+**Local validation gate: PASS — 35 checks passed and 0 failed on PostgreSQL 17.11.** Six fixture/candidate SQL files installed successfully, and all 11 RPC names expected by the current backend were present. This is a disposable local rehearsal with synthetic users and claim helpers, not a live Supabase certification. The temporary cluster was stopped and removed. Candidate command/sensor SQL was updated to reject missing/fractional ticks and invalid sensor batches, and to return the backend-expected SQLSTATE codes. No hosted database was changed.
 
 [Machine-readable results](../02-Software-Development/Sentinel-Database/validation/latest_results.json) · [Reproducible validator](../02-Software-Development/Sentinel-Database/validation/validate_local.py)
 
@@ -41,9 +41,9 @@ The [Stage05B2 revised manifest](history/codex-outputs/Stage05B2/Revised_Final_S
 
 `900_local_fixture_only.sql` creates synthetic Auth helpers and fixture roles only in the new local cluster. It is not a Supabase migration. The retirement script can terminate the exact legacy-role sessions; in this harness it runs only inside that new isolated cluster, never against a supplied database. Each source SQL hash is recorded in the JSON report.
 
-## Six failed checks and required follow-up
+## Original six failures — fixed and retested locally
 
-| Finding | Expected | Observed locally | Follow-up before sign-off |
+| Finding | Expected | Original observation | Fix applied |
 |---|---|---|---|
 | Scan command omits `tick` and substitutes an extra key | `PC422` rejection | Accepted and stored as a command | Require the exact payload keys and explicit non-null/true validation. Review SQL NULL propagation; a NULL predicate must not become acceptance. |
 | Scan command uses fractional `tick` | Integer tick, matching the API model | `1.5` accepted | Enforce integer semantics as well as numeric range in SQL, with matching negative tests. |
@@ -77,14 +77,17 @@ The SQLSTATE observations are measured. The backend source branches on gateway r
 | Identical command replay is idempotent | **PASS** |
 | Stale command revision rejected | **PASS** |
 | Unknown command kind rejected | **PASS** |
-| Scan command missing tick is rejected | **FAIL** |
-| Scan command fractional tick is rejected | **FAIL** |
+| Scan command missing tick is rejected | **PASS** |
+| Scan command fractional tick is rejected | **PASS** |
 | SQL-layer sensor fixture accepted | **PASS** |
 | Identical sensor replay is idempotent | **PASS** |
-| Sensor conflict uses backend-expected SQLSTATE | **FAIL** |
-| Forged analysis provenance uses expected rejection | **FAIL** |
-| Null sensor batch rejected | **FAIL** |
-| Cross-user sensor RPC uses expected denial code | **FAIL** |
+| Sensor conflict uses backend-expected SQLSTATE | **PASS** |
+| Forged analysis provenance uses expected rejection | **PASS** |
+| Null sensor batch rejected | **PASS** |
+| Object/empty sensor batch rejected | **PASS** |
+| Null sensor element rejected | **PASS** |
+| Missing sensor provenance rejected | **PASS** |
+| Cross-user sensor RPC uses expected denial code | **PASS** |
 | Cross-user sensor read returns no rows | **PASS** |
 | Auth session can be revoked | **PASS** |
 | Revoked session cannot read its profile | **PASS** |
@@ -104,12 +107,12 @@ python3 02-Software-Development/Sentinel-Database/validation/validate_local.py \
   --report 02-Software-Development/Sentinel-Database/validation/latest_results.json
 ```
 
-Exit **0** means every implemented check passed; exit **1** means a failed expectation or harness/setup failure. The committed run exits 1 because of the six recorded failures. Do not change expected results to turn a failing contract into a pass. Review source SQL changes separately, then rerun the same negative tests and affected integration tests. Generic setup failures are recorded separately from individual check failures.
+Exit **0** means every implemented check passed; exit **1** means a failed expectation or harness/setup failure. The committed run exits 0; all 35 checks pass, including four additional malformed sensor batch/provenance cases. Do not change expected results to turn a failing contract into a pass. Review source SQL changes separately, then rerun the same negative tests and affected integration tests. Generic setup failures are recorded separately from individual check failures.
 
 ## Sign-off sequence
 
 1. Bawantha and Kapilash agree the current schema/RPC/payload contract and the appropriate reviewed candidate baseline.
-2. Fix the six observed failures in a separately reviewed implementation change, preserving ownership and authentication boundaries.
+2. Review the candidate SQL fixes for the six original failures; ownership and authentication checks remain enforced.
 3. Rerun all local positive/negative checks; add concurrency, cap and transaction-atomicity tests.
 4. Exercise an isolated gateway/API/client path and verify exact error/status/response behavior. Synthetic `auth.uid`/`auth.jwt` helpers do not verify signatures.
 5. Record backup/restore, transition/rollback and target compatibility evidence before any live migration decision.
@@ -123,4 +126,4 @@ Exit **0** means every implemented check passed; exit **1** means a failed expec
 - Backup restoration, production rollback and migration from an existing older schema.
 - Stage07A experimental schema; it is not included in this primary-backend rehearsal.
 
-Current conclusion: **validation tooling and a measured report now exist; the database is not signed off as ready.**
+Current conclusion: **35 local checks pass; hosted integration and deployment readiness remain unverified.**

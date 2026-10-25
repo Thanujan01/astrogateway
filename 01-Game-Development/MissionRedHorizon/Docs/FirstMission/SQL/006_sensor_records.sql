@@ -1,4 +1,4 @@
--- First Mission candidate (2026-10-20). LOCAL REHEARSAL / OPERATOR REVIEW ONLY. NOT executed anywhere.
+-- First Mission candidate (2026-10-20). LOCAL REHEARSAL / OPERATOR REVIEW ONLY. Tested in disposable local PostgreSQL only; no hosted deployment.
 -- Requires Step 3 005_mission_commands_reports.sql. Existing objects are NOT altered.
 -- Append-only rover sensor records. The client may only store SIMULATED or UNAVAILABLE observations;
 -- analysis results (MODEL-ESTIMATED / BACKEND-ANALYZED) have no client write path at all.
@@ -32,18 +32,19 @@ CREATE FUNCTION mission_api.submit_sensor_records(p_session_id uuid,p_records js
  LANGUAGE plpgsql SECURITY INVOKER SET search_path='' AS $$
 DECLARE r jsonb; out jsonb:='[]'::jsonb; existing training.sensor_records; n integer;
 BEGIN
- IF NOT (SELECT training.session_allowed()) THEN RAISE EXCEPTION USING ERRCODE='P0001',MESSAGE='PT401'; END IF;
- IF jsonb_typeof(p_records)<>'array' OR jsonb_array_length(p_records) NOT BETWEEN 1 AND 50 THEN RAISE EXCEPTION USING MESSAGE='PS422'; END IF;
- IF NOT EXISTS(SELECT 1 FROM training.mission_sessions s WHERE s.id=p_session_id AND s.user_id=(SELECT auth.uid())) THEN RAISE EXCEPTION USING MESSAGE='PT404'; END IF;
+ IF NOT (SELECT training.session_allowed()) THEN RAISE SQLSTATE 'PT401' USING MESSAGE='Authentication required'; END IF;
+ IF jsonb_typeof(p_records) IS DISTINCT FROM 'array' THEN RAISE SQLSTATE 'PS422' USING MESSAGE='Invalid sensor batch'; END IF;
+ IF jsonb_array_length(p_records) NOT BETWEEN 1 AND 50 THEN RAISE SQLSTATE 'PS422' USING MESSAGE='PS422'; END IF;
+ IF NOT EXISTS(SELECT 1 FROM training.mission_sessions s WHERE s.id=p_session_id AND s.user_id=(SELECT auth.uid())) THEN RAISE SQLSTATE 'PT404' USING MESSAGE='PT404'; END IF;
  SELECT count(*) INTO n FROM training.sensor_records WHERE session_id=p_session_id;
  FOR r IN SELECT * FROM jsonb_array_elements(p_records) LOOP
-  IF (r->>'provenance') NOT IN ('SIMULATED','UNAVAILABLE') OR octet_length(r::text)>2048 THEN RAISE EXCEPTION USING MESSAGE='PS422'; END IF;
+  IF jsonb_typeof(r) IS DISTINCT FROM 'object' OR r->>'provenance' IS NULL OR (r->>'provenance') NOT IN ('SIMULATED','UNAVAILABLE') OR octet_length(r::text)>2048 THEN RAISE SQLSTATE 'PS422' USING MESSAGE='PS422'; END IF;
   SELECT * INTO existing FROM training.sensor_records WHERE session_id=p_session_id AND event_id=(r->>'event_id')::uuid;
   IF FOUND THEN
-   IF existing.record<>r THEN RAISE EXCEPTION USING MESSAGE='PS409'; END IF;
+   IF existing.record<>r THEN RAISE SQLSTATE 'PS409' USING MESSAGE='PS409'; END IF;
    out:=out||jsonb_build_object('session_id',p_session_id,'event_id',existing.event_id,'duplicate',true,'stored_at',existing.stored_at);
   ELSE
-   IF n>=2000 THEN RAISE EXCEPTION USING MESSAGE='PS429'; END IF;
+   IF n>=2000 THEN RAISE SQLSTATE 'PS429' USING MESSAGE='PS429'; END IF;
    INSERT INTO training.sensor_records(session_id,event_id,user_id,auth_session_id,sensor_id,provenance,record)
     VALUES(p_session_id,(r->>'event_id')::uuid,(SELECT auth.uid()),(SELECT training.claim_session_id()),r->>'sensor_id',r->>'provenance',r)
     RETURNING * INTO existing;

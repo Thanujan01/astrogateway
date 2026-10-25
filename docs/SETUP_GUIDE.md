@@ -8,7 +8,7 @@ Application dependency installation, execution, tests, Unity compilation, Androi
 
 ## Credential configuration status
 
-See [CREDENTIALS_GUIDE.md](CREDENTIALS_GUIDE.md) for the approved test profile: local app files are configured and ignored; 13 offline checks and 13 synthetic scenarios passed. Live credential verification remains blocked by the configured project hostname DNS failure and dashboard sign-in availability. This does not establish admin/service isolation or resolve the six SQL validation failures.
+See [CREDENTIALS_GUIDE.md](CREDENTIALS_GUIDE.md) for the approved test profile: local app files are configured and ignored; 13 offline checks and 13 synthetic scenarios passed. Live credential verification remains blocked by the configured project hostname DNS failure and dashboard sign-in availability. This does not establish admin/service isolation or establish hosted database readiness.
 
 ## Clone and prerequisites
 

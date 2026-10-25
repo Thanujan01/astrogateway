@@ -1,5 +1,5 @@
 {
-  "run_at_utc": "2026-10-25T09:02:14.686627+00:00",
+  "run_at_utc": "2026-10-25T13:32:27.855171+00:00",
   "postgres": "postgres (PostgreSQL) 17.11",
   "scope": "disposable local SQL rehearsal; synthetic identity helpers; not hosted validation",
   "remote_database_access": false,
@@ -27,12 +27,12 @@
     },
     {
       "file": "01-Game-Development/MissionRedHorizon/Docs/Step3/SQL/005_mission_commands_reports.sql",
-      "sha256": "2ebad1675b86b24c17ea722cec7318e620031694f82f9407ec2af9efc95fcf62",
+      "sha256": "df37207b5c0b0061b14ad6897a92ba603378f479acc599ae74932c2837c81e54",
       "status": "PASS"
     },
     {
       "file": "01-Game-Development/MissionRedHorizon/Docs/FirstMission/SQL/006_sensor_records.sql",
-      "sha256": "afac9ef83a1699f53b442aa74c9b63eb083056772be40d977cec5a2137005d43",
+      "sha256": "6c2f85ce3565a888cb7b46fdaa33e7d8082601e020cc8fdf226f18f535c9e824",
       "status": "PASS"
     }
   ],
@@ -68,8 +68,8 @@
     {
       "name": "Profile returns the current owner",
       "status": "PASS",
-      "expected_result": "cc6adc83-ed7f-4086-a7aa-c5f841a89560",
-      "observed": "cc6adc83-ed7f-4086-a7aa-c5f841a89560"
+      "expected_result": "a4760230-df9a-4241-b28f-94eec4df63d6",
+      "observed": "a4760230-df9a-4241-b28f-94eec4df63d6"
     },
     {
       "name": "Other user profile is invisible",
@@ -161,15 +161,17 @@
     },
     {
       "name": "Scan command missing tick is rejected",
-      "status": "FAIL",
+      "status": "PASS",
       "expected_sqlstate": "PC422",
-      "observed": "{\"kind\": \"scan_target\", \"revision\": 2, \"duplicate\": false, \"command_id\": \"0e8cface-75e2-4ac9-adf9-f147a4ce0fa5\", \"session_id\": \"f5a27a83-7c85-4c8e-9dcb-416f32c21a8f\", \"accepted_at\": \"2026-10-25T14:32:15.260742+05:30\"}"
+      "observed": "PC422",
+      "error_summary": "ERROR:  PC422: Invalid mission command"
     },
     {
       "name": "Scan command fractional tick is rejected",
-      "status": "FAIL",
+      "status": "PASS",
       "expected_sqlstate": "PC422",
-      "observed": "{\"kind\": \"scan_target\", \"revision\": 3, \"duplicate\": false, \"command_id\": \"44a8ea38-b50e-4dae-bd6e-df7ed3456f43\", \"session_id\": \"f5a27a83-7c85-4c8e-9dcb-416f32c21a8f\", \"accepted_at\": \"2026-10-25T14:32:15.268377+05:30\"}"
+      "observed": "PC422",
+      "error_summary": "ERROR:  PC422: Invalid mission command"
     },
     {
       "name": "SQL-layer sensor fixture accepted",
@@ -185,30 +187,59 @@
     },
     {
       "name": "Sensor conflict uses backend-expected SQLSTATE",
-      "status": "FAIL",
+      "status": "PASS",
       "expected_sqlstate": "PS409",
-      "observed": "P0001",
-      "error_summary": "ERROR:  P0001: PS409"
+      "observed": "PS409",
+      "error_summary": "ERROR:  PS409: PS409"
     },
     {
       "name": "Forged analysis provenance uses expected rejection",
-      "status": "FAIL",
+      "status": "PASS",
       "expected_sqlstate": "PS422",
-      "observed": "P0001",
-      "error_summary": "ERROR:  P0001: PS422"
+      "observed": "PS422",
+      "error_summary": "ERROR:  PS422: PS422"
     },
     {
       "name": "Null sensor batch rejected",
-      "status": "FAIL",
+      "status": "PASS",
       "expected_sqlstate": "PS422",
-      "observed": "[]"
+      "observed": "PS422",
+      "error_summary": "ERROR:  PS422: Invalid sensor batch"
+    },
+    {
+      "name": "Object sensor batch rejected",
+      "status": "PASS",
+      "expected_sqlstate": "PS422",
+      "observed": "PS422",
+      "error_summary": "ERROR:  PS422: Invalid sensor batch"
+    },
+    {
+      "name": "Empty sensor batch rejected",
+      "status": "PASS",
+      "expected_sqlstate": "PS422",
+      "observed": "PS422",
+      "error_summary": "ERROR:  PS422: PS422"
+    },
+    {
+      "name": "Null sensor element rejected",
+      "status": "PASS",
+      "expected_sqlstate": "PS422",
+      "observed": "PS422",
+      "error_summary": "ERROR:  PS422: PS422"
+    },
+    {
+      "name": "Missing sensor provenance rejected",
+      "status": "PASS",
+      "expected_sqlstate": "PS422",
+      "observed": "PS422",
+      "error_summary": "ERROR:  PS422: PS422"
     },
     {
       "name": "Cross-user sensor RPC uses expected denial code",
-      "status": "FAIL",
+      "status": "PASS",
       "expected_sqlstate": "PT404",
-      "observed": "P0001",
-      "error_summary": "ERROR:  P0001: PT404"
+      "observed": "PT404",
+      "error_summary": "ERROR:  PT404: PT404"
     },
     {
       "name": "Cross-user sensor read returns no rows",
@@ -277,9 +308,9 @@
     "mission_api_rpc_definitions": 0
   },
   "summary": {
-    "passed": 25,
-    "failed": 6,
-    "overall": "FAIL",
+    "passed": 35,
+    "failed": 0,
+    "overall": "PASS",
     "disposable_cluster_removed": true
   }
 }

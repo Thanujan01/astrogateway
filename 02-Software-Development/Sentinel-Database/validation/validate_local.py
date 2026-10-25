@@ -163,6 +163,8 @@ def main():
         check('Sensor conflict uses backend-expected SQLSTATE', 'SELECT '+sensor([{**record,'extra':1}]), error='PS409', claims=ca)
         check('Forged analysis provenance uses expected rejection', 'SELECT '+sensor([{**record,'event_id':str(uuid.uuid4()),'provenance':'BACKEND-ANALYZED'}]), error='PS422', claims=ca)
         check('Null sensor batch rejected', 'SELECT '+sensor(None), error='PS422', claims=ca)
+        for label, records in [('Object sensor batch rejected', {}), ('Empty sensor batch rejected', []), ('Null sensor element rejected', [None]), ('Missing sensor provenance rejected', [{'event_id':str(uuid.uuid4()),'sensor_id':'environment.temperature'}])]:
+            check(label, 'SELECT '+sensor(records), error='PS422', claims=ca)
         check('Cross-user sensor RPC uses expected denial code', 'SELECT '+sensor([{**record,'event_id':str(uuid.uuid4())}]), error='PT404', claims=cb)
         check('Cross-user sensor read returns no rows', 'SELECT count(*) FROM training.sensor_records WHERE session_id='+quoted(session), 0, claims=cb)
         check('Auth session can be revoked', 'SELECT mission_api.revoke_session()', 't', claims=ca)
