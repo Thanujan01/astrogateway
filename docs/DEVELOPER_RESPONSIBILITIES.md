@@ -56,6 +56,10 @@ Do not fill an ownership file with invented handles. Once the owner chooses actu
 6. Request the relevant role reviewers manually until real review routing is configured. Owner-approved repository policy governs merging.
 7. Update the tree/setup/architecture documents when paths, dependencies or boundaries change. Preserve the fixed migration manifest as import evidence.
 
+## Sentinel database validation ownership
+
+As part of the software workstream, **Bawantha** is the proposed primary contributor for Sentinel validation, with **Kapilash** reviewing game payload contracts. **Layanthini and Shinojan** record evidence and limitations in the project documents/PPT. The [validation report](SENTINEL_DATABASE_VALIDATION.md) records a disposable PostgreSQL 17.11 rehearsal: **25 checks passed, 6 failed**. Resolve and re-test the payload/error-code gaps before sign-off. This task added validation tooling and evidence; it did not modify existing application SQL or access a hosted database.
+
 ## Current handoff priorities
 
 - Verify current-clone Unity/Android builds and explicit scene selection before release claims.

@@ -1,0 +1,285 @@
+{
+  "run_at_utc": "2026-10-25T09:02:14.686627+00:00",
+  "postgres": "postgres (PostgreSQL) 17.11",
+  "scope": "disposable local SQL rehearsal; synthetic identity helpers; not hosted validation",
+  "remote_database_access": false,
+  "existing_sql_modified": false,
+  "migrations": [
+    {
+      "file": "docs/history/codex-outputs/Stage05B2/SQL/900_local_fixture_only.sql",
+      "sha256": "10a95c49f1f3ed1fb736e9e540af1c579aad3d6d132004c0f8b936f939d779e4",
+      "status": "PASS"
+    },
+    {
+      "file": "docs/history/codex-outputs/Stage05B2/SQL/001_verified_jwt_training.sql",
+      "sha256": "f88737a63921642a6646c6883906f820491a7b422a747863aa4b1681f656bd3b",
+      "status": "PASS"
+    },
+    {
+      "file": "docs/history/codex-outputs/Stage05B2/SQL/002_retire_direct_runtime.sql",
+      "sha256": "9e76d544a44a0815ea4d0263d15be381bba646aa1d68e1cf38dbaf26a19fc22f",
+      "status": "PASS"
+    },
+    {
+      "file": "docs/history/codex-outputs/UnifiedAuth/SQL/004_profile_display_name.sql",
+      "sha256": "7ea79e79fc3719e82180d5552a5e2837b24e2b9ae5f83e1135f50239b20a8fbe",
+      "status": "PASS"
+    },
+    {
+      "file": "01-Game-Development/MissionRedHorizon/Docs/Step3/SQL/005_mission_commands_reports.sql",
+      "sha256": "2ebad1675b86b24c17ea722cec7318e620031694f82f9407ec2af9efc95fcf62",
+      "status": "PASS"
+    },
+    {
+      "file": "01-Game-Development/MissionRedHorizon/Docs/FirstMission/SQL/006_sensor_records.sql",
+      "sha256": "afac9ef83a1699f53b442aa74c9b63eb083056772be40d977cec5a2137005d43",
+      "status": "PASS"
+    }
+  ],
+  "checks": [
+    {
+      "name": "Current backend RPC names are present",
+      "status": "PASS"
+    },
+    {
+      "name": "RLS enabled on all five training tables",
+      "status": "PASS",
+      "expected_result": 5,
+      "observed": "5"
+    },
+    {
+      "name": "No exposed SECURITY DEFINER RPCs",
+      "status": "PASS",
+      "expected_result": 0,
+      "observed": "0"
+    },
+    {
+      "name": "Anonymous cannot execute current_profile",
+      "status": "PASS",
+      "expected_result": "f",
+      "observed": "f"
+    },
+    {
+      "name": "Legacy login role retired",
+      "status": "PASS",
+      "expected_result": "t",
+      "observed": "t"
+    },
+    {
+      "name": "Profile returns the current owner",
+      "status": "PASS",
+      "expected_result": "cc6adc83-ed7f-4086-a7aa-c5f841a89560",
+      "observed": "cc6adc83-ed7f-4086-a7aa-c5f841a89560"
+    },
+    {
+      "name": "Other user profile is invisible",
+      "status": "PASS",
+      "expected_result": 0,
+      "observed": "0"
+    },
+    {
+      "name": "Cross-user mission insert denied by RLS",
+      "status": "PASS",
+      "expected_sqlstate": "42501",
+      "observed": "42501",
+      "error_summary": "ERROR:  42501: new row violates row-level security policy for table \"mission_sessions\""
+    },
+    {
+      "name": "Profile RPC rejects short display name",
+      "status": "PASS",
+      "expected_sqlstate": "PT422",
+      "observed": "PT422",
+      "error_summary": "ERROR:  PT422: Invalid display name"
+    },
+    {
+      "name": "Database enforces display-name length",
+      "status": "PASS",
+      "expected_sqlstate": "23514",
+      "observed": "23514",
+      "error_summary": "ERROR:  23514: new row for relation \"profiles\" violates check constraint \"profiles_display_name_check\""
+    },
+    {
+      "name": "Database enforces training-level range",
+      "status": "PASS",
+      "expected_sqlstate": "23514",
+      "observed": "23514",
+      "error_summary": "ERROR:  23514: new row for relation \"profiles\" violates check constraint \"profiles_training_level_check\""
+    },
+    {
+      "name": "Profile requires an Auth user FK",
+      "status": "PASS",
+      "expected_sqlstate": "23503",
+      "observed": "23503",
+      "error_summary": "ERROR:  23503: insert or update on table \"profiles\" violates foreign key constraint \"profiles_user_id_fkey\""
+    },
+    {
+      "name": "Duplicate mission launch is rejected",
+      "status": "PASS",
+      "expected_sqlstate": "23505",
+      "observed": "23505",
+      "error_summary": "ERROR:  23505: duplicate key value violates unique constraint \"mission_sessions_launch_id_key\""
+    },
+    {
+      "name": "Completion status requires completed_at",
+      "status": "PASS",
+      "expected_sqlstate": "23514",
+      "observed": "23514",
+      "error_summary": "ERROR:  23514: new row for relation \"mission_sessions\" violates check constraint \"mission_sessions_check\""
+    },
+    {
+      "name": "Expired SQL claims are rejected",
+      "status": "PASS",
+      "expected_sqlstate": "PT401",
+      "observed": "PT401",
+      "error_summary": "ERROR:  PT401: Session invalid or expired"
+    },
+    {
+      "name": "First semantic command accepted",
+      "status": "PASS",
+      "expected_result": "false",
+      "observed": "false"
+    },
+    {
+      "name": "Identical command replay is idempotent",
+      "status": "PASS",
+      "expected_result": "true",
+      "observed": "true"
+    },
+    {
+      "name": "Stale command revision rejected",
+      "status": "PASS",
+      "expected_sqlstate": "PC409",
+      "observed": "PC409",
+      "error_summary": "ERROR:  PC409: Revision conflict"
+    },
+    {
+      "name": "Unknown command kind rejected",
+      "status": "PASS",
+      "expected_sqlstate": "PC422",
+      "observed": "PC422",
+      "error_summary": "ERROR:  PC422: Invalid mission command"
+    },
+    {
+      "name": "Scan command missing tick is rejected",
+      "status": "FAIL",
+      "expected_sqlstate": "PC422",
+      "observed": "{\"kind\": \"scan_target\", \"revision\": 2, \"duplicate\": false, \"command_id\": \"0e8cface-75e2-4ac9-adf9-f147a4ce0fa5\", \"session_id\": \"f5a27a83-7c85-4c8e-9dcb-416f32c21a8f\", \"accepted_at\": \"2026-10-25T14:32:15.260742+05:30\"}"
+    },
+    {
+      "name": "Scan command fractional tick is rejected",
+      "status": "FAIL",
+      "expected_sqlstate": "PC422",
+      "observed": "{\"kind\": \"scan_target\", \"revision\": 3, \"duplicate\": false, \"command_id\": \"44a8ea38-b50e-4dae-bd6e-df7ed3456f43\", \"session_id\": \"f5a27a83-7c85-4c8e-9dcb-416f32c21a8f\", \"accepted_at\": \"2026-10-25T14:32:15.268377+05:30\"}"
+    },
+    {
+      "name": "SQL-layer sensor fixture accepted",
+      "status": "PASS",
+      "expected_result": "false",
+      "observed": "false"
+    },
+    {
+      "name": "Identical sensor replay is idempotent",
+      "status": "PASS",
+      "expected_result": "true",
+      "observed": "true"
+    },
+    {
+      "name": "Sensor conflict uses backend-expected SQLSTATE",
+      "status": "FAIL",
+      "expected_sqlstate": "PS409",
+      "observed": "P0001",
+      "error_summary": "ERROR:  P0001: PS409"
+    },
+    {
+      "name": "Forged analysis provenance uses expected rejection",
+      "status": "FAIL",
+      "expected_sqlstate": "PS422",
+      "observed": "P0001",
+      "error_summary": "ERROR:  P0001: PS422"
+    },
+    {
+      "name": "Null sensor batch rejected",
+      "status": "FAIL",
+      "expected_sqlstate": "PS422",
+      "observed": "[]"
+    },
+    {
+      "name": "Cross-user sensor RPC uses expected denial code",
+      "status": "FAIL",
+      "expected_sqlstate": "PT404",
+      "observed": "P0001",
+      "error_summary": "ERROR:  P0001: PT404"
+    },
+    {
+      "name": "Cross-user sensor read returns no rows",
+      "status": "PASS",
+      "expected_result": 0,
+      "observed": "0"
+    },
+    {
+      "name": "Auth session can be revoked",
+      "status": "PASS",
+      "expected_result": "t",
+      "observed": "t"
+    },
+    {
+      "name": "Revoked session cannot read its profile",
+      "status": "PASS",
+      "expected_sqlstate": "PT401",
+      "observed": "PT401",
+      "error_summary": "ERROR:  PT401: Session revoked"
+    },
+    {
+      "name": "Fresh-install candidate refuses reapplication/collisions",
+      "status": "PASS",
+      "observed_sqlstate": "42710"
+    }
+  ],
+  "not_tested": [
+    "Hosted Supabase Auth/JWT signature verification and PostgREST error translation",
+    "Live deployment/schema exposure/TLS",
+    "Concurrent requests and per-session caps under race",
+    "Backup/restore, production rollback and load/performance",
+    "Stage07A experimental schema"
+  ],
+  "rpc_coverage": {
+    "required": [
+      "complete_mission",
+      "current_profile",
+      "initialize_mission",
+      "mission_report",
+      "mission_state",
+      "revoke_session",
+      "session_revoked",
+      "skill_evidence",
+      "submit_mission_command",
+      "submit_sensor_records",
+      "update_display_name"
+    ],
+    "installed": [
+      "complete_mission",
+      "current_profile",
+      "initialize_mission",
+      "mission_report",
+      "mission_state",
+      "revoke_session",
+      "session_revoked",
+      "skill_evidence",
+      "submit_mission_command",
+      "submit_sensor_records",
+      "update_display_name"
+    ],
+    "missing": []
+  },
+  "legacy_candidate": {
+    "file": "02-Software-Development/Sentinel-Database/001_identity_and_mission_sessions.sql",
+    "status": "SUPERSEDED; not a standalone current-backend installation",
+    "mission_api_rpc_definitions": 0
+  },
+  "summary": {
+    "passed": 25,
+    "failed": 6,
+    "overall": "FAIL",
+    "disposable_cluster_removed": true
+  }
+}

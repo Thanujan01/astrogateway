@@ -2,9 +2,9 @@
 
 [README](../README.md) · [Architecture](ARCHITECTURE.md) · [Setup](SETUP_GUIDE.md)
 
-Generated from the actual Git index plus the team-plan document being added in this update. Every leaf below is an actual tracked/being-committed file; directory nodes are derived solely from those paths. The tree includes itself, all Unity assets and `.meta` files, experimental copies, hidden tracked configuration and historical source. There are no wildcard placeholders or elided children in the complete tree.
+Generated from the actual Git index plus the validation tool, result snapshot and guide being added in this update. Every leaf below is an actual tracked/being-committed file; directory nodes are derived solely from those paths. The tree includes itself, all Unity assets and `.meta` files, experimental copies, hidden tracked configuration and historical source. There are no wildcard placeholders or elided children in the complete tree.
 
-The source baseline is `678bf88c3fec3be7dedad343eb3bf775528df744`; the inventory describes this team-plan documentation commit's resulting file set. Local caches, secrets, Git internals and ignored/untracked files are not repository source and are not listed. Counts will change with later commits. The fixed migration manifest describes the earlier import, not this live inventory.
+The source baseline is `f5b2638f36a4efdcd0744795a32f9ac3d5f019d4`; the inventory describes this database-validation commit's resulting file set. Local caches, secrets, Git internals and ignored/untracked files are not repository source and are not listed. Counts will change with later commits. The fixed migration manifest describes the earlier import, not this live inventory.
 
 Use GitHub's Raw/download view or a local text editor if the rendered viewer truncates this large inventory. From the clone root, `git ls-files` prints the full repository-relative paths; the hierarchy below is the same complete set arranged as a terminal tree.
 
@@ -16,11 +16,11 @@ Use GitHub's Raw/download view or a local text editor if the rendered viewer tru
 | `.gitignore` | 1 |
 | `.gitleaks.toml` | 1 |
 | `01-Game-Development` | 7,925 |
-| `02-Software-Development` | 523 |
+| `02-Software-Development` | 525 |
 | `MIGRATION.md` | 1 |
 | `README.md` | 1 |
-| `docs` | 1,154 |
-| **Total** | **9,607** |
+| `docs` | 1,155 |
+| **Total** | **9,610** |
 
 ## Orientation
 
@@ -9442,6 +9442,9 @@ Kabylash-Development-SK2LB/
 │   │           ├── probe.py
 │   │           └── run_local.py
 │   ├── Sentinel-Database/
+│   │   ├── validation/
+│   │   │   ├── latest_results.json
+│   │   │   └── validate_local.py
 │   │   ├── 001_identity_and_mission_sessions.sql
 │   │   └── admin.env.example
 │   └── Web-Dashboards/
@@ -10927,6 +10930,7 @@ Kabylash-Development-SK2LB/
 │   ├── DEVELOPER_RESPONSIBILITIES.md
 │   ├── DEVELOPMENT_WORKFLOW.md
 │   ├── REPOSITORY_TREE.md
+│   ├── SENTINEL_DATABASE_VALIDATION.md
 │   ├── SETUP_GUIDE.md
 │   └── TEAM_PLAN.md
 ├── .gitattributes
