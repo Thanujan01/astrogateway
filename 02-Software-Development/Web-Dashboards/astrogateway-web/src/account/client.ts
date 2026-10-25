@@ -5,7 +5,7 @@ export const configurationReady = url === 'https://jvkwofmxtxjhdwtwdboz.supabase
 export const client = configurationReady ? createClient(url, key, { auth: {
   flowType: 'pkce', detectSessionInUrl: false, persistSession: true, autoRefreshToken: true,
 }, global: { fetch: (input, init) => fetch(input, { ...init, signal: init?.signal ? AbortSignal.any([init.signal, AbortSignal.timeout(15000)]) : AbortSignal.timeout(15000) }) } }) : null
-export interface Profile { user_id: string; display_name: string; trainee_profile: string; training_level: number; created_at: string }
+export interface Profile { username?: string | null; avatar_path?: string | null; user_id: string; display_name: string; trainee_profile: string; training_level: number; created_at: string }
 export class AccountError extends Error { status: number; constructor(status: number, message: string) { super(message); this.status = status } }
 export function validateName(name: string) {
   const value = name.trim()
@@ -26,7 +26,7 @@ export async function profileRequest(token: string, expectedId: string, name?: s
   if (text.length > 32768) throw new AccountError(502, 'Invalid profile response.')
   let profile: Profile
   try { profile = JSON.parse(text) as Profile } catch { throw new AccountError(502, 'Invalid profile response.') }
-  if (profile.user_id !== expectedId || typeof profile.display_name !== 'string' || typeof profile.created_at !== 'string' || Number.isNaN(Date.parse(profile.created_at)) || profile.trainee_profile !== 'astronaut_candidate' || !Number.isInteger(profile.training_level) || profile.training_level < 0 || profile.training_level > 10) throw new AccountError(502, 'Profile ownership validation failed.')
+  if ((profile.username != null && (typeof profile.username !== 'string' || !/^[a-z][a-z0-9_]{2,23}$/.test(profile.username))) || (profile.avatar_path != null && profile.avatar_path !== expectedId+'/avatar.png') || profile.user_id !== expectedId || typeof profile.display_name !== 'string' || typeof profile.created_at !== 'string' || Number.isNaN(Date.parse(profile.created_at)) || profile.trainee_profile !== 'astronaut_candidate' || !Number.isInteger(profile.training_level) || profile.training_level < 0 || profile.training_level > 10) throw new AccountError(502, 'Profile ownership validation failed.')
   return profile
 }
 export const callbackUrl = () => location.origin + '/auth/callback'

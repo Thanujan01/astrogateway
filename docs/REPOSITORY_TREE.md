@@ -2,9 +2,9 @@
 
 [README](../README.md) · [Architecture](ARCHITECTURE.md) · [Setup](SETUP_GUIDE.md)
 
-Generated from the actual Git index plus the credential checker, synthetic scenario script and guide being added in this update. Every leaf below is an actual tracked/being-committed file; directory nodes are derived solely from those paths. The tree includes itself, all Unity assets and `.meta` files, experimental copies, hidden tracked configuration and historical source. There are no wildcard placeholders or elided children in the complete tree.
+Generated from the actual Git index plus the account/profile update files being committed. Every leaf below is an actual tracked/being-committed file; directory nodes are derived solely from those paths. The tree includes itself, all Unity assets and `.meta` files, experimental copies, hidden tracked configuration and historical source. There are no wildcard placeholders or elided children in the complete tree.
 
-The source baseline is `165433f541612017b0b30dfe10adc8858dabae1a`; the inventory describes this credential-configuration commit's resulting file set. Local caches, secrets, Git internals and ignored/untracked files are not repository source and are not listed. Counts will change with later commits. The fixed migration manifest describes the earlier import, not this live inventory.
+The source baseline is `a90e6a90cbd40eac5cded7ff4f196ae6953b23a6`; the inventory describes this account/profile commit's resulting file set. Local caches, secrets, Git internals and ignored/untracked files are not repository source and are not listed. Counts will change with later commits. The fixed migration manifest describes the earlier import, not this live inventory.
 
 Use GitHub's Raw/download view or a local text editor if the rendered viewer truncates this large inventory. From the clone root, `git ls-files` prints the full repository-relative paths; the hierarchy below is the same complete set arranged as a terminal tree.
 
@@ -16,11 +16,11 @@ Use GitHub's Raw/download view or a local text editor if the rendered viewer tru
 | `.gitignore` | 1 |
 | `.gitleaks.toml` | 1 |
 | `01-Game-Development` | 7,925 |
-| `02-Software-Development` | 527 |
+| `02-Software-Development` | 540 |
 | `MIGRATION.md` | 1 |
 | `README.md` | 1 |
-| `docs` | 1,156 |
-| **Total** | **9,613** |
+| `docs` | 1,157 |
+| **Total** | **9,627** |
 
 ## Orientation
 
@@ -8839,6 +8839,14 @@ Kabylash-Development-SK2LB/
 │       └── AstroGatewayAstronaut/
 │           └── README.md
 ├── 02-Software-Development/
+│   ├── Auth-Broker/
+│   │   ├── supabase/
+│   │   │   ├── functions/
+│   │   │   │   └── account-login/
+│   │   │   │       ├── handler.ts
+│   │   │   │       └── index.ts
+│   │   │   └── config.toml
+│   │   └── README.md
 │   ├── Backend/
 │   │   └── astrogateway-api/
 │   │       ├── certs/
@@ -9442,7 +9450,12 @@ Kabylash-Development-SK2LB/
 │   │           ├── probe.py
 │   │           └── run_local.py
 │   ├── Sentinel-Database/
+│   │   ├── migrations/
+│   │   │   ├── 007_account_profile.sql
+│   │   │   ├── 008_private_avatars.sql
+│   │   │   └── 009_private_login_broker.sql
 │   │   ├── validation/
+│   │   │   ├── 901_account_storage_fixture_only.sql
 │   │   │   ├── check_credentials.py
 │   │   │   ├── latest_results.json
 │   │   │   ├── test_credentials.py
@@ -9460,10 +9473,15 @@ Kabylash-Development-SK2LB/
 │           │   │   ├── AccountApp.test.tsx
 │           │   │   ├── AccountApp.tsx
 │           │   │   ├── AccountContext.tsx
+│           │   │   ├── accountFeatures.test.tsx
 │           │   │   ├── accountState.ts
+│           │   │   ├── broker.test.ts
 │           │   │   ├── client.test.ts
 │           │   │   ├── client.ts
-│           │   │   └── test-setup.ts
+│           │   │   ├── ProfileExtras.tsx
+│           │   │   ├── test-setup.ts
+│           │   │   ├── usernameLogin.test.ts
+│           │   │   └── UsernameLogin.tsx
 │           │   ├── assets/
 │           │   │   ├── hero.png
 │           │   │   ├── react.svg
@@ -10928,6 +10946,7 @@ Kabylash-Development-SK2LB/
 │   │       ├── AstroGateway_Realistic_2D_Reference_Master_Report.pdf
 │   │       ├── AstroGateway_Style02_Technical_Asset_Bible_Desktop.pdf
 │   │       └── AstroGateway_Team_Development_Master_Plan.pdf
+│   ├── ACCOUNT_IDENTITY.md
 │   ├── ARCHITECTURE.md
 │   ├── CREDENTIALS_GUIDE.md
 │   ├── DEVELOPER_RESPONSIBILITIES.md

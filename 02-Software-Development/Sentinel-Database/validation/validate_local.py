@@ -26,7 +26,11 @@ CANDIDATES = [BASE / '900_local_fixture_only.sql', BASE / '001_verified_jwt_trai
               BASE / '002_retire_direct_runtime.sql',
               ROOT / 'docs/history/codex-outputs/UnifiedAuth/SQL/004_profile_display_name.sql',
               ROOT / '01-Game-Development/MissionRedHorizon/Docs/Step3/SQL/005_mission_commands_reports.sql',
-              ROOT / '01-Game-Development/MissionRedHorizon/Docs/FirstMission/SQL/006_sensor_records.sql']
+              ROOT / '01-Game-Development/MissionRedHorizon/Docs/FirstMission/SQL/006_sensor_records.sql',
+              SOFTWARE / 'Sentinel-Database/migrations/007_account_profile.sql',
+              SOFTWARE / 'Sentinel-Database/validation/901_account_storage_fixture_only.sql',
+              SOFTWARE / 'Sentinel-Database/migrations/008_private_avatars.sql',
+              SOFTWARE / 'Sentinel-Database/migrations/009_private_login_broker.sql']
 
 
 def quoted(value):
@@ -120,7 +124,7 @@ def main():
         report['legacy_candidate'] = {'file': '02-Software-Development/Sentinel-Database/001_identity_and_mission_sessions.sql',
                                       'status': 'SUPERSEDED; not a standalone current-backend installation',
                                       'mission_api_rpc_definitions': len(re.findall(r'CREATE\s+FUNCTION\s+mission_api\.', legacy, re.I))}
-        check('RLS enabled on all five training tables', "SELECT count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='training' AND c.relkind='r' AND c.relrowsecurity", 5)
+        check('RLS enabled on all five training tables', "SELECT count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='training' AND c.relkind='r' AND c.relrowsecurity AND c.relname<>'login_attempt_windows'", 5)
         check('No exposed SECURITY DEFINER RPCs', "SELECT count(*) FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='mission_api' AND p.prosecdef", 0)
         check('Anonymous cannot execute current_profile', "SELECT has_function_privilege('anon','mission_api.current_profile()','EXECUTE')", 'f')
         check('Legacy login role retired', "SELECT NOT rolcanlogin AND NOT rolbypassrls AND NOT rolsuper FROM pg_roles WHERE rolname='astrogateway_runtime'", 't')
@@ -167,6 +171,28 @@ def main():
             check(label, 'SELECT '+sensor(records), error='PS422', claims=ca)
         check('Cross-user sensor RPC uses expected denial code', 'SELECT '+sensor([{**record,'event_id':str(uuid.uuid4())}]), error='PT404', claims=cb)
         check('Cross-user sensor read returns no rows', 'SELECT count(*) FROM training.sensor_records WHERE session_id='+quoted(session), 0, claims=cb)
+        check('Username normalizes and retains owner', "SELECT mission_api.set_username(' Commander_1 ')->>'user_id'", user_a, claims=ca)
+        check('Stale account cannot change username', "SELECT mission_api.set_username('changed',"+quoted(user_b)+')', error='PT401', claims=ca)
+        check('Username is canonical lowercase', "SELECT mission_api.current_profile()->>'username'", 'commander_1', claims=ca)
+        check('Duplicate username rejected across owners', "SELECT mission_api.set_username('COMMANDER_1')", error='PA409', claims=cb)
+        for invalid in ('ab','1commander','commander space','x'*25):
+            check('Invalid username rejected: '+invalid, 'SELECT mission_api.set_username('+quoted(invalid)+')', error='PA422', claims=ca)
+        check('Null username rejected', 'SELECT mission_api.set_username(NULL)', error='PA422', claims=ca)
+        check('Foreign avatar path rejected', 'SELECT mission_api.set_avatar('+quoted(user_b+'/avatar.png')+')', error='PA422', claims=ca)
+        check('Own avatar path accepted', 'SELECT mission_api.set_avatar('+quoted(user_a+'/avatar.png')+")->>'avatar_path'", user_a+'/avatar.png', claims=ca)
+        check('Avatar can be removed', "SELECT mission_api.set_avatar(NULL)->'avatar_path'", 'null', claims=ca)
+        check('Anonymous cannot resolve username/email', "SELECT has_function_privilege('anon','public.broker_login_identity(text,text)','EXECUTE')", 'f')
+        check('Authenticated cannot resolve username/email', "SELECT has_function_privilege('authenticated','public.broker_login_identity(text,text)','EXECUTE')", 'f')
+        check('Anonymous cannot change username', "SELECT has_function_privilege('anon','mission_api.set_username(text,uuid)','EXECUTE')", 'f')
+        check('Wrong account cannot change avatar metadata', 'SELECT mission_api.set_avatar(NULL,'+quoted(user_b)+')', error='PT401', claims=ca)
+        check('Prepare synthetic broker email', "UPDATE auth.users SET email='fixture-a@example.test' WHERE id="+quoted(user_a))
+        check('Broker-only username lookup resolves canonical Auth email', "BEGIN; SET LOCAL ROLE service_role; SELECT public.broker_login_identity('commander_1',repeat('b',64))->>'email'; COMMIT", 'fixture-a@example.test')
+        check('Login throttle rejects seventh attempt', "SELECT public.broker_login_identity('commander_1',repeat('a',64))->>'limited' FROM generate_series(1,7)", '\n'.join(['']*6+['true']).strip())
+        check('Own avatar upload allowed', "INSERT INTO storage.objects(bucket_id,name) VALUES('profile-photos',"+quoted(user_a+'/avatar.png')+')', claims=ca)
+        check('Cross-user avatar upload denied', "INSERT INTO storage.objects(bucket_id,name) VALUES('profile-photos',"+quoted(user_b+'/avatar.png')+')', error='42501', claims=ca)
+        check('Other owner cannot read avatar', 'SELECT count(*) FROM storage.objects', 0, claims=cb)
+        check('Other owner cannot update avatar', "WITH changed AS (UPDATE storage.objects SET name=name RETURNING *) SELECT count(*) FROM changed", 0, claims=cb)
+        check('Own avatar can be removed', 'WITH removed AS (DELETE FROM storage.objects RETURNING *) SELECT count(*) FROM removed', 1, claims=ca)
         check('Auth session can be revoked', 'SELECT mission_api.revoke_session()', 't', claims=ca)
         check('Revoked session cannot read its profile', 'SELECT mission_api.current_profile()', error='PT401', claims=ca)
         r = sql(file=BASE/'001_verified_jwt_training.sql')

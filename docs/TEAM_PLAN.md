@@ -46,7 +46,7 @@ Presentation and document outputs should be produced from the agreed brief and e
 
 ## Mandatory software acceptance gate: Sentinel database validation
 
-Proposed primary contributor: **Bawantha**, with **Kapilash** reviewing Unity payloads and integration behavior. Validation must cover schema constraints, ownership/RLS, data shape, idempotency/error contracts, migrations and recovery. The [measured local report](SENTINEL_DATABASE_VALIDATION.md) currently records **35 PASS / 0 FAIL**. The six observed failures are fixed locally; hosted integration and deployment sign-off remain pending. Layanthini and Shinojan should keep the actual results and NOT TESTED limits visible in the project documents and PPT.
+Proposed primary contributor: **Bawantha**, with **Kapilash** reviewing Unity payloads and integration behavior. Validation must cover schema constraints, ownership/RLS, data shape, idempotency/error contracts, migrations and recovery. The [measured local report](SENTINEL_DATABASE_VALIDATION.md) currently records **59 PASS / 0 FAIL**. The six observed failures are fixed locally; hosted integration and deployment sign-off remain pending. Layanthini and Shinojan should keep the actual results and NOT TESTED limits visible in the project documents and PPT.
 
 The older Sentinel SQL alone does not satisfy the current backend. Use the report to agree the reviewed baseline before fixing or deploying anything. Gate 3 requires the applicable validation failures to be resolved and re-tested, in addition to demonstrating the selected software flow.
 

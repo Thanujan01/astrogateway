@@ -60,3 +60,14 @@ async def test_update_forwards_original_jwt_not_user_id():
     assert seen[0].headers['Authorization']=='Bearer '+principal.access_token
     assert seen[0].headers['Content-Profile']=='mission_api'
     assert json.loads(seen[0].content)=={'p_display_name':'New'}
+
+def test_central_profile_preserves_username_and_owner_photo():
+    app,repo=setup()
+    async def with_extras(user):
+        row=await EditableRepo.profile(repo,user)
+        return dict(row,username='commander',avatar_path=str(U)+'/avatar.png')
+    repo.profile=with_extras
+    with TestClient(app) as c:
+        row=c.get('/v1/me',headers={'Authorization':'Bearer '+token()}).json()
+        assert row['user_id']==str(U) and row['username']=='commander'
+        assert row['avatar_path']==str(U)+'/avatar.png'

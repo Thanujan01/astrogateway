@@ -1,5 +1,5 @@
 {
-  "run_at_utc": "2026-10-25T13:32:27.855171+00:00",
+  "run_at_utc": "2026-10-25T14:08:26.535116+00:00",
   "postgres": "postgres (PostgreSQL) 17.11",
   "scope": "disposable local SQL rehearsal; synthetic identity helpers; not hosted validation",
   "remote_database_access": false,
@@ -33,6 +33,26 @@
     {
       "file": "01-Game-Development/MissionRedHorizon/Docs/FirstMission/SQL/006_sensor_records.sql",
       "sha256": "6c2f85ce3565a888cb7b46fdaa33e7d8082601e020cc8fdf226f18f535c9e824",
+      "status": "PASS"
+    },
+    {
+      "file": "02-Software-Development/Sentinel-Database/migrations/007_account_profile.sql",
+      "sha256": "155336a96edfc76a7b0f5d6b8fd9b6c37676241b535bd1d3b4b0dab1c4fcd8bd",
+      "status": "PASS"
+    },
+    {
+      "file": "02-Software-Development/Sentinel-Database/validation/901_account_storage_fixture_only.sql",
+      "sha256": "4dc10774e7b82acbc4bfcd7987926337378d7c008eede3efa335b0e91c1ee0cc",
+      "status": "PASS"
+    },
+    {
+      "file": "02-Software-Development/Sentinel-Database/migrations/008_private_avatars.sql",
+      "sha256": "57a95c39281c3e202b441291d39705b5fe2d0d80d3fc8359932ba229e4a9e428",
+      "status": "PASS"
+    },
+    {
+      "file": "02-Software-Development/Sentinel-Database/migrations/009_private_login_broker.sql",
+      "sha256": "1f2417b7afd779fd37e5016f656f37cb7f26966eb279bd506d725bf95a65ed98",
       "status": "PASS"
     }
   ],
@@ -68,8 +88,8 @@
     {
       "name": "Profile returns the current owner",
       "status": "PASS",
-      "expected_result": "a4760230-df9a-4241-b28f-94eec4df63d6",
-      "observed": "a4760230-df9a-4241-b28f-94eec4df63d6"
+      "expected_result": "32651f96-e4fa-4805-b9df-f155e0d982b5",
+      "observed": "32651f96-e4fa-4805-b9df-f155e0d982b5"
     },
     {
       "name": "Other user profile is invisible",
@@ -248,6 +268,160 @@
       "observed": "0"
     },
     {
+      "name": "Username normalizes and retains owner",
+      "status": "PASS",
+      "expected_result": "32651f96-e4fa-4805-b9df-f155e0d982b5",
+      "observed": "32651f96-e4fa-4805-b9df-f155e0d982b5"
+    },
+    {
+      "name": "Stale account cannot change username",
+      "status": "PASS",
+      "expected_sqlstate": "PT401",
+      "observed": "PT401",
+      "error_summary": "ERROR:  PT401: Account changed"
+    },
+    {
+      "name": "Username is canonical lowercase",
+      "status": "PASS",
+      "expected_result": "commander_1",
+      "observed": "commander_1"
+    },
+    {
+      "name": "Duplicate username rejected across owners",
+      "status": "PASS",
+      "expected_sqlstate": "PA409",
+      "observed": "PA409",
+      "error_summary": "ERROR:  PA409: Username unavailable"
+    },
+    {
+      "name": "Invalid username rejected: ab",
+      "status": "PASS",
+      "expected_sqlstate": "PA422",
+      "observed": "PA422",
+      "error_summary": "ERROR:  PA422: Invalid username"
+    },
+    {
+      "name": "Invalid username rejected: 1commander",
+      "status": "PASS",
+      "expected_sqlstate": "PA422",
+      "observed": "PA422",
+      "error_summary": "ERROR:  PA422: Invalid username"
+    },
+    {
+      "name": "Invalid username rejected: commander space",
+      "status": "PASS",
+      "expected_sqlstate": "PA422",
+      "observed": "PA422",
+      "error_summary": "ERROR:  PA422: Invalid username"
+    },
+    {
+      "name": "Invalid username rejected: xxxxxxxxxxxxxxxxxxxxxxxxx",
+      "status": "PASS",
+      "expected_sqlstate": "PA422",
+      "observed": "PA422",
+      "error_summary": "ERROR:  PA422: Invalid username"
+    },
+    {
+      "name": "Null username rejected",
+      "status": "PASS",
+      "expected_sqlstate": "PA422",
+      "observed": "PA422",
+      "error_summary": "ERROR:  PA422: Invalid username"
+    },
+    {
+      "name": "Foreign avatar path rejected",
+      "status": "PASS",
+      "expected_sqlstate": "PA422",
+      "observed": "PA422",
+      "error_summary": "ERROR:  PA422: Invalid avatar path"
+    },
+    {
+      "name": "Own avatar path accepted",
+      "status": "PASS",
+      "expected_result": "32651f96-e4fa-4805-b9df-f155e0d982b5/avatar.png",
+      "observed": "32651f96-e4fa-4805-b9df-f155e0d982b5/avatar.png"
+    },
+    {
+      "name": "Avatar can be removed",
+      "status": "PASS",
+      "expected_result": "null",
+      "observed": "null"
+    },
+    {
+      "name": "Anonymous cannot resolve username/email",
+      "status": "PASS",
+      "expected_result": "f",
+      "observed": "f"
+    },
+    {
+      "name": "Authenticated cannot resolve username/email",
+      "status": "PASS",
+      "expected_result": "f",
+      "observed": "f"
+    },
+    {
+      "name": "Anonymous cannot change username",
+      "status": "PASS",
+      "expected_result": "f",
+      "observed": "f"
+    },
+    {
+      "name": "Wrong account cannot change avatar metadata",
+      "status": "PASS",
+      "expected_sqlstate": "PT401",
+      "observed": "PT401",
+      "error_summary": "ERROR:  PT401: Account changed"
+    },
+    {
+      "name": "Prepare synthetic broker email",
+      "status": "PASS",
+      "expected_result": null,
+      "observed": ""
+    },
+    {
+      "name": "Broker-only username lookup resolves canonical Auth email",
+      "status": "PASS",
+      "expected_result": "fixture-a@example.test",
+      "observed": "fixture-a@example.test"
+    },
+    {
+      "name": "Login throttle rejects seventh attempt",
+      "status": "PASS",
+      "expected_result": "true",
+      "observed": "true"
+    },
+    {
+      "name": "Own avatar upload allowed",
+      "status": "PASS",
+      "expected_result": null,
+      "observed": ""
+    },
+    {
+      "name": "Cross-user avatar upload denied",
+      "status": "PASS",
+      "expected_sqlstate": "42501",
+      "observed": "42501",
+      "error_summary": "ERROR:  42501: new row violates row-level security policy for table \"objects\""
+    },
+    {
+      "name": "Other owner cannot read avatar",
+      "status": "PASS",
+      "expected_result": 0,
+      "observed": "0"
+    },
+    {
+      "name": "Other owner cannot update avatar",
+      "status": "PASS",
+      "expected_result": 0,
+      "observed": "0"
+    },
+    {
+      "name": "Own avatar can be removed",
+      "status": "PASS",
+      "expected_result": 1,
+      "observed": "1"
+    },
+    {
       "name": "Auth session can be revoked",
       "status": "PASS",
       "expected_result": "t",
@@ -295,6 +469,8 @@
       "mission_state",
       "revoke_session",
       "session_revoked",
+      "set_avatar",
+      "set_username",
       "skill_evidence",
       "submit_mission_command",
       "submit_sensor_records",
@@ -308,7 +484,7 @@
     "mission_api_rpc_definitions": 0
   },
   "summary": {
-    "passed": 35,
+    "passed": 59,
     "failed": 0,
     "overall": "PASS",
     "disposable_cluster_removed": true

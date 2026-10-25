@@ -78,6 +78,8 @@ class Principal:
 class Profile(BaseModel):
     user_id: UUID
     display_name: str
+    username: str | None = None
+    avatar_path: str | None = None
     trainee_profile: str
     training_level: int
     created_at: datetime

@@ -1,0 +1,4 @@
+# Separate, pre-login function; password verification happens in Supabase Auth.
+# Operator review required before deploying this public endpoint.
+[functions.account-login]
+verify_jwt = false

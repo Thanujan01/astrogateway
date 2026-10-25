@@ -4,7 +4,7 @@
 
 ## Current decision
 
-**Local validation gate: PASS — 35 checks passed and 0 failed on PostgreSQL 17.11.** Six fixture/candidate SQL files installed successfully, and all 11 RPC names expected by the current backend were present. This is a disposable local rehearsal with synthetic users and claim helpers, not a live Supabase certification. The temporary cluster was stopped and removed. Candidate command/sensor SQL was updated to reject missing/fractional ticks and invalid sensor batches, and to return the backend-expected SQLSTATE codes. No hosted database was changed.
+**Local validation gate: PASS — 59 checks passed and 0 failed on PostgreSQL 17.11.** Ten fixture/candidate SQL files installed successfully, and all 11 RPC names expected by the current backend were present. This is a disposable local rehearsal with synthetic users and claim helpers, not a live Supabase certification. The temporary cluster was stopped and removed. Candidate command/sensor SQL was updated to reject missing/fractional ticks and invalid sensor batches, and to return the backend-expected SQLSTATE codes. No hosted database was changed.
 
 [Machine-readable results](../02-Software-Development/Sentinel-Database/validation/latest_results.json) · [Reproducible validator](../02-Software-Development/Sentinel-Database/validation/validate_local.py)
 
@@ -107,7 +107,7 @@ python3 02-Software-Development/Sentinel-Database/validation/validate_local.py \
   --report 02-Software-Development/Sentinel-Database/validation/latest_results.json
 ```
 
-Exit **0** means every implemented check passed; exit **1** means a failed expectation or harness/setup failure. The committed run exits 0; all 35 checks pass, including four additional malformed sensor batch/provenance cases. Do not change expected results to turn a failing contract into a pass. Review source SQL changes separately, then rerun the same negative tests and affected integration tests. Generic setup failures are recorded separately from individual check failures.
+Exit **0** means every implemented check passed; exit **1** means a failed expectation or harness/setup failure. The committed run exits 0; all 59 checks pass, including four additional malformed sensor batch/provenance cases. Do not change expected results to turn a failing contract into a pass. Review source SQL changes separately, then rerun the same negative tests and affected integration tests. Generic setup failures are recorded separately from individual check failures.
 
 ## Sign-off sequence
 
@@ -126,4 +126,8 @@ Exit **0** means every implemented check passed; exit **1** means a failed expec
 - Backup restoration, production rollback and migration from an existing older schema.
 - Stage07A experimental schema; it is not included in this primary-backend rehearsal.
 
-Current conclusion: **35 local checks pass; hosted integration and deployment readiness remain unverified.**
+Current conclusion: **59 local checks pass; hosted integration and deployment readiness remain unverified.**
+
+## Account/profile extension
+
+The current report also includes migrations 007–009 and the local-only 901 Storage fixture, with username, avatar ownership, broker-only lookup and throttle checks. See [ACCOUNT_IDENTITY.md](ACCOUNT_IDENTITY.md) for implementation scope, installation prerequisites and the distinction between synthetic SQL policies and actual hosted Storage behavior. Additional setters are not in the FastAPI RPC allowlist because the web calls them directly with its user JWT.

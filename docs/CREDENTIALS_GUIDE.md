@@ -15,7 +15,7 @@ Target selected by Kapilash: **the existing Supabase test project**, not product
 | Dashboard project status | Sign-in required in the browser session available during the check; no active/paused/deleted status inferred from DNS alone |
 | Administrative credential rotation/storage | Not performed; no administrator DSN/password or secret/service-role key was read or copied |
 | Service/admin isolation | **NOT VERIFIED**; owner-only files do not isolate two processes running as the same OS user |
-| Database readiness | Separate local SQL rehearsal remains **35 PASS / 0 FAIL**; candidate SQL fixes were retested locally; hosted integration remains unverified |
+| Database readiness | Separate local SQL rehearsal remains **59 PASS / 0 FAIL**; candidate SQL fixes were retested locally; hosted integration remains unverified |
 
 The local files are intentionally absent from GitHub and fresh clones. A matching format/project reference does not prove a key is accepted by Supabase. Do not describe the deployment as ready until provider access, isolated runtime configuration and the remaining database checks are verified.
 
