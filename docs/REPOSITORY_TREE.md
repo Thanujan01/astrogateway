@@ -2,9 +2,9 @@
 
 [README](../README.md) · [Architecture](ARCHITECTURE.md) · [Setup](SETUP_GUIDE.md)
 
-Generated from the actual Git index plus the account/profile update files being committed. Every leaf below is an actual tracked/being-committed file; directory nodes are derived solely from those paths. The tree includes itself, all Unity assets and `.meta` files, experimental copies, hidden tracked configuration and historical source. There are no wildcard placeholders or elided children in the complete tree.
+Generated from the actual Git index plus the team comparison foundation files being committed. Every leaf below is an actual tracked/being-committed file; directory nodes are derived solely from those paths. The tree includes itself, all Unity assets and `.meta` files, experimental copies, hidden tracked configuration and historical source. There are no wildcard placeholders or elided children in the complete tree.
 
-The source baseline is `a90e6a90cbd40eac5cded7ff4f196ae6953b23a6`; the inventory describes this account/profile commit's resulting file set. Local caches, secrets, Git internals and ignored/untracked files are not repository source and are not listed. Counts will change with later commits. The fixed migration manifest describes the earlier import, not this live inventory.
+The source baseline is `6a14e308de5817c7d4521990327d47bd1326e63a`; the inventory describes this team-foundation commit's resulting file set. Local caches, secrets, Git internals and ignored/untracked files are not repository source and are not listed. Counts will change with later commits. The fixed migration manifest describes the earlier import, not this live inventory.
 
 Use GitHub's Raw/download view or a local text editor if the rendered viewer truncates this large inventory. From the clone root, `git ls-files` prints the full repository-relative paths; the hierarchy below is the same complete set arranged as a terminal tree.
 
@@ -12,15 +12,16 @@ Use GitHub's Raw/download view or a local text editor if the rendered viewer tru
 
 | Top-level entry | Tracked file count |
 |---|---:|
+| `"01-Game-Development` | 14 |
 | `.gitattributes` | 1 |
 | `.gitignore` | 1 |
 | `.gitleaks.toml` | 1 |
-| `01-Game-Development` | 7,925 |
-| `02-Software-Development` | 540 |
+| `01-Game-Development` | 7,911 |
+| `02-Software-Development` | 542 |
 | `MIGRATION.md` | 1 |
 | `README.md` | 1 |
-| `docs` | 1,157 |
-| **Total** | **9,627** |
+| `docs` | 1,158 |
+| **Total** | **9,630** |
 
 ## Orientation
 
@@ -35,6 +36,61 @@ Use GitHub's Raw/download view or a local text editor if the rendered viewer tru
 
 ```text
 Kabylash-Development-SK2LB/
+├── "01-Game-Development/
+│   ├── Experiments/
+│   │   └── MissionRedHorizon_Step1Work/
+│   │       ├── FirstMissionAndroid/
+│   │       │   └── Assets/
+│   │       │       └── AstroGateway/
+│   │       │           └── MarsEnvironment/
+│   │       │               └── Materials/
+│   │       │                   ├── Observation panels â opaque approximation.mat"
+│   │       │                   └── Observation panels â opaque approximation.mat.meta"
+│   │       ├── GameplayVideo/
+│   │       │   └── Project/
+│   │       │       └── Assets/
+│   │       │           └── AstroGateway/
+│   │       │               └── MarsEnvironment/
+│   │       │                   └── Materials/
+│   │       │                       ├── Observation panels â opaque approximation.mat"
+│   │       │                       └── Observation panels â opaque approximation.mat.meta"
+│   │       ├── Lab/
+│   │       │   └── Assets/
+│   │       │       └── AstroGateway/
+│   │       │           └── MarsEnvironment/
+│   │       │               └── Materials/
+│   │       │                   ├── Observation panels â opaque approximation.mat"
+│   │       │                   └── Observation panels â opaque approximation.mat.meta"
+│   │       ├── Lab2/
+│   │       │   └── Assets/
+│   │       │       └── AstroGateway/
+│   │       │           └── MarsEnvironment/
+│   │       │               └── Materials/
+│   │       │                   ├── Observation panels â opaque approximation.mat"
+│   │       │                   └── Observation panels â opaque approximation.mat.meta"
+│   │       ├── MacBuild/
+│   │       │   └── Project/
+│   │       │       └── Assets/
+│   │       │           └── AstroGateway/
+│   │       │               └── MarsEnvironment/
+│   │       │                   └── Materials/
+│   │       │                       ├── Observation panels â opaque approximation.mat"
+│   │       │                       └── Observation panels â opaque approximation.mat.meta"
+│   │       └── VisualUpgradeMacBuild/
+│   │           └── Project/
+│   │               └── Assets/
+│   │                   └── AstroGateway/
+│   │                       └── MarsEnvironment/
+│   │                           └── Materials/
+│   │                               ├── Observation panels â opaque approximation.mat"
+│   │                               └── Observation panels â opaque approximation.mat.meta"
+│   └── MissionRedHorizon/
+│       └── Assets/
+│           └── AstroGateway/
+│               └── MarsEnvironment/
+│                   └── Materials/
+│                       ├── Observation panels â opaque approximation.mat"
+│                       └── Observation panels â opaque approximation.mat.meta"
 ├── 01-Game-Development/
 │   ├── Experiments/
 │   │   └── MissionRedHorizon_Step1Work/
@@ -521,8 +577,6 @@ Kabylash-Development-SK2LB/
 │   │       │   │   │   │   │   ├── Fine Mars dust.mat.meta
 │   │       │   │   │   │   │   ├── Habitat ceramic composite.mat
 │   │       │   │   │   │   │   ├── Habitat ceramic composite.mat.meta
-│   │       │   │   │   │   │   ├── Observation panels — opaque approximation.mat
-│   │       │   │   │   │   │   ├── Observation panels — opaque approximation.mat.meta
 │   │       │   │   │   │   │   ├── Restrained identification ochre.mat
 │   │       │   │   │   │   │   ├── Restrained identification ochre.mat.meta
 │   │       │   │   │   │   │   ├── Rock07 dusty basalt.mat
@@ -1884,8 +1938,6 @@ Kabylash-Development-SK2LB/
 │   │       │   │   │   │   │   │   ├── Fine Mars dust.mat.meta
 │   │       │   │   │   │   │   │   ├── Habitat ceramic composite.mat
 │   │       │   │   │   │   │   │   ├── Habitat ceramic composite.mat.meta
-│   │       │   │   │   │   │   │   ├── Observation panels — opaque approximation.mat
-│   │       │   │   │   │   │   │   ├── Observation panels — opaque approximation.mat.meta
 │   │       │   │   │   │   │   │   ├── Restrained identification ochre.mat
 │   │       │   │   │   │   │   │   ├── Restrained identification ochre.mat.meta
 │   │       │   │   │   │   │   │   ├── Rock07 dusty basalt.mat
@@ -3098,8 +3150,6 @@ Kabylash-Development-SK2LB/
 │   │       │   │   │   │   │   ├── Fine Mars dust.mat.meta
 │   │       │   │   │   │   │   ├── Habitat ceramic composite.mat
 │   │       │   │   │   │   │   ├── Habitat ceramic composite.mat.meta
-│   │       │   │   │   │   │   ├── Observation panels — opaque approximation.mat
-│   │       │   │   │   │   │   ├── Observation panels — opaque approximation.mat.meta
 │   │       │   │   │   │   │   ├── Restrained identification ochre.mat
 │   │       │   │   │   │   │   ├── Restrained identification ochre.mat.meta
 │   │       │   │   │   │   │   ├── Rock07 dusty basalt.mat
@@ -4065,8 +4115,6 @@ Kabylash-Development-SK2LB/
 │   │       │   │   │   │   │   ├── Fine Mars dust.mat.meta
 │   │       │   │   │   │   │   ├── Habitat ceramic composite.mat
 │   │       │   │   │   │   │   ├── Habitat ceramic composite.mat.meta
-│   │       │   │   │   │   │   ├── Observation panels — opaque approximation.mat
-│   │       │   │   │   │   │   ├── Observation panels — opaque approximation.mat.meta
 │   │       │   │   │   │   │   ├── Restrained identification ochre.mat
 │   │       │   │   │   │   │   ├── Restrained identification ochre.mat.meta
 │   │       │   │   │   │   │   ├── Rock07 dusty basalt.mat
@@ -5036,8 +5084,6 @@ Kabylash-Development-SK2LB/
 │   │       │       │   │   │   │   ├── Fine Mars dust.mat.meta
 │   │       │       │   │   │   │   ├── Habitat ceramic composite.mat
 │   │       │       │   │   │   │   ├── Habitat ceramic composite.mat.meta
-│   │       │       │   │   │   │   ├── Observation panels — opaque approximation.mat
-│   │       │       │   │   │   │   ├── Observation panels — opaque approximation.mat.meta
 │   │       │       │   │   │   │   ├── Restrained identification ochre.mat
 │   │       │       │   │   │   │   ├── Restrained identification ochre.mat.meta
 │   │       │       │   │   │   │   ├── Rock07 dusty basalt.mat
@@ -6123,8 +6169,6 @@ Kabylash-Development-SK2LB/
 │   │       │   │   │   │   │   │   ├── Fine Mars dust.mat.meta
 │   │       │   │   │   │   │   │   ├── Habitat ceramic composite.mat
 │   │       │   │   │   │   │   │   ├── Habitat ceramic composite.mat.meta
-│   │       │   │   │   │   │   │   ├── Observation panels — opaque approximation.mat
-│   │       │   │   │   │   │   │   ├── Observation panels — opaque approximation.mat.meta
 │   │       │   │   │   │   │   │   ├── Restrained identification ochre.mat
 │   │       │   │   │   │   │   │   ├── Restrained identification ochre.mat.meta
 │   │       │   │   │   │   │   │   ├── Rock07 dusty basalt.mat
@@ -7422,8 +7466,6 @@ Kabylash-Development-SK2LB/
 │   │   │   │   │   │   ├── Fine Mars dust.mat.meta
 │   │   │   │   │   │   ├── Habitat ceramic composite.mat
 │   │   │   │   │   │   ├── Habitat ceramic composite.mat.meta
-│   │   │   │   │   │   ├── Observation panels — opaque approximation.mat
-│   │   │   │   │   │   ├── Observation panels — opaque approximation.mat.meta
 │   │   │   │   │   │   ├── Restrained identification ochre.mat
 │   │   │   │   │   │   ├── Restrained identification ochre.mat.meta
 │   │   │   │   │   │   ├── Rock07 dusty basalt.mat
@@ -8858,6 +8900,7 @@ Kabylash-Development-SK2LB/
 │   │       │   ├── config.py
 │   │       │   ├── life_support.py
 │   │       │   ├── mission_rules_v1.json
+│   │       │   ├── peers.py
 │   │       │   ├── recommendations.py
 │   │       │   ├── scoring.py
 │   │       │   ├── sensor_catalog_v1.json
@@ -8869,6 +8912,7 @@ Kabylash-Development-SK2LB/
 │   │       │   ├── local_mock_server.py
 │   │       │   ├── test_hardening.py
 │   │       │   ├── test_mission_commands.py
+│   │       │   ├── test_peers.py
 │   │       │   ├── test_postgrest_repository.py
 │   │       │   ├── test_rules.py
 │   │       │   ├── test_security_contract.py
@@ -10954,6 +10998,7 @@ Kabylash-Development-SK2LB/
 │   ├── REPOSITORY_TREE.md
 │   ├── SENTINEL_DATABASE_VALIDATION.md
 │   ├── SETUP_GUIDE.md
+│   ├── TEAM_COORDINATION.md
 │   └── TEAM_PLAN.md
 ├── .gitattributes
 ├── .gitignore

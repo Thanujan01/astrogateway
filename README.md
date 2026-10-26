@@ -326,3 +326,7 @@ Keep the repository private. This guide does not change collaborators, branch ru
 ### Shared account profile update
 
 [Account identity, username login and profile photo](docs/ACCOUNT_IDENTITY.md): web code and candidate database/storage/broker changes are implemented and tested locally. Native username/photo UI, main Unity integration and hosted deployment remain pending. Local checks: 59 SQL, 61 web/broker and 233 backend tests passed.
+
+### Team coordination scope
+
+[Team coordination and same-world co-op](docs/TEAM_COORDINATION.md): accepted teams of 2–4 using the same account and existing scoring rubric. Peer comparison foundation is implemented and tested offline; live synchronization, invitations, Unity multiplayer and chat/media remain pending.
