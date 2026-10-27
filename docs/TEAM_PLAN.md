@@ -119,3 +119,7 @@ A lightweight task board can use **Ideas → Ready → In progress → Review �
 The primary Unity integrations default offline; live provider/database configuration and end-to-end behavior remain unverified. Some tests/tools depend on the original machine layout. Scoring defaults are proposed, scientific analysis is not connected, and Stage07A/07B remain separate experiments. See [Architecture known limits](ARCHITECTURE.md#known-limits) and [Setup](SETUP_GUIDE.md) before planning a release or presentation claim.
 
 This plan records team organization and proposed work only. It changes no application source, remote service configuration, repository permissions or team member's account access.
+
+## Latest game integration evidence
+
+The [Missions/native host update](GAME_INTEGRATION_UPDATE.md) records real scene selection, retry serialization fix, development APK build and two full graphical regression runs (292 PASS / 1 Editor Search FAIL / 1 UNTESTED). All six local missions completed in the automated sequence. Device/live identity/score integration, multiplayer/media and final release gates remain open; this does not mark every delivery gate complete.

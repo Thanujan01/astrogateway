@@ -15,7 +15,7 @@ Use an existing email address to register **one AstroGateway account**, confirm 
 | Central profile | Optional `username` and `avatar_path` returned by `/v1/me`; UUID unchanged. Username/photo writes use user-scoped invoker RPCs, verified ownership and revocation checks. |
 | Storage | Private `profile-photos` bucket; exact owner path `<auth.uid()>/avatar.png`; 2 MB limit, PNG MIME allowlist, owner-only SELECT/INSERT/UPDATE/DELETE policies. Short signed preview URLs are bearer links valid for 120 seconds; do not share them. |
 | Android | Existing email/password login uses the same central identity. Native username/CAPTCHA and photo editor UI are **not implemented in this change**. |
-| Main Unity | Still defaults to offline services. Authenticated Android integration scene is a prototype. Full gameplay account/sync wiring remains pending. |
+| Main Unity | Native export now contains the actual Missions scene and a bounded native context with local account-scoped progress/sensor storage. Game service adapters still default offline; live gameplay API/score synchronization remains pending. See [game integration update](GAME_INTEGRATION_UPDATE.md). |
 | Hosted environment | **NOT DEPLOYED OR VERIFIED**. Approved test hostname DNS lookup failed in the preceding provider check. No keys/passwords/accounts, hosted database, bucket or permissions changed. |
 
 ## Implementation and privilege boundary

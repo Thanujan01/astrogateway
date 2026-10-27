@@ -129,9 +129,9 @@ npm run preview
 
 `src/main.tsx` renders AccountApp; `App.tsx` is the separate earlier 3D preview. Use the actual URL printed by Vite. The config binds **127.0.0.1** and proxies `/account-api` to **127.0.0.1:8000**, stripping the prefix. The template uses `VITE_AUTH_API_BASE=/account-api`; a different API base must be HTTPS. `VITE_SUPABASE_URL` / `VITE_SUPABASE_PUBLISHABLE_KEY` are public client configuration, and `client.ts` pins readiness to the approved project URL/key shape. Do not put database or service-role credentials in `VITE_*`. The `/auth/callback` redirect must be configured for the intended origin; live provider callback behavior remains unverified.
 
-## Android host POC
+## Android Missions account host
 
-The [host directory](../02-Software-Development/Integrations/android-unity-host-poc) contains `app`, `UnityIntegrationProject`, `unity-export` and `tools`. The Gradle build root is `unity-export`; its settings points `:app` to `../app`. `MainActivity` is the launcher; `PocUnityActivity` is private and runs Unity in a separate process. This POC is distinct from the full FirstMission Android build described above.
+The [host directory](../02-Software-Development/Integrations/android-unity-host-poc) contains `app`, `UnityIntegrationProject`, `unity-export` and `tools`. The Gradle build root is `unity-export`; its settings points `:app` to `../app`. `MainActivity` is the launcher; `PocUnityActivity` is private and runs Unity in a separate process. The default exporter now uses the actual Missions scene from the primary project. The old isolated cube project is historical. See [GAME_INTEGRATION_UPDATE.md](GAME_INTEGRATION_UPDATE.md) for current build results and limits.
 
 **NOT TESTED:** copy the host tree to an isolated working directory before running generators/build tools. Its shell scripts hard-code the original Unity installation location on macOS. Review/adapt your working copy to the installed matching editor/JDK/Gradle/NDK paths first; this documentation update changes no scripts.
 
@@ -146,7 +146,7 @@ zsh tools/build.sh
 
 The template supplies approved Supabase URL/publishable key and backend URL. Source restricts backend transport to HTTPS except the debug emulator host. Match the exact property names in the template. Keep local configuration out of Git. The scripts regenerate exported files and `prepare_host.py` modifies exported Gradle settings; inspect the diff and do not stage generated changes as part of unrelated work.
 
-`unity-export/gradle/wrapper/gradle-wrapper.properties` identifies Gradle 9.3.1, but the shell build explicitly launches Unity's Gradle JAR; do not assume a standalone `./gradlew` is available. Exported settings include Mac NDK paths. Generated IL2CPP toolchain sources/caches were excluded during migration, so the imported export is not a portable guarantee of a clean rebuild. Regenerate from the isolated Unity project with the Android modules installed.
+`unity-export/gradle/wrapper/gradle-wrapper.properties` identifies Gradle 9.3.1, but the shell build explicitly launches Unity's Gradle JAR; do not assume a standalone `./gradlew` is available. Exported settings include Mac NDK paths. Generated IL2CPP toolchain sources/caches were excluded during migration, so the imported export is not a portable guarantee of a clean rebuild. Regenerate from a staging copy of the primary Missions project with Android modules installed; the host now rejects unstamped historical cube exports.
 
 Expected debug APK path: `app/build/outputs/apk/debug/app-debug.apk` under the working host copy. A compiled APK is not real-device validation. With **one authorized unlocked ARM64 device** connected, source provides (**NOT TESTED; performs install/launch actions**):
 

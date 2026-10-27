@@ -93,11 +93,11 @@ class PocUnityActivity : UnityPlayerActivity() {
         Log.i("AstroGatewayPOC", "UNITY_ACTIVITY_RELAUNCH launch=$launchId ready=$sceneReady")
         if (!authorized) { showDashboard(); return }; if (sceneReady) sendMission()
     }
-    // Called from the temporary C# scene after its message receiver exists.
-    fun onUnityReady() { runOnUiThread { sceneReady = true; publish("READY", "Unity integration scene ready"); sendMission() } }
+    // Called from the Missions C# bridge after its message receiver exists.
+    fun onUnityReady() { runOnUiThread { sceneReady = true; publish("READY", "Missions scene bridge ready"); sendMission() } }
     private fun sendMission() {
         if (!authorized || System.currentTimeMillis() >= expiresAtMillis || launchId.isBlank() || missionId.isBlank()) { publish("ERROR", "Missing launch descriptor"); return }
-        val descriptor = JSONObject().put("version", 1).put("launchId", launchId).put("missionId", missionId).put("missionSessionId",missionSessionId).put("userId",userId).toString()
+        val descriptor = JSONObject().put("version", 1).put("launchId", launchId).put("missionId", missionId).put("missionSessionId",missionSessionId).put("userId",userId).put("expiresAtMillis",expiresAtMillis).toString()
         Log.i("AstroGatewayPOC", "NATIVE_TO_UNITY launch=$launchId mission=$missionId")
         UnityPlayer.UnitySendMessage("AstroGatewayBridge", "ReceiveMission", descriptor)
     }

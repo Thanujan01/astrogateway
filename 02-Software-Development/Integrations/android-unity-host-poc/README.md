@@ -1,23 +1,23 @@
-# AstroGateway Android integration POC
+# AstroGateway native account + Missions host
 
-Native Kotlin host source and isolated Unity integration copy. Production Unity/React projects are not edited. Temporary scene contains only a camera, directional light, a one-meter cube and the test receiver. Export only that scene, not the Mars environment.
+The current export path uses the primary game's **Mars_FirstMission_Missions** scene, not the historical cube integration scene. The isolated `UnityIntegrationProject` and Stage05 backups are retained as historical prototypes; they are no longer the default export input.
 
-Unity 6000.6.4f1 Activity entry, separate :unity process. One runtime instance is retained when the dashboard returns; Activity pause/resume is inherited from Unity. Relaunch reuses the existing Activity, sends a fresh launch UUID and repeats ACK/RESULT. This POC deliberately does not claim to free Unity memory on dashboard return. Host process death, Unity exit and unload have distinct behavior and require device tests.
+## Development build
 
-Native host sends version 1 mission descriptor after scene-ready handshake. C# acknowledges then returns a test result through Activity callbacks. Package-restricted non-exported receiver records evidence on the dashboard. Identifiers are test data, not authorization credentials. No backend/Auth services exist.
+Use a staging copy of the main Unity project. `ASTROGATEWAY_GAME_PROJECT` selects its absolute path; `ASTROGATEWAY_UNITY_EDITOR` can override the Unity executable. Then run `zsh tools/export.sh` and `zsh tools/build.sh`. The exporter sets Android Activity entry, ARM64, API26 minimum/API36 target, application ID `com.sk2lb.astrogateway`, development version 0.3.0. Native Kotlin namespace remains `.poc` for class/bridge compatibility; host application version is 0.3-missions. Release signing is not configured or implied by a debug APK.
 
-Build and test status are tracked in logs and the output completion report; source presence is not proof of a working APK.
+The main game's `MissionsAndroidBuild.ExportHost` export replaces the Gradle Unity library. `prepare_host.py` preserves the fresh Unity settings and idempotently substitutes the native `:app` launcher. It does not restore stale exporter configuration over a newly generated file.
 
-## Reproduce
+## Identity and gameplay boundary
 
-1. `zsh tools/export.sh` exports the isolated project and records `logs/unity-export.log`.
-2. `zsh tools/build.sh` uses Unity's JDK/Gradle and produces `app/build/outputs/apk/debug/app-debug.apk`.
-3. Connect exactly one authorized ARM64 Android device, keep it unlocked, then run `python3 tools/device_smoke.py` for install, launch, ten message/return cycles and screenshots.
+Native Supabase Auth still verifies the account and initializes a backend mission context before launching the private Unity Activity. `NativeMissionBridge` freezes the scene roots before Start until it receives a bounded descriptor (canonical user/session/launch UUIDs, fixed mission ID, expiry within one hour). It sends ACK only after context validation. FirstMission progress, Missions progress and sensor files use an account-specific local namespace; anonymous standalone/editor play keeps its existing offline namespace. No old anonymous progress is assigned to a signed-in user automatically.
 
-The exported `unity-export` folder is the Gradle build root; the app module points to the separate `../app` source. Android Studio is optional for this CLI workflow. SDK 36/min 26, JDK 17.0.18, NDK 27.2.12479018, Gradle 9.3.1, AGP 9.1.1. Unity export disables Kotlin by default; the preparation tool enables AGP built-in Kotlin without adding the legacy Kotlin Android plugin. Native code calls the static `UnityPlayer.UnitySendMessage` API.
+A warm new launch reloads the scene before enabling a new account's gameplay objects. Local expiry stops the scene and the native expiry/revocation handling returns to the dashboard. Native callbacks carry no password, access token or refresh token. This is an account-context/local-save integration, not proof that the game is authenticated to the remote API.
 
-The Unity library's generated launcher Activity is removed by manifest merging; only the Kotlin dashboard is exported as LAUNCHER. The custom Unity Activity is private, in a separate process and reused with reorder-to-front plus singleTop. Dashboard return does not destroy or unload it. Source and build outputs contain no account credentials.
+Six local mission completions produce `LOCAL_MISSIONS_COMPLETE`, explicitly not `POC_RESULT_OK`. They do not award a server-verified score or pretend that offline mission outcomes have been synchronized. Game HTTP adapters/scoring still require their separately verified live integration.
 
-If the phone is locked, unauthorized or absent, runtime checks must remain NOT TESTED. Do not label a compiled APK as device validation.
+## Validation
 
-Result delivery also accompanies the explicit dashboard-return Intent, since newer Android versions can defer broadcasts to a cached host process. The launch ID is checked before displaying it. This debug test result is not a trusted mission score.
+See [game integration report](../../../docs/GAME_INTEGRATION_UPDATE.md). Graphical Missions regression tests and build/package checks are separate from physical device acceptance. Run `python3 tools/tests/test_prepare_host.py` for the export-wiring regression.
+
+The old `device_smoke.py` is cube-only and stops by default. Its automatic immediate RESULT expectation is incorrect for a real mission. It can be opted into explicitly for the historical cube project only. Updated Missions acceptance requires a real verified account, two different users, launch/return/expiry/revocation checks, full gameplay completion, and confirmation that local completion is not submitted as a verified training score. No device test is claimed without a connected device.

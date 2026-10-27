@@ -273,13 +273,13 @@ namespace AstroGateway.FirstMission.Missions
         // ---------- persistence ----------
         void Load()
         {
-            try { save = JsonUtility.FromJson<MissionSave>(PlayerPrefs.GetString(SaveKey, "{}")) ?? new MissionSave(); }
+            try { save = JsonUtility.FromJson<MissionSave>(PlayerPrefs.GetString(NativeMissionContext.PreferenceKey(SaveKey), "{}")) ?? new MissionSave(); }
             catch { save = new MissionSave(); }
             save.charge = Mathf.Clamp01(save.charge); save.o2 = Mathf.Clamp(save.o2, 0, 100);
             if (save.o2 <= 0 && !save.repaired) save.o2 = O2Retry;          // never resume into an instant failure
             if (save.stormStarted && save.stormEta <= 0 && !save.finished) save.stormEta = StormRetry;
         }
-        public void Save() { PlayerPrefs.SetString(SaveKey, JsonUtility.ToJson(save)); PlayerPrefs.Save(); }
+        public void Save() { PlayerPrefs.SetString(NativeMissionContext.PreferenceKey(SaveKey), JsonUtility.ToJson(save)); PlayerPrefs.Save(); }
         public void ResetForTests(int missionIndex = 0)
         {
             save = new MissionSave { mission = missionIndex };
@@ -287,7 +287,7 @@ namespace AstroGateway.FirstMission.Missions
             if (missionIndex > 1) { save.charge = 1; save.batteryDrained = true; }
             if (missionIndex > 2) { save.repaired = true; save.o2 = 100; }
             if (generator) { generator.RepairProgress = save.repaired ? 1 : 0; generator.SetRepaired(save.repaired); }
-            PlayerPrefs.DeleteKey(SaveKey);
+            PlayerPrefs.DeleteKey(NativeMissionContext.PreferenceKey(SaveKey));
             if (Missions.Count > 0 && save.mission >= Missions.Count) save.finished = true;
             EnterStep();
         }

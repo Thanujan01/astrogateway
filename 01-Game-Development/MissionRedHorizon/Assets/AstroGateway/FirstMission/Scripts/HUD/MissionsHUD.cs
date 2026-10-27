@@ -201,7 +201,9 @@ namespace AstroGateway.FirstMission.HUD
         }
 
         // ---------------- survival panel + failure ----------------
-        public GameObject SurvivalPanel, FailCard; public Button RetryButton;
+        public GameObject SurvivalPanel, FailCard;
+        // Runtime-created mission retry is distinct from the inherited sensor-sync retry.
+        [System.NonSerialized] public new Button RetryButton;
         public string SurvivalText => survO2 ? survO2.text + " | " + survSecond.text : "";
         Text survO2, survSecond, failTitle, failBody; Image survBar, survBar2; RectTransform survRt;
 

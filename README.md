@@ -126,7 +126,7 @@ Kabylash-Development-SK2LB/
 | [Backend](02-Software-Development/Backend/astrogateway-api) | Python FastAPI / httpx / uvicorn. `main.create_app`, `Database` RPC adapter, `sensor_records.register`, `rules/`, pytest tests. | Primary API source; live provider/RLS configuration unverified. |
 | [Web app](02-Software-Development/Web-Dashboards/astrogateway-web) | React / TypeScript / Vite / Supabase JS. `src/main.tsx` renders `AccountApp`; profile requests target FastAPI. Three.js preview remains in `App.tsx`. | Account UI implemented; full mission dashboard not established. |
 | [Sentinel-Database](02-Software-Development/Sentinel-Database) | SQL identity/mission-session candidate and admin template. Revised SQL and later candidates live in stage/game docs. | Historical candidate; **not an automatic migration sequence**. [Local validation](docs/SENTINEL_DATABASE_VALIDATION.md): 59 PASS / 0 FAIL; hosted sign-off pending. |
-| [Android host](02-Software-Development/Integrations/android-unity-host-poc) | Kotlin Activity host, Supabase Kotlin/OkHttp, private Unity Activity, C# bridge and Gradle export. `MainActivity`, `AuthCoordinator`, `SecureSessionStore`, `PocUnityActivity`. | Integration POC; run export/build tools on a copy; device behavior NOT TESTED here. |
+| [Android host](02-Software-Development/Integrations/android-unity-host-poc) | Kotlin Activity host, Supabase Kotlin/OkHttp, private Unity Activity, C# bridge and Gradle export. `MainActivity`, `AuthCoordinator`, `SecureSessionStore`, `PocUnityActivity`. | Actual Missions export + native account host development APK built; device lifecycle NOT TESTED. [Report](docs/GAME_INTEGRATION_UPDATE.md) |
 | [Stage07A](02-Software-Development/Integrations/experimental/stage07a-adaptive) | Separate FastAPI snapshot, `adaptive/engine.py`, `/ai` endpoints and candidate SQL. | Experimental; not mounted in the primary API. |
 | [Stage07B](02-Software-Development/Integrations/experimental/stage07b-aria) | Python synthetic dataset, five-head logistic regression, curated English/Tamil retrieval templates, privacy and witness checks. | Offline experiment; no deployed AI service or measured astronaut-skill claim. |
 | [History](docs/history) | Codex outputs, unique work source, recovered archive files and project-backup differences. | Historical reference; may require its original layout. |
@@ -288,7 +288,7 @@ See [Setup](docs/SETUP_GUIDE.md) for complete working directories, environment v
 
 | Area | Implemented in source | Pending / incomplete / unverified |
 |---|---|---|
-| Unity gameplay | Local rover/astronaut control, mission chain, HUD variants, navigation and sensor record store | Current-clone compilation/device/playtest NOT TESTED; API adapters not enabled by default |
+| Unity gameplay | Local rover/astronaut control, mission chain, HUD variants, navigation and sensor record store | Updated Missions/native-host APK builds pass; graphical regression 292 PASS / 1 Editor FAIL / 1 UNTESTED; device and live adapters pending. [Game report](docs/GAME_INTEGRATION_UPDATE.md) |
 | API | Profile, mission sessions/commands/reports, sensor-record endpoints, bearer verification and RPC adapter | Hosted SQL/RLS, configuration, isolation and live end-to-end execution unverified |
 | Sentinel database validation | Disposable PostgreSQL 17 validator; revised SQL installed; 11 backend RPC names covered | **59 PASS / 0 FAIL**; observed payload/error-contract gaps fixed locally; live database NOT TESTED. [Report](docs/SENTINEL_DATABASE_VALIDATION.md) |
 | Scientific analysis | Explicit `not_connected` interface/status | No connected scientific analysis model |
@@ -330,3 +330,7 @@ Keep the repository private. This guide does not change collaborators, branch ru
 ### Team coordination scope
 
 [Team coordination and same-world co-op](docs/TEAM_COORDINATION.md): accepted teams of 2–4 using the same account and existing scoring rubric. Peer comparison foundation is implemented and tested offline; live synchronization, invitations, Unity multiplayer and chat/media remain pending.
+
+### Missions/native host update
+
+[Game integration update and exact validation limits](docs/GAME_INTEGRATION_UPDATE.md): actual Missions scene selected by default and exported into the native app; retry serialization fixed; local account save namespaces and bounded native context added; proper Android application ID/version configured. Graphical suite: **292 PASS / 1 Editor Search FAIL / 1 UNTESTED**. No live scoring/multiplayer/media completion is claimed.

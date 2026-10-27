@@ -61,7 +61,7 @@ namespace AstroGateway.FirstMission
         void Start()
         {
             // After the HUD (300) and Visual Upgrade fixes (600) chose their files: this scene keeps its own save.
-            hud.game.testSave = Path.Combine(Application.persistentDataPath, SaveFile);
+            hud.game.testSave = NativeMissionContext.FilePath(SaveFile);
             // Approved orientation: landscape only (both directions, so the camera cutout can sit on either side).
             Screen.autorotateToPortrait = false; Screen.autorotateToPortraitUpsideDown = false;
             Screen.autorotateToLandscapeLeft = true; Screen.autorotateToLandscapeRight = true;
@@ -69,7 +69,7 @@ namespace AstroGateway.FirstMission
 
             Catalog = new SensorCatalog(catalogJson.text);
             sensors.Catalog = Catalog;
-            string folder = string.IsNullOrEmpty(storeFolderOverride) ? Path.Combine(Application.persistentDataPath, "AstroGateway_FirstMission") : storeFolderOverride;
+            string folder = string.IsNullOrEmpty(storeFolderOverride) ? NativeMissionContext.FilePath("AstroGateway_FirstMission") : storeFolderOverride;
             Store = new SensorRecordStore(Path.Combine(folder, "sensor_records_v1.json"));
             Sync = new SensorSyncService(Store, new NotConnectedUploader(), Catalog.MaxBatch);
             LoadSettings(); LoadProgress();
@@ -182,10 +182,10 @@ namespace AstroGateway.FirstMission
             Settings.shoulderSide = Settings.shoulderSide < 0 ? -1 : 1;
             Settings.joystickPosition = Mathf.Clamp(Settings.joystickPosition, 0, 2);
         }
-        void SaveProgress() { progress.distance = sensors.DistanceTravelled; PlayerPrefs.SetString(ProgressKey, JsonUtility.ToJson(progress)); PlayerPrefs.Save(); }
+        void SaveProgress() { progress.distance = sensors.DistanceTravelled; PlayerPrefs.SetString(NativeMissionContext.PreferenceKey(ProgressKey), JsonUtility.ToJson(progress)); PlayerPrefs.Save(); }
         void LoadProgress()
         {
-            try { progress = JsonUtility.FromJson<FirstMissionProgress>(PlayerPrefs.GetString(ProgressKey, "{}")) ?? new FirstMissionProgress(); }
+            try { progress = JsonUtility.FromJson<FirstMissionProgress>(PlayerPrefs.GetString(NativeMissionContext.PreferenceKey(ProgressKey), "{}")) ?? new FirstMissionProgress(); }
             catch { progress = new FirstMissionProgress(); }
         }
         // Test hook: isolated store folder and fresh progress (the player's own data is never touched by the harness).
@@ -195,7 +195,7 @@ namespace AstroGateway.FirstMission
             Sync = new SensorSyncService(Store, uploader ?? new NotConnectedUploader(), Catalog.MaxBatch);
             LastObservation = new List<SensorRecord>();
         }
-        public void ResetProgressForTests() { progress = new FirstMissionProgress(); PlayerPrefs.DeleteKey(ProgressKey); }
+        public void ResetProgressForTests() { progress = new FirstMissionProgress(); PlayerPrefs.DeleteKey(NativeMissionContext.PreferenceKey(ProgressKey)); }
         void OnApplicationPause(bool paused) { if (paused && Ready) { SaveProgress(); Store.Touch(); } }
     }
 }

@@ -1,5 +1,7 @@
 import json, os, re, subprocess, time, xml.etree.ElementTree as ET
 from pathlib import Path
+if os.environ.get('ASTROGATEWAY_LEGACY_CUBE_SMOKE') != '1':
+ raise SystemExit('Legacy cube-only smoke script: not valid for the Missions host. Follow docs/GAME_INTEGRATION_UPDATE.md device acceptance steps; no install was performed.')
 ROOT=Path('/Users/kapilash/Projects/AstroGatewayAndroid')
 ADB='/Applications/Unity/Hub/Editor/6000.6.4f1/PlaybackEngines/AndroidPlayer/SDK/platform-tools/adb'
 PACKAGE='com.sk2lb.astrogateway.poc'

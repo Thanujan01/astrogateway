@@ -2,9 +2,9 @@
 
 [README](../README.md) · [Architecture](ARCHITECTURE.md) · [Setup](SETUP_GUIDE.md)
 
-Generated from the actual Git index plus the team comparison foundation files being committed. Every leaf below is an actual tracked/being-committed file; directory nodes are derived solely from those paths. The tree includes itself, all Unity assets and `.meta` files, experimental copies, hidden tracked configuration and historical source. There are no wildcard placeholders or elided children in the complete tree.
+Generated from the actual Git index plus the Missions/native-host integration files being committed. Every leaf below is an actual tracked/being-committed file; directory nodes are derived solely from those paths. The tree includes itself, all Unity assets and `.meta` files, experimental copies, hidden tracked configuration and historical source. There are no wildcard placeholders or elided children in the complete tree.
 
-The source baseline is `6a14e308de5817c7d4521990327d47bd1326e63a`; the inventory describes this team-foundation commit's resulting file set. Local caches, secrets, Git internals and ignored/untracked files are not repository source and are not listed. Counts will change with later commits. The fixed migration manifest describes the earlier import, not this live inventory.
+The source baseline is `bac9575f24248935f2577114aee4487a3f0cddd3`; the inventory describes this game-integration commit's resulting file set. Local caches, secrets, Git internals and ignored/untracked files are not repository source and are not listed. Counts will change with later commits. The fixed migration manifest describes the earlier import, not this live inventory.
 
 Use GitHub's Raw/download view or a local text editor if the rendered viewer truncates this large inventory. From the clone root, `git ls-files` prints the full repository-relative paths; the hierarchy below is the same complete set arranged as a terminal tree.
 
@@ -16,12 +16,12 @@ Use GitHub's Raw/download view or a local text editor if the rendered viewer tru
 | `.gitattributes` | 1 |
 | `.gitignore` | 1 |
 | `.gitleaks.toml` | 1 |
-| `01-Game-Development` | 7,911 |
-| `02-Software-Development` | 542 |
+| `01-Game-Development` | 7,916 |
+| `02-Software-Development` | 543 |
 | `MIGRATION.md` | 1 |
 | `README.md` | 1 |
-| `docs` | 1,158 |
-| **Total** | **9,630** |
+| `docs` | 1,159 |
+| **Total** | **9,637** |
 
 ## Orientation
 
@@ -7373,6 +7373,8 @@ Kabylash-Development-SK2LB/
 │   │   │   │   │   │   ├── FirstMissionHUD.cs.meta
 │   │   │   │   │   │   ├── HUD.meta
 │   │   │   │   │   │   ├── Missions.meta
+│   │   │   │   │   │   ├── NativeMissionBridge.cs
+│   │   │   │   │   │   ├── NativeMissionBridge.cs.meta
 │   │   │   │   │   │   ├── Nav.meta
 │   │   │   │   │   │   ├── RoverSensorSuite.cs
 │   │   │   │   │   │   └── RoverSensorSuite.cs.meta
@@ -7421,6 +7423,9 @@ Kabylash-Development-SK2LB/
 │   │   │   │   │   ├── Contracts/
 │   │   │   │   │   │   ├── IntegrationContracts.cs
 │   │   │   │   │   │   └── IntegrationContracts.cs.meta
+│   │   │   │   │   ├── Editor/
+│   │   │   │   │   │   ├── MissionsAndroidBuild.cs
+│   │   │   │   │   │   └── MissionsAndroidBuild.cs.meta
 │   │   │   │   │   ├── Http/
 │   │   │   │   │   │   ├── HttpMissionSessionService.cs
 │   │   │   │   │   │   └── HttpMissionSessionService.cs.meta
@@ -7432,6 +7437,7 @@ Kabylash-Development-SK2LB/
 │   │   │   │   │   │   ├── LocalServices.cs
 │   │   │   │   │   │   └── LocalServices.cs.meta
 │   │   │   │   │   ├── Contracts.meta
+│   │   │   │   │   ├── Editor.meta
 │   │   │   │   │   ├── Http.meta
 │   │   │   │   │   └── Local.meta
 │   │   │   │   ├── MarsEnvironment/
@@ -9014,6 +9020,8 @@ Kabylash-Development-SK2LB/
 │   │   │   │       ├── MainActivity.kt
 │   │   │   │       └── PocUnityActivity.kt
 │   │   │   ├── tools/
+│   │   │   │   ├── tests/
+│   │   │   │   │   └── test_prepare_host.py
 │   │   │   │   ├── build.sh
 │   │   │   │   ├── configure_test_db_admin.py
 │   │   │   │   ├── device_smoke.py
@@ -10995,6 +11003,7 @@ Kabylash-Development-SK2LB/
 │   ├── CREDENTIALS_GUIDE.md
 │   ├── DEVELOPER_RESPONSIBILITIES.md
 │   ├── DEVELOPMENT_WORKFLOW.md
+│   ├── GAME_INTEGRATION_UPDATE.md
 │   ├── REPOSITORY_TREE.md
 │   ├── SENTINEL_DATABASE_VALIDATION.md
 │   ├── SETUP_GUIDE.md

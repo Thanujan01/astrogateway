@@ -201,6 +201,14 @@ namespace AstroGateway.FirstMission.EditorTools
 
         static IEnumerator Tests()
         {
+            var retryField = typeof(HUD.MissionsHUD).GetField("RetryButton", System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.DeclaredOnly);
+            Check("Mission retry is runtime-only; no duplicate inherited serialization", retryField != null && System.Attribute.IsDefined(retryField, typeof(System.NonSerializedAttribute)));
+            var descriptor = new NativeMissionBridge.Descriptor { version = 1, launchId = System.Guid.NewGuid().ToString(), missionSessionId = System.Guid.NewGuid().ToString(), userId = System.Guid.NewGuid().ToString(), missionId = "mission-red-horizon-poc", expiresAtMillis = 2000 };
+            Check("Native descriptor accepts bounded canonical identity", NativeMissionBridge.Valid(descriptor, 1000));
+            Check("Native descriptor rejects expiry", !NativeMissionBridge.Valid(descriptor, 2000));
+            descriptor.userId = "../other-user";
+            Check("Native descriptor rejects non-UUID account scope", !NativeMissionBridge.Valid(descriptor, 1000));
+
             Directory.CreateDirectory(Shots);
             Line($"Unity {Application.unityVersion} | GPU {SystemInfo.graphicsDeviceName} | {SystemInfo.graphicsDeviceType} | Game View {Screen.width}x{Screen.height}");
             Line("Scene: " + UnityEngine.SceneManagement.SceneManager.GetActiveScene().path);
