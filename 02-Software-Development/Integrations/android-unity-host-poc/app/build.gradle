@@ -7,7 +7,9 @@ def authFile = new File(projectDir.parentFile, 'auth.local.properties')
 if (authFile.exists()) authFile.withInputStream { authValues.load(it) }
 def supabaseUrl = authValues.getProperty('supabase.url', System.getenv('ASTROGATEWAY_SUPABASE_URL') ?: '').trim()
 def publicKey = authValues.getProperty('supabase.publishableKey', System.getenv('ASTROGATEWAY_SUPABASE_PUBLISHABLE_KEY') ?: '').trim()
-def backendUrl = authValues.getProperty('auth.backendUrl', System.getenv('ASTROGATEWAY_AUTH_BACKEND_URL') ?: '').trim()
+def accountProvider = System.getenv('ASTROGATEWAY_ACCOUNT_PROVIDER') ?: 'mongodb'
+if (!(accountProvider in ['mongodb','supabase'])) throw new GradleException('Unsupported account provider.')
+def backendUrl = authValues.getProperty('auth.backendUrl', System.getenv('ASTROGATEWAY_AUTH_BACKEND_URL') ?: (accountProvider == 'mongodb' ? 'http://10.0.2.2:8000' : '')).trim()
 def isPublicKey = { key ->
     if (key.startsWith('sb_publishable_')) return true
     try { return new JsonSlurper().parseText(new String(Base64.urlDecoder.decode(key.split('\\.')[1]), StandardCharsets.UTF_8)).role == 'anon' } catch(Exception ignored) { return false }
@@ -28,6 +30,7 @@ android {
         targetSdk 36
         versionCode 3
         versionName '0.3-missions'
+        buildConfigField 'String','AUTH_PROVIDER',quoteConfig(accountProvider)
         buildConfigField 'String','SUPABASE_URL',quoteConfig(supabaseUrl)
         buildConfigField 'String','SUPABASE_PUBLISHABLE_KEY',quoteConfig(publicKey)
         buildConfigField 'String','AUTH_BACKEND_URL',quoteConfig(backendUrl)

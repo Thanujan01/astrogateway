@@ -161,8 +161,9 @@ def test_repository_response_mismatch_is_502():
         s=start(c,h);repo.submit_sensor_records=bad
         assert c.post(P.format(s=s),headers=h,json={'records':[rec()]}).status_code==502
 def test_unity_and_backend_catalogs_identical():
-    unity=Path.home()/'Projects/MissionRedHorizon/Assets/AstroGateway/FirstMission/Config/sensor_catalog_v1.json'
-    if not unity.exists():pytest.skip('Unity project not on this machine')
+    root=Path(__file__).resolve().parents[4]
+    unity=root/'01-Game-Development/MissionRedHorizon/Assets/AstroGateway/FirstMission/Config/sensor_catalog_v1.json'
+    assert unity.is_file(), 'The repository Unity sensor catalog is missing'
     backend=Path(sensor_records.__file__).resolve().parent/'rules'/'sensor_catalog_v1.json'
     assert unity.read_bytes()==backend.read_bytes()
 def test_every_catalog_sensor_belongs_to_an_instrument_and_unimplemented_are_not_modeled():

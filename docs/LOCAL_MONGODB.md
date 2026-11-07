@@ -1,0 +1,12 @@
+# Local MongoDB prototype
+
+Double-click `Run Prototype.command`. It starts MongoDB on `127.0.0.1:27018`, the API on `127.0.0.1:8000`, the portal on `127.0.0.1:5173`, and the Missions game. The Terminal stays open while the services run. Open the portal's **Create account** page to register a local prototype account.
+
+The existing Mac has the verified MongoDB binary and Python dependencies. On a fresh Apple Silicon checkout, run `python3 tools/prototype/setup_mongodb.py` once and `npm ci` inside the web application. The setup installs the [official MongoDB Community Server](https://www.mongodb.com/docs/v8.0/tutorial/install-mongodb-on-os-x/) in the ignored `prototype-builds/mongodb/` folder and creates a backend virtual environment. The database files stay in `prototype-builds/mongodb/data/`; keep that folder to retain local accounts and sessions. The launcher runs the database on loopback and does not create an Atlas project or system service.
+
+- FastAPI owns the application account identity. MongoDB stores password hashes, hashed opaque session tokens, profiles, mission sessions, commands and simulated sensor records. Browser sessions use a same-origin HttpOnly cookie; the Android source uses the existing encrypted device vault for its opaque token.
+- New local accounts are separate from the old Supabase account database. Email verification/recovery and profile-photo storage are not enabled in this local mode. The previous Supabase settings remain unchanged. To run that older provider explicitly, set `ASTROGATEWAY_ACCOUNT_PROVIDER=supabase` when starting the launcher or compiling the Android host.
+- Unity's existing mission save and replay stay local to the game. Creating a web mission session or completing a Unity local mission does not award an assessed score. The sensor/command API endpoints can store validated prototype evidence; the game does not automatically upload its local save.
+- Android source is ready to compile against the local API. Debug emulator access uses `http://10.0.2.2:8000`; a physical phone needs a separately reachable HTTPS API. This update compiles Kotlin only and does not package or install an APK.
+
+For API/portal startup without opening the game or browser, run `python3 tools/prototype/start.py --no-game --no-browser`. To test actual MongoDB persistence, run the backend pytest suite with `AG_TEST_MONGODB_URL=mongodb://127.0.0.1:27018/`; its integration tests create and remove isolated, synthetic databases.

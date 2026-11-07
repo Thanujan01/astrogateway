@@ -20,7 +20,7 @@ import kotlinx.coroutines.flow.collect
 import android.text.InputType
 import android.view.inputmethod.EditorInfo
 
-/** Stage 05A Views and Unity lifecycle retained; all private routes now require Supabase identity. */
+/** Stage 05A Views and Unity lifecycle retained; private routes require the configured account provider. */
 class MainActivity : Activity() {
     private val activityScope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
     private val account by lazy { AuthCoordinator.get(this) }
@@ -140,7 +140,7 @@ class MainActivity : Activity() {
             "Splash" -> { label("MISSION RED HORIZON"); paragraph("Astronaut training • Android foundation"); card("Systems initializing","Native interface and simulator connection") }
             "Welcome" -> {
                 label("EXPLORE. UNDERSTAND. ENGINEER."); paragraph("A scientific training workspace for your journey to Mars.")
-                card("One AstroGateway account","Your Supabase identity belongs to this application, the mission trainer and the future web application. Training gameplay remains in development.")
+                card("One AstroGateway account","Your account ID belongs to the configured account API and is shared with mission launches. Local MongoDB is the prototype default.")
                 card("Account status",authUi.message)
                 action("Sign in",true){go("Sign in")}; action("Create account"){go("Sign up")}
                 action("Retry session validation"){account.retrySession()}
@@ -150,7 +150,7 @@ class MainActivity : Activity() {
                 label("SECURE ASTROGATEWAY ACCOUNT"); paragraph(authUi.message)
                 if(next=="Sign up") field("Display name")
                 field("Email address"); field("Password")
-                paragraph("Passwords are sent only to Supabase Auth over HTTPS and are not saved by this app. Minimum 12 characters.")
+                paragraph("Passwords go to the configured account service and are never saved by this app. Use at least 12 characters. Local emulator mode connects to the API on your Mac.")
                 action(if(next=="Sign up") "Register account" else "Sign in to AstroGateway",true) { submitCredentials(next=="Sign up") }
                 if(next=="Sign in") action("Forgot password?"){go("Password reset")}
                 action(if(next=="Sign up")"Already have an account?" else "Create account"){go(if(next=="Sign up")"Sign in" else "Sign up")}
@@ -166,7 +166,7 @@ class MainActivity : Activity() {
             }
             "Dashboard" -> { label("ASTRONAUT  /  ${authUi.profile?.displayName ?: ""}"); paragraph("Welcome, astronaut. Continue your scientific preparation."); card("Training level · ${authUi.profile?.trainingLevel ?: 0}","Account-linked profile. No mission assessment has been recorded."); card("Mission Red Horizon","Mars systems exploration • Simulator preview available"); action("Continue training",true){go("Launch")}; action("Browse missions"){go("Missions")}; label("SCIENTIFIC SKILLS"); card("Geology • Energy • Life support","Observation, engineering trade-offs, and resource awareness"); card("Recent mission","No completed missions. Integration test results are not training scores."); status=text(""); evidence=text("",14f,muted); body.addView(status); body.addView(evidence); action("Astronaut profile"){go("Profile")}; action("Training progress"){go("Progress")}; action("Settings"){go("Settings")}; renderEvidence() }
             "Missions" -> { label("01  /  MARS EXPLORATION"); card("Mission Red Horizon","Jezero-inspired training site • Desktop world in development • Android integration preview"); action("Review Mission Red Horizon",true){go("Launch")}; card("Future missions","Unavailable in this foundation. No additional downloads or game installations.") }
-            "Launch" -> { label("SIMULATOR CONNECTION"); card("Mission Red Horizon","Native dashboard → embedded Unity → dashboard. Launches the Mars Missions gameplay scene. Local mission completion is provisional; online score synchronization is not yet connected."); paragraph("Your verified account launches a bounded mission context. Return to the dashboard with Android Back."); status=text(""); evidence=text("",14f,muted); body.addView(status); body.addView(evidence); action("Launch Mars Missions",true){launchUnity()}; paragraph("Use the dashboard return control or Android Back. Unity is retained for a warm relaunch."); renderEvidence() }
+            "Launch" -> { label("SIMULATOR CONNECTION"); card("Mission Red Horizon","Native dashboard → embedded Unity → dashboard. Launches the Mars Missions gameplay scene. Local mission completion is provisional; online score synchronization is not yet connected."); paragraph("Your signed-in account launches a bounded mission context. Return to the dashboard with Android Back."); status=text(""); evidence=text("",14f,muted); body.addView(status); body.addView(evidence); action("Launch Mars Missions",true){launchUnity()}; paragraph("Use the dashboard return control or Android Back. Unity is retained for a warm relaunch."); renderEvidence() }
             "Profile" -> { label("SUPABASE USER IDENTITY"); card(authUi.profile?.displayName ?: "Astronaut", "${authUi.profile?.traineeProfile} • Level ${authUi.profile?.trainingLevel}\nUser ID: ${authUi.profile?.userId}\nProfile created: ${authUi.profile?.createdAt}"); action("Edit display name",true){profileDraft=authUi.profile?.displayName; go("Edit profile")}; card("Learning focus","Mars geology, power systems and habitat engineering"); action("View training progress",true){go("Progress")} }
             "Edit profile" -> {
                 label("PERSONAL PROFILE"); paragraph("Your user ID stays the same across web and Android. Your display name can change.")
@@ -189,7 +189,7 @@ class MainActivity : Activity() {
                 action("View saved profile") {profileDraft=null; back()}
             }
             "Progress" -> { label("NO ASSESSMENTS RECORDED"); progress("Scientific observation",0); progress("Power systems",0); progress("Habitat engineering",0); card("Learning record","No live mission results or certificates. Bridge acknowledgements verify integration only."); action("Continue training",true){go("Launch")} }
-            "Settings" -> { label("APPLICATION PREFERENCES"); val prefs=getSharedPreferences("ui_preferences",MODE_PRIVATE); body.addView(Switch(this).apply { text="Reduce interface motion"; textSize=16f; setTextColor(ink); minHeight=dp(56); isChecked=prefs.getBoolean("reduced_motion",false); setOnCheckedChangeListener { _,v -> prefs.edit().putBoolean("reduced_motion",v).apply() } }); paragraph("Disables the subtle predictive Back motion on Android 14 and later. Navigation remains available."); card("Simulator quality","Managed by the existing Unity export. Graphics and audio controls are not connected in this stage."); card("Privacy & account","Supabase is the single identity provider. Sessions are encrypted on this device. No plaintext passwords or credentials are sent to Unity."); action("Sign out"){account.signOut()}; card("Application foundation","Stage 05B • Unity 6000.6.4f1 • ARM64\nNative Kotlin Views • Integration scene only"); action("Back to dashboard",true){dashboard()} }
+            "Settings" -> { label("APPLICATION PREFERENCES"); val prefs=getSharedPreferences("ui_preferences",MODE_PRIVATE); body.addView(Switch(this).apply { text="Reduce interface motion"; textSize=16f; setTextColor(ink); minHeight=dp(56); isChecked=prefs.getBoolean("reduced_motion",false); setOnCheckedChangeListener { _,v -> prefs.edit().putBoolean("reduced_motion",v).apply() } }); paragraph("Disables the subtle predictive Back motion on Android 14 and later. Navigation remains available."); card("Simulator quality","Managed by the existing Unity export. Graphics and audio controls are not connected in this stage."); card("Privacy & account","The configured account API owns your identity; local MongoDB is the prototype default. Sessions are encrypted on this device. No plaintext passwords or credentials are sent to Unity."); action("Sign out"){account.signOut()}; card("Application foundation","Local prototype • Unity 6000.6.4f1 • ARM64\nNative Kotlin Views • Missions gameplay"); action("Back to dashboard",true){dashboard()} }
         }
         Log.i("AstroGatewayUI","SCREEN $next")
     }

@@ -31,6 +31,7 @@ namespace AstroGateway.FirstMission.HUD
         public HudMinimap Minimap { get; protected set; }
         public GameObject TopBar, MissionCard, StatusSummary, NavWidget, AlertBanner, SpeedGauge;
         public Button MissionCollapse, NavCollapse, StatusExpand, DataPrev, DataNext, ScanButton;
+        protected Button FieldLogButton;
         public bool MissionCollapsed { get; private set; }
         public bool NavCollapsed { get; private set; }
         public bool StatusExpanded { get; private set; }
@@ -458,14 +459,14 @@ namespace AstroGateway.FirstMission.HUD
 
         GameObject BuildScience(Transform host)
         {
-            var p = Glass("Science panel", host, new Vector2(1, 0), new Vector2(1, 1), new Vector2(-700, 16), new Vector2(-12, -128));
-            Tx("Title", p, "SCIENCE • ROVER INSTRUMENTS", 22, TextAnchor.MiddleLeft, HudTokens.Cyan, new Vector2(.04f, .93f), new Vector2(.96f, .99f), FontStyle.Bold);
+            var p = Glass("Science panel", host, new Vector2(1, 0), new Vector2(1, 1), new Vector2(-700, 16), new Vector2(-12, -128), .9f);
+            Tx("Title", p, "SCIENCE OPERATIONS", 22, TextAnchor.MiddleLeft, HudTokens.Cyan, new Vector2(.04f, .93f), new Vector2(.96f, .99f), FontStyle.Bold);
             var list = R("Instrument list", p, new Vector2(.03f, .52f), new Vector2(.97f, .92f));
             int n = mission.Catalog.Instruments.Count, i = 0;
             foreach (var inst in mission.Catalog.Instruments)
             {
                 var id = inst.id; int row = i / 2, col = i % 2; float rows = Mathf.Ceil(n / 2f);
-                var b = Btn("Instrument " + id, list, (inst.available ? "" : "UNAVAILABLE • ") + inst.name.Replace(" (hazard cameras)", ""), new Vector2(col * .5f, 1 - (row + 1) / rows), new Vector2(col * .5f + .5f, 1 - row / rows), new Vector2(4, 4), new Vector2(-4, -4), () => SelectInstrument(id), 18);
+                var b = Btn("Instrument " + id, list, inst.name.Replace(" (hazard cameras)", "") + (inst.available ? "" : "\nUnavailable"), new Vector2(col * .5f, 1 - (row + 1) / rows), new Vector2(col * .5f + .5f, 1 - row / rows), new Vector2(4, 4), new Vector2(-4, -4), () => SelectInstrument(id), 18);
                 b.GetComponent<Image>().sprite = glass;
                 b.interactable = true;
                 sciInstrumentButtons[id] = b; instrumentButtons[id] = b; i++;
@@ -486,9 +487,13 @@ namespace AstroGateway.FirstMission.HUD
             scanLabel = ObserveButton.GetComponentInChildren<Text>(); scanLabel.transform.SetAsLastSibling();
             observeFill = scanFill;
             CancelButton = Btn("Cancel observation", p, "CANCEL", new Vector2(.72f, .19f), new Vector2(.97f, .32f), Vector2.zero, Vector2.zero, () => { if (mission.Observing != null) mission.Cancel("Observation cancelled by the player"); }, 20);
-            ScienceResultText = Tx("Scan result", p, "", 16, TextAnchor.UpperLeft, HudTokens.Text, new Vector2(.04f, .015f), new Vector2(.97f, .18f));
+            ScienceResultText = Tx("Scan result", p, "", 16, TextAnchor.UpperLeft, HudTokens.Text, new Vector2(.04f, .115f), new Vector2(.97f, .18f));
+            FieldLogButton = Btn("Open field log", p, "FIELD LOG", new Vector2(.04f, .015f), new Vector2(.43f, .105f),
+                Vector2.zero, Vector2.zero, OpenFieldLog, 18);
             return p.gameObject;
         }
+
+        protected virtual void OpenFieldLog() => Select(Tab.Data);
 
         void SelectInstrument(string id)
         {
@@ -498,17 +503,19 @@ namespace AstroGateway.FirstMission.HUD
             Refresh();
         }
 
-        static readonly string[] DataCols = { "TIME", "SENSOR", "STATION", "TYPE", "VALUE", "UNIT", "SOURCE", "QUEUE", "BACKEND", "AI" };
-        static readonly float[] DataColX = { 0, .08f, .26f, .34f, .45f, .58f, .65f, .76f, .86f, .94f, 1 };
+        static readonly string[] DataCols = { "TIME", "READING", "SITE", "VALUE", "SOURCE", "SYNC", "ANALYSIS" };
+        static readonly float[] DataColX = { 0, .09f, .29f, .40f, .60f, .75f, .86f, 1 };
 
         GameObject BuildData(Transform host)
         {
-            var p = Glass("Data panel", host, new Vector2(0, 0), new Vector2(1, 1), new Vector2(12, 16), new Vector2(-12, -128));
-            Tx("Title", p, "DATA • SCIENTIFIC RECORDS", 22, TextAnchor.MiddleLeft, HudTokens.Cyan, new Vector2(.02f, .93f), new Vector2(.5f, .99f), FontStyle.Bold);
+            var p = Glass("Data panel", host, new Vector2(0, 0), new Vector2(1, 1), new Vector2(12, 16), new Vector2(-12, -128), .94f);
+            Tx("Title", p, "FIELD LOG • READINGS", 22, TextAnchor.MiddleLeft, HudTokens.Cyan, new Vector2(.02f, .93f), new Vector2(.5f, .99f), FontStyle.Bold);
+            Btn("Back to science", p, "BACK TO SCIENCE", new Vector2(.64f, .905f), new Vector2(.83f, .995f),
+                Vector2.zero, Vector2.zero, () => Select(Tab.Science), 18);
             RetryButton = Btn("Retry sync", p, "RETRY SYNC", new Vector2(.84f, .905f), new Vector2(.985f, .995f), Vector2.zero, Vector2.zero, () => mission.Sync.RetryNow(), 18);
             DataSummaryText = Tx("Data body", p, "", 18, TextAnchor.MiddleLeft, HudTokens.Text, new Vector2(.02f, .83f), new Vector2(.98f, .92f));
             var head = R("Table header", p, new Vector2(.02f, .76f), new Vector2(.98f, .82f));
-            for (int c = 0; c < DataCols.Length; c++) Tx("H " + DataCols[c], head, DataCols[c], 14, TextAnchor.MiddleLeft, HudTokens.Cyan, new Vector2(DataColX[c], 0), new Vector2(DataColX[c + 1], 1), FontStyle.Bold);
+            for (int c = 0; c < DataCols.Length; c++) Tx("H " + DataCols[c], head, DataCols[c], 17, TextAnchor.MiddleLeft, HudTokens.Cyan, new Vector2(DataColX[c], 0), new Vector2(DataColX[c + 1], 1), FontStyle.Bold);
             var body = R("Table rows", p, new Vector2(.02f, .10f), new Vector2(.98f, .76f));
             const int rows = 10;
             for (int r = 0; r < rows; r++)
@@ -516,12 +523,12 @@ namespace AstroGateway.FirstMission.HUD
                 var row = R("Row " + r, body, new Vector2(0, 1 - (r + 1) / (float)rows), new Vector2(1, 1 - r / (float)rows));
                 if (r % 2 == 0) Img("Stripe", row, Vector2.zero, Vector2.one, null, new Color(1, 1, 1, .03f));
                 var cells = new Text[DataCols.Length];
-                for (int c = 0; c < DataCols.Length; c++) cells[c] = Tx(DataCols[c], row, "", 14, TextAnchor.MiddleLeft, HudTokens.Text, new Vector2(DataColX[c], 0), new Vector2(DataColX[c + 1], 1));
+                for (int c = 0; c < DataCols.Length; c++) cells[c] = Tx(DataCols[c], row, "", 17, TextAnchor.MiddleLeft, HudTokens.Text, new Vector2(DataColX[c], 0), new Vector2(DataColX[c + 1], 1));
                 DataRows.Add(cells);
             }
             DataPrev = Btn("Data newer", p, "NEWER", new Vector2(.70f, .015f), new Vector2(.84f, .09f), Vector2.zero, Vector2.zero, () => { DataPage = Mathf.Max(0, DataPage - 1); Refresh(); }, 18);
             DataNext = Btn("Data older", p, "OLDER", new Vector2(.85f, .015f), new Vector2(.985f, .09f), Vector2.zero, Vector2.zero, () => { DataPage++; Refresh(); }, 18);
-            Tx("AI note", p, "AI ANALYSIS: NOT CONNECTED — the team's scientific model is not available yet; no results are shown or invented.", 15, TextAnchor.MiddleLeft, HudTokens.Amber, new Vector2(.02f, .015f), new Vector2(.68f, .09f));
+            Tx("AI note", p, "SOURCE describes the reading. SYNC tracks upload. ANALYSIS tracks model results.", 15, TextAnchor.MiddleLeft, HudTokens.TextDim, new Vector2(.02f, .015f), new Vector2(.68f, .09f));
             return p.gameObject;
         }
 
@@ -769,30 +776,45 @@ namespace AstroGateway.FirstMission.HUD
                 kv.Value.GetComponentInChildren<Text>().color = def.available ? HudTokens.Text : HudTokens.TextDim;
             }
             var station = mission.sensors.Target(out float range);
-            scienceTarget.text = station ? $"{(mission.sensors.selected ? "TARGET" : "NEAREST")}: {station.displayName.ToUpperInvariant()} ({station.stableId})" : "NO RESEARCH STATION";
+            scienceTarget.text = station ? $"{station.displayName}  ·  {range:0.0} m" : "No research station nearby";
             string reason = mission.Check(inst);
-            float max = inst.maxRange > 0 ? inst.maxRange : 0;
-            rangeBar.rectTransform.anchorMax = new Vector2(max > 0 && station ? Mathf.Clamp01(1 - Mathf.Max(0, range - max) / 25f) : 1, 1);
-            bool inRange = max == 0 || (station && range <= max);
+            bool scanning = mission.Observing != null;
+            float max = inst.maxRange;
+            bool inRange = max <= 0 || (station && range <= max);
+            rangeBar.rectTransform.anchorMax = new Vector2(max <= 0 ? 1 : station ? Mathf.Clamp01(max / Mathf.Max(range, max)) : 0, 1);
             rangeBar.color = inRange ? HudTokens.Green : HudTokens.Amber;
-            scienceRange.text = max > 0 ? $"RANGE {(station ? range.ToString("0.0") : "—")} m / max {max:0} m • {(inRange ? "IN RANGE" : "OUT OF RANGE")}" + (inst.requiresStopped ? " • rover must be stopped" : "") : "Measures at the rover (no range limit)";
-            CancelButton.interactable = mission.Observing != null;
+            scienceRange.text = max > 0
+                ? $"{(inRange ? "IN RANGE" : "OUT OF RANGE")}  ·  Within {max:0} m of the site"
+                : "Readings taken at the rover";
+            CancelButton.interactable = scanning;
+            TargetButton.interactable = !scanning;
+            foreach (var button in sciInstrumentButtons.Values) button.interactable = !scanning;
             ObserveButton.interactable = reason == null;
-            scanLabel.text = mission.Observing != null ? $"SCANNING {Mathf.RoundToInt(mission.ObservationProgress * 100)}%" : reason == null ? "SCAN" : "SCAN UNAVAILABLE";
+            scanLabel.text = scanning ? $"SCANNING {Mathf.RoundToInt(mission.ObservationProgress * 100)}%"
+                : reason == null ? "START SCAN" : "SCAN UNAVAILABLE";
+
             var last = mission.LastObservation;
-            var b = new StringBuilder();
-            if (reason != null && mission.Observing == null) b.AppendLine(reason);
-            b.AppendLine(mission.LastFeedback);
-            if (last.Count > 0)
-            {
-                foreach (var r in last.Where(r => r.sensorId != "nav.position").Take(3))
-                    b.Append($"{r.sensorId} = {r.ValueLabel} [{r.provenance}]   ");
-                b.AppendLine();
-                b.Append($"Collection: stored on this device • {RoverStatusProvider.SyncLabel(last[0], mission.Sync.Uploader.Online)} • AI NOT CONNECTED");
-            }
-            ScienceResultText.text = b.ToString();
-            ScienceResultText.color = reason != null && mission.Observing == null ? HudTokens.Amber : HudTokens.Text;
+            bool hasSavedScan = mission.Store.Records.Count > 0;
+            FieldLogButton.interactable = hasSavedScan && !scanning;
+            string readings = last.Count == 0 ? "Choose an instrument to collect readings." : ScienceReadout.Assessment(last);
+            if (scanning) ScienceResultText.text = $"{mission.Observing.name}  ·  Collecting readings";
+            else if (reason != null) ScienceResultText.text = reason;
+            else if (mission.LastFeedback.StartsWith("Observation discarded") || mission.LastFeedback.StartsWith("Not stored")
+                || mission.LastFeedback.StartsWith("Observation cancelled")) ScienceResultText.text = mission.LastFeedback;
+            else ScienceResultText.text = last.Count == 0 ? readings : $"Scan saved  ·  {readings}";
+            ScienceResultText.color = reason != null && !scanning ? HudTokens.Amber : HudTokens.Text;
         }
+
+        protected string StationLabel(string id)
+        {
+            if (string.IsNullOrEmpty(id)) return "Open terrain";
+            var station = mission.sensors.stations.FirstOrDefault(s => s && s.stableId == id);
+            return station && !string.IsNullOrEmpty(station.displayName) ? station.displayName : id;
+        }
+
+        protected string ReadingValue(SensorRecord reading) =>
+            reading.sensorId == "sci.station_id" && reading.provenance == Provenance.Simulated
+                ? StationLabel(reading.valueText) : ScienceReadout.Value(reading);
 
         void RefreshDataPanel()
         {
@@ -800,7 +822,8 @@ namespace AstroGateway.FirstMission.HUD
             int local = 0, queued = 0, syncing = 0, synced = 0, failed = 0;
             foreach (var r in recs)
                 switch (RoverStatusProvider.SyncLabel(r, online)) { case "SYNCED": synced++; break; case "SYNCING": syncing++; break; case "FAILED": failed++; break; case "QUEUED": queued++; break; default: local++; break; }
-            DataSummaryText.text = $"{recs.Count} records   LOCAL ONLY {local}   QUEUED {queued}   SYNCING {syncing}   SYNCED {synced}   FAILED {failed}   •   backend: {(online ? "connected" : "OFFLINE / NOT CONNECTED")}   •   AI: NOT CONNECTED";
+            DataSummaryText.text = recs.Count == 0 ? "No readings yet. Open Science to start a scan."
+                : $"{recs.Count} readings  ·  {local} local  ·  {queued} queued  ·  {syncing} uploading  ·  {synced} synced  ·  {failed} failed";
             int pages = Mathf.Max(1, Mathf.CeilToInt(recs.Count / (float)DataRows.Count));
             DataPage = Mathf.Clamp(DataPage, 0, pages - 1);
             var view = recs.Reverse().Skip(DataPage * DataRows.Count).Take(DataRows.Count).ToList();
@@ -810,12 +833,16 @@ namespace AstroGateway.FirstMission.HUD
                 if (i >= view.Count) { foreach (var t in c) t.text = ""; continue; }
                 var r = view[i];
                 string sync = RoverStatusProvider.SyncLabel(r, online);
-                c[0].text = Local(r.capturedAtUtc); c[1].text = r.sensorId; c[2].text = string.IsNullOrEmpty(r.stationId) ? "—" : r.stationId; c[3].text = r.sensorType;
-                c[4].text = r.provenance == Provenance.Unavailable ? "N/A" : r.hasValue ? r.value.ToString("0.###", CultureInfo.InvariantCulture) : string.IsNullOrEmpty(r.valueText) ? "(location)" : Clip(r.valueText, 14);
-                c[5].text = r.unit; c[6].text = r.provenance; c[7].text = sync; c[8].text = r.uploadState; c[9].text = r.analysisState == AnalysisState.Complete ? "COMPLETE" : "NOT CONNECTED";
-                c[6].color = r.provenance == Provenance.Unavailable ? HudTokens.Amber : HudTokens.Text;
-                c[7].color = sync == "SYNCED" ? HudTokens.Green : sync == "FAILED" ? HudTokens.Red : sync == "SYNCING" ? HudTokens.Cyan : HudTokens.TextDim;
-                c[9].color = HudTokens.Amber;
+                c[0].text = Local(r.capturedAtUtc);
+                c[1].text = ScienceReadout.Label(r.sensorId);
+                c[2].text = StationLabel(r.stationId);
+                c[3].text = r.provenance == Provenance.Unavailable ? "—" : Clip(ReadingValue(r), 26);
+                c[4].text = r.provenance;
+                c[5].text = sync;
+                c[6].text = ScienceReadout.AnalysisTag(r);
+                c[4].color = r.provenance == Provenance.Unavailable ? HudTokens.Amber : HudTokens.Cyan;
+                c[5].color = sync == "SYNCED" ? HudTokens.Green : sync == "FAILED" ? HudTokens.Red : sync == "SYNCING" ? HudTokens.Cyan : HudTokens.TextDim;
+                c[6].color = r.analysisState == AnalysisState.Complete ? HudTokens.Green : HudTokens.TextDim;
             }
             DataPrev.interactable = DataPage > 0; DataNext.interactable = DataPage < pages - 1;
             RetryButton.interactable = failed > 0 || mission.Sync.Status.StartsWith("Sign-in");

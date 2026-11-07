@@ -216,6 +216,9 @@ def repository(request:Request):
     if request.app.state.repository is None:raise HTTPException(503,'Private training database configuration required.')
     return request.app.state.repository
 async def verified_user(request:Request,credentials:HTTPAuthorizationCredentials|None=Depends(bearer)):
+    if credentials is None and getattr(request.app.state.verifier, 'cookie_auth', False):
+        token = request.cookies.get('ag_mongo_session', '')
+        if token: return await request.app.state.verifier.verify(token)
     if credentials is None or credentials.scheme.lower()!='bearer' or not 1<=len(credentials.credentials)<=8192:
         raise HTTPException(401,'Sign-in required.',headers={'WWW-Authenticate':'Bearer'})
     return await request.app.state.verifier.verify(credentials.credentials)
@@ -223,10 +226,18 @@ async def authorized_user(user:Principal=Depends(verified_user),db=Depends(repos
     if await db.revoked(user):raise HTTPException(401,'This training session has been signed out.',headers={'WWW-Authenticate':'Bearer'})
     return user
 
-def create_app(settings:Settings|None=None,transport:httpx.AsyncBaseTransport|None=None,test_repository=None):
+def create_app(settings:Settings|None=None,transport:httpx.AsyncBaseTransport|None=None,test_repository=None,provider_factory=None):
     settings=settings or Settings.from_env()
     @asynccontextmanager
     async def lifespan(app):
+        if provider_factory is not None:
+            provider = await provider_factory()
+            app.state.verifier = provider
+            app.state.repository = provider
+            app.state.provider_ready = True
+            try: yield
+            finally: await provider.close()
+            return
         if test_repository is None and transport is None and settings.configured:
             # An operator-owned admin file must not be readable by this service account.
             # This guard covers the known development layout, not arbitrary secret discovery.
@@ -240,7 +251,7 @@ def create_app(settings:Settings|None=None,transport:httpx.AsyncBaseTransport|No
     app=FastAPI(title='AstroGateway Identity API',version='0.4',lifespan=lifespan,debug=False)
     if settings.cors_origins:app.add_middleware(CORSMiddleware,allow_origins=list(settings.cors_origins),allow_credentials=False,allow_methods=['GET','POST'],allow_headers=['Authorization','Content-Type'])
     @app.get('/health')
-    def health():return {'status':'ok' if settings.configured else 'configuration_required'}
+    def health():return {'status':'ok' if getattr(app.state,'provider_ready',settings.configured) else 'configuration_required'}
     @app.get('/v1/me',response_model=Profile)
     async def me(user:Principal=Depends(authorized_user),db=Depends(repository)):
         profile=await db.profile(user)

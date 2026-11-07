@@ -31,3 +31,6 @@
 !.env.template
 **/credentials.local.json
 **/secrets.local.json
+
+# Reproducible local prototype builds and process logs
+/prototype-builds/

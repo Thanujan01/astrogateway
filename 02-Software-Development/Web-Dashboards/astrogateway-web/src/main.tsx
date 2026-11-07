@@ -1,10 +1,5 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import AccountEntry from './account/AccountEntry'
 import './index.css'
-import AccountApp from './account/AccountApp.tsx'
-
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <AccountApp />
-  </StrictMode>,
-)
+createRoot(document.getElementById('root')!).render(<StrictMode><AccountEntry /></StrictMode>)

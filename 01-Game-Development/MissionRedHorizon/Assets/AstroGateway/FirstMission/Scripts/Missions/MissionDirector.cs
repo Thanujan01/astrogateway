@@ -25,9 +25,6 @@ namespace AstroGateway.FirstMission.Missions
         public List<MissionStep> steps = new List<MissionStep>();
     }
 
-    [Serializable]
-    class MissionSave { public int mission, step; public float charge; public bool repaired; public int checkpoints; public bool finished; public float o2 = 40; public bool stormStarted, batteryDrained; public float stormEta = 200; }
-
     [DefaultExecutionOrder(710)]
     public class MissionDirector : MonoBehaviour
     {
@@ -57,11 +54,15 @@ namespace AstroGateway.FirstMission.Missions
         public bool OnPad { get; private set; }
         public bool InDock { get; private set; }
         public bool Ready { get; private set; }
+        public MissionRunSession Run { get; private set; }
+        public MissionProgressState CaptureLocalProgress() => save;
+        public float ActiveSeconds => save.activeSeconds;
+        public int RetryCount => save.retries;
         public event Action<MissionDef, MissionStep> StepStarted, StepCompleted;
         public event Action<MissionDef> MissionCompleted;
         public event Action AllMissionsCompleted;
 
-        MissionSave save = new MissionSave();
+        MissionProgressState save = new MissionProgressState();
         float stepStartedAt, stillTime; bool started;
         Stage08B.MarsPrototype P => mission.hud.game.prototype;
         bool Reduced() => mission.Settings.reducedMotion;
@@ -73,12 +74,16 @@ namespace AstroGateway.FirstMission.Missions
             if (!generator) generator = FindAnyObjectByType<GeneratorState>();
             if (!charging) charging = FindAnyObjectByType<ChargingPadState>();
             Load();
-            if (generator) { generator.reduced = Reduced; generator.Init(particleTemplate); generator.SetRepaired(save.repaired); }
+            if (generator) { generator.reduced = Reduced; generator.Init(particleTemplate); }
             if (charging) { charging.reduced = Reduced; charging.Init(particleTemplate); }
             foreach (var c in checkpoints) { c.reduced = Reduced; c.Init(particleTemplate); }
             Define();
+            Failed = save.failed; FailReason = save.failReason;
+            if (generator) generator.SetRepaired(save.repaired);
             SyncCheckpointVisuals();
             Ready = true;
+            Run = gameObject.AddComponent<MissionRunSession>();
+            Run.Initialize(this);
         }
 
         float Dist(Vector3 a, Vector3 b) => RoverSensorSuite.Planar(a, b);
@@ -132,7 +137,8 @@ namespace AstroGateway.FirstMission.Missions
             m6.steps.Add(new MissionStep { objective = "Drive into the rover dock", targetId = "fac.dock", guide = "The covered dock is south-west of the charging station. Drive under the roof.", hint = "Go fast, then slow down at the entrance. PRECISION mode helps.", done = () => RoverNear(dockBay, DockRadius) });
             m6.steps.Add(new MissionStep { objective = "Stop inside the dock", targetId = "fac.dock", guide = "Bring the rover to a full stop inside the bay.", hint = "Hold BRAKE until the speed reads 0.0.", done = () => InDock && stillTime > 1.2f });
             Missions.Add(m6);
-            if (save.mission >= Missions.Count) save.finished = true;
+            save = save.Normalize(Missions.Select(m => m.steps.Count).ToArray(), checkpoints.Count);
+            if (generator) generator.RepairProgress = save.repairProgress;
         }
 
         // ---------- survival rules (game rules, SIMULATED) ----------
@@ -169,6 +175,7 @@ namespace AstroGateway.FirstMission.Missions
         void Fail(string title, string why)
         {
             Failed = true; FailReason = title + "\n" + why;
+            save.failed = true; save.failReason = FailReason;
             Save(); MissionFailed?.Invoke(FailReason);
         }
 
@@ -177,6 +184,8 @@ namespace AstroGateway.FirstMission.Missions
         {
             if (!Failed) return;
             Failed = false;
+            save.failed = false; save.failReason = "";
+            save.retries++;
             if (save.o2 <= 0) save.o2 = O2Retry;
             if (save.stormStarted && save.stormEta <= 0) { save.stormEta = StormRetry; P.SetWeather(1); }
             Save(); Retried?.Invoke(); EnterStep();
@@ -185,9 +194,18 @@ namespace AstroGateway.FirstMission.Missions
         void Update()
         {
             if (!Ready || !mission.Ready) return;
-            var p = P; float dt = Time.deltaTime; bool paused = mission.hud.environment.paused;
+            var p = P; float dt = Time.deltaTime; bool paused = mission.hud.environment.paused || mission.hud.modalOpen;
             if (!started && ui && ui.Nav != null) { started = true; EnterStep(); }
             Survival(dt, paused);
+            // Conditions such as proximity remain true at timeScale=0. Do not let
+            // them complete steps/checkpoints while paused or after a failure.
+            if (paused || Failed)
+            {
+                RepairHeld = false;
+                if (charging) charging.Charging = false;
+                return;
+            }
+            if (!save.finished) save.activeSeconds += dt;
 
             // rules that run regardless of the current step (structures keep their state)
             OnPad = charging && charging.pad && p.driving && Dist(p.rover.transform.position, charging.pad.position) <= PadRadius;
@@ -210,6 +228,7 @@ namespace AstroGateway.FirstMission.Missions
             if (generator && step != null && step.repair && InRepairRange && (RepairHeld || keyR) && !paused)
             {
                 generator.RepairProgress = Mathf.Min(1, generator.RepairProgress + dt / RepairSeconds);
+                save.repairProgress = generator.RepairProgress;
                 if (generator.RepairProgress >= 1 && !save.repaired) { save.repaired = true; generator.SetRepaired(true); Save(); }
             }
 
@@ -273,16 +292,14 @@ namespace AstroGateway.FirstMission.Missions
         // ---------- persistence ----------
         void Load()
         {
-            try { save = JsonUtility.FromJson<MissionSave>(PlayerPrefs.GetString(NativeMissionContext.PreferenceKey(SaveKey), "{}")) ?? new MissionSave(); }
-            catch { save = new MissionSave(); }
-            save.charge = Mathf.Clamp01(save.charge); save.o2 = Mathf.Clamp(save.o2, 0, 100);
-            if (save.o2 <= 0 && !save.repaired) save.o2 = O2Retry;          // never resume into an instant failure
-            if (save.stormStarted && save.stormEta <= 0 && !save.finished) save.stormEta = StormRetry;
+            try { save = JsonUtility.FromJson<MissionProgressState>(PlayerPrefs.GetString(NativeMissionContext.PreferenceKey(SaveKey), "{}")) ?? new MissionProgressState(); }
+            catch { save = new MissionProgressState(); }
+            // Normalize after Define has constructed the real mission catalog.
         }
         public void Save() { PlayerPrefs.SetString(NativeMissionContext.PreferenceKey(SaveKey), JsonUtility.ToJson(save)); PlayerPrefs.Save(); }
         public void ResetForTests(int missionIndex = 0)
         {
-            save = new MissionSave { mission = missionIndex };
+            save = new MissionProgressState { mission = missionIndex };
             Failed = false; FailReason = "";
             if (missionIndex > 1) { save.charge = 1; save.batteryDrained = true; }
             if (missionIndex > 2) { save.repaired = true; save.o2 = 100; }
@@ -292,5 +309,6 @@ namespace AstroGateway.FirstMission.Missions
             EnterStep();
         }
         void OnApplicationPause(bool paused) { if (paused && Ready) Save(); }
+        void OnApplicationQuit() { if (Ready) Save(); }
     }
 }

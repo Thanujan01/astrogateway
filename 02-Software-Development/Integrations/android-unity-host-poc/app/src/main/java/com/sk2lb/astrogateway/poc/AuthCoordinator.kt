@@ -30,12 +30,12 @@ data class MissionContext(val sessionId: String, val userId: String, val launchI
 class SafeAccountError(val uiMessage: String) : Exception()
 
 /** One application-scoped SDK client in the native host; Unity never constructs this object. */
-class AuthCoordinator private constructor(private val context: Context) {
+class AuthCoordinator private constructor(private val context: Context) : AccountService {
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main.immediate)
     private val operation = Mutex()
     private val vault = SecureSessionStore(context)
     private val mutable = MutableStateFlow(AuthUi())
-    val state: StateFlow<AuthUi> = mutable.asStateFlow()
+    override val state: StateFlow<AuthUi> = mutable.asStateFlow()
     private var signingOut = false
     private var epoch = 0
     private var validation: Job? = null
@@ -130,7 +130,7 @@ class AuthCoordinator private constructor(private val context: Context) {
             }
         } }
     }
-    fun retrySession() { if(client != null) validateSession() else mutable.value=AuthUi(ready=true,message="Account service is not configured. No session can be validated.") }
+    override fun retrySession() { if(client != null) validateSession() else mutable.value=AuthUi(ready=true,message="Account service is not configured. No session can be validated.") }
     private fun runAccount(task: suspend () -> Unit) {
         if (mutable.value.busy) return
         scope.launch { operation.withLock {
@@ -139,20 +139,20 @@ class AuthCoordinator private constructor(private val context: Context) {
             catch (error: Exception) { mutable.value = mutable.value.copy(ready=true,busy=false,message=safeError(error)) }
         } }
     }
-    fun signUp(name: String, email: String, password: String) = runAccount {
+    override fun signUp(name: String, email: String, password: String) = runAccount {
         val c=requiredClient(); vault.allowSessionWrites(); vault.setPendingFlow("verification")
         c.auth.signUpWith(Email, redirectUrl=CALLBACK) { this.email=email; this.password=password; data=buildJsonObject { put("display_name",name) } }
         if(c.auth.currentSessionOrNull()==null) mutable.value=AuthUi(ready=true,message="If registration can proceed, check your inbox to verify your email. Then return here and sign in.")
         else validateSession()
     }
-    fun signIn(email: String, password: String) = runAccount {
+    override fun signIn(email: String, password: String) = runAccount {
         val c=requiredClient(); vault.allowSessionWrites(); c.auth.signInWith(Email) { this.email=email; this.password=password }; vault.clearPendingFlow(); mutable.value=mutable.value.copy(recovery=false); validateSession()
     }
-    fun resetRequest(email: String) = runAccount {
+    override fun resetRequest(email: String) = runAccount {
         val c=requiredClient(); vault.setPendingFlow("recovery"); c.auth.resetPasswordForEmail(email,redirectUrl=CALLBACK)
         mutable.value=mutable.value.copy(ready=true,busy=false,message="If this address has an account, a recovery email has been requested. Open it on this device.")
     }
-    fun completeCallback(uri: Uri) = runAccount {
+    override fun completeCallback(uri: Uri) = runAccount {
         if(uri.scheme!="astrogateway" || uri.host!="auth" || uri.path!="/callback" || uri.fragment!=null) throw SafeAccountError("Unsupported verification link. Return to sign-in.")
         val code=uri.getQueryParameter("code")?.takeIf { it.length in 1..2048 } ?: throw SafeAccountError("Verification link is missing or expired. Request a new email.")
         val pending=vault.pendingFlow() ?: throw SafeAccountError("This link has no pending request on this device. Verify in your browser and sign in, or request a new recovery email here.")
@@ -162,11 +162,11 @@ class AuthCoordinator private constructor(private val context: Context) {
         if(pending=="recovery") mutable.value=mutable.value.copy(ready=true,busy=false,message="Choose a new password to finish account recovery.",recovery=true)
         else validateSession()
     }
-    fun changeRecoveredPassword(password: String) = runAccount {
+    override fun changeRecoveredPassword(password: String) = runAccount {
         if(!mutable.value.recovery) throw SafeAccountError("Start a password recovery request first.")
         requiredClient().auth.updateUser { this.password=password }; vault.clearPendingFlow(); mutable.value=mutable.value.copy(recovery=false); validateSession()
     }
-    fun updateDisplayName(rawName: String) = runAccount {
+    override fun updateDisplayName(rawName: String) = runAccount {
         val name=rawName.trim()
         if(name.codePointCount(0,name.length) !in 2..64 || name.any { it.code < 32 || it.code in 127..159 }) throw SafeAccountError("Use 2–64 characters without control characters.")
         if(!state.value.authenticated || signingOut) throw SafeAccountError("Sign in before editing your profile.")
@@ -177,7 +177,7 @@ class AuthCoordinator private constructor(private val context: Context) {
         if(generation!=epoch || signingOut || refreshed.userId!=before.userId) throw SafeAccountError("Your session changed. Sign in and retry.")
         mutable.value=mutable.value.copy(ready=true,busy=false,profile=refreshed,message="Display name saved.",accessExpiresAtMillis=client!!.auth.currentSessionOrNull()!!.expiresAt.toEpochMilliseconds())
     }
-    fun signOut() {
+    override fun signOut() {
         if(signingOut) return
         signingOut=true; epoch++; validation?.cancel(); revokeMission()
         mutable.value=AuthUi(ready=true,busy=true,message="Signing out and clearing this device’s session…")
@@ -197,7 +197,7 @@ class AuthCoordinator private constructor(private val context: Context) {
             }
         } }
     }
-    suspend fun initializeMission(launchId: String): MissionContext = operation.withLock {
+    override suspend fun initializeMission(launchId: String): MissionContext = operation.withLock {
         if(!state.value.authenticated || signingOut) throw SafeAccountError("Sign in before launching a mission.")
         val generation=epoch; val profile=verifyNow()
         val data=backend("POST","/v1/mission-sessions",JSONObjectBuilder("launch_id" to launchId,"mission_id" to "mission-red-horizon-poc"))
@@ -206,7 +206,7 @@ class AuthCoordinator private constructor(private val context: Context) {
         val expiry=java.time.Instant.parse(data.getString("expires_at")).toEpochMilli()
         return@withLock MissionContext(data.getString("id"),profile.userId,launchId,"mission-red-horizon-poc",expiry)
     }
-    suspend fun submitIntegrationResult(sessionId: String, launchId: String) {
+    override suspend fun submitIntegrationResult(sessionId: String, launchId: String) {
         operation.withLock {
             if(!state.value.authenticated || signingOut) throw SafeAccountError("Sign in to submit the integration result.")
             backend("POST","/v1/mission-sessions/$sessionId/complete",JSONObjectBuilder("launch_id" to launchId,"outcome" to "integration_check"))
@@ -237,6 +237,6 @@ class AuthCoordinator private constructor(private val context: Context) {
     companion object {
         const val CALLBACK="astrogateway://auth/callback"
         @Volatile private var instance: AuthCoordinator?=null
-        fun get(context: Context): AuthCoordinator = instance ?: synchronized(this) { instance ?: AuthCoordinator(context.applicationContext).also { instance=it } }
+        fun get(context: Context): AccountService = if (BuildConfig.AUTH_PROVIDER == "mongodb") MongoAuthCoordinator.get(context) else instance ?: synchronized(this) { instance ?: AuthCoordinator(context.applicationContext).also { instance=it } }
     }
 }

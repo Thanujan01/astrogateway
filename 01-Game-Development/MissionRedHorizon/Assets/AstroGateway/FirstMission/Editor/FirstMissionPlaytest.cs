@@ -69,6 +69,9 @@ namespace AstroGateway.FirstMission.EditorTools
 
         static void Tick()
         {
+            // Continue an automated run after Editor Error Pause; the exception
+            // remains recorded and still fails the no-console-errors gate.
+            if ((routine != null || SessionState.GetBool(Flag, false)) && EditorApplication.isPaused) EditorApplication.isPaused = false;
             if (!EditorApplication.isPlaying) return;
             try
             {
@@ -237,6 +240,13 @@ namespace AstroGateway.FirstMission.EditorTools
                 if (d.enabled && (d is Keyboard || d is Pointer || d is Gamepad)) { InputSystem.DisableDevice(d); disabledReal.Add(d); }
             Line($"Physical input devices disabled for this run: {disabledReal.Count}");
             yield return Real(2f);
+
+            if (Environment.GetEnvironmentVariable("FM_TEST_SCOPE") == "controls")
+            {
+                yield return ControlTests();
+                Check("No console errors or exceptions during the control run", logErrors.Count == 0, string.Join(" | ", logErrors.Distinct().Take(5)));
+                yield break;
+            }
 
             // ---------- start state ----------
             var cam = p.follow; var aresT = mission.ares.ares;
@@ -436,8 +446,34 @@ namespace AstroGateway.FirstMission.EditorTools
             ui.Select(FirstMissionHUD.Tab.Data); yield return Real(.6f);
             var dataText = ui.Panels[FirstMissionHUD.Tab.Data].GetComponentsInChildren<Text>().First(t => t.name == "Data body").text;
             if (Premium) dataText += " " + string.Join(" ", ((HUD.PremiumHUD)ui).DataRows.SelectMany(r => r).Select(t => t.text));
-            Check("DATA tab shows OFFLINE upload state and AI NOT CONNECTED", dataText.Contains(UploadState.Offline) && dataText.Contains("NOT CONNECTED") && dataText.Contains("SIMULATED"), dataText.Substring(0, Math.Min(160, dataText.Length)));
+            Check("DATA tab shows local storage and disconnected model analysis", dataText.Contains(Premium ? "LOCAL ONLY" : UploadState.Offline) && dataText.Contains("NOT CONNECTED") && dataText.Contains("SIMULATED"), dataText.Substring(0, Math.Min(160, dataText.Length)));
+            if (ui is HUD.ExplorerHUD dataExplorer)
+                Check("DATA readings are clear of scan notifications and navigation markers", !dataExplorer.ScanPopup.activeSelf
+                    && !dataExplorer.RecordIcon.activeSelf && !dataExplorer.WaypointMarker.activeSelf
+                    && (!(ui is HUD.MissionsHUD dataMissions) || !dataMissions.SurvivalPanel.activeSelf));
             yield return Shot("06_data_tab_offline.png", "DATA tab: local records, OFFLINE, AI not connected");
+            if (ui is HUD.ExplorerHUD explorer)
+            {
+                var back = ui.Panels[FirstMissionHUD.Tab.Data].GetComponentsInChildren<Button>().First(b => b.name == "Back to science");
+                back.onClick.Invoke(); yield return Real(.3f);
+                Check("DATA has a direct route back to Science", ui.Current == FirstMissionHUD.Tab.Science);
+                var fieldLog = ui.Panels[FirstMissionHUD.Tab.Science].GetComponentsInChildren<Button>().First(b => b.name == "Open field log");
+                fieldLog.onClick.Invoke(); yield return Real(.3f);
+                var logBody = explorer.RecordView.GetComponentsInChildren<Text>().First(t => t.name == "Record body");
+                Check("Science opens the latest scan with readable values and separate analysis status",
+                    fieldLog.interactable && explorer.RecordView.activeSelf && logBody.text.Contains("Light dust")
+                    && logBody.text.Contains("FIELD ASSESSMENT") && logBody.text.Contains("MODEL ANALYSIS  ·  NOT CONNECTED")
+                    && logBody.text.Contains("[SIMULATED]") && logBody.text.Contains("[UNAVAILABLE]"), logBody.text);
+                yield return Shot("06a_science_field_log.png", "Field Log: review the saved environment scan");
+                var logButtons = explorer.RecordView.GetComponentsInChildren<Button>();
+                var older = logButtons.First(b => b.name == "Record older");
+                var newer = logButtons.First(b => b.name == "Record newer");
+                bool atLatest = older.interactable && !newer.interactable;
+                older.onClick.Invoke(); yield return Real(.2f);
+                Check("Field Log can page back to the terrain scan", atLatest && newer.interactable && logBody.text.Contains("Ground slope"));
+                explorer.RecordClose.onClick.Invoke(); yield return Real(.2f);
+            }
+            if (Environment.GetEnvironmentVariable("FM_TEST_SCOPE") == "science") yield break;
             ui.Select(FirstMissionHUD.Tab.Mission); yield return Real(.6f);
             int done = mission.Objectives().Count(o => o.done && !o.info);
             Check("MISSION objectives progress from validated local records", done >= 6, $"{done} done: " + string.Join(" | ", mission.Objectives().Select(o => (o.done ? "x " : "- ") + o.text)));
@@ -544,8 +580,11 @@ namespace AstroGateway.FirstMission.EditorTools
             Check("Keyboard E boards (5 m rule)", p.driving);
             Check("State ROVER_DRIVE after boarding", cl.State == ControlState.RoverDrive);
             var r0 = p.rover.transform.position;
-            held.Add(Key.W); KeyState(); yield return Real(1.5f); held.Clear(); KeyState();
-            Check("Keyboard W drives in ROVER_DRIVE", Vector3.Distance(r0, p.rover.transform.position) > 1.5f, $"{Vector3.Distance(r0, p.rover.transform.position):F2} m");
+            float driveSimStart = p.elapsed;
+            // The controller caps dt during long frames. Measure simulated driving
+            // time so background shader compilation cannot shorten the input trial.
+            held.Add(Key.W); KeyState(); yield return Until(() => p.elapsed - driveSimStart >= 1.5f, 12); held.Clear(); KeyState();
+            Check("Keyboard W drives in ROVER_DRIVE", p.elapsed - driveSimStart >= 1.5f && Vector3.Distance(r0, p.rover.transform.position) > 1.5f, $"{Vector3.Distance(r0, p.rover.transform.position):F2} m in {p.elapsed - driveSimStart:F2} simulated seconds");
             held.Add(Key.Space); KeyState(); yield return Until(() => Mathf.Abs(p.speed) < .05f, 4); held.Clear(); KeyState();
             Check("Keyboard Space brakes", Mathf.Abs(p.speed) < .05f);
 
@@ -794,10 +833,22 @@ namespace AstroGateway.FirstMission.EditorTools
             Check("Objective chip shows the mission step", ex.ObjectiveChip.GetComponentInChildren<Text>().text.StartsWith("M1 • Grab"), ex.ObjectiveChip.GetComponentInChildren<Text>().text);
             float o2a = d.BaseO2; yield return Real(1.5f);
             Check("Survival: base oxygen reserve drains while the generator is down", d.BaseO2 < o2a && mh.SurvivalPanel.activeInHierarchy && mh.SurvivalText.Contains("ON RESERVE"), $"{o2a:F2} -> {d.BaseO2:F2} | {mh.SurvivalText}");
+            hud.TogglePause(); yield return Real(.2f);
+            float pausedO2 = d.BaseO2, pausedActive = d.ActiveSeconds;
+            Teleport(p.astronaut, tents, 0); yield return Real(.8f);
+            Check("Paused proximity cannot advance a mission step", d.MissionIndex == 0 && d.StepIndex == 0);
+            Check("Paused survival and active-time counters stay still", Mathf.Approximately(d.BaseO2, pausedO2) && Mathf.Approximately(d.ActiveSeconds, pausedActive));
+            Teleport(p.astronaut, near, Yaw(near, tents)); p.yaw = Yaw(near, tents);
+            hud.CloseModal(); yield return Real(.2f);
             d.SetSurvivalForTests(o2: .05f); yield return Real(.6f);
             Check("Oxygen running out fails the mission (MISSION FAILED + RETRY)", d.Failed && mh.FailCard.activeInHierarchy && d.FailReason.StartsWith("LIFE SUPPORT FAILED"), d.FailReason);
             yield return Shot("70_survival_mission_failed.png", "mission failed: oxygen reserve ran out");
+            float failedActive = d.ActiveSeconds;
+            Teleport(p.astronaut, tents, 0); yield return Real(.8f);
+            Check("Failed mission cannot advance from proximity or count active time", d.StepIndex == 0 && Mathf.Approximately(d.ActiveSeconds, failedActive));
+            Teleport(p.astronaut, near, Yaw(near, tents)); p.yaw = Yaw(near, tents);
             mh.RetryButton.onClick.Invoke(); yield return Real(.6f);
+            Check("Retry count records the explicit retry", d.RetryCount == 1);
             Check("RETRY resumes the mission with a top-up", !d.Failed && !mh.FailCard.activeInHierarchy && d.BaseO2 >= 29, $"o2 {d.BaseO2:F1}");
             yield return Until(() => mh.GuideOpen, 4);
             Check("Step sets a navigation target (beacon at the tents)", ex.Nav.Target != null && ex.Nav.Target.id == "fac.tents" && ex.Cinematics.Beacon.activeInHierarchy);
@@ -903,6 +954,7 @@ namespace AstroGateway.FirstMission.EditorTools
             Check("Mission progress saved on this device", PlayerPrefs.GetString(Missions.MissionDirector.SaveKey, "").Contains("\"finished\":true"));
             ex.OpenDrawer("Mission"); yield return Real(.5f);
             var dt = ex.Drawer.GetComponentsInChildren<Text>().First(t => t.name == "Drawer body").text;
+            Check("Completion debrief is local and unscored", dt.Contains("MISSION DEBRIEF - LOCAL, UNSCORED") && dt.Contains("not assessed"));
             Check("Systems drawer lists all six missions as DONE", dt.Split('\n').Count(l => l.StartsWith("DONE") && l.Contains(".")) >= 6, dt.Substring(0, Math.Min(200, dt.Length)));
             yield return Shot("68_missions_drawer.png", "mission list in the systems drawer");
             ex.CloseDrawer();
@@ -1055,13 +1107,13 @@ namespace AstroGateway.FirstMission.EditorTools
             yield return Shot("51_explorer_scan_beam.png", "scan beam and ring during a rover observation");
             yield return Until(() => mission.Observing == null, 6); yield return Real(.3f);
             Check("Scan beam stops when the observation ends", !ex.Cinematics.ScanBeam.enabled);
-            Check("Scan result popup appears (not over the centre)", ex.ScanPopup.activeSelf && ex.RecordCount == recs0 + 1 && ex.PopupText.Contains("SIMULATED") && ex.PopupText.Contains("LOCAL ONLY"), ex.PopupText.Replace("\n", " | "));
+            Check("Scan result popup appears (not over the centre)", ex.ScanPopup.activeSelf && ex.RecordCount == recs0 + 1 && ex.PopupText.Contains("SIMULATED") && ex.PopupText.Contains("Saved on this device"), ex.PopupText.Replace("\n", " | "));
             yield return Shot("47_explorer_scan_popup.png", "scan result popup");
             yield return Real(5f);
             Check("Popup collapses into the record icon after ~4.5 s", !ex.ScanPopup.activeSelf && ex.RecordIcon.activeSelf);
             ex.RecordIconButton.onClick.Invoke(); yield return Real(.4f);
             var detail = ex.RecordView.GetComponentsInChildren<Text>().First(t => t.name == "Record body").text;
-            Check("Record view shows provenance, storage, sync and AI status", ex.RecordView.activeSelf && detail.Contains("SIMULATED") && detail.Contains("LOCAL ONLY") && detail.Contains("NOT CONNECTED") && detail.Contains("Related objective"));
+            Check("Field log shows readable readings, provenance, storage and separate model status", ex.RecordView.activeSelf && detail.Contains("Survey site") && detail.Contains("[SIMULATED]") && detail.Contains("FIELD ASSESSMENT") && detail.Contains("SAVED ON THIS DEVICE") && detail.Contains("LOCAL ONLY") && detail.Contains("MODEL ANALYSIS  ·  NOT CONNECTED"), detail);
             yield return Shot("48_explorer_record_view.png", "detailed scientific record");
             ex.RecordClose.onClick.Invoke(); yield return Real(.2f);
             ui.ExitButton.onClick.Invoke(); yield return Until(() => !p.driving, 3);
@@ -1103,8 +1155,12 @@ namespace AstroGateway.FirstMission.EditorTools
             ui.Select(FirstMissionHUD.Tab.Data); yield return Real(.5f);
             Check("DATA: dashboard visible, side panels hidden", ui.Panels[FirstMissionHUD.Tab.Data].activeInHierarchy && !ph.MissionCard.activeInHierarchy && !ph.NavWidget.activeInHierarchy);
             var newest = mission.Store.Records.Last();
-            Check("DATA table row 1 is the newest record with its real fields", ph.DataRows[0][1].text == newest.sensorId && ph.DataRows[0][6].text == newest.provenance && ph.DataRows[0][9].text == "NOT CONNECTED", string.Join(" | ", ph.DataRows[0].Select(t => t.text)));
-            Check("DATA sync states use LOCAL ONLY while offline", ph.DataRows[0][7].text == "LOCAL ONLY" && ph.DataSummaryText.text.Contains("LOCAL ONLY"));
+            var row = ph.DataRows[0];
+            string model = newest.analysisState == AnalysisState.Unavailable ? "UNAVAILABLE" : "NOT CONNECTED";
+            Check("DATA table shows a readable sensor label and the newest record's provenance and model status",
+                !string.IsNullOrEmpty(row[1].text) && row[1].text != newest.sensorId && row[4].text == newest.provenance && row[6].text == model,
+                string.Join(" | ", row.Select(t => t.text)));
+            Check("DATA sync states use LOCAL ONLY while offline", row[5].text == "LOCAL ONLY" && ph.DataSummaryText.text.Contains(" local"));
             Check("Sync label mapping (SYNCED/SYNCING/FAILED/QUEUED/LOCAL ONLY)", HUD.RoverStatusProvider.SyncLabel(new SensorRecord { uploadState = UploadState.Uploaded }, true) == "SYNCED" && HUD.RoverStatusProvider.SyncLabel(new SensorRecord { uploadState = UploadState.Uploading }, true) == "SYNCING" && HUD.RoverStatusProvider.SyncLabel(new SensorRecord { uploadState = UploadState.Failed }, true) == "FAILED" && HUD.RoverStatusProvider.SyncLabel(new SensorRecord { uploadState = UploadState.WaitingForSync }, true) == "QUEUED" && HUD.RoverStatusProvider.SyncLabel(new SensorRecord { uploadState = UploadState.Offline }, false) == "LOCAL ONLY");
             yield return Shot("31_hudv2_data.png", "HUD v2 DATA dashboard");
             ui.Select(FirstMissionHUD.Tab.Mission); yield return Real(.5f);

@@ -58,6 +58,8 @@ class SecureSessionStore(context: Context, private val namespace: String = "auth
         }
     }
     private suspend fun delete(name: String) = withContext(Dispatchers.IO) { mutex.withLock { AtomicFile(File(directory, name)).delete() } }
+    suspend fun saveLocalAccount(value: String) = write("session", value)
+    suspend fun loadLocalAccount(): String? = read("session")
     override suspend fun saveSession(session: UserSession) { if(sessionWritesAllowed) write("session", json.encodeToString(UserSession.serializer(), session)) }
     suspend fun blockAndClearSession() { sessionWritesAllowed=false; deleteSession() }
     fun allowSessionWrites() { sessionWritesAllowed=true }

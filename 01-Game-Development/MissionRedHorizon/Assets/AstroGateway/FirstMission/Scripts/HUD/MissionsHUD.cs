@@ -26,6 +26,10 @@ namespace AstroGateway.FirstMission.HUD
         public int BannersShown { get; private set; }
         public const float GuideSeconds = 9f, CompleteFlash = 1.3f, BannerSeconds = 3.4f;
 
+        public Button SaveRunButton, NewRunButton, ConfirmNewRunButton, CancelNewRunButton;
+        public GameObject NewRunCard;
+        Text saveStatus;
+
         Text guideHeader, guideObjective, guideBody, guideHint, guideProgressLabel, bannerTitle, bannerBody, repairLabel;
         Image guideBar, guideBarBack, guideIcon, repairFill, guideFlash; RectTransform guideDots;
         GameObject guideProgress; Text flashText;
@@ -49,6 +53,7 @@ namespace AstroGateway.FirstMission.HUD
             BuildFail();
             BuildRepairButton();
             BuildTitleCard();
+            BuildRunControls();
             if (director)
             {
                 Fx = gameObject.AddComponent<MissionFx>(); Fx.Init(director);
@@ -61,6 +66,30 @@ namespace AstroGateway.FirstMission.HUD
                 director.MissionFailed += why => ShowFail(why);
             }
             PausedOverlay.transform.SetAsLastSibling();
+        }
+
+        void BuildRunControls()
+        {
+            // Two explicit actions in the existing pause card; no new navigation framework.
+            SaveRunButton = PillButton("Save mission run", PausedOverlay.transform, "check", "SAVE RUN", new Vector2(.5f, 0), new Vector2(-420, 28), new Vector2(-30, 116), () => {
+                bool ok = director.Run && director.Run.SaveNow();
+                saveStatus.text = ok ? "Saved on this device. Continue from here next launch." : "Save unavailable. Previous checkpoint is preserved.";
+            }, HudTokens.Cyan);
+            NewRunButton = PillButton("New mission run", PausedOverlay.transform, "recenter2", "NEW RUN", new Vector2(.5f, 0), new Vector2(30, 28), new Vector2(420, 116), () => NewRunCard.SetActive(true), HudTokens.Orange);
+            saveStatus = Tx("Run save status", PausedOverlay.transform, "Autosaves locally at mission steps and every 10 seconds.", 18, TextAnchor.MiddleCenter, HudTokens.Text,
+                new Vector2(.15f, 0), new Vector2(.85f, 0));
+            saveStatus.rectTransform.offsetMin = new Vector2(0, 120); saveStatus.rectTransform.offsetMax = new Vector2(0, 164);
+            var shade = Img("Confirm new run", PausedOverlay.transform, Vector2.zero, Vector2.one, null, new Color(0, 0, 0, .85f), true);
+            NewRunCard = shade.gameObject;
+            var card = Glass("New run card", shade.transform, new Vector2(.5f, .5f), new Vector2(.5f, .5f), new Vector2(-470, -220), new Vector2(470, 220), .98f);
+            Tx("New run title", card, "START A NEW RUN?", 32, TextAnchor.MiddleCenter, HudTokens.Orange, new Vector2(.05f, .72f), new Vector2(.95f, .95f), FontStyle.Bold);
+            Tx("New run description", card, "Your current run will be archived on this device. The six missions and observations start fresh. Your account and settings stay the same.", 23, TextAnchor.MiddleCenter,
+                HudTokens.Text, new Vector2(.07f, .32f), new Vector2(.93f, .72f));
+            CancelNewRunButton = PillButton("Cancel new run", card, "close", "KEEP PLAYING", new Vector2(.5f, 0), new Vector2(-430, 30), new Vector2(-20, 122), () => NewRunCard.SetActive(false), HudTokens.Cyan);
+            ConfirmNewRunButton = PillButton("Confirm new run", card, "recenter2", "START NEW RUN", new Vector2(.5f, 0), new Vector2(20, 30), new Vector2(430, 122), () => {
+                if (!director.Run || !director.Run.RestartRun()) { NewRunCard.SetActive(false); saveStatus.text = director.Run ? director.Run.Status : "New run unavailable"; }
+            }, HudTokens.Orange);
+            NewRunCard.SetActive(false);
         }
 
         string NextLine()
@@ -135,7 +164,7 @@ namespace AstroGateway.FirstMission.HUD
         }
 
         public void OpenGuide() { if (director && !director.AllComplete) ShowGuide(); }
-        protected override void ObjectiveTapped() { if (director && !director.AllComplete) OpenGuide(); else base.ObjectiveTapped(); }
+        protected override void ObjectiveTapped() { if (director && !director.AllComplete) OpenGuide(); else OpenDrawer("Mission"); }
 
         // ---------------- mission title card ----------------
         void BuildTitleCard()
@@ -244,6 +273,7 @@ namespace AstroGateway.FirstMission.HUD
         {
             bool show = !director.AllComplete && !hide;
             SurvivalPanel.SetActive(show);
+            if (director.Failed && !FailCard.activeSelf) ShowFail(director.FailReason);
             if (FailCard.activeSelf && !director.Failed) FailCard.SetActive(false);
             if (!show) return;
             survRt.offsetMin = new Vector2(16, driving ? -322 : -208); survRt.offsetMax = new Vector2(560, driving ? -236 : -122);
@@ -283,6 +313,16 @@ namespace AstroGateway.FirstMission.HUD
         {
             if (!director || director.Missions.Count == 0) return base.MissionSection();
             var b = new StringBuilder();
+            if (director.AllComplete)
+            {
+                b.AppendLine("MISSION DEBRIEF - LOCAL, UNSCORED");
+                b.AppendLine(director.ActiveSeconds > 0
+                    ? $"Recorded active time: {Clock(director.ActiveSeconds)}   Retries: {director.RetryCount}"
+                    : "Time / retries: not recorded in this older save.");
+                b.AppendLine($"Sensor records on this device: {mission.Store.Records.Count}");
+                b.AppendLine("Life support restored; supply site surveyed; storm shelter reached.");
+                b.AppendLine("Training score / skill levels: not assessed.\n");
+            }
             b.AppendLine($"MISSIONS • {(director.AllComplete ? director.Missions.Count : director.MissionIndex)} of {director.Missions.Count} complete (saved on this device, not scored)\n");
             for (int i = 0; i < director.Missions.Count; i++)
             {
@@ -301,7 +341,7 @@ namespace AstroGateway.FirstMission.HUD
         {
             base.Refresh();
             if (!objectiveText || !director || !director.Ready) return;
-            if (director.AllComplete) { objectiveText.text = "All missions complete • free exploration"; return; }
+            if (director.AllComplete) { objectiveText.text = "All missions complete • tap for debrief"; return; }
             var s = director.Step; if (s == null) return;
             string pct = s.progress != null ? $" • {s.progress() * 100:0}%" : "";
             objectiveText.text = $"M{director.MissionIndex + 1} • {s.objective}{pct}";
@@ -316,6 +356,8 @@ namespace AstroGateway.FirstMission.HUD
             bool overlay = MapOverlay.activeSelf || Drawer.activeSelf || RecordView.activeSelf;
             bool intro = Cinematics && Cinematics.IntroActive;
             float now = Time.unscaledTime;
+            if (director.Run && !NewRunCard.activeSelf) saveStatus.text = director.Run.Status;
+            if (!paused && NewRunCard.activeSelf) NewRunCard.SetActive(false);
 
             // mission title card: after the intro and any MISSION COMPLETE banner, before the step guide
             if (titlePending && !intro && !Banner.activeSelf && !(paused || overlay)) { titlePending = false; ShowTitle(); }
@@ -345,7 +387,7 @@ namespace AstroGateway.FirstMission.HUD
                 guideProgressLabel.text = $"{s.progressLabel}  {v * 100:0}%{extra}";
             }
 
-            UpdateSurvival(p.driving, paused || overlay || intro);
+            UpdateSurvival(p.driving, paused || overlay || intro || (Current != Tab.Drive && Current != Tab.Science));
             // banner
             if (Banner.activeSelf && (now > bannerUntil || overlay)) Banner.SetActive(false);
             if (Banner.activeSelf) Banner.transform.SetAsLastSibling();

@@ -2,6 +2,14 @@
 
 A developer navigation hub for the **Kabylash-Development-SK2LB** private source repository. AstroGateway combines a Unity Mars training prototype, account and mission API code, a React account interface, an Android/Unity host POC, and independent adaptive-training experiments. **Source availability is not a production-readiness claim.**
 
+## Run the local prototype
+
+Double-click **`Run Prototype.command`** on this Mac. It starts local MongoDB, the FastAPI account/mission API and the web portal, then opens the existing Unity prototype. The game supports local save/resume, retry and confirmed replay. Create a local account in the web portal; prior Supabase accounts were not imported.
+
+[Local MongoDB setup and test commands](docs/LOCAL_MONGODB.md). The prior Supabase configuration is retained for optional legacy use.
+
+Controls: WASD move/drive, Shift run, E board/exit, Space brake, right mouse orbit; use the on-screen map and science controls. Pause → Save Run saves a complete checkpoint. The next launch resumes it. Unity progress is saved on this device; local MongoDB holds accounts and API mission/session records.
+
 ## 1. Project overview
 
 [MissionRedHorizon](01-Game-Development/MissionRedHorizon) is the primary Unity project: Mars environments, astronaut/rover controls, local mission chains, sensor records, navigation, HUDs and visual prototypes. [FastAPI](02-Software-Development/Backend/astrogateway-api) supplies identity/profile, mission-session, command/report and sensor-record routes; its provider integration uses Supabase Auth and PostgREST. The [web app](02-Software-Development/Web-Dashboards/astrogateway-web) currently starts **AccountApp**, while its separate `App.tsx` contains an earlier 3D Mars preview. The [Android host](02-Software-Development/Integrations/android-unity-host-poc) manages native accounts and launches an isolated Unity integration scene; it is separate from a full FirstMission Android build.
@@ -274,7 +282,7 @@ Use component-local `.env.example` / `auth.local.properties.example` templates a
 
 | Component | Entry point / commands | Caveat |
 |---|---|---|
-| Unity gameplay | Open `MissionRedHorizon` in the pinned editor; use **AstroGateway → Open Missions Scene**, then Play | Default Build Settings still names `Assets/Scenes/SampleScene.unity`; choose the intended mission scene. |
+| Unity gameplay | Open `MissionRedHorizon` in the pinned editor; use **AstroGateway → Open Missions Scene**, then Play | Default enabled build scene is now Missions; verify it before exporting. |
 | Unity playtest | **AstroGateway → First Mission Playtest** | Graphical Editor harness; mock uploads, no live backend proof. |
 | Backend | In API directory: `python3 -m venv .venv`, install `requirements-dev.txt`, `python -m pytest tests -q`, `python run_local.py` | Configure owner-only `.env`; tests include an original-layout catalog path; live isolation/RPC setup still required. |
 | Web | In web directory: `npm ci`, `npm run dev`, `npm test`, `npm run lint`, `npm run build` | Main entry is AccountApp; default profile proxy targets loopback port 8000. |

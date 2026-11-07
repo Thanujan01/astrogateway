@@ -23,7 +23,7 @@ namespace AstroGateway.FirstMission
     }
 
     [Serializable]
-    class FirstMissionProgress { public bool boarded, reachedSite; public float distance; }
+    public class FirstMissionProgress { public bool boarded, reachedSite; public float distance; }
 
     public class Objective { public string text; public bool done, info; }
 
@@ -69,6 +69,7 @@ namespace AstroGateway.FirstMission
 
             Catalog = new SensorCatalog(catalogJson.text);
             sensors.Catalog = Catalog;
+            MissionRunSession.RestoreAtStartup(this);
             string folder = string.IsNullOrEmpty(storeFolderOverride) ? NativeMissionContext.FilePath("AstroGateway_FirstMission") : storeFolderOverride;
             Store = new SensorRecordStore(Path.Combine(folder, "sensor_records_v1.json"));
             Sync = new SensorSyncService(Store, new NotConnectedUploader(), Catalog.MaxBatch);
@@ -182,6 +183,7 @@ namespace AstroGateway.FirstMission
             Settings.shoulderSide = Settings.shoulderSide < 0 ? -1 : 1;
             Settings.joystickPosition = Mathf.Clamp(Settings.joystickPosition, 0, 2);
         }
+        public FirstMissionProgress CaptureLocalProgress() { progress.distance = sensors.DistanceTravelled; return progress; }
         void SaveProgress() { progress.distance = sensors.DistanceTravelled; PlayerPrefs.SetString(NativeMissionContext.PreferenceKey(ProgressKey), JsonUtility.ToJson(progress)); PlayerPrefs.Save(); }
         void LoadProgress()
         {

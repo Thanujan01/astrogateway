@@ -61,7 +61,15 @@ namespace AstroGateway.FirstMission.HUD
         float popupUntil, mapOpenedAt; int lastScanCount = -1; List<SensorRecord> lastObservationRef;
         Vector3 lastRoverPos; bool roverInit; float nextRegistryRefresh;
 
-        class RecordEntry { public string title, summary, detail; public DateTime time; }
+        class RecordEntry
+        {
+            public string title, detail;
+            public IReadOnlyList<SensorRecord> readings;
+        }
+
+        ScrollRect recordScroll;
+        Button recordNewer, recordOlder;
+        Text recordPage;
 
         protected override void Build()
         {
@@ -91,6 +99,11 @@ namespace AstroGateway.FirstMission.HUD
             BuildMapOverlay();
             BuildDrawer();
             BuildRecordView();
+            foreach (var scan in mission.Store.Records.GroupBy(r => r.observationId).TakeLast(50))
+                records.Add(RoverRecord(scan.ToArray()));
+            recordBadge.text = records.Count.ToString();
+            lastObservationRef = mission.LastObservation;
+            lastScanCount = hud.game.scans.Count;
             ApplyProfile(DriveProfile.Normal);
             PausedOverlay.transform.SetAsLastSibling();
             // Cinematic motion layer (Explorer only) + UI slide/fade-in for overlays.
@@ -243,31 +256,98 @@ namespace AstroGateway.FirstMission.HUD
         {
             var shade = Img("Record view", Safe, Vector2.zero, Vector2.one, null, new Color(HudTokens.Background.r, HudTokens.Background.g, HudTokens.Background.b, .55f), true);
             RecordView = shade.gameObject;
-            var card = Glass("Record card", shade.transform, new Vector2(0, 0), new Vector2(0, 1), new Vector2(16, 24), new Vector2(900, -124), .88f);
-            recordTitle = Tx("Record title", card, "", 22, TextAnchor.MiddleLeft, HudTokens.Cyan, new Vector2(.04f, .90f), new Vector2(.7f, .98f), FontStyle.Bold);
+            var card = Glass("Record card", shade.transform, new Vector2(0, 0), new Vector2(.62f, 1), new Vector2(16, 24), new Vector2(0, -124), .96f);
+            recordTitle = Tx("Record title", card, "FIELD LOG", 24, TextAnchor.MiddleLeft, HudTokens.Cyan, new Vector2(.04f, .90f), new Vector2(.70f, .98f), FontStyle.Bold);
             RecordClose = Btn("Record close", card, "CLOSE", new Vector2(.74f, .89f), new Vector2(.97f, .985f), Vector2.zero, Vector2.zero, () => RecordView.SetActive(false), 18);
-            recordBody = Tx("Record body", card, "", 17, TextAnchor.UpperLeft, HudTokens.Text, new Vector2(.04f, .14f), new Vector2(.96f, .88f));
-            Btn("Record newer", card, "NEWER", new Vector2(.04f, .02f), new Vector2(.32f, .12f), Vector2.zero, Vector2.zero, () => OpenRecords(recordIndex + 1), 18);
-            Btn("Record older", card, "OLDER", new Vector2(.35f, .02f), new Vector2(.63f, .12f), Vector2.zero, Vector2.zero, () => OpenRecords(recordIndex - 1), 18);
+            var viewport = Img("Reading scroll area", card, new Vector2(.04f, .15f), new Vector2(.96f, .86f), null, Color.clear, true).rectTransform;
+            viewport.gameObject.AddComponent<RectMask2D>();
+            recordScroll = viewport.gameObject.AddComponent<ScrollRect>();
+            recordScroll.viewport = viewport;
+            recordScroll.horizontal = false;
+            recordScroll.movementType = ScrollRect.MovementType.Clamped;
+            recordScroll.scrollSensitivity = 30;
+            recordBody = Tx("Record body", viewport, "", 25, TextAnchor.UpperLeft, HudTokens.Text, new Vector2(0, 1), Vector2.one);
+            recordBody.rectTransform.pivot = new Vector2(.5f, 1);
+            recordBody.lineSpacing = 1.2f;
+            recordBody.verticalOverflow = VerticalWrapMode.Overflow;
+            recordScroll.content = recordBody.rectTransform;
+            recordOlder = Btn("Record older", card, "OLDER", new Vector2(.04f, .025f), new Vector2(.29f, .12f), Vector2.zero, Vector2.zero, () => OpenRecords(recordIndex - 1), 18);
+            recordNewer = Btn("Record newer", card, "NEWER", new Vector2(.71f, .025f), new Vector2(.96f, .12f), Vector2.zero, Vector2.zero, () => OpenRecords(recordIndex + 1), 18);
+            recordPage = Tx("Record page", card, "", 18, TextAnchor.MiddleCenter, HudTokens.TextDim, new Vector2(.31f, .025f), new Vector2(.69f, .12f));
             RecordView.SetActive(false);
         }
+
+        protected override void OpenFieldLog() => OpenRecords(records.FindLastIndex(r => r.readings != null));
 
         public void OpenRecords(int index)
         {
             if (records.Count == 0) { Say("No scan records yet"); return; }
             recordIndex = Mathf.Clamp(index, 0, records.Count - 1);
-            var r = records[recordIndex];
-            recordTitle.text = $"SCIENTIFIC RECORD {recordIndex + 1}/{records.Count}";
-            recordBody.text = r.detail;
+            var entry = records[recordIndex];
+            recordPage.text = $"SCAN {recordIndex + 1} / {records.Count}";
+            recordOlder.interactable = recordIndex > 0;
+            recordNewer.interactable = recordIndex < records.Count - 1;
+            recordBody.supportRichText = entry.readings != null;
+            recordBody.text = entry.readings == null ? entry.detail : DescribeRoverRecord(entry);
+            ScanPopup.SetActive(false);
             RecordView.SetActive(true);
+            Canvas.ForceUpdateCanvases();
+            recordBody.rectTransform.sizeDelta = new Vector2(0, recordBody.preferredHeight + 12);
+            recordScroll.StopMovement();
+            recordScroll.verticalNormalizedPosition = 1;
         }
 
-        void ShowPopup(string title, string body, string detail)
+        RecordEntry RoverRecord(IReadOnlyList<SensorRecord> readings)
         {
-            records.Add(new RecordEntry { title = title, summary = body, detail = detail, time = DateTime.Now });
-            if (records.Count > 50) records.RemoveAt(0);
-            popupTitle.text = title; popupBody.text = body;
-            ScanPopup.SetActive(true); RecordIcon.SetActive(false);
+            var instrument = mission.Catalog.Instrument(readings[0].instrumentId);
+            return new RecordEntry { title = instrument?.name ?? "Rover scan", readings = readings };
+        }
+
+        static string LogText(string value) => value?.Replace('<', '‹').Replace('>', '›') ?? string.Empty;
+
+        string DescribeRoverRecord(RecordEntry entry)
+        {
+            string Heading(string label) => $"<color=#{ColorUtility.ToHtmlStringRGB(HudTokens.Cyan)}><b>{label}</b></color>";
+            var readings = entry.readings;
+            var first = readings[0];
+            var text = new StringBuilder();
+            text.AppendLine(Heading(LogText(entry.title.ToUpperInvariant())));
+            text.AppendLine($"{LogText(StationLabel(first.stationId))}  ·  {LocalTime(first.capturedAtUtc)}  ·  X {first.location.x:0.0} / Z {first.location.z:0.0} m");
+            text.AppendLine().AppendLine(Heading("FIELD ASSESSMENT  ·  SIMULATION"));
+            text.AppendLine(ScienceReadout.Assessment(readings));
+            text.AppendLine().AppendLine(Heading("CAPTURED READINGS"));
+            foreach (var reading in readings)
+            {
+                var tagColor = reading.provenance == Provenance.Unavailable ? HudTokens.Amber : HudTokens.Cyan;
+                text.AppendLine($"{LogText(ScienceReadout.Label(reading.sensorId))}  ·  {LogText(ReadingValue(reading))}  "
+                    + $"<color=#{ColorUtility.ToHtmlStringRGB(tagColor)}>[{LogText(reading.provenance)}]</color>");
+            }
+
+            bool online = mission.Sync.Uploader.Online;
+            var sync = readings.Select(r => RoverStatusProvider.SyncLabel(r, online)).Distinct();
+            text.AppendLine($"\nSTORAGE  ·  SAVED ON THIS DEVICE\nSYNC  ·  {string.Join(" / ", sync)}");
+            var analysis = readings.Select(ScienceReadout.AnalysisTag).Distinct();
+            text.AppendLine($"MODEL ANALYSIS  ·  {string.Join(" / ", analysis)}");
+            foreach (var reading in readings.Where(r => r.analysisState == AnalysisState.Complete && !string.IsNullOrEmpty(r.analysisSummary)))
+                text.AppendLine($"{LogText(ScienceReadout.Label(reading.sensorId))}  ·  {LogText(reading.analysisSummary)}");
+            return text.ToString();
+        }
+
+        bool ShowFieldNotifications => (Current == Tab.Drive || Current == Tab.Science)
+            && !hud.environment.paused && !hud.modalOpen && !RecordView.activeSelf && !MapOverlay.activeSelf && !Drawer.activeSelf;
+
+        void ShowPopup(RecordEntry entry, string title, string body)
+        {
+            records.Add(entry);
+            if (records.Count > 50)
+            {
+                records.RemoveAt(0);
+                recordIndex = Mathf.Max(0, recordIndex - 1);
+            }
+            popupTitle.text = title;
+            popupBody.text = body;
+            ScanPopup.SetActive(ShowFieldNotifications);
+            RecordIcon.SetActive(false);
             popupUntil = Time.unscaledTime + 4.5f;
             recordBadge.text = records.Count.ToString();
         }
@@ -277,23 +357,12 @@ namespace AstroGateway.FirstMission.HUD
             // Rover instruments: a new observation list from the controller.
             if (mission.LastObservation != null && mission.LastObservation.Count > 0 && !ReferenceEquals(mission.LastObservation, lastObservationRef))
             {
-                if (lastObservationRef != null || lastScanCount >= 0)
-                {
-                    var obs = mission.LastObservation; var inst = mission.Catalog.Instrument(obs[0].instrumentId);
-                    bool online = mission.Sync.Uploader.Online;
-                    var lines = obs.Where(r => r.sensorId != "nav.position").Take(3).Select(r => $"{r.sensorId}: {r.ValueLabel}  [{(r.provenance == Provenance.Simulated ? "SIMULATED" : "UNAVAILABLE")}]");
-                    string body = string.Join("\n", lines) + $"\nSaved: LOCAL ONLY • sync {RoverStatusProvider.SyncLabel(obs[0], online)} • {LocalTime(obs[0].capturedAtUtc)}";
-                    var d = new StringBuilder();
-                    d.AppendLine($"Instrument: {inst.name} ({inst.id})");
-                    d.AppendLine($"Station: {(string.IsNullOrEmpty(obs[0].stationId) ? "none" : obs[0].stationId)} • observation {obs[0].observationId.Substring(0, 8)}");
-                    d.AppendLine($"Collected: {LocalTime(obs[0].capturedAtUtc)} (device clock) • sim time {obs[0].simTimeS:0.0} s");
-                    d.AppendLine($"Location: x {obs[0].location.x:0.0} m, z {obs[0].location.z:0.0} m (scene frame, not GPS)\n");
-                    foreach (var r in obs) d.AppendLine($"{r.sensorId,-24} {r.ValueLabel,-22} unit {r.unit,-9} {r.provenance} ({r.method})");
-                    d.AppendLine($"\nLocal storage: saved on this device (LOCAL ONLY) • upload: {obs[0].uploadState} ({RoverStatusProvider.SyncLabel(obs[0], online)})");
-                    d.AppendLine("Scientific interpretation: NOT CONNECTED (no scientific AI model is available)");
-                    d.AppendLine("Related objective: " + mission.Objectives().FirstOrDefault(o => !o.done && !o.info)?.text);
-                    ShowPopup(inst.name.ToUpperInvariant() + " • COMPLETE", body, d.ToString());
-                }
+                var entry = RoverRecord(mission.LastObservation);
+                int usable = entry.readings.Count(r => r.provenance == Provenance.Simulated);
+                string body = $"{entry.title}  ·  {StationLabel(entry.readings[0].stationId)}\n"
+                    + $"{usable} SIMULATED readings  ·  {entry.readings.Count - usable} unavailable\n"
+                    + "Saved on this device  ·  Tap to review";
+                ShowPopup(entry, "SCAN SAVED", body);
                 lastObservationRef = mission.LastObservation;
             }
             // On-foot scans: the existing synthetic scan (no measurement values exist for it).
@@ -305,10 +374,11 @@ namespace AstroGateway.FirstMission.HUD
                 var target = mission.sensors.stations.FirstOrDefault(s => s && s.stableId == st);
                 string body = $"{(target ? target.displayName : "Surface")} • SIMULATED surface scan recorded\nNo measurement values are modelled for on-foot scans\nSaved: game session (local) • not in the sensor upload queue";
                 string detail = $"Sensor: {sc.instrument} • type {sc.type}\nStation: {(target ? target.displayName + " (" + st + ")" : "none")}\nSample id: {sc.sampleId}\nCollected: tick {sc.tick} • {DateTime.Now:HH:mm:ss}\nLocation: x {sc.location.x:0.0} m, z {sc.location.z:0.0} m (scene frame, not GPS)\n\nMeasurement values: NONE (the prototype scanner has no physical model; its 'synthetic index' is not a measurement and is not shown)\nData provenance: {sc.analysis.ToUpperInvariant()} (SIMULATED)\nLocal storage: game session snapshot (LOCAL ONLY)\nSync: not part of the sensor-record queue\nScientific interpretation: NOT CONNECTED\nRelated objective: {mission.Objectives().FirstOrDefault(o => !o.done && !o.info)?.text}";
-                ShowPopup("SURFACE SCAN • COMPLETE", body, detail);
+                ShowPopup(new RecordEntry { title = "Surface scan", detail = detail }, "SURFACE SCAN SAVED", body);
             }
             lastScanCount = n;
-            if (ScanPopup.activeSelf && Time.unscaledTime > popupUntil) { ScanPopup.SetActive(false); RecordIcon.SetActive(true); }
+            if (ScanPopup.activeSelf && (!ShowFieldNotifications || Time.unscaledTime > popupUntil)) ScanPopup.SetActive(false);
+            RecordIcon.SetActive(ShowFieldNotifications && !ScanPopup.activeSelf && records.Count > 0);
         }
 
         static string LocalTime(string iso) => DateTime.TryParse(iso, CultureInfo.InvariantCulture, DateTimeStyles.RoundtripKind, out var t) ? t.ToLocalTime().ToString("HH:mm:ss") : "--:--:--";
@@ -639,8 +709,6 @@ namespace AstroGateway.FirstMission.HUD
                 var cg = root.GetComponent<CanvasGroup>(); if (!cg) cg = root.AddComponent<CanvasGroup>();
                 cg.alpha = overlay ? 0 : mission.Settings.opacity; cg.blocksRaycasts = cg.interactable = !overlay;
             }
-            if (overlay && RecordIcon.activeSelf) RecordIcon.SetActive(false);
-            else if (!overlay && !ScanPopup.activeSelf && records.Count > 0 && !RecordIcon.activeSelf) RecordIcon.SetActive(true);
 
             // measured rover speed (from motion, not the commanded value)
             var rp = p.rover.transform.position;
@@ -676,8 +744,8 @@ namespace AstroGateway.FirstMission.HUD
             Nav.Tick(Time.unscaledTime);
             var target = Nav.Target;
             compassPin.gameObject.SetActive(target != null);
-            RouteChip.SetActive(target != null && !overlay && !paused);
-            WaypointMarker.SetActive(target != null && !overlay && !paused);
+            RouteChip.SetActive(target != null && !overlay && !paused && (Current == Tab.Drive || Current == Tab.Science));
+            WaypointMarker.SetActive(target != null && !overlay && !paused && Current == Tab.Drive);
             if (target != null)
             {
                 float brg = RoverSensorSuite.Bearing(p.ActivePosition(), target.Position);
