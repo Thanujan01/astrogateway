@@ -10,7 +10,9 @@ import SiteNav from './SiteNav'
 // 81 KB of question data, so keep it out of the account bundle.
 const Challenges = lazy(() => import('../challenges/Challenges'))
 const Tutorials = lazy(() => import('../tutorials/Tutorials'))
-const DownloadApp = lazy(() => import('../download/DownloadApp'))
+
+// No in-app download page: the nav link opens this Drive folder directly, in a new tab.
+const MOBILE_GAME_DRIVE_FOLDER_URL = 'https://drive.google.com/drive/folders/1DsE8mD1pNGBWLC_IGZgl_6kA11O8pDza?usp=sharing'
 
 function navigate(to: string) { history.pushState({}, '', to); window.dispatchEvent(new PopStateEvent('popstate')) }
 function Link({ to, children, className = '' }: { to: string; children: ReactNode; className?: string }) {
@@ -47,7 +49,7 @@ export default function SoloAccountApp() {
       <SiteNav>
         <Link to="/challenges">Challenges</Link>
         <Link to="/tutorials">Training videos</Link>
-        <Link to="/download">Download app</Link>
+        <a href={MOBILE_GAME_DRIVE_FOLDER_URL} target="_blank" rel="noopener noreferrer">Download mobile game</a>
         <Link to="/dashboard">Dashboard</Link>
         <Link to="/profile">Profile</Link>
       </SiteNav>
@@ -62,8 +64,6 @@ export default function SoloAccountApp() {
         <Suspense fallback={<p role="status">Loading challenges</p>}><Challenges /></Suspense>
       ) : path === '/tutorials' ? (
         <Suspense fallback={<p role="status">Loading training videos</p>}><Tutorials /></Suspense>
-      ) : path === '/download' ? (
-        <Suspense fallback={<p role="status">Loading download page</p>}><DownloadApp /></Suspense>
       ) : path === '/dashboard' ? (
         <>
           <h1>Welcome, {profile.display_name}.</h1>
