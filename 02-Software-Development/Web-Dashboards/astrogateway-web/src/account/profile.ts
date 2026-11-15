@@ -1,11 +1,10 @@
 /* ---------------------------------------------------------------------------
  * The single local profile. No sign-up, no login, no backend: this app is
- * built for one person. Display name and training-session count persist in
- * this browser only, via localStorage.
+ * built for one person. Display name persists in this browser only, via
+ * localStorage.
  * ------------------------------------------------------------------------- */
 
 const PROFILE_KEY = 'ag-solo-profile-v1'
-const SESSIONS_KEY = 'ag-solo-sessions-v1'
 const DEFAULT_NAME = 'Thanujan'
 
 export interface Profile {
@@ -64,20 +63,4 @@ export function saveDisplayName(profile: Profile, name: string): Profile {
   const updated: Profile = { ...profile, display_name: validateName(name) }
   try { localStorage.setItem(PROFILE_KEY, JSON.stringify(updated)) } catch { /* best-effort */ }
   return updated
-}
-
-export function readSessionCount(): number {
-  try {
-    const raw = localStorage.getItem(SESSIONS_KEY)
-    const n: unknown = raw ? JSON.parse(raw) : 0
-    return typeof n === 'number' && Number.isFinite(n) && n >= 0 ? Math.floor(n) : 0
-  } catch {
-    return 0
-  }
-}
-
-export function recordSessionStart(): number {
-  const next = readSessionCount() + 1
-  try { localStorage.setItem(SESSIONS_KEY, JSON.stringify(next)) } catch { /* best-effort */ }
-  return next
 }

@@ -150,7 +150,7 @@ The intended external database boundary is Supabase Auth → trusted PostgREST i
 
 ## Web and Android
 
-The web entry is [src/main.tsx](../02-Software-Development/Web-Dashboards/astrogateway-web/src/main.tsx) → AccountApp/AccountContext. Authentication uses Supabase JS PKCE; profile requests carry the user bearer to the API. `configurationReady` checks a fixed approved provider URL and publishable-key shape, so arbitrary new projects are not automatically supported by environment substitution. `App.tsx` is a separate 3D movement/HUD preview and is not rendered by the current entry point. Listed dependencies do not prove all features are used.
+The web entry is [src/main.tsx](../02-Software-Development/Web-Dashboards/astrogateway-web/src/main.tsx) → AccountApp/AccountContext. Authentication uses Supabase JS PKCE; profile requests carry the user bearer to the API. `configurationReady` checks a fixed approved provider URL and publishable-key shape, so arbitrary new projects are not automatically supported by environment substitution. Listed dependencies do not prove all features are used.
 
 The Android host uses Supabase Kotlin auth, `SecureSessionStore`, native API requests and a retained Unity Activity in a separate process. `MainActivity` is the exported launcher; `PocUnityActivity` is private. Unity receives mission/session/user identifiers via a versioned descriptor, not the account bearer. Source includes ready/ACK/RESULT and return/relaunch logic. The IntegrationPOC scene is an isolated test scene, not the complete Mars game. The host README’s early “No backend/Auth services” statement describes its initial POC and is superseded by the tracked AuthCoordinator code; historical text was preserved.
 

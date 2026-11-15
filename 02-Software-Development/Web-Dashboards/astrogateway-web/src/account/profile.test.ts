@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import { loadProfile, readSessionCount, recordSessionStart, saveDisplayName, validateName } from './profile'
+import { loadProfile, saveDisplayName, validateName } from './profile'
 
 beforeEach(() => localStorage.clear())
 
@@ -34,19 +34,5 @@ describe('the single local profile', () => {
   it('recovers with a fresh profile if storage holds garbage', () => {
     localStorage.setItem('ag-solo-profile-v1', '{"not":"a profile"}')
     expect(loadProfile().display_name).toBe('Thanujan')
-  })
-})
-
-describe('local training-session count', () => {
-  it('starts at zero and increments on each session start', () => {
-    expect(readSessionCount()).toBe(0)
-    expect(recordSessionStart()).toBe(1)
-    expect(recordSessionStart()).toBe(2)
-    expect(readSessionCount()).toBe(2)
-  })
-
-  it('treats corrupt session storage as zero', () => {
-    localStorage.setItem('ag-solo-sessions-v1', '"not a number"')
-    expect(readSessionCount()).toBe(0)
   })
 })

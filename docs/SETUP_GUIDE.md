@@ -127,7 +127,7 @@ npm run build
 npm run preview
 ```
 
-`src/main.tsx` renders AccountApp; `App.tsx` is the separate earlier 3D preview. Use the actual URL printed by Vite. The config binds **127.0.0.1** and proxies `/account-api` to **127.0.0.1:8000**, stripping the prefix. The template uses `VITE_AUTH_API_BASE=/account-api`; a different API base must be HTTPS. `VITE_SUPABASE_URL` / `VITE_SUPABASE_PUBLISHABLE_KEY` are public client configuration, and `client.ts` pins readiness to the approved project URL/key shape. Do not put database or service-role credentials in `VITE_*`. The `/auth/callback` redirect must be configured for the intended origin; live provider callback behavior remains unverified.
+`src/main.tsx` renders AccountApp. Use the actual URL printed by Vite. The config binds **127.0.0.1** and proxies `/account-api` to **127.0.0.1:8000**, stripping the prefix. The template uses `VITE_AUTH_API_BASE=/account-api`; a different API base must be HTTPS. `VITE_SUPABASE_URL` / `VITE_SUPABASE_PUBLISHABLE_KEY` are public client configuration, and `client.ts` pins readiness to the approved project URL/key shape. Do not put database or service-role credentials in `VITE_*`. The `/auth/callback` redirect must be configured for the intended origin; live provider callback behavior remains unverified.
 
 ## Android Missions account host
 
