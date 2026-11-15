@@ -118,6 +118,68 @@ def test_browser_origin_and_rate_limits(api):
     statuses = [client.post('/v1/auth/login', json={'identifier': 'missing', 'password': 'x'}).status_code for _ in range(13)]
     assert statuses[-1] == 429
 
+def test_player_discovery_is_opt_in_and_session_count_ranked(api):
+    client, _ = api
+    _, a = signup(client, 'a'); _, b = signup(client, 'b'); _, c = signup(client, 'c')
+    mission(client, a); mission(client, a)
+    assert client.get('/v1/players/matches', headers=a).json()['matches'] == []
+    assert client.post('/v1/me/discoverable', headers=b, json={'discoverable': True}).status_code == 200
+    assert client.post('/v1/me/discoverable', headers=c, json={'discoverable': True}).status_code == 200
+    mission(client, b)
+    rows = client.get('/v1/players/matches', headers=a).json()['matches']
+    assert [r['username'] for r in rows] == ['astro_b', 'astro_c']
+    assert all(r['status'] == 'none' for r in rows)
+    assert all('email' not in r and 'password_hash' not in r for r in rows)
+
+def test_talk_request_lifecycle_and_chat_requires_acceptance(api):
+    client, _ = api
+    body_a, a = signup(client, 'a'); body_b, b = signup(client, 'b')
+    client.post('/v1/me/discoverable', headers=b, json={'discoverable': True})
+    a_id, b_id = body_a['profile']['user_id'], body_b['profile']['user_id']
+    assert client.post('/v1/players/requests', headers=a, json={'to_user_id': a_id}).status_code == 400
+    sent = client.post('/v1/players/requests', headers=a, json={'to_user_id': b_id})
+    assert sent.status_code == 201 and sent.json()['status'] == 'pending'
+    assert client.post('/v1/players/requests', headers=a, json={'to_user_id': b_id}).status_code == 409
+    assert client.get('/v1/players/' + b_id + '/messages', headers=a).status_code == 403
+    assert client.post('/v1/players/' + b_id + '/messages', headers=a, json={'body': 'hi'}).status_code == 403
+    requests_for_b = client.get('/v1/players/requests', headers=b).json()
+    assert len(requests_for_b['incoming']) == 1 and requests_for_b['incoming'][0]['player']['user_id'] == a_id
+    request_id = requests_for_b['incoming'][0]['request_id']
+    assert client.post('/v1/players/requests/' + request_id + '/respond', headers=a, json={'action': 'accept'}).status_code == 404
+    accepted = client.post('/v1/players/requests/' + request_id + '/respond', headers=b, json={'action': 'accept'})
+    assert accepted.status_code == 200 and accepted.json()['status'] == 'accepted'
+    assert client.post('/v1/players/requests/' + request_id + '/respond', headers=b, json={'action': 'decline'}).status_code == 404
+    sent_msg = client.post('/v1/players/' + b_id + '/messages', headers=a, json={'body': '  Hello astronaut  '})
+    assert sent_msg.status_code == 201 and sent_msg.json()['body'] == 'Hello astronaut' and sent_msg.json()['from_user_id'] == a_id
+    seen_by_b = client.get('/v1/players/' + a_id + '/messages', headers=b).json()['messages']
+    assert len(seen_by_b) == 1 and seen_by_b[0]['body'] == 'Hello astronaut'
+    contacts_for_a = client.get('/v1/players/requests', headers=a).json()['contacts']
+    assert contacts_for_a[0]['player']['user_id'] == b_id
+    assert client.get('/v1/players/matches', headers=a).json()['matches'] == []
+
+def test_declined_request_can_be_resent(api):
+    client, _ = api
+    body_a, a = signup(client, 'a'); body_b, b = signup(client, 'b')
+    client.post('/v1/me/discoverable', headers=b, json={'discoverable': True})
+    b_id = body_b['profile']['user_id']
+    first = client.post('/v1/players/requests', headers=a, json={'to_user_id': b_id}).json()
+    request_id = client.get('/v1/players/requests', headers=b).json()['incoming'][0]['request_id']
+    assert client.post('/v1/players/requests/' + request_id + '/respond', headers=b, json={'action': 'decline'}).json()['status'] == 'declined'
+    second = client.post('/v1/players/requests', headers=a, json={'to_user_id': b_id})
+    assert second.status_code == 201 and second.json()['request_id'] != first['request_id']
+
+def test_chat_message_rejects_invalid_and_oversized_bodies(api):
+    client, _ = api
+    body_a, a = signup(client, 'a'); body_b, b = signup(client, 'b')
+    client.post('/v1/me/discoverable', headers=b, json={'discoverable': True})
+    b_id = body_b['profile']['user_id']
+    client.post('/v1/players/requests', headers=a, json={'to_user_id': b_id})
+    request_id = client.get('/v1/players/requests', headers=b).json()['incoming'][0]['request_id']
+    client.post('/v1/players/requests/' + request_id + '/respond', headers=b, json={'action': 'accept'})
+    assert client.post('/v1/players/' + b_id + '/messages', headers=a, json={'body': ''}).status_code == 422
+    assert client.post('/v1/players/' + b_id + '/messages', headers=a, json={'body': '  '}).status_code == 422
+    assert client.post('/v1/players/' + b_id + '/messages', headers=a, json={'body': 'x' * 2001}).status_code == 422
+
 def test_complete_is_idempotent_and_not_score(api):
     client, _ = api
     _, h = signup(client); row = mission(client, h)

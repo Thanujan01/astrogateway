@@ -1,0 +1,2869 @@
+{
+ "title": "Mars Outpost: Astronaut Challenges",
+ "ratingNote": "Ratings are preliminary assessment-design ratings, not official NASA judgements.",
+ "scienceNote": "These are simplified educational scenarios, not operational instructions for real astronauts. Actual mission decisions require authorised procedures, engineering data and expert judgement.",
+ "tracks": [
+  {
+   "id": "cadet",
+   "label": "Cadet",
+   "ageLabel": "Ages 7-12",
+   "source": "Mars_Astronaut_Challenges_Age_7-12_60_MCQs.docx",
+   "levels": [
+    {
+     "n": 1,
+     "title": "Arriving at the Mars Outpost",
+     "difficulty": "Introductory",
+     "questions": [
+      {
+       "id": "cadet-01",
+       "n": 1,
+       "title": "Oxygen Alarm",
+       "scenario": "You are inside the Mars habitat when the oxygen alarm sounds. What should you do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Tell the crew, check the warning and follow the emergency oxygen procedure.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Ignore the alarm and continue your work.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Open the habitat door to let Mars air inside.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-02",
+       "n": 2,
+       "title": "Low Battery",
+       "scenario": "The habitat battery is running low. What should your crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Switch off lights and equipment that are not needed.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Turn on every light and machine.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Use the remaining power for entertainment.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-03",
+       "n": 3,
+       "title": "Saving Water",
+       "scenario": "The water supply is getting low. What is the best action?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Use water carefully and check the recycling system.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Leave taps running.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Use drinking water to wash the rover.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-04",
+       "n": 4,
+       "title": "Cold Greenhouse",
+       "scenario": "The plants in your Mars greenhouse are getting too cold. What should you do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Check the heating system and protect the plants.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Turn off all heating.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Move the plants outside the habitat.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-05",
+       "n": 5,
+       "title": "Dusty Air Filter",
+       "scenario": "Mars dust is blocking the habitat air filter. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Clean or replace the filter using the correct safety procedure.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Add more dust to the filter.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Ignore the air-quality warning.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-06",
+       "n": 6,
+       "title": "Dusty Solar Panels",
+       "scenario": "Dust has covered the solar panels and less electricity is being produced. What should you do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Arrange a safe inspection and cleaning of the panels.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Paint the panels black.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Keep using more electricity without checking them.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-07",
+       "n": 7,
+       "title": "Food Supplies",
+       "scenario": "Some stored food may spoil soon. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Check the food and use safe items that need to be eaten first.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Throw away all the food immediately.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Hide the food and stop checking supplies.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-08",
+       "n": 8,
+       "title": "Weak Radio Signal",
+       "scenario": "The radio antenna is not sending a clear signal to Earth. What should you do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Check the antenna and use the backup communication system if needed.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Damage the antenna further.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Stop all communication attempts.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-09",
+       "n": 9,
+       "title": "Oxygen Tank Leak",
+       "scenario": "A sensor reports that oxygen is leaking from a storage tank. What should happen?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Tell the crew and isolate or repair the leak according to the safety plan.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Ignore the warning.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Open the tank and let more oxygen escape.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-10",
+       "n": 10,
+       "title": "Mars Rock Study",
+       "scenario": "Your rover finds an unusual rock near the habitat. What is the best next step?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Use the rover to photograph and study it safely.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Drive the rover into an unsafe area to reach it quickly.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Ignore the rover's safety instructions.",
+         "stars": 1
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "title": "Mars Weather and Environment",
+     "difficulty": "Easy",
+     "questions": [
+      {
+       "id": "cadet-11",
+       "n": 11,
+       "title": "Dust Storm Warning",
+       "scenario": "A large dust storm is approaching your Mars base. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Secure equipment, remain in the habitat and conserve power.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Go outside to watch the storm.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Leave doors and equipment exposed.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-12",
+       "n": 12,
+       "title": "Solar Radiation Alert",
+       "scenario": "Mission control reports a possible solar radiation event. What should astronauts do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Follow the radiation safety plan and move to the designated protected area if instructed.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Go outside to watch the Sun.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Ignore the alert.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-13",
+       "n": 13,
+       "title": "Very Cold Conditions",
+       "scenario": "The outside temperature is becoming extremely cold. What should you protect?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Habitat heating, life-support equipment and temperature-sensitive systems.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Outdoor furniture first.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Nothing; all equipment works at any temperature.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-14",
+       "n": 14,
+       "title": "Rover Stuck",
+       "scenario": "Your exploration rover becomes stuck in soft ground. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Stop unsafe movement and plan a careful recovery.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Keep driving faster into the soft ground.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Leave it running until its battery is empty.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-15",
+       "n": 15,
+       "title": "Possible Water Ice",
+       "scenario": "A rover detects a material that may be water ice. What should you do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Investigate and test a sample using approved equipment.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Assume it is safe drinking water immediately.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Damage the area before recording it.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-16",
+       "n": 16,
+       "title": "Unhealthy Plants",
+       "scenario": "Some greenhouse plants show signs of disease. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Separate affected plants and inspect them carefully.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Mix all plants together.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Stop caring for every plant.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-17",
+       "n": 17,
+       "title": "Habitat Pressure Warning",
+       "scenario": "The habitat pressure is falling. What is the safest response?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Check for a leak and follow the habitat emergency procedure.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Open a hatch to the outside.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Ignore the pressure sensor.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-18",
+       "n": 18,
+       "title": "Dusty Greenhouse Window",
+       "scenario": "Dust is blocking sunlight from reaching the greenhouse. What can help?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Clean the window safely or use suitable plant lights.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Cover the window with more dust.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Stop monitoring the plants.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-19",
+       "n": 19,
+       "title": "Rover Navigation Problem",
+       "scenario": "Your rover is unsure of its location. What should it do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Stop in a safe place and check its map and navigation sensors.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Drive as fast as possible.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Switch off all navigation sensors.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-20",
+       "n": 20,
+       "title": "Astronaut Feels Unwell",
+       "scenario": "A crew member says they are feeling unwell. What should you do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Inform the crew medical officer and follow the medical plan.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Tell them to ignore it.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Send them outside alone.",
+         "stars": 1
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "title": "Maintaining the Mars Base",
+     "difficulty": "Easy to Moderate",
+     "questions": [
+      {
+       "id": "cadet-21",
+       "n": 21,
+       "title": "Overheating Battery",
+       "scenario": "The battery system is getting too hot. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Check the system and use its approved cooling procedure.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Cover it with a blanket.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Continue charging without monitoring it.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-22",
+       "n": 22,
+       "title": "Crack in the Habitat",
+       "scenario": "You notice a crack or possible damage on the habitat wall. What should happen?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Report it, keep away from the damaged area and arrange an inspection and repair.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Make the crack larger.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Hide the damage.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-23",
+       "n": 23,
+       "title": "Oxygen Machine Stops",
+       "scenario": "The machine that produces oxygen has stopped. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Use the backup life-support procedure and arrange a repair.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Turn off the oxygen alarm.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Wait until all stored oxygen is gone.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-24",
+       "n": 24,
+       "title": "Robot Needs Repair",
+       "scenario": "A maintenance robot stops working. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Check the fault and repair it safely or use another approved method.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Hit it until it starts.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Send it on another mission while it is damaged.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-25",
+       "n": 25,
+       "title": "Ice-Drilling Machine Fails",
+       "scenario": "The machine used to investigate underground ice stops working. What should you do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Make the equipment safe, inspect the fault and arrange a repair.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Use all drinking water to test it.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Ignore the failure.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-26",
+       "n": 26,
+       "title": "Waiting for Earth",
+       "scenario": "You have sent a question to Earth, but the reply will take time. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Use the approved onboard procedures while waiting for guidance.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Make a dangerous guess.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Stop monitoring the habitat.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-27",
+       "n": 27,
+       "title": "Not Enough Repair Materials",
+       "scenario": "Your team needs materials to repair part of the base. What is a sensible action?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Check approved spare parts and safe reusable materials.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Use unknown materials without testing them.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Throw away all useful equipment.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-28",
+       "n": 28,
+       "title": "Leaking Water Pipe",
+       "scenario": "A pipe in the greenhouse is leaking water. What should happen?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Stop the leak and protect the remaining water supply.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Let the water continue to escape.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Open more water pipes.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-29",
+       "n": 29,
+       "title": "Science Equipment Needs Power",
+       "scenario": "A science instrument needs electricity, but life-support equipment also needs power. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Keep essential life-support systems supplied before using spare power for science.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Give all power to the science instrument.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Switch off oxygen production.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-30",
+       "n": 30,
+       "title": "Backup Generator Failure",
+       "scenario": "The backup generator stops working. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Conserve power and arrange a safe inspection and repair.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Use more electricity than usual.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Ignore the failure.",
+         "stars": 1
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "title": "Protecting the Crew",
+     "difficulty": "Moderate",
+     "questions": [
+      {
+       "id": "cadet-31",
+       "n": 31,
+       "title": "Major Solar Storm",
+       "scenario": "A strong solar storm warning reaches your Mars outpost. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Follow the shelter procedure and pause non-essential outdoor activities.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Go outside to take photographs.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Continue outdoor work without checking the warning.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-32",
+       "n": 32,
+       "title": "Very Low Oxygen",
+       "scenario": "The stored oxygen level is becoming dangerously low. What should happen first?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Protect the crew and follow the emergency life-support procedure.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Use oxygen for a non-essential experiment.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Ignore the oxygen reading.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-33",
+       "n": 33,
+       "title": "Two Systems Fail",
+       "scenario": "The oxygen system and the radio both stop working. Which issue should receive immediate priority?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Protect the crew's oxygen supply while using emergency communication procedures.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Focus only on the radio and ignore oxygen.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Do not respond to either failure.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-34",
+       "n": 34,
+       "title": "External Repair",
+       "scenario": "An astronaut may need to leave the habitat to repair equipment. What must be checked first?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Suit condition, task risks, environmental conditions and the approved EVA plan.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Go outside without a spacesuit.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Rush outside without checking equipment.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-35",
+       "n": 35,
+       "title": "Food Supply Shortage",
+       "scenario": "The food supply is lower than expected. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Check remaining supplies, plan meals carefully and use approved emergency provisions.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Eat all remaining food immediately.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Stop checking the greenhouse.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-36",
+       "n": 36,
+       "title": "Smoke Alarm",
+       "scenario": "A smoke alarm activates inside the habitat. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Follow the fire response procedure and protect the crew.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Cover the alarm and continue working.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Keep operating equipment that may be overheating.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-37",
+       "n": 37,
+       "title": "Rover Stops Communicating",
+       "scenario": "An exploration rover stops sending information. What should the team do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Try the approved recovery and communication procedure before sending help.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Assume it is safe and forget about it.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Send every available rover away at once.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-38",
+       "n": 38,
+       "title": "Water and Oxygen Power Demand",
+       "scenario": "The water-recycling and oxygen systems both need more electricity. What should guide the decision?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Protect essential crew needs and manage the available power carefully.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Use power for decorations first.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Switch off both systems.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-39",
+       "n": 39,
+       "title": "Improve the Storm Shelter",
+       "scenario": "The crew can improve the shelter used during radiation warnings. What is the best approach?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Use suitable shielding materials and keep essential supplies accessible.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Remove the shelter walls.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Use the shielding materials for unrelated tasks.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-40",
+       "n": 40,
+       "title": "Conflicting Messages",
+       "scenario": "Two messages from Earth appear to give different instructions. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Check message details and follow the authorised mission and safety procedures.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Choose one randomly.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Ignore all instructions and safety rules.",
+         "stars": 1
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "title": "Mars Exploration",
+     "difficulty": "Moderate",
+     "questions": [
+      {
+       "id": "cadet-41",
+       "n": 41,
+       "title": "Explore a Possible Ice Deposit",
+       "scenario": "A rover finds a location that may contain underground ice. What should your team do next?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Plan a careful investigation using the rover's instruments.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Start drilling without checking the ground or equipment.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Use all habitat power immediately.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-42",
+       "n": 42,
+       "title": "Long Rover Journey",
+       "scenario": "A rover is travelling far from the habitat. What should be checked before departure?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Battery, route, communication, terrain and a safe return plan.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Only the rover's colour.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Nothing; the rover can manage every situation.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-43",
+       "n": 43,
+       "title": "Expand the Greenhouse",
+       "scenario": "The crew wants to grow more food. What should be planned first?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Available water, power, space, equipment and expected food needs.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Build immediately without checking resources.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Use all drinking water for plants.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-44",
+       "n": 44,
+       "title": "Prepare for Low Solar Power",
+       "scenario": "Forecasts suggest that solar panels may produce less electricity over the next few days. What should you do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Conserve energy and reserve power for essential systems.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Use all stored battery power today.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Leave every machine running.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-45",
+       "n": 45,
+       "title": "Damaged Antenna",
+       "scenario": "A dust storm damages the main antenna. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Use backup communication and plan a safe antenna repair.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Throw away all communication equipment.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Stop following mission procedures.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-46",
+       "n": 46,
+       "title": "Unusual Mars Rock",
+       "scenario": "A rover finds an unusual rock formation. What is a useful scientific response?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Record images and collect a sample if the mission plan permits.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Damage the rover to reach it.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Collect samples without recording their locations.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-47",
+       "n": 47,
+       "title": "Medical Supplies Running Low",
+       "scenario": "The medical supplies are running low. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Check the inventory, protect essential supplies and request resupply if available.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Use medical supplies for non-medical tasks.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Hide the shortage from the crew.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-48",
+       "n": 48,
+       "title": "Build Another Habitat Room",
+       "scenario": "The team proposes building another room. What should be assessed?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Construction materials, power, safety, time and crew requirements.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Only the room's appearance.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Start construction without a plan.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-49",
+       "n": 49,
+       "title": "Strengthen the Radiation Shelter",
+       "scenario": "The crew wants to improve its radiation shelter. What should be considered?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Suitable shielding design, materials, access and essential supplies.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Remove the shelter roof.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Store all supplies outside the habitat.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-50",
+       "n": 50,
+       "title": "Extend the Mission",
+       "scenario": "Mission control asks whether the crew can remain on Mars longer. What must be reviewed?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Food, water, oxygen, power, equipment condition and crew health.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Only the number of experiments completed.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Agree without checking any supplies.",
+         "stars": 1
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "title": "Mission Commander Decisions",
+     "difficulty": "Moderate to Challenging",
+     "questions": [
+      {
+       "id": "cadet-51",
+       "n": 51,
+       "title": "Severe Solar Event",
+       "scenario": "A severe solar event is forecast. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Move to the designated protected area and follow radiation procedures.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Go outside to observe it.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Ignore the warning.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-52",
+       "n": 52,
+       "title": "Solar Power System Failure",
+       "scenario": "The solar panels stop supplying electricity. What should happen?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Conserve battery power and arrange a safe inspection and repair.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Switch on every machine.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Use all backup power for non-essential tasks.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-53",
+       "n": 53,
+       "title": "Two Habitat Leaks",
+       "scenario": "Two habitat sections may be losing air. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Protect the crew, isolate affected areas as required and follow repair procedures.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Open both sections to inspect them without protection.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Ignore the pressure alarms.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-54",
+       "n": 54,
+       "title": "Food and Water Shortage",
+       "scenario": "Food and water supplies are both low. What is the best response?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Protect essential crew needs, use reserves carefully and reduce waste.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Use all supplies immediately.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Waste water on non-essential cleaning.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-55",
+       "n": 55,
+       "title": "Rescue a Stranded Rover",
+       "scenario": "A rover carrying valuable samples becomes stuck. What should guide the rescue decision?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Keep the crew and habitat safe while assessing the risks and resources needed.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Risk the habitat's essential power to recover every sample.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Send another rover without checking its battery.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-56",
+       "n": 56,
+       "title": "Limited Power for Essential Systems",
+       "scenario": "The habitat has very little electricity. Which systems should receive priority?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Oxygen, water, thermal control and other essential life-support systems.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Decorative lights and entertainment equipment.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Only the science display.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-57",
+       "n": 57,
+       "title": "Meteorite Impact",
+       "scenario": "A small meteorite strikes an external part of the habitat. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Check for damage and keep people away from unsafe areas until inspected.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Ignore the impact.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Touch damaged electrical equipment.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-58",
+       "n": 58,
+       "title": "No Contact with Earth",
+       "scenario": "The habitat loses communication with Earth. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Use the onboard emergency plan and attempt backup communication.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Stop all safety checks.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Make an unplanned risky decision.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-59",
+       "n": 59,
+       "title": "Final Science Opportunity",
+       "scenario": "A rare science opportunity appears, but the habitat has limited power. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Confirm essential systems have sufficient power before approving the experiment.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Use all power for the experiment.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Switch off oxygen production.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "cadet-60",
+       "n": 60,
+       "title": "End-of-Mission Review",
+       "scenario": "Your crew has completed its planned stay on Mars. What should be checked before the next mission phase?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Crew health, habitat safety, supplies, equipment condition and mission records.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Only the number of experiments completed.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Leave without checking the habitat.",
+         "stars": 1
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "questionCount": 60
+  },
+  {
+   "id": "specialist",
+   "label": "Specialist",
+   "ageLabel": "Ages 13 and above",
+   "source": "Mars_Astronaut_Challenges_Open_Age_60_MCQs.docx",
+   "levels": [
+    {
+     "n": 1,
+     "title": "Mission Systems and Resource Priorities",
+     "difficulty": "Foundation",
+     "questions": [
+      {
+       "id": "specialist-01",
+       "n": 1,
+       "title": "Life-Support Power Priority",
+       "scenario": "A Mars habitat has limited electrical power. Oxygen production, laboratory instruments and non-essential lighting are operating. What should the commander prioritise?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Maintain essential life-support systems and reduce non-essential electrical loads.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Keep every system at maximum power.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Prioritise laboratory instruments regardless of oxygen reserves.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-02",
+       "n": 2,
+       "title": "Battery Reserve Planning",
+       "scenario": "A dust storm is forecast to reduce solar generation for two days. The battery is at 70%. Which plan is most appropriate?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Reduce non-essential loads and protect a reserve for critical systems.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Continue normal consumption and wait until the battery is nearly empty.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Increase experimental activity before the storm.",
+         "stars": 3
+        }
+       ]
+      },
+      {
+       "id": "specialist-03",
+       "n": 3,
+       "title": "Water-Recovery Fault",
+       "scenario": "The water-recovery system is operating at half capacity. Which response best protects the mission?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Diagnose and repair the fault while monitoring reserves and limiting avoidable water use.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Use stored water without changing operations.",
+         "stars": 3
+        },
+        {
+         "key": "C",
+         "text": "Stop measuring water consumption until repairs are complete.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-04",
+       "n": 4,
+       "title": "Greenhouse Energy Trade-off",
+       "scenario": "The greenhouse requires additional lighting while habitat battery reserves are low. What is the most balanced response?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Schedule or reduce lighting while preserving required power for life support.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Allocate all available power to the greenhouse.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Disable plant lighting indefinitely without assessing crop requirements.",
+         "stars": 2
+        }
+       ]
+      },
+      {
+       "id": "specialist-05",
+       "n": 5,
+       "title": "Air-Quality Warning",
+       "scenario": "A sensor indicates declining habitat air quality. What should the crew do first?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Verify the measurement, inspect filtration and follow the relevant safety procedure.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Disable the sensor because it may be faulty.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Open the habitat to the external Martian atmosphere.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-06",
+       "n": 6,
+       "title": "Solar-Array Dust Accumulation",
+       "scenario": "Solar-array output has decreased after a dust event. Which action is most appropriate?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Assess array performance and arrange a safe cleaning or maintenance procedure if needed.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Assume output will recover immediately without inspection.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Increase electrical demand to compensate for lower generation.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-07",
+       "n": 7,
+       "title": "Food Inventory Planning",
+       "scenario": "Stored food will last 18 days, but the mission must continue for 25 days. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Recalculate consumption, assess crop production and activate a contingency supply plan.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Continue current consumption and assume extra food will appear.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Stop recording food inventory.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-08",
+       "n": 8,
+       "title": "Communication Outage",
+       "scenario": "The primary antenna fails during a routine operation. What is the most appropriate response?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Use the backup communication plan and continue only within approved mission procedures.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Attempt a high-risk operation because Earth cannot respond.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Disable onboard monitoring systems.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-09",
+       "n": 9,
+       "title": "Habitat Pressure Loss",
+       "scenario": "Habitat pressure begins to decrease slowly. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Locate the source, isolate affected sections if necessary and protect the crew.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Wait until pressure reaches a critical level before acting.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Open another hatch to equalise pressure with the outside.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-10",
+       "n": 10,
+       "title": "Science Versus Survival",
+       "scenario": "A high-value experiment requires power also needed by life-support equipment. Which decision principle is soundest?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Protect critical crew-safety systems before allocating surplus power to science.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Always choose the experiment because of its research value.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Split power equally even if life support becomes inadequate.",
+         "stars": 1
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "n": 2,
+     "title": "Environmental Hazards and Monitoring",
+     "difficulty": "Intermediate",
+     "questions": [
+      {
+       "id": "specialist-11",
+       "n": 11,
+       "title": "Solar Particle Event Alert",
+       "scenario": "A space-weather alert indicates an elevated solar particle event risk. What should the mission team do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Review the event context and follow radiation-monitoring and shelter procedures, limiting unnecessary EVA.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Continue all outdoor activities without reviewing the alert.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Assume the alert means the surface is immediately unsafe or immediately safe without checking details.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-12",
+       "n": 12,
+       "title": "Radiation Shelter Readiness",
+       "scenario": "A habitat has a designated storm shelter with additional shielding. What should determine crew movement during a serious solar radiation warning?",
+       "options": [
+        {
+         "key": "A",
+         "text": "The mission's radiation procedures and verified warning information.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "The shelter's distance from the largest window.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "A preference to remain near external equipment.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-13",
+       "n": 13,
+       "title": "Dust-Storm Operations",
+       "scenario": "A regional dust storm reduces visibility and solar generation. Which operational response is strongest?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Pause exposed activities, secure equipment and shift to essential power loads.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Schedule additional rover trips during peak storm conditions.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Ignore power forecasts because batteries are unlimited.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-14",
+       "n": 14,
+       "title": "Thermal-Control Failure",
+       "scenario": "A habitat cooling loop is failing and equipment temperature is rising. What is the best response?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Protect crew-critical thermal control, isolate the fault and reduce non-essential heat loads.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Keep all equipment operating at maximum output.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Disable temperature sensors to remove alarms.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-15",
+       "n": 15,
+       "title": "EVA Timing Decision",
+       "scenario": "An astronaut must perform an external repair while radiation and dust conditions are uncertain. What should determine whether the EVA proceeds?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Verified environmental data, suit readiness, task urgency and mission safety limits.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "The desire to complete the task as quickly as possible.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "A fixed schedule regardless of current conditions.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-16",
+       "n": 16,
+       "title": "Dust on Optical Sensors",
+       "scenario": "A rover's cameras and navigation sensors become obscured by dust. What is the best action?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Check sensor status, use approved cleaning or backup navigation methods and reassess the route.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Continue at full speed using unreliable images.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Disable obstacle detection.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-17",
+       "n": 17,
+       "title": "Cold-Soak Risk",
+       "scenario": "An external instrument may become too cold during a long night. What should planners do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Use its thermal limits and power budget to schedule operation or a safe shutdown.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Assume the instrument works at any temperature.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Leave it powered without monitoring.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-18",
+       "n": 18,
+       "title": "Solar-Power Forecast",
+       "scenario": "Forecasts indicate several low-generation days ahead. Which plan best reduces risk?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Estimate demand, conserve energy and maintain reserves for essential loads.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Spend the reserve before the low-generation period begins.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Avoid planning because forecasts contain uncertainty.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-19",
+       "n": 19,
+       "title": "Radiation Data Interpretation",
+       "scenario": "A dashboard shows a radiation alert but provides no units, timestamp or source. What should the operator do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Check the original data, units, timestamp and measurement context before interpreting the value.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Treat the number as a confirmed astronaut dose.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Compare it directly with an unrelated game percentage.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-20",
+       "n": 20,
+       "title": "Environmental Sensor Disagreement",
+       "scenario": "Two sensors report different temperatures near an external instrument. What is the best approach?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Check calibration, location and sensor health, then use validated measurements.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Choose whichever reading is more convenient.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Average the values without checking whether they measure the same thing.",
+         "stars": 1
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "n": 3,
+     "title": "Engineering and Infrastructure",
+     "difficulty": "Intermediate to Advanced",
+     "questions": [
+      {
+       "id": "specialist-21",
+       "n": 21,
+       "title": "Battery Degradation",
+       "scenario": "Battery capacity has declined over repeated charge cycles. What should mission planners do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Update usable-capacity estimates and revise the energy budget with an appropriate reserve.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Continue using the original capacity rating.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Increase loads to test the battery during an emergency.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-22",
+       "n": 22,
+       "title": "Redundant Oxygen Production",
+       "scenario": "The primary oxygen-generation unit is unreliable. Why is a suitable backup capability valuable?",
+       "options": [
+        {
+         "key": "A",
+         "text": "It provides an alternate capability if the primary unit fails, subject to backup limits.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "It guarantees oxygen can never run out.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "It removes the need to monitor the primary unit.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-23",
+       "n": 23,
+       "title": "Life-Support Maintenance Window",
+       "scenario": "A filter requires scheduled maintenance, but the crew is busy with science activities. What is the best decision?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Schedule maintenance before performance becomes unsafe, following approved procedures.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Delay all maintenance until a failure occurs.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Remove the filter while the system continues operating normally.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-24",
+       "n": 24,
+       "title": "Habitat Leak Isolation",
+       "scenario": "A leak is detected in one module connected to the main habitat. What is the main benefit of isolating that module?",
+       "options": [
+        {
+         "key": "A",
+         "text": "It can limit atmosphere loss and protect the remaining habitable volume.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "It automatically increases oxygen throughout the habitat.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "It repairs the leak without inspection.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-25",
+       "n": 25,
+       "title": "Local Material for Shielding",
+       "scenario": "A rover identifies material that may be useful for radiation shielding. What should happen before it is used in construction?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Characterise its properties and verify suitability for the intended engineering use.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Assume all local materials provide equal protection.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Use it immediately without testing.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-26",
+       "n": 26,
+       "title": "Repair or Replace",
+       "scenario": "A pump is failing intermittently. Which information best supports a repair-versus-replacement decision?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Failure history, diagnosis, spare availability, repair time and mission risk.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "The pump's colour alone.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Which option uses fewer words in the maintenance log.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-27",
+       "n": 27,
+       "title": "Rover Energy Budget",
+       "scenario": "A rover must travel to a site, conduct measurements and return to base. What should its energy plan include?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Outbound travel, terrain, science operations, communications and a return reserve.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Only the energy required to reach the destination.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "The advertised maximum battery capacity with no margin.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-28",
+       "n": 28,
+       "title": "Thermal and Power Trade-off",
+       "scenario": "Heaters consume electricity also needed by other systems. What is the best design approach?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Improve insulation and schedule heating while maintaining required temperature limits.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Turn off all heating regardless of temperature.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Use maximum heating continuously without measuring demand.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-29",
+       "n": 29,
+       "title": "Critical-System Redundancy",
+       "scenario": "Why should critical systems have independent backup capability where feasible?",
+       "options": [
+        {
+         "key": "A",
+         "text": "A single failure is less likely to endanger the mission if a suitable backup is available.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Backups make testing and maintenance unnecessary.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "A backup system always has unlimited capacity.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-30",
+       "n": 30,
+       "title": "Fault Diagnosis",
+       "scenario": "A machine stops unexpectedly. What should the crew do before attempting a repair?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Make the system safe, review alarms and diagnose the likely fault using procedures.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Disconnect random components immediately.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Restart repeatedly without checking for damage.",
+         "stars": 1
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "n": 4,
+     "title": "Mission Planning and Communication",
+     "difficulty": "Advanced",
+     "questions": [
+      {
+       "id": "specialist-31",
+       "n": 31,
+       "title": "Communication Delay",
+       "scenario": "A command from Earth cannot arrive before a time-critical decision. What capability is essential?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Pre-agreed onboard procedures and trained crew autonomy within mission limits.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Waiting indefinitely for a reply even if the decision deadline passes.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Making an undocumented decision without checking safety rules.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-32",
+       "n": 32,
+       "title": "Message Prioritisation",
+       "scenario": "The communication link has limited bandwidth. Which information should be transmitted first during an emergency?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Crew safety, critical system status and information needed for support.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Routine entertainment files.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Large non-urgent science images before the emergency summary.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-33",
+       "n": 33,
+       "title": "Conflicting Instructions",
+       "scenario": "Two received messages appear to conflict. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Verify message time and authority, then follow the approved command and safety process.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Choose the message with the shortest text.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Combine both instructions even if they are incompatible.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-34",
+       "n": 34,
+       "title": "Mission Timeline Change",
+       "scenario": "A repair takes longer than expected and affects a scheduled experiment. What should mission control do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Re-plan around safety, task dependencies and available resources.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Keep the original timeline even when it is no longer feasible.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Skip required safety checks to recover the schedule.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-35",
+       "n": 35,
+       "title": "Crew Workload",
+       "scenario": "Several demanding tasks are assigned to the same crew member. What is the best planning response?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Balance workload, rest and task criticality, then assign work appropriately.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Assign every task to the same person.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Remove rest periods to finish the schedule.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-36",
+       "n": 36,
+       "title": "Emergency Drill",
+       "scenario": "Why should the crew practise emergency scenarios before they occur?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Practice improves readiness and can reveal gaps in procedures and equipment.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "A drill guarantees that no emergency will occur.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Drills are useful only after an accident.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-37",
+       "n": 37,
+       "title": "Data-Storage Risk",
+       "scenario": "A rover is collecting unique scientific data but has limited storage and a weak communication link. What should it do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Prioritise and validate key data, store it safely and transmit when the link allows.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Delete all data before checking it.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Transmit low-priority files first and ignore storage limits.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-38",
+       "n": 38,
+       "title": "Navigation Uncertainty",
+       "scenario": "A rover's estimated position becomes less certain near difficult terrain. What is the safest response?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Slow or pause, use available localisation methods and update the route.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Increase speed to spend less time in the area.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Ignore uncertainty and continue toward hazards.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-39",
+       "n": 39,
+       "title": "Mission Abort Criteria",
+       "scenario": "Why should a mission define conditions that require stopping or changing an activity?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Clear limits help the crew respond consistently when risk exceeds acceptable bounds.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Abort criteria prevent all equipment failures.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "They allow the crew to ignore real-time conditions.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-40",
+       "n": 40,
+       "title": "Resupply Delay",
+       "scenario": "A planned cargo delivery is delayed. What is the best response?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Recalculate reserves, prioritise essentials and revise mission duration or activities.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Continue consumption as if the cargo had arrived.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Use emergency supplies for optional experiments.",
+         "stars": 1
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "n": 5,
+     "title": "Science, Crew Health and Resources",
+     "difficulty": "Advanced",
+     "questions": [
+      {
+       "id": "specialist-41",
+       "n": 41,
+       "title": "Radiation Exposure Records",
+       "scenario": "Why should astronaut radiation exposure be tracked over time?",
+       "options": [
+        {
+         "key": "A",
+         "text": "To understand accumulated exposure and support informed health and mission decisions.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "To convert every reading into a score only.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Because one reading predicts every future health outcome exactly.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-42",
+       "n": 42,
+       "title": "Using OSDR Research",
+       "scenario": "What is an appropriate way to use astronaut biological research data in an educational resource?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Explain relevant findings with context, limitations and clear source attribution.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Claim that one study proves every astronaut has the same outcome.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Present research data as a live radiation warning.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-43",
+       "n": 43,
+       "title": "Interpreting DONKI Events",
+       "scenario": "A space-weather database reports a coronal mass ejection. What additional information matters before creating a mission alert?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Event timing and available direction, speed and context, plus its relevance to the mission.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "The event title alone.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "A random danger score unrelated to the reported event.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-44",
+       "n": 44,
+       "title": "Food-System Resilience",
+       "scenario": "A greenhouse harvest is uncertain. Which strategy improves food-system resilience?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Combine crop planning, stored food, water and energy budgets, and contingency supplies.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Depend on one crop and discard stored food.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Assume plants always produce the expected harvest.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-45",
+       "n": 45,
+       "title": "Water-Recovery Efficiency",
+       "scenario": "A recycling system becomes less efficient. What should the crew monitor?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Input and recovered volumes, losses, system condition and water quality.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Only the colour of the storage tank.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "The number of science experiments completed.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-46",
+       "n": 46,
+       "title": "Crew Exercise and Health",
+       "scenario": "Exercise equipment uses power and crew time. Why might exercise still be important?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Crew health is a mission requirement, so exercise must be planned alongside other needs.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Exercise should always use all available power.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Exercise removes the need for medical monitoring.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-47",
+       "n": 47,
+       "title": "Selecting Science Priorities",
+       "scenario": "Several experiments compete for limited power and crew time. How should they be prioritised?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Compare scientific value, resource demand, risk, timing and mission objectives.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Choose the experiment with the brightest display.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Run every experiment simultaneously regardless of limits.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-48",
+       "n": 48,
+       "title": "Reporting Uncertain Data",
+       "scenario": "A scientific measurement has a large uncertainty range. How should it be reported?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Show the value with units, uncertainty, method and limitations.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Report only the most exciting possible value.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Remove uncertainty to make the result look precise.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-49",
+       "n": 49,
+       "title": "Water Quality",
+       "scenario": "A sample of extracted ice has been melted for possible use by the crew. What must happen before consumption?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Process and test it to meet mission water-quality requirements.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Assume clear water is automatically safe to drink.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Use it without checking for contaminants.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-50",
+       "n": 50,
+       "title": "Learning from a Mission Failure",
+       "scenario": "A mission analysis shows the habitat ran out of power. What is the most useful next step?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Review decisions and resource trends, identify causes and revise the plan.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Hide the result and repeat the same decisions.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Assume the analysis is wrong without examining the evidence.",
+         "stars": 1
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "n": 6,
+     "title": "Integrated Mission Decisions",
+     "difficulty": "Expert",
+     "questions": [
+      {
+       "id": "specialist-51",
+       "n": 51,
+       "title": "Solar Event During EVA",
+       "scenario": "A solar particle event warning arrives while an astronaut is outside the habitat. What should the team prioritise?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Follow the EVA contingency plan and return the astronaut to appropriate protection as safely as possible.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Continue the task to avoid losing schedule time.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Disable radiation monitoring to reduce distractions.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-52",
+       "n": 52,
+       "title": "Power Failure and Oxygen Demand",
+       "scenario": "An electrical fault threatens both oxygen generation and research equipment. What should the controller do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Allocate available power to essential life support and use backup procedures.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Keep research running at full power first.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Split power equally even if oxygen production becomes inadequate.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-53",
+       "n": 53,
+       "title": "Rapid Habitat Depressurisation",
+       "scenario": "Habitat pressure is falling faster than the crew can locate the leak. What is the best immediate strategy?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Protect the crew, use emergency procedures and isolate sections as directed.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Continue normal operations until the source is found.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Open additional compartments to search faster.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-54",
+       "n": 54,
+       "title": "Water and Crop Crisis",
+       "scenario": "A leak reduces water available for both the crew and crops. What is the best planning response?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Protect crew requirements, quantify reserves and adjust crop operations to the available water budget.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Give all water to crops because food is important.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Continue normal use and wait for the tank to empty.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-55",
+       "n": 55,
+       "title": "Rover Rescue Versus Crew Safety",
+       "scenario": "A stranded rover contains valuable samples, but rescue would consume a large energy reserve. What should guide the decision?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Compare rescue risk and resource cost against crew safety and mission-critical reserves.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Risk life-support reserves to recover every sample.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Redirect essential habitat power to the rescue without analysis.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-56",
+       "n": 56,
+       "title": "Multiple Critical Alarms",
+       "scenario": "Oxygen, temperature and communication alarms occur together. What is the strongest response?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Use the emergency priority framework, stabilise crew-critical systems and delegate tasks.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Handle the easiest alarm first regardless of consequence.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Silence all alarms and wait for Earth.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-57",
+       "n": 57,
+       "title": "Solar Array Damage Near Nightfall",
+       "scenario": "A damaged array needs repair, but darkness is approaching. What should the team consider?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Remaining daylight, battery reserve, repair risk and essential power demand before scheduling work.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Start the repair without checking the battery.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Wait until the batteries are empty.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-58",
+       "n": 58,
+       "title": "Unverified Radiation Reading",
+       "scenario": "A sensor produces an unusually high value that conflicts with other instruments. What should the crew do?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Treat it cautiously, verify instruments and follow radiation safety procedures while resolving uncertainty.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Delete the reading immediately.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Assume the lowest reading is always correct.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-59",
+       "n": 59,
+       "title": "Final Science Opportunity",
+       "scenario": "A rare experiment could provide major scientific value but uses energy needed for the coming night. What is the best decision process?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Check forecasts, life-support reserves and mission thresholds before deciding whether surplus energy is available.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Run it because rare opportunities must never be missed.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Disable the night-time power reserve.",
+         "stars": 1
+        }
+       ]
+      },
+      {
+       "id": "specialist-60",
+       "n": 60,
+       "title": "Thirty-Day Mission Assessment",
+       "scenario": "The outpost completes 30 days. Which measures best assess mission performance?",
+       "options": [
+        {
+         "key": "A",
+         "text": "Evaluate crew safety, resource stability, system reliability and scientific objectives together.",
+         "stars": 5
+        },
+        {
+         "key": "B",
+         "text": "Count only the number of experiments completed.",
+         "stars": 1
+        },
+        {
+         "key": "C",
+         "text": "Count only the amount of power consumed.",
+         "stars": 1
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "questionCount": 60
+  }
+ ]
+}

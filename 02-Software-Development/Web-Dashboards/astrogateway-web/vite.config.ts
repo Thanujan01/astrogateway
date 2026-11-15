@@ -1,9 +1,9 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
+// Frontend-only: no backend/account API, so no dev proxy is needed.
 export default defineConfig({
   plugins: [react()],
   server: {
     host: '127.0.0.1',
-    proxy: { '/account-api': { target: 'http://127.0.0.1:8000', changeOrigin: false, rewrite: path => path.replace(/^\/account-api/, '') } },
   },
 })

@@ -208,7 +208,9 @@ class AuthVerifier:
             aud=claims.get('aud'); audience=aud if isinstance(aud,list) else [aud]
             if claims.get('iss')!=self.settings.expected_issuer or claims.get('role')!='authenticated' or 'authenticated' not in audience or UUID(claims['sub'])!=user_id or expires<=datetime.now(timezone.utc):raise ValueError()
         except (ValueError,KeyError,TypeError,OverflowError,AttributeError,OSError):raise HTTPException(401,'Invalid session claims.',headers={'WWW-Authenticate':'Bearer'}) from None
-        if not user.get('email_confirmed_at') or user.get('is_anonymous',False):raise HTTPException(403,'A verified email account is required.')
+        # Email confirmation is intentionally not required: sign up, then sign in with the same
+        # credentials. Anonymous Supabase sessions are a separate, unrelated concern and stay blocked.
+        if user.get('is_anonymous',False):raise HTTPException(403,'An email/password account is required.')
         return Principal(user_id,session_id,expires,token)
 
 bearer=HTTPBearer(auto_error=False)

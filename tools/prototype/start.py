@@ -1,4 +1,8 @@
-"""Start the existing local API, account portal and playable Missions prototype."""
+"""Start the existing local API, account portal and playable Missions prototype.
+
+Runs on macOS and Windows. Platform-specific pieces (process groups, venv layout, the
+mongod binary name and flags, the Unity editor path) are selected from WINDOWS below.
+"""
 import argparse
 import json
 import os
@@ -17,6 +21,7 @@ ROOT = Path(__file__).resolve().parents[2]
 API = ROOT / '02-Software-Development/Backend/astrogateway-api'
 WEB = ROOT / '02-Software-Development/Web-Dashboards/astrogateway-web'
 GAME = ROOT / '01-Game-Development/MissionRedHorizon'
+WINDOWS = os.name == 'nt'
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--backend-python', default=os.environ.get('ASTROGATEWAY_BACKEND_PYTHON'))
 parser.add_argument('--no-game', action='store_true')
@@ -41,7 +46,12 @@ def start(name, command, cwd):
     log = (folder / (name + '.log')).open('w')
     logs.append(log)
     env = dict(os.environ, VITE_AUTH_PROVIDER=PROVIDER) if name == "web" else None
-    child = subprocess.Popen(command, cwd=cwd, stdout=log, stderr=subprocess.STDOUT, start_new_session=True, env=env)
+    # Isolate children so Ctrl+C in this terminal does not race our own cleanup.
+    if WINDOWS:
+        grouping = {'creationflags': subprocess.CREATE_NEW_PROCESS_GROUP}
+    else:
+        grouping = {'start_new_session': True}
+    child = subprocess.Popen(command, cwd=cwd, stdout=log, stderr=subprocess.STDOUT, env=env, **grouping)
     children.append(child)
     return child
 
@@ -57,13 +67,14 @@ def wait_for(url, child, label):
     raise RuntimeError(f'{label} did not start. See prototype-builds/run-logs/{label}.log')
 
 def python_environment():
-    candidates = [args.backend_python, str(API / '.venv/bin/python'), str(ROOT.parent / 'identity-audit-venv/bin/python'), sys.executable]
+    venv = 'Scripts/python.exe' if WINDOWS else 'bin/python'
+    candidates = [args.backend_python, str(API / '.venv' / venv), str(ROOT.parent / 'identity-audit-venv' / venv), sys.executable]
     for candidate in candidates:
         if candidate and Path(candidate).exists():
             result = subprocess.run([candidate, '-c', 'import fastapi, uvicorn, httpx' + ('; import pymongo, argon2' if PROVIDER == 'mongodb' else '')], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             if result.returncode == 0:
                 return candidate
-    raise RuntimeError('Backend dependencies are missing. For MongoDB, run python3 tools/prototype/setup_mongodb.py. For legacy Supabase, install requirements-dev.txt in the backend .venv.')
+    raise RuntimeError('Backend dependencies are missing. Run "python tools/prototype/setup_mongodb.py" for MongoDB mode, or install requirements-dev.txt in the backend .venv for legacy Supabase mode.')
 
 def mongo_running():
     try:
@@ -72,14 +83,18 @@ def mongo_running():
 
 try:
     if PROVIDER == 'mongodb' and not mongo_running():
-        binaries = list((ROOT / 'prototype-builds/mongodb').glob('*/bin/mongod'))
+        pattern = '*/bin/mongod.exe' if WINDOWS else '*/bin/mongod'
+        binaries = list((ROOT / 'prototype-builds/mongodb').glob(pattern))
         installed = shutil.which('mongod')
         binary = str(binaries[0]) if binaries else installed
         if not binary:
-            raise RuntimeError('Local MongoDB is missing. Run python3 tools/prototype/setup_mongodb.py once, then retry.')
+            raise RuntimeError('Local MongoDB is missing. Run "' + ('py -3' if WINDOWS else 'python3') + ' tools/prototype/setup_mongodb.py" once, then retry.')
         data = ROOT / 'prototype-builds/mongodb/data'; data.mkdir(parents=True, exist_ok=True, mode=0o700)
-        data.chmod(0o700)
-        process = start('mongodb', [binary, '--dbpath', str(data), '--bind_ip', '127.0.0.1', '--port', '27018', '--nounixsocket', '--logpath', str(data.parent / 'mongod.log')], ROOT)
+        if not WINDOWS:
+            data.chmod(0o700)  # No POSIX mode bits on Windows; NTFS ACLs apply instead.
+        # --nounixsocket is POSIX-only; Windows mongod rejects the flag.
+        flags = [] if WINDOWS else ['--nounixsocket']
+        process = start('mongodb', [binary, '--dbpath', str(data), '--bind_ip', '127.0.0.1', '--port', '27018', *flags, '--logpath', str(data.parent / 'mongod.log')], ROOT)
         deadline = time.monotonic() + 20
         while not mongo_running():
             if process.poll() is not None or time.monotonic() > deadline: raise RuntimeError('Local MongoDB did not start. See prototype-builds/mongodb/mongod.log')
@@ -112,15 +127,21 @@ try:
     if not args.check and not args.no_browser:
         webbrowser.open('http://127.0.0.1:5173/welcome')
     if not args.no_game:
-        app = Path(os.environ.get('ASTROGATEWAY_PROTOTYPE_APP', str(ROOT / 'prototype-builds/AstroGateway.app')))
-        if app.is_dir():
+        default_app = 'prototype-builds/AstroGateway.exe' if WINDOWS else 'prototype-builds/AstroGateway.app'
+        app = Path(os.environ.get('ASTROGATEWAY_PROTOTYPE_APP', str(ROOT / default_app)))
+        if app.is_dir() or (WINDOWS and app.is_file()):
             if not args.check:
-                subprocess.run(['open', '-n', str(app)], check=True)
+                if WINDOWS:
+                    start('game', [str(app)], ROOT)
+                else:
+                    subprocess.run(['open', '-n', str(app)], check=True)
             print('Playable Missions app: ' + str(app), flush=True)
         else:
-            editor = Path(os.environ.get('ASTROGATEWAY_UNITY_EDITOR', '/Applications/Unity/Hub/Editor/6000.6.4f1/Unity.app/Contents/MacOS/Unity'))
+            default_editor = ('C:/Program Files/Unity/Hub/Editor/6000.6.4f1/Editor/Unity.exe' if WINDOWS
+                              else '/Applications/Unity/Hub/Editor/6000.6.4f1/Unity.app/Contents/MacOS/Unity')
+            editor = Path(os.environ.get('ASTROGATEWAY_UNITY_EDITOR', default_editor))
             if not editor.is_file():
-                raise RuntimeError('Build the prototype app or install the pinned Unity Editor before launching the game.')
+                raise RuntimeError('Build the prototype app, or install the pinned Unity Editor and set ASTROGATEWAY_UNITY_EDITOR, before launching the game.')
             if not args.check:
                 start('game-editor', [str(editor), '-projectPath', str(GAME), '-executeMethod', 'PrototypeBuild.Play'], ROOT)
             print('Missions scene launches in Unity; an active Unity license is required.', flush=True)
@@ -140,11 +161,17 @@ except (RuntimeError, OSError, ValueError, subprocess.SubprocessError) as error:
 finally:
     for child in children:
         if child.poll() is None:
-            os.killpg(child.pid, signal.SIGTERM)
+            if WINDOWS:
+                # No process groups to signal; taskkill /T reaches the whole tree (npm -> node).
+                subprocess.run(['taskkill', '/T', '/F', '/PID', str(child.pid)],
+                               stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            else:
+                os.killpg(child.pid, signal.SIGTERM)
     for child in children:
         try:
             child.wait(timeout=5)
         except subprocess.TimeoutExpired:
-            os.killpg(child.pid, signal.SIGKILL)
+            if not WINDOWS:
+                os.killpg(child.pid, signal.SIGKILL)
     for log in logs:
         log.close()

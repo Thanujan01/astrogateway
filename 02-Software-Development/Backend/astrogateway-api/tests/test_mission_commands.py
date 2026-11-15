@@ -63,11 +63,12 @@ def test_new_endpoints_require_verified_session(method,path,headers,expected):
         kw={'json':cmd(0,'board_rover')} if method=='post' else {}
         assert getattr(c,method)(path.format(s=uuid4()),headers=headers,**kw).status_code==expected
 @pytest.mark.parametrize('method,path',NEW_ENDPOINTS)
-def test_new_endpoints_require_confirmed_email(method,path):
+def test_new_endpoints_do_not_require_confirmed_email(method,path):
+    """Email verification was removed: sign up, then sign in with the same credentials."""
     app,_,_=setup(confirmed=False)
     with TestClient(app) as c:
         kw={'json':cmd(0,'board_rover')} if method=='post' else {}
-        assert getattr(c,method)(path.format(s=uuid4()),headers=H(),**kw).status_code==403
+        assert getattr(c,method)(path.format(s=uuid4()),headers=H(),**kw).status_code!=403
 @pytest.mark.parametrize('method,path',NEW_ENDPOINTS)
 def test_revoked_session_is_refused(method,path):
     app,_,_=setup();h=H()

@@ -1,0 +1,126 @@
+/* Header navigation. Desktop keeps the original inline row; below 760px the
+   links collapse behind a three-bar toggle. Loaded by SiteNav.tsx.
+   Selectors are scoped under .ag-shell to beat the base rules in account.css. */
+
+.ag-shell .ag-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.ag-shell .ag-nav-items {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+/* Desktop: no toggle. */
+.ag-shell .ag-nav-toggle {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .ag-shell .ag-nav {
+    gap: 0;
+  }
+
+  .ag-shell .ag-nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    /* 44px is the minimum comfortable touch target. */
+    min-height: 44px;
+    min-width: 44px;
+    padding: 8px 12px;
+    border: 1px solid #344657;
+    border-radius: 8px;
+    background: #172532;
+    color: var(--ag-ink);
+    font-size: 13px;
+    font-weight: 650;
+  }
+
+  .ag-nav-toggle-text {
+    letter-spacing: 0.08em;
+  }
+
+  .ag-shell .ag-nav-items {
+    display: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    z-index: 30;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    min-width: 232px;
+    padding: 10px;
+    border: 1px solid #344657;
+    border-radius: 12px;
+    background: #121e2a;
+    box-shadow: 0 18px 44px #04080cd9;
+  }
+
+  .ag-shell .ag-nav[data-open] .ag-nav-items {
+    display: flex;
+  }
+
+  /* Links and the sign-out button become full-width rows. Each app wraps its
+     signed-in links in a fragment, which renders no DOM node, so every link and
+     button is a direct child of the panel. */
+  .ag-shell .ag-nav-items > a,
+  .ag-shell .ag-nav-items > button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    text-align: left;
+    color: var(--ag-ink);
+  }
+
+  .ag-shell .ag-nav-items > a:active,
+  .ag-shell .ag-nav-items > button:active {
+    background: #1d2d3c;
+  }
+
+  /* Keep the header a single row: brand left, toggle right. */
+  .ag-shell .ag-header {
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .ag-shell .ag-brand {
+    font-size: 15px;
+    gap: 10px;
+  }
+
+  .ag-shell .ag-brand svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+}
+
+/* Very narrow phones: drop the word, keep the icon. */
+@media (max-width: 400px) {
+  .ag-nav-toggle-text {
+    display: none;
+  }
+
+  .ag-shell .ag-nav-items {
+    min-width: min(272px, calc(100vw - 44px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ag-shell .ag-nav-items {
+    box-shadow: none;
+  }
+}

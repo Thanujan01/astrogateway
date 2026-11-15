@@ -7,7 +7,10 @@ ROOT=Path(__file__).resolve().parent
 ALLOWED={'DATABASE_SSL_ROOT_CERT','DATABASE_ALLOW_LEGACY_CA','SUPABASE_URL','SUPABASE_PUBLISHABLE_KEY','DATABASE_URL','SUPABASE_JWT_ISSUER','CORS_ALLOWED_ORIGINS','ASTROGATEWAY_ENVIRONMENT','ASTROGATEWAY_APPROVED_PROJECT_REF'}
 def load_local(path):
     if not path.exists():return
-    if path.is_symlink() or stat.S_IMODE(path.stat().st_mode)&0o077:raise ValueError('Use a regular owner-only .env file (chmod 600).')
+    if path.is_symlink():raise ValueError('Use a regular owner-only .env file, not a symlink.')
+    # POSIX mode bits are not meaningful on Windows (os.chmod only toggles read-only there), so the
+    # 0o077 check can never pass. Keep enforcing it on POSIX; rely on NTFS ACLs on Windows.
+    if os.name!='nt' and stat.S_IMODE(path.stat().st_mode)&0o077:raise ValueError('Use a regular owner-only .env file (chmod 600).')
     for line in path.read_text().splitlines():
         line=line.strip()
         if not line or line.startswith('#'):continue

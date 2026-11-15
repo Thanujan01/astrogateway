@@ -41,9 +41,10 @@ def test_missing_malformed_authorization(value):
     app,_=setup()
     with TestClient(app) as c:assert c.get('/v1/me',headers={'Authorization':value}).status_code==401
 
-def test_verified_email_required():
+def test_unconfirmed_email_is_allowed():
+    """Email verification was removed: sign up, then sign in with the same credentials."""
     app,_=setup(confirmed=False)
-    with TestClient(app) as c:assert c.get('/v1/me',headers={'Authorization':'Bearer '+token()}).status_code==403
+    with TestClient(app) as c:assert c.get('/v1/me',headers={'Authorization':'Bearer '+token()}).status_code==200
 
 def test_profile_mission_completion_and_revocation():
     app,_=setup();h={'Authorization':'Bearer '+token()};launch=str(uuid4())

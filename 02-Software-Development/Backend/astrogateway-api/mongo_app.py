@@ -1,13 +1,16 @@
 """MongoDB local-prototype entry point; it never uses or changes Supabase credentials."""
+from datetime import datetime
 import os
 import re
+from typing import Literal
 from urllib.parse import urlparse
-from fastapi import HTTPException, Request, Response
+from uuid import UUID
+from fastapi import Depends, HTTPException, Request, Response
 from fastapi.responses import JSONResponse
 from fastapi.exceptions import RequestValidationError
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 from pymongo.errors import PyMongoError
-from main import Settings, ProfileUpdate, create_app
+from main import Settings, ProfileUpdate, authorized_user, create_app, repository
 from mongo_backend import MongoRepository
 
 class Registration(BaseModel):
@@ -40,6 +43,29 @@ class Login(BaseModel):
     @field_validator('identifier')
     @classmethod
     def normalized(cls, value): return value.strip().casefold()
+
+class DiscoverableIn(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    discoverable: bool
+
+class TalkRequestIn(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    to_user_id: UUID
+
+class RequestAction(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    action: Literal['accept', 'decline']
+
+class ChatMessageIn(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    body: str = Field(min_length=1, max_length=2000)
+    @field_validator('body')
+    @classmethod
+    def clean(cls, value):
+        value = value.strip()
+        if not value: raise ValueError('Message cannot be empty.')
+        if any(ord(c) < 32 and c != '\n' for c in value): raise ValueError('Message contains invalid characters.')
+        return value
 
 def create_mongo_app(uri=None, database=None):
     uri = uri or os.environ.get('MONGODB_URL', 'mongodb://127.0.0.1:27018/?directConnection=true')
@@ -90,6 +116,37 @@ def create_mongo_app(uri=None, database=None):
                 if error.status_code != 401: raise
         response.delete_cookie('ag_mongo_session', path='/account-api', httponly=True, samesite='strict')
         return {'revoked': True}
+    # Player discovery and talk-request/chat lifecycle. Local-prototype only: cross-user queries
+    # like this need the local database, not the per-user Supabase/PostgREST adapter in main.py.
+    @app.post('/v1/me/discoverable')
+    async def set_discoverable(payload: DiscoverableIn, user=Depends(authorized_user), db=Depends(repository)):
+        return await db.set_discoverable(user, payload.discoverable)
+    @app.get('/v1/players/matches')
+    async def matches(user=Depends(authorized_user), db=Depends(repository)):
+        return {'matches': await db.list_matches(user)}
+    @app.get('/v1/players/requests')
+    async def requests_list(user=Depends(authorized_user), db=Depends(repository)):
+        return await db.list_requests(user)
+    @app.post('/v1/players/requests', status_code=201)
+    async def request_create(payload: TalkRequestIn, user=Depends(authorized_user), db=Depends(repository)):
+        row = await db.create_request(user, payload.to_user_id)
+        return {'request_id': row['_id'], 'status': row['status']}
+    @app.post('/v1/players/requests/{request_id}/respond')
+    async def request_respond(request_id: UUID, payload: RequestAction, user=Depends(authorized_user), db=Depends(repository)):
+        row = await db.respond_request(user, request_id, payload.action == 'accept')
+        return {'request_id': row['_id'], 'status': row['status']}
+    @app.get('/v1/players/{other_user_id}/messages')
+    async def messages_list(other_user_id: UUID, since: str | None = None, user=Depends(authorized_user), db=Depends(repository)):
+        since_at = None
+        if since:
+            try: since_at = datetime.fromisoformat(since)
+            except ValueError: raise HTTPException(422, 'Invalid timestamp.') from None
+        rows = await db.list_messages(user, other_user_id, since_at)
+        return {'messages': [{'message_id': r['_id'], 'from_user_id': r['from_user_id'], 'body': r['body'], 'created_at': r['created_at']} for r in rows]}
+    @app.post('/v1/players/{other_user_id}/messages', status_code=201)
+    async def messages_send(other_user_id: UUID, payload: ChatMessageIn, user=Depends(authorized_user), db=Depends(repository)):
+        row = await db.send_message(user, other_user_id, payload.body)
+        return {'message_id': row['_id'], 'from_user_id': row['from_user_id'], 'body': row['body'], 'created_at': row['created_at']}
     return app
 
 app = create_mongo_app()

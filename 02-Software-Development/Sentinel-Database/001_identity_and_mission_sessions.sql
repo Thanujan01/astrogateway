@@ -1,3 +1,27 @@
+-- ============================================================================
+-- ⚠ SUPERSEDED — DO NOT APPLY. Kept only as the Stage 05B historical candidate.
+--
+-- This file uses the ABANDONED security model: a custom `astrogateway_api` role
+-- plus transaction-local `current_setting('astrogateway.user_id')` settings.
+-- The current backend uses Supabase `auth.uid()` / `auth.jwt()` with the
+-- `authenticated` role. The two models are INCOMPATIBLE: applying this file
+-- produces a schema that `database.py` cannot talk to.
+--
+-- The authoritative migration chain, in order, is:
+--   001  docs/history/codex-outputs/Stage05B2/SQL/001_verified_jwt_training.sql
+--   002  docs/history/codex-outputs/Stage05B2/SQL/002_retire_direct_runtime.sql
+--   004  docs/history/codex-outputs/UnifiedAuth/SQL/004_profile_display_name.sql
+--   005  01-Game-Development/MissionRedHorizon/Docs/Step3/SQL/005_mission_commands_reports.sql
+--   006  01-Game-Development/MissionRedHorizon/Docs/FirstMission/SQL/006_sensor_records.sql
+--   007  02-Software-Development/Sentinel-Database/migrations/007_account_profile.sql
+--   008  02-Software-Development/Sentinel-Database/migrations/008_private_avatars.sql
+--   009  02-Software-Development/Sentinel-Database/migrations/009_private_login_broker.sql
+-- That exact list is what validation/validate_local.py installs (see CANDIDATES).
+--
+-- The validator already records this file as
+-- "SUPERSEDED; not a standalone current-backend installation".
+-- ============================================================================
+
 -- Stage 05B additive, transactional migration. NOT applied to any live Supabase project.
 -- Review existing training schema/role names first; collisions fail without overwriting data.
 -- Run as the Supabase migration owner. auth.users remains the only identity provider.

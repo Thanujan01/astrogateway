@@ -1,0 +1,130 @@
+import { lazy, Suspense, useEffect, useState } from 'react'
+import type { FormEvent, ReactNode } from 'react'
+import { Orbit } from 'lucide-react'
+import './account.css'
+import { loadProfile, readSessionCount, recordSessionStart, saveDisplayName } from './profile'
+// Small and bank-free: imports ./progress only, so the question data stays out of here.
+import ReadinessRating from '../challenges/ReadinessRating'
+import SiteNav from './SiteNav'
+
+const MarsPreview = lazy(() => import('../App'))
+// 81 KB of question data, so keep it out of the account bundle.
+const Challenges = lazy(() => import('../challenges/Challenges'))
+const Tutorials = lazy(() => import('../tutorials/Tutorials'))
+const DownloadApp = lazy(() => import('../download/DownloadApp'))
+
+function navigate(to: string) { history.pushState({}, '', to); window.dispatchEvent(new PopStateEvent('popstate')) }
+function Link({ to, children, className = '' }: { to: string; children: ReactNode; className?: string }) {
+  return <a href={to} className={className} onClick={e => { e.preventDefault(); navigate(to) }}>{children}</a>
+}
+
+export default function SoloAccountApp() {
+  const [path, setPath] = useState(location.pathname)
+  const [profile, setProfile] = useState(() => loadProfile())
+  const [sessions, setSessions] = useState(() => readSessionCount())
+  const [message, setMessage] = useState('')
+  const [error, setError] = useState('')
+
+  useEffect(() => {
+    const pop = () => { setPath(location.pathname); setError(''); setMessage('') }
+    window.addEventListener('popstate', pop)
+    return () => window.removeEventListener('popstate', pop)
+  }, [])
+
+  function submit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    const name = new FormData(event.currentTarget).get('name')
+    setError(''); setMessage('')
+    try {
+      setProfile(current => saveDisplayName(current, String(name)))
+      setMessage('Display name saved.')
+    } catch (reason) {
+      setError(reason instanceof Error ? reason.message : 'Could not save your profile.')
+    }
+  }
+
+  function startTraining() {
+    setSessions(recordSessionStart())
+    if (location.pathname === '/dashboard') navigate('/training')
+  }
+
+  const training = path === '/training'
+  if (path === '/mars' || training) {
+    return <>
+      <Suspense fallback={<p role="status">Loading {training ? 'training' : 'Mars preview'}…</p>}>
+        <MarsPreview />
+      </Suspense>
+      <Link to="/dashboard" className="ag-preview-account ag-preview-return">Return to dashboard</Link>
+    </>
+  }
+
+  return <div className="ag-shell">
+    <header className="ag-header">
+      <Link to="/welcome" className="ag-brand"><Orbit size={28}/><span>ASTROGATEWAY<small>SK2LB · LOCAL WORKSPACE</small></span></Link>
+      <SiteNav>
+        <Link to="/mars">Mars preview</Link>
+        <Link to="/challenges">Challenges</Link>
+        <Link to="/tutorials">Training videos</Link>
+        <Link to="/download">Download app</Link>
+        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/profile">Profile</Link>
+      </SiteNav>
+    </header>
+    <main className="ag-main">
+      <div className="ag-eyebrow">LOCAL ASTRONAUT WORKSPACE</div>
+      <p className="ag-small">Your profile and training sessions are stored in this browser only. There is no account server and nothing is sent anywhere.</p>
+      {error && <p className="ag-notice" role="alert">{error}</p>}
+      {message && <p className="ag-notice" role="status">{message}</p>}
+
+      {path === '/challenges' ? (
+        <Suspense fallback={<p role="status">Loading challenges</p>}><Challenges /></Suspense>
+      ) : path === '/tutorials' ? (
+        <Suspense fallback={<p role="status">Loading training videos</p>}><Tutorials /></Suspense>
+      ) : path === '/download' ? (
+        <Suspense fallback={<p role="status">Loading download page</p>}><DownloadApp /></Suspense>
+      ) : path === '/dashboard' ? (
+        <>
+          <h1>Welcome, {profile.display_name}.</h1>
+          <div className="ag-dashboard-grid">
+            <article className="ag-panel">
+              <h2>Mission Red Horizon</h2>
+              <p>Practise moving your astronaut and explore the Mars outpost in the browser.</p>
+              <button className="ag-primary" onClick={() => startTraining()}>Start training</button>
+            </article>
+            <article className="ag-panel">
+              <h2>Your progress</h2>
+              <p>Mission sessions: {sessions}</p>
+              <p>Training score and skill levels: unassessed.</p>
+              <Link to="/profile">Manage profile</Link>
+            </article>
+          </div>
+        </>
+      ) : path === '/profile' ? (
+        <section className="ag-profile-card">
+          <h1>Your astronaut profile.</h1>
+          <form onSubmit={submit}>
+            <label>Display name<input key={profile.user_id} name="name" defaultValue={profile.display_name} minLength={2} maxLength={64} required/></label>
+            <button className="ag-primary">Save display name</button>
+          </form>
+          <dl>
+            <dt>Profile ID</dt><dd className="ag-id">{profile.user_id}</dd>
+            <dt>Created</dt><dd>{new Date(profile.created_at).toLocaleDateString()}</dd>
+          </dl>
+          <ReadinessRating onOpen={navigate}/>
+        </section>
+      ) : (
+        <section className="ag-hero">
+          <div>
+            <h1>Your Mars<br/>mission starts here.</h1>
+            <p className="ag-lead">Explore Mission Red Horizon, right in your browser.</p>
+            <div className="ag-actions">
+              <Link to="/dashboard" className="ag-primary">Open dashboard</Link>
+              <Link to="/mars" className="ag-secondary">Mars preview</Link>
+            </div>
+          </div>
+        </section>
+      )}
+    </main>
+    <footer className="ag-footer"><span>MISSION RED HORIZON</span><span>Local workspace</span></footer>
+  </div>
+}

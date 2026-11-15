@@ -24,7 +24,15 @@ def digest(value): return hashlib.sha256(value.encode()).hexdigest()
 def conflict(): return HTTPException(409, 'Mission revision or operation conflict.')
 
 def public_profile(row):
-    return {k: row[k] for k in ('user_id', 'display_name', 'username', 'avatar_path', 'trainee_profile', 'training_level', 'created_at')}
+    result = {k: row[k] for k in ('user_id', 'display_name', 'username', 'avatar_path', 'trainee_profile', 'training_level', 'created_at')}
+    result['discoverable'] = row.get('discoverable', True)
+    return result
+
+def player_card(row):
+    """Narrow projection for other players: never email, password_hash or training evidence totals."""
+    return {'user_id': row['user_id'], 'display_name': row['display_name'], 'username': row.get('username')}
+
+def pair_key(a, b): return ':'.join(sorted((a, b)))
 
 class MongoRepository:
     cookie_auth = True
@@ -43,6 +51,12 @@ class MongoRepository:
             await repo.db.auth_sessions.create_index('auth_session_id', unique=True)
             await repo.db.missions.create_index([('user_id', 1), ('launch_id', 1)], unique=True)
             await repo.db.attempts.create_index('expires_at', expireAfterSeconds=0)
+            # Only one active (pending or accepted) talk relationship per pair at a time; a
+            # declined/cancelled request is terminal and excluded, so a fresh request can follow.
+            await repo.db.talk_requests.create_index('pair_key', unique=True, partialFilterExpression={'status': {'$in': ['pending', 'accepted']}})
+            await repo.db.talk_requests.create_index([('to_user_id', 1), ('status', 1)])
+            await repo.db.talk_requests.create_index([('from_user_id', 1), ('status', 1)])
+            await repo.db.chat_messages.create_index([('pair_key', 1), ('created_at', 1)])
             return repo
         except Exception:
             await client.close()
@@ -55,7 +69,7 @@ class MongoRepository:
             if row['count'] > limit: raise HTTPException(429, 'Too many account requests. Try later.')
     async def register(self, name, email, password, username=None):
         row = dict(_id=str(uuid4()), display_name=name, email=email, username=username, avatar_path=None,
-                   trainee_profile='astronaut_candidate', training_level=0, created_at=now(),
+                   trainee_profile='astronaut_candidate', training_level=0, created_at=now(), discoverable=True,
                    password_hash=await asyncio.to_thread(HASHER.hash, password))
         row['user_id'] = row['_id']
         try: await self.db.users.insert_one(row)
@@ -90,6 +104,9 @@ class MongoRepository:
         return public_profile(row)
     async def update_profile(self, user, name):
         await self.db.users.update_one({'_id': str(user.user_id)}, {'$set': {'display_name': name}})
+        return await self.profile(user)
+    async def set_discoverable(self, user, value):
+        await self.db.users.update_one({'_id': str(user.user_id)}, {'$set': {'discoverable': bool(value)}})
         return await self.profile(user)
     async def initialize(self, user, payload):
         existing = await self.db.missions.find_one({'user_id': str(user.user_id), 'launch_id': str(payload.launch_id)})
@@ -166,3 +183,73 @@ class MongoRepository:
             result = await self.db.missions.update_one({'_id': row['_id'], 'user_id': str(user.user_id), 'sensor_revision': row['sensor_revision'], 'status': 'initialized'}, {'$push': {'records': {'$each': additions}}, '$inc': {'sensor_revision': 1}})
             if result.modified_count: return acknowledgments
         raise conflict()
+    async def list_matches(self, user, limit=20):
+        """Directory of discoverable players, ranked by session-count proximity.
+
+        The scoring rubric is still `pending_approval` (see SkillsSummary), so this is an
+        honest session-count heuristic, not a skill-based rubric match like rules/peers.py.
+        """
+        me = str(user.user_id)
+        own_sessions = await self.db.missions.count_documents({'user_id': me})
+        candidates = await self.db.users.find({'_id': {'$ne': me}, 'discoverable': True}, {'password_hash': 0, 'email': 0}).to_list(length=200)
+        if not candidates: return []
+        ids = [c['_id'] for c in candidates]
+        counts = {row['_id']: row['n'] for row in await self.db.missions.aggregate([{'$match': {'user_id': {'$in': ids}}}, {'$group': {'_id': '$user_id', 'n': {'$sum': 1}}}]).to_list(length=None)}
+        relations = await self.db.talk_requests.find({'$or': [{'from_user_id': me, 'to_user_id': {'$in': ids}}, {'to_user_id': me, 'from_user_id': {'$in': ids}}], 'status': {'$in': ['pending', 'accepted']}}).to_list(length=None)
+        status_by_peer = {}
+        for row in relations:
+            other = row['to_user_id'] if row['from_user_id'] == me else row['from_user_id']
+            status_by_peer[other] = 'connected' if row['status'] == 'accepted' else ('pending_outgoing' if row['from_user_id'] == me else 'pending_incoming')
+        rows = []
+        for candidate in candidates:
+            cid = candidate['_id']
+            sessions = counts.get(cid, 0)
+            rows.append({'user_id': cid, 'display_name': candidate['display_name'], 'username': candidate.get('username'),
+                         'sessions': sessions, 'status': status_by_peer.get(cid, 'none'), '_proximity': abs(sessions - own_sessions)})
+        rows.sort(key=lambda row: (row['_proximity'], row['display_name']))
+        for row in rows: del row['_proximity']
+        return rows[:limit]
+    async def create_request(self, user, target_id):
+        me, target = str(user.user_id), str(target_id)
+        if me == target: raise HTTPException(400, 'You cannot send a request to yourself.')
+        target_row = await self.db.users.find_one({'_id': target, 'discoverable': True})
+        if not target_row: raise HTTPException(404, 'Player not found.')
+        row = dict(_id=str(uuid4()), from_user_id=me, to_user_id=target, pair_key=pair_key(me, target), status='pending', created_at=now(), responded_at=None)
+        try: await self.db.talk_requests.insert_one(row)
+        except DuplicateKeyError: raise HTTPException(409, 'A request already exists with this player.') from None
+        return row
+    async def respond_request(self, user, request_id, accept):
+        row = await self.db.talk_requests.find_one_and_update(
+            {'_id': str(request_id), 'to_user_id': str(user.user_id), 'status': 'pending'},
+            {'$set': {'status': 'accepted' if accept else 'declined', 'responded_at': now()}},
+            return_document=ReturnDocument.AFTER)
+        if not row: raise HTTPException(404, 'Request not found or already answered.')
+        return row
+    async def list_requests(self, user):
+        me = str(user.user_id)
+        rows = await self.db.talk_requests.find({'$or': [{'from_user_id': me}, {'to_user_id': me}]}).to_list(length=200)
+        others = {r['to_user_id'] if r['from_user_id'] == me else r['from_user_id'] for r in rows}
+        cards = {p['_id']: player_card({**p, 'user_id': p['_id']}) for p in await self.db.users.find({'_id': {'$in': list(others)}}).to_list(length=None)} if others else {}
+        incoming, outgoing, contacts = [], [], []
+        for row in rows:
+            other = row['to_user_id'] if row['from_user_id'] == me else row['from_user_id']
+            entry = {'request_id': row['_id'], 'player': cards.get(other, {'user_id': other, 'display_name': 'Former player', 'username': None}),
+                     'created_at': row['created_at'], 'status': row['status']}
+            if row['status'] == 'accepted': contacts.append(entry)
+            elif row['status'] == 'pending' and row['to_user_id'] == me: incoming.append(entry)
+            elif row['status'] == 'pending' and row['from_user_id'] == me: outgoing.append(entry)
+        return {'incoming': incoming, 'outgoing': outgoing, 'contacts': contacts}
+    async def connected(self, a, b): return await self.db.talk_requests.find_one({'pair_key': pair_key(a, b), 'status': 'accepted'})
+    async def send_message(self, user, other_id, body):
+        me, other = str(user.user_id), str(other_id)
+        if me == other: raise HTTPException(400, 'Invalid recipient.')
+        if not await self.connected(me, other): raise HTTPException(403, 'You are not connected with this player yet.')
+        row = dict(_id=str(uuid4()), pair_key=pair_key(me, other), from_user_id=me, to_user_id=other, body=body, created_at=now())
+        await self.db.chat_messages.insert_one(row)
+        return row
+    async def list_messages(self, user, other_id, since=None):
+        me, other = str(user.user_id), str(other_id)
+        if not await self.connected(me, other): raise HTTPException(403, 'You are not connected with this player yet.')
+        query = {'pair_key': pair_key(me, other)}
+        if since: query['created_at'] = {'$gt': since}
+        return await self.db.chat_messages.find(query).sort('created_at', 1).to_list(length=200)

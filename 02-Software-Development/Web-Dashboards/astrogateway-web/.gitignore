@@ -27,3 +27,8 @@ dist-ssr
 .env
 .env.*
 !.env.example
+
+# Derived 3D assets staged from 01-Game-Development by
+# tools/web-assets/prepare_web_assets.py. Not committed: the sources already live
+# in Git LFS and duplicating them here would double their weight in the repo.
+public/models/

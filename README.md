@@ -269,7 +269,7 @@ Only pull while on the intended branch with a clean working tree. `git lfs pull`
 |---|---|
 | Repository | Git + Git LFS; repository access through your GitHub account |
 | Unity | **6000.6.4f1**, URP **17.6.0**, Input System **1.20.0**, Test Framework **1.8.0** from project configuration |
-| Backend | Python; no repository-wide interpreter pin. Historical runner used 3.14. FastAPI **0.143.0**, uvicorn **0.54.0**, httpx **0.28.1**; pytest dependencies in `requirements-dev.txt` |
+| Backend | Python **3.11+** (`pymongo==4.19.0` in `requirements-mongodb.txt` sets that floor; the historical runner used 3.14). FastAPI **0.143.0**, uvicorn **0.54.0**, httpx **0.28.1**; pytest dependencies in `requirements-dev.txt`. `tools/prototype/setup_mongodb.py` checks the version before installing. |
 | Web | npm with committed lockfile. Node **24.15+ within 24.x** meets the inspected Vite/Vitest/jsdom engine constraints; no runtime version file is pinned. Lockfile resolves Vite 8.3.3, Vitest 5.0.3, jsdom 30.1.2 |
 | Android POC | SDK **36**, min SDK **26**, build-tools **36.0.0**, ARM64, NDK **27.2.12479018**, JDK **17**, Gradle **9.3.1**, AGP **9.1.1**; Android Studio optional |
 | Source art | Python; Blender `bpy` for Blender-specific scripts. Blender version is not pinned |
@@ -322,7 +322,7 @@ Keep the repository private. This guide does not change collaborators, branch ru
 | Unity opens the sample scene | Explicitly open the linked FirstMission scene or use the Open Missions Scene menu; do not assume Build Settings selects it. |
 | Unity package/shader errors | Match editor and URP versions, restore LFS, preserve `.meta` files and allow package resolution. |
 | Backend startup is refused | Check `.env` ownership/mode, complete approved test settings, retired DB settings and admin-secret isolation. Never bypass the guard by relocating secrets beside the service. |
-| Backend catalog test fails on another clone | `tests/test_sensor_records.py` references the original home-directory Unity location. Documented portability issue; do not treat a missing external path as a provider failure. |
+| Backend catalog test fails on another clone | `tests/test_sensor_records.py::test_unity_and_backend_catalogs_identical` resolves the Unity catalog repo-relatively via `Path(__file__).resolve().parents[4]`, so it is portable. If it fails, the two `sensor_catalog_v1.json` copies have genuinely diverged (Unity `FirstMission/Config/` vs backend `rules/`) — re-sync them rather than editing the test. |
 | Web account service is unavailable | Configuration readiness pins the approved provider URL and publishable-key shape; check `.env.local`, callback configuration and the `/account-api` proxy/backend. |
 | Node install reports engine errors | Use a Node release satisfying locked package engines; `npm ci` preserves the lockfile. |
 | Android Gradle/IL2CPP files are missing | Regenerate the integration export with the matching Unity Android modules; imported cache/toolchain directories were excluded. |

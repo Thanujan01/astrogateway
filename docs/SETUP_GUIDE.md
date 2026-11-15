@@ -93,7 +93,7 @@ On Windows, activate `.venv` using that platform's activation script; owner-only
 
 Blank provider configuration cannot authenticate users and is not live readiness. Even `/health` only reports configuration presence. Provide an independently isolated service identity/filesystem without readable admin/gateway/signing credentials. The original guard checks a known relative admin-file path; the migrated layout does not make that a complete isolation boundary.
 
-Tests use local/mock transports; they do not establish a hosted provider deployment. `tests/test_sensor_records.py` includes an original home-directory Unity catalog path, so a fresh clone on another layout can fail that check. No source fix is included here. A test-vector regeneration path exists in `tests/test_rules.py`; avoid using it casually because it can rewrite an existing JSON file.
+Tests use local/mock transports; they do not establish a hosted provider deployment. `tests/test_sensor_records.py` cross-checks the Unity and backend copies of `sensor_catalog_v1.json`; it resolves the Unity path repo-relatively, so it works on any clone as long as both copies stay byte-identical. No source fix is included here. A test-vector regeneration path exists in `tests/test_rules.py`; avoid using it casually because it can rewrite an existing JSON file.
 
 For Unity/client mock integration only, the tracked mock server binds loopback **8766** by default (**NOT TESTED**):
 
@@ -205,7 +205,7 @@ Do **not** treat `python run_local.py` as a turnkey migrated command: it imports
 | Wrong Unity scene | Build Settings selects SampleScene; open the exact FirstMission scene/menu. |
 | Android missing IL2CPP/NDK/JDK | Install matching Unity Android modules and regenerate the integration export. Existing scripts/export paths are Mac-specific. |
 | Backend configuration rejection | Use the allowlisted template, owner-only regular `.env`, test marker, complete provider settings and empty retired DB options. Isolation is independent of the known-path guard. |
-| Backend test reads another project path | The catalog cross-check uses an original home-directory path. Record as a portability issue; a documentation update does not repair it. |
+| Catalog cross-check test fails | The Unity and backend `sensor_catalog_v1.json` copies differ. Compare them and re-sync; the path itself is repo-relative and portable. |
 | Web sign-in disabled / profile call fails | Check fixed provider readiness check, public key, callback origin, local backend and Vite proxy. Main entry is the account UI. |
 | npm engine error | Inspect locked package `engines`; use a mutually compatible Node version and `npm ci`. |
 | ARIA protocol/adaptive import missing | Historical parent paths/PYTHONPATH differ after migration; keep the experiment isolated and reconstruct dependencies deliberately. |

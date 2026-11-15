@@ -1,0 +1,140 @@
+/* Readiness rating on the profile page. Inherits the .ag-shell tokens. */
+
+.agr {
+  margin: 2rem 0 0;
+  padding: 1.75rem 0 0;
+  border-top: 1px solid #35434e;
+}
+
+.agr h2 {
+  margin: 10px 0 8px;
+  font-size: 22px;
+}
+
+.agr-headline {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin: 14px 0 6px;
+}
+
+.agr-average {
+  font-size: 46px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 750;
+}
+
+.agr-of {
+  color: var(--ag-muted);
+  font-size: 16px;
+  margin-left: 6px;
+}
+
+.agr-sub {
+  color: var(--ag-muted);
+  margin: 0 0 4px;
+}
+
+/* --- Fractional star bar -------------------------------------------------- */
+.agr-bar {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  letter-spacing: 3px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.agr-bar-empty {
+  color: #3b4a58;
+}
+
+.agr-bar-fill {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  color: #f0b45f;
+}
+
+/* --- Per-track breakdown -------------------------------------------------- */
+.agr-tracks {
+  display: grid;
+  gap: 14px;
+  margin: 22px 0 18px;
+  padding: 0;
+  border: 0;
+  grid-template-columns: 1fr;
+}
+
+.agr-track {
+  display: grid;
+  grid-template-columns: minmax(120px, 190px) 1fr;
+  align-items: center;
+  gap: 8px 20px;
+  padding: 14px 16px;
+  border: 1px solid #2b3c4c;
+  border-radius: 10px;
+  background: var(--ag-panel);
+}
+
+.agr-track dt {
+  font-size: 14px;
+  font-weight: 650;
+  color: var(--ag-ink);
+}
+
+.agr-track dt small {
+  display: block;
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--ag-muted);
+  letter-spacing: 0.04em;
+}
+
+.agr-track dd {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.agr-track dd em {
+  color: #7f909f;
+  font-style: normal;
+  font-size: 13px;
+}
+
+.agr-track-value {
+  font-size: 12px;
+  color: var(--ag-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- Notes ---------------------------------------------------------------- */
+.agr-note {
+  display: flex;
+  gap: 9px;
+  align-items: start;
+  color: #7f909f;
+  margin: 0 0 14px;
+  max-width: 560px;
+}
+
+.agr-note svg {
+  color: var(--ag-accent);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+@media (max-width: 760px) {
+  .agr-track {
+    grid-template-columns: 1fr;
+  }
+
+  .agr-average {
+    font-size: 38px;
+  }
+}

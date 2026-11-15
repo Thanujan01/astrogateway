@@ -51,9 +51,10 @@ def test_requires_verified_session(method,path,headers):
     with TestClient(app) as c:
         kw={'json':{'records':[rec()]}} if method=='post' else {}
         assert getattr(c,method)(path.format(s=uuid4()),headers=headers,**kw).status_code==401
-def test_requires_confirmed_email():
+def test_does_not_require_confirmed_email():
+    """Email verification was removed: sign up, then sign in with the same credentials."""
     app,_=setup(confirmed=False)
-    with TestClient(app) as c:assert c.post(P.format(s=uuid4()),headers=H(),json={'records':[rec()]}).status_code==403
+    with TestClient(app) as c:assert c.post(P.format(s=uuid4()),headers=H(),json={'records':[rec()]}).status_code!=403
 def test_revoked_session_refused():
     app,_=setup();h=H()
     with TestClient(app) as c:
