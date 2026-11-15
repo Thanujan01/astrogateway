@@ -14,19 +14,35 @@ const Tutorials = lazy(() => import('../tutorials/Tutorials'))
 // No in-app download page: the nav link opens this Drive folder directly, in a new tab.
 const MOBILE_GAME_DRIVE_FOLDER_URL = 'https://drive.google.com/drive/folders/1DsE8mD1pNGBWLC_IGZgl_6kA11O8pDza?usp=sharing'
 
-function navigate(to: string) { history.pushState({}, '', to); window.dispatchEvent(new PopStateEvent('popstate')) }
+/* ---------------------------------------------------------------------------
+ * On GitHub Pages this app is served from /astrogateway/, not from the
+ * domain root, so every pushed URL must carry that prefix or the address bar
+ * ends up at a path (e.g. /tutorials) that doesn't belong to this site at
+ * all -- refreshing it 404s before this app's own code ever runs. BASE is
+ * Vite's own build-time base ('/astrogateway/' on Pages, '/' in dev), so
+ * this tracks vite.config.ts automatically.
+ * ------------------------------------------------------------------------- */
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '')
+
+function currentPath() {
+  const { pathname } = location
+  if (BASE && pathname.startsWith(BASE)) return pathname.slice(BASE.length) || '/'
+  return pathname
+}
+
+function navigate(to: string) { history.pushState({}, '', BASE + to); window.dispatchEvent(new PopStateEvent('popstate')) }
 function Link({ to, children, className = '' }: { to: string; children: ReactNode; className?: string }) {
-  return <a href={to} className={className} onClick={e => { e.preventDefault(); navigate(to) }}>{children}</a>
+  return <a href={BASE + to} className={className} onClick={e => { e.preventDefault(); navigate(to) }}>{children}</a>
 }
 
 export default function SoloAccountApp() {
-  const [path, setPath] = useState(location.pathname)
+  const [path, setPath] = useState(currentPath())
   const [profile, setProfile] = useState(() => loadProfile())
   const [message, setMessage] = useState('')
   const [error, setError] = useState('')
 
   useEffect(() => {
-    const pop = () => { setPath(location.pathname); setError(''); setMessage('') }
+    const pop = () => { setPath(currentPath()); setError(''); setMessage('') }
     window.addEventListener('popstate', pop)
     return () => window.removeEventListener('popstate', pop)
   }, [])
